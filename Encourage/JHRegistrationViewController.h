@@ -1,5 +1,5 @@
 //
-//  JHLoginViewController.h
+//  JHRegistrationViewController.h
 //  Encourage
 //
 //  Created by Abu on 12/07/14.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JHLoginViewController : UIViewController
--(IBAction)registerButtonPressed:(id)sender;
-
+@interface JHRegistrationViewController : UIViewController
+-(IBAction)loginButtonPressed:(id)sender;
 @end

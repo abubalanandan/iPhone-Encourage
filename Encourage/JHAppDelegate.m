@@ -17,7 +17,10 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     JHLoginViewController * viewController = [[JHLoginViewController alloc]initWithNibName:@"JHLoginViewController" bundle:[NSBundle mainBundle]];
-    self.window.rootViewController = viewController;
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:viewController];
+
+    self.window.rootViewController = navController;
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     [self.window makeKeyAndVisible];
     return YES;
 }

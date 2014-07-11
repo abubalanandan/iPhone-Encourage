@@ -23,6 +23,8 @@
 		70F10AC219706D4E002513D1 /* JHLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70F10AC119706D4E002513D1 /* JHLoginViewController.xib */; };
 		70F10AD21970744D002513D1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F10AD01970744D002513D1 /* Default@2x.png */; };
 		70F10AD31970744D002513D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F10AD11970744D002513D1 /* Default-568h@2x.png */; };
+		70F10AD7197077B1002513D1 /* JHRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F10AD5197077B1002513D1 /* JHRegistrationViewController.m */; };
+		70F10AD8197077B1002513D1 /* JHRegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70F10AD6197077B1002513D1 /* JHRegistrationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		70F10AC119706D4E002513D1 /* JHLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHLoginViewController.xib; sourceTree = "<group>"; };
 		70F10AD01970744D002513D1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		70F10AD11970744D002513D1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		70F10AD4197077B1002513D1 /* JHRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRegistrationViewController.h; sourceTree = "<group>"; };
+		70F10AD5197077B1002513D1 /* JHRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRegistrationViewController.m; sourceTree = "<group>"; };
+		70F10AD6197077B1002513D1 /* JHRegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHRegistrationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +166,9 @@
 				70F10ABC19706D07002513D1 /* JHLoginViewController.h */,
 				70F10ABD19706D07002513D1 /* JHLoginViewController.m */,
 				70F10AC119706D4E002513D1 /* JHLoginViewController.xib */,
+				70F10AD4197077B1002513D1 /* JHRegistrationViewController.h */,
+				70F10AD5197077B1002513D1 /* JHRegistrationViewController.m */,
+				70F10AD6197077B1002513D1 /* JHRegistrationViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -252,6 +260,7 @@
 			files = (
 				70F10AD21970744D002513D1 /* Default@2x.png in Resources */,
 				70F10AC219706D4E002513D1 /* JHLoginViewController.xib in Resources */,
+				70F10AD8197077B1002513D1 /* JHRegistrationViewController.xib in Resources */,
 				70F10A9719706C92002513D1 /* InfoPlist.strings in Resources */,
 				70F10AD31970744D002513D1 /* Default-568h@2x.png in Resources */,
 				70F10A9F19706C92002513D1 /* Images.xcassets in Resources */,
@@ -274,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70F10ABE19706D07002513D1 /* JHLoginViewController.m in Sources */,
+				70F10AD7197077B1002513D1 /* JHRegistrationViewController.m in Sources */,
 				70F10A9D19706C92002513D1 /* JHAppDelegate.m in Sources */,
 				70F10A9919706C92002513D1 /* main.m in Sources */,
 			);
@@ -474,6 +484,7 @@
 				70F10AB719706C92002513D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70F10AB819706C92002513D1 /* Build configuration list for PBXNativeTarget "EncourageTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +493,7 @@
 				70F10ABA19706C92002513D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

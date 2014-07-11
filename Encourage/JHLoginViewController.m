@@ -7,7 +7,23 @@
 //
 
 #import "JHLoginViewController.h"
-
+#import "JHRegistrationViewController.h"
 @implementation JHLoginViewController
 
+
+
+- (void)viewDidLoad{
+    [super viewDidLoad];
+}
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
+
+-(IBAction)registerButtonPressed:(id)sender{
+    JHRegistrationViewController *viewController = [[JHRegistrationViewController alloc]initWithNibName:@"JHRegistrationViewController" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 @end
