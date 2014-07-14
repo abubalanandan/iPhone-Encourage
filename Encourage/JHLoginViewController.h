@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JHLoginViewController : UIViewController
+@interface JHLoginViewController : UIViewController<UITextFieldDelegate>
+
+@property (nonatomic, strong) NSString *testString;
+@property IBOutlet UITextField *loginField;
+@property IBOutlet UITextField *passwordField;
 -(IBAction)registerButtonPressed:(id)sender;
 
 @end

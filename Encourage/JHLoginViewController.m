@@ -10,10 +10,12 @@
 #import "JHRegistrationViewController.h"
 @implementation JHLoginViewController
 
+@synthesize testString;
 
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 
@@ -21,6 +23,15 @@
     [super viewWillAppear:animated];
 }
 
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if (textField==self.loginField) {
+        [self.passwordField becomeFirstResponder];
+    }else{
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
 
 -(IBAction)registerButtonPressed:(id)sender{
     JHRegistrationViewController *viewController = [[JHRegistrationViewController alloc]initWithNibName:@"JHRegistrationViewController" bundle:nil];
