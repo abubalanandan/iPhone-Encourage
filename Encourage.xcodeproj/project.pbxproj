@@ -7,32 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70B36DB5197477EA002695E4 /* login_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B36DAE197477EA002695E4 /* login_bg@2x.png */; };
-		70B36DB6197477EA002695E4 /* login_form@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B36DAF197477EA002695E4 /* login_form@2x.png */; };
-		70B36DB7197477EA002695E4 /* login_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B36DB0197477EA002695E4 /* login_logo@2x.png */; };
-		70B36DB8197477EA002695E4 /* password_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B36DB1197477EA002695E4 /* password_icon@2x.png */; };
-		70B36DB9197477EA002695E4 /* register_buton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B36DB2197477EA002695E4 /* register_buton@2x.png */; };
-		70B36DBA197477EA002695E4 /* separate_form@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B36DB3197477EA002695E4 /* separate_form@2x.png */; };
-		70B36DBB197477EA002695E4 /* username_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B36DB4197477EA002695E4 /* username_icon@2x.png */; };
-		70B36DBD19747808002695E4 /* login_buton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B36DBC19747808002695E4 /* login_buton@2x.png */; };
+		700F969A199E1049009E5E52 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 700F9699199E1049009E5E52 /* libz.dylib */; };
+		7028135919F8008C00643D17 /* KVCBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028132F19F8008C00643D17 /* KVCBaseObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028135A19F8008C00643D17 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028133519F8008C00643D17 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028135B19F8008C00643D17 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028133819F8008C00643D17 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028135C19F8008C00643D17 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028133A19F8008C00643D17 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028135D19F8008C00643D17 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028133C19F8008C00643D17 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028135E19F8008C00643D17 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028133E19F8008C00643D17 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028135F19F8008C00643D17 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028134019F8008C00643D17 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028136019F8008C00643D17 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028134419F8008C00643D17 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028136119F8008C00643D17 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028134619F8008C00643D17 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028136219F8008C00643D17 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028134A19F8008C00643D17 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028136319F8008C00643D17 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028134E19F8008C00643D17 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028136419F8008C00643D17 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028135019F8008C00643D17 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028136519F8008C00643D17 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028135219F8008C00643D17 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028136619F8008C00643D17 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028135419F8008C00643D17 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028136719F8008C00643D17 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028135619F8008C00643D17 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028136819F8008C00643D17 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028135819F8008C00643D17 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028136C19F800FB00643D17 /* JHBaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028136B19F800FB00643D17 /* JHBaseAPI.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7028137719F8016F00643D17 /* JHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028136F19F8016F00643D17 /* JHLoginViewController.m */; };
+		7028137819F8016F00643D17 /* JHLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7028137019F8016F00643D17 /* JHLoginViewController.xib */; };
+		7028137919F8016F00643D17 /* JHRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028137219F8016F00643D17 /* JHRegistrationViewController.m */; };
+		7028137A19F8016F00643D17 /* JHRegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7028137319F8016F00643D17 /* JHRegistrationViewController.xib */; };
+		7028137B19F8016F00643D17 /* JHTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028137519F8016F00643D17 /* JHTimelineViewController.m */; };
+		7028137C19F8016F00643D17 /* JHTimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7028137619F8016F00643D17 /* JHTimelineViewController.xib */; };
+		7028138819F8022200643D17 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7028137E19F8022200643D17 /* Default-568h@2x.png */; };
+		7028138919F8022200643D17 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7028137F19F8022200643D17 /* Default@2x.png */; };
+		7028138A19F8022200643D17 /* login_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7028138019F8022200643D17 /* login_bg@2x.png */; };
+		7028138B19F8022200643D17 /* login_buton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7028138119F8022200643D17 /* login_buton@2x.png */; };
+		7028138C19F8022200643D17 /* login_form@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7028138219F8022200643D17 /* login_form@2x.png */; };
+		7028138D19F8022200643D17 /* login_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7028138319F8022200643D17 /* login_logo@2x.png */; };
+		7028138E19F8022200643D17 /* password_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7028138419F8022200643D17 /* password_icon@2x.png */; };
+		7028138F19F8022200643D17 /* register_buton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7028138519F8022200643D17 /* register_buton@2x.png */; };
+		7028139019F8022200643D17 /* separate_form@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7028138619F8022200643D17 /* separate_form@2x.png */; };
+		7028139119F8022200643D17 /* username_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7028138719F8022200643D17 /* username_icon@2x.png */; };
+		7028139B19F8038700643D17 /* JHBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028139419F8038700643D17 /* JHBaseRequest.m */; };
+		7028139C19F8038700643D17 /* JHBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028139619F8038700643D17 /* JHBaseResponse.m */; };
+		7028139D19F8038700643D17 /* JHError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028139819F8038700643D17 /* JHError.m */; };
+		7028139E19F8038700643D17 /* JHResponeMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028139A19F8038700643D17 /* JHResponeMessage.m */; };
+		702813A219F803CB00643D17 /* JHWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813A119F803CB00643D17 /* JHWebService.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		702813AA19F804EE00643D17 /* JHLoginAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813A919F804EE00643D17 /* JHLoginAPI.m */; };
+		702813AD19F8061700643D17 /* JHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813AC19F8061700643D17 /* JHAppDelegate.m */; };
+		702813B719F807C200643D17 /* JHActivityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813B019F807C200643D17 /* JHActivityManager.m */; };
+		702813B819F807C200643D17 /* JHDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813B319F807C200643D17 /* JHDataManager.m */; };
+		702813B919F807C200643D17 /* JHLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813B619F807C200643D17 /* JHLocationManager.m */; };
+		702813BC19F8083200643D17 /* JHLoginAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813BB19F8083200643D17 /* JHLoginAPIRequest.m */; };
+		702813BF19F8084800643D17 /* JHLoginAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813BE19F8084800643D17 /* JHLoginAPIResponse.m */; };
+		702813C219F8287400643D17 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813C119F8287400643D17 /* Utility.m */; };
+		70C366C919F8712100B5F30B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70C366C819F8712100B5F30B /* Localizable.strings */; };
 		70F10A8D19706C92002513D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F10A8C19706C92002513D1 /* Foundation.framework */; };
 		70F10A8F19706C92002513D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F10A8E19706C92002513D1 /* CoreGraphics.framework */; };
 		70F10A9119706C92002513D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F10A9019706C92002513D1 /* UIKit.framework */; };
 		70F10A9719706C92002513D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70F10A9519706C92002513D1 /* InfoPlist.strings */; };
 		70F10A9919706C92002513D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F10A9819706C92002513D1 /* main.m */; };
-		70F10A9D19706C92002513D1 /* JHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F10A9C19706C92002513D1 /* JHAppDelegate.m */; };
 		70F10A9F19706C92002513D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70F10A9E19706C92002513D1 /* Images.xcassets */; };
 		70F10AA619706C92002513D1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F10AA519706C92002513D1 /* XCTest.framework */; };
 		70F10AA719706C92002513D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F10A8C19706C92002513D1 /* Foundation.framework */; };
 		70F10AA819706C92002513D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F10A9019706C92002513D1 /* UIKit.framework */; };
 		70F10AB019706C92002513D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70F10AAE19706C92002513D1 /* InfoPlist.strings */; };
 		70F10AB219706C92002513D1 /* EncourageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F10AB119706C92002513D1 /* EncourageTests.m */; };
-		70F10ABE19706D07002513D1 /* JHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F10ABD19706D07002513D1 /* JHLoginViewController.m */; };
-		70F10AC219706D4E002513D1 /* JHLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70F10AC119706D4E002513D1 /* JHLoginViewController.xib */; };
-		70F10AD21970744D002513D1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F10AD01970744D002513D1 /* Default@2x.png */; };
-		70F10AD31970744D002513D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F10AD11970744D002513D1 /* Default-568h@2x.png */; };
-		70F10AD7197077B1002513D1 /* JHRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F10AD5197077B1002513D1 /* JHRegistrationViewController.m */; };
-		70F10AD8197077B1002513D1 /* JHRegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70F10AD6197077B1002513D1 /* JHRegistrationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,14 +79,93 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		70B36DAE197477EA002695E4 /* login_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_bg@2x.png"; sourceTree = "<group>"; };
-		70B36DAF197477EA002695E4 /* login_form@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_form@2x.png"; sourceTree = "<group>"; };
-		70B36DB0197477EA002695E4 /* login_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_logo@2x.png"; sourceTree = "<group>"; };
-		70B36DB1197477EA002695E4 /* password_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password_icon@2x.png"; sourceTree = "<group>"; };
-		70B36DB2197477EA002695E4 /* register_buton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register_buton@2x.png"; sourceTree = "<group>"; };
-		70B36DB3197477EA002695E4 /* separate_form@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separate_form@2x.png"; sourceTree = "<group>"; };
-		70B36DB4197477EA002695E4 /* username_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "username_icon@2x.png"; sourceTree = "<group>"; };
-		70B36DBC19747808002695E4 /* login_buton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_buton@2x.png"; sourceTree = "<group>"; };
+		700F9699199E1049009E5E52 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		7028132E19F8008C00643D17 /* KVCBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVCBaseObject.h; sourceTree = "<group>"; };
+		7028132F19F8008C00643D17 /* KVCBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVCBaseObject.m; sourceTree = "<group>"; };
+		7028133419F8008C00643D17 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		7028133519F8008C00643D17 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		7028133619F8008C00643D17 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		7028133719F8008C00643D17 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		7028133819F8008C00643D17 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		7028133919F8008C00643D17 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		7028133A19F8008C00643D17 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		7028133B19F8008C00643D17 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		7028133C19F8008C00643D17 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		7028133D19F8008C00643D17 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		7028133E19F8008C00643D17 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		7028133F19F8008C00643D17 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		7028134019F8008C00643D17 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		7028134119F8008C00643D17 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		7028134219F8008C00643D17 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		7028134319F8008C00643D17 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		7028134419F8008C00643D17 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		7028134519F8008C00643D17 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		7028134619F8008C00643D17 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		7028134719F8008C00643D17 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		7028134919F8008C00643D17 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		7028134A19F8008C00643D17 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		7028134C19F8008C00643D17 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		7028134D19F8008C00643D17 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		7028134E19F8008C00643D17 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		7028134F19F8008C00643D17 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		7028135019F8008C00643D17 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		7028135119F8008C00643D17 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		7028135219F8008C00643D17 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		7028135319F8008C00643D17 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		7028135419F8008C00643D17 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		7028135519F8008C00643D17 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		7028135619F8008C00643D17 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		7028135719F8008C00643D17 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		7028135819F8008C00643D17 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		7028136A19F800FB00643D17 /* JHBaseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHBaseAPI.h; sourceTree = "<group>"; };
+		7028136B19F800FB00643D17 /* JHBaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHBaseAPI.m; sourceTree = "<group>"; };
+		7028136E19F8016F00643D17 /* JHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHLoginViewController.h; sourceTree = "<group>"; };
+		7028136F19F8016F00643D17 /* JHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHLoginViewController.m; sourceTree = "<group>"; };
+		7028137019F8016F00643D17 /* JHLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHLoginViewController.xib; sourceTree = "<group>"; };
+		7028137119F8016F00643D17 /* JHRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRegistrationViewController.h; sourceTree = "<group>"; };
+		7028137219F8016F00643D17 /* JHRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRegistrationViewController.m; sourceTree = "<group>"; };
+		7028137319F8016F00643D17 /* JHRegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHRegistrationViewController.xib; sourceTree = "<group>"; };
+		7028137419F8016F00643D17 /* JHTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHTimelineViewController.h; sourceTree = "<group>"; };
+		7028137519F8016F00643D17 /* JHTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHTimelineViewController.m; sourceTree = "<group>"; };
+		7028137619F8016F00643D17 /* JHTimelineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHTimelineViewController.xib; sourceTree = "<group>"; };
+		7028137E19F8022200643D17 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7028137F19F8022200643D17 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		7028138019F8022200643D17 /* login_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_bg@2x.png"; sourceTree = "<group>"; };
+		7028138119F8022200643D17 /* login_buton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_buton@2x.png"; sourceTree = "<group>"; };
+		7028138219F8022200643D17 /* login_form@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_form@2x.png"; sourceTree = "<group>"; };
+		7028138319F8022200643D17 /* login_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_logo@2x.png"; sourceTree = "<group>"; };
+		7028138419F8022200643D17 /* password_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password_icon@2x.png"; sourceTree = "<group>"; };
+		7028138519F8022200643D17 /* register_buton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register_buton@2x.png"; sourceTree = "<group>"; };
+		7028138619F8022200643D17 /* separate_form@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separate_form@2x.png"; sourceTree = "<group>"; };
+		7028138719F8022200643D17 /* username_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "username_icon@2x.png"; sourceTree = "<group>"; };
+		7028139319F8038700643D17 /* JHBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHBaseRequest.h; sourceTree = "<group>"; };
+		7028139419F8038700643D17 /* JHBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHBaseRequest.m; sourceTree = "<group>"; };
+		7028139519F8038700643D17 /* JHBaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHBaseResponse.h; sourceTree = "<group>"; };
+		7028139619F8038700643D17 /* JHBaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHBaseResponse.m; sourceTree = "<group>"; };
+		7028139719F8038700643D17 /* JHError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHError.h; sourceTree = "<group>"; };
+		7028139819F8038700643D17 /* JHError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHError.m; sourceTree = "<group>"; };
+		7028139919F8038700643D17 /* JHResponeMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHResponeMessage.h; sourceTree = "<group>"; };
+		7028139A19F8038700643D17 /* JHResponeMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHResponeMessage.m; sourceTree = "<group>"; };
+		702813A019F803CB00643D17 /* JHWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHWebService.h; sourceTree = "<group>"; };
+		702813A119F803CB00643D17 /* JHWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHWebService.m; sourceTree = "<group>"; };
+		702813A819F804EE00643D17 /* JHLoginAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHLoginAPI.h; path = Login/JHLoginAPI.h; sourceTree = "<group>"; };
+		702813A919F804EE00643D17 /* JHLoginAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHLoginAPI.m; path = Login/JHLoginAPI.m; sourceTree = "<group>"; };
+		702813AB19F8061700643D17 /* JHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAppDelegate.h; sourceTree = "<group>"; };
+		702813AC19F8061700643D17 /* JHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAppDelegate.m; sourceTree = "<group>"; };
+		702813AF19F807C200643D17 /* JHActivityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHActivityManager.h; sourceTree = "<group>"; };
+		702813B019F807C200643D17 /* JHActivityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHActivityManager.m; sourceTree = "<group>"; };
+		702813B219F807C200643D17 /* JHDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHDataManager.h; sourceTree = "<group>"; };
+		702813B319F807C200643D17 /* JHDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHDataManager.m; sourceTree = "<group>"; };
+		702813B519F807C200643D17 /* JHLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHLocationManager.h; sourceTree = "<group>"; };
+		702813B619F807C200643D17 /* JHLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHLocationManager.m; sourceTree = "<group>"; };
+		702813BA19F8083200643D17 /* JHLoginAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHLoginAPIRequest.h; path = Login/JHLoginAPIRequest.h; sourceTree = "<group>"; };
+		702813BB19F8083200643D17 /* JHLoginAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHLoginAPIRequest.m; path = Login/JHLoginAPIRequest.m; sourceTree = "<group>"; };
+		702813BD19F8084800643D17 /* JHLoginAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHLoginAPIResponse.h; sourceTree = "<group>"; };
+		702813BE19F8084800643D17 /* JHLoginAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHLoginAPIResponse.m; sourceTree = "<group>"; };
+		702813C019F8287400643D17 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		702813C119F8287400643D17 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		702813C319F8293300643D17 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		70C366C819F8712100B5F30B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		70F10A8919706C92002513D1 /* Encourage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Encourage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F10A8C19706C92002513D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		70F10A8E19706C92002513D1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,22 +174,12 @@
 		70F10A9619706C92002513D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		70F10A9819706C92002513D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70F10A9A19706C92002513D1 /* Encourage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Encourage-Prefix.pch"; sourceTree = "<group>"; };
-		70F10A9B19706C92002513D1 /* JHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHAppDelegate.h; sourceTree = "<group>"; };
-		70F10A9C19706C92002513D1 /* JHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHAppDelegate.m; sourceTree = "<group>"; };
 		70F10A9E19706C92002513D1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		70F10AA419706C92002513D1 /* EncourageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EncourageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F10AA519706C92002513D1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		70F10AAD19706C92002513D1 /* EncourageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EncourageTests-Info.plist"; sourceTree = "<group>"; };
 		70F10AAF19706C92002513D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		70F10AB119706C92002513D1 /* EncourageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncourageTests.m; sourceTree = "<group>"; };
-		70F10ABC19706D07002513D1 /* JHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHLoginViewController.h; sourceTree = "<group>"; };
-		70F10ABD19706D07002513D1 /* JHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHLoginViewController.m; sourceTree = "<group>"; };
-		70F10AC119706D4E002513D1 /* JHLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHLoginViewController.xib; sourceTree = "<group>"; };
-		70F10AD01970744D002513D1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		70F10AD11970744D002513D1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		70F10AD4197077B1002513D1 /* JHRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRegistrationViewController.h; sourceTree = "<group>"; };
-		70F10AD5197077B1002513D1 /* JHRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRegistrationViewController.m; sourceTree = "<group>"; };
-		70F10AD6197077B1002513D1 /* JHRegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHRegistrationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				700F969A199E1049009E5E52 /* libz.dylib in Frameworks */,
 				70F10A8F19706C92002513D1 /* CoreGraphics.framework in Frameworks */,
 				70F10A9119706C92002513D1 /* UIKit.framework in Frameworks */,
 				70F10A8D19706C92002513D1 /* Foundation.framework in Frameworks */,
@@ -104,6 +207,214 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7028132C19F8008C00643D17 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				702813AE19F807C200643D17 /* Activity Manager */,
+				702813B119F807C200643D17 /* Data Manager */,
+				702813B419F807C200643D17 /* Location Manager */,
+				7028132D19F8008C00643D17 /* KVCObjectSerializer */,
+				702813C019F8287400643D17 /* Utility.h */,
+				702813C119F8287400643D17 /* Utility.m */,
+				702813C319F8293300643D17 /* Constants.h */,
+				70C366C819F8712100B5F30B /* Localizable.strings */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		7028132D19F8008C00643D17 /* KVCObjectSerializer */ = {
+			isa = PBXGroup;
+			children = (
+				7028132E19F8008C00643D17 /* KVCBaseObject.h */,
+				7028132F19F8008C00643D17 /* KVCBaseObject.m */,
+			);
+			path = KVCObjectSerializer;
+			sourceTree = "<group>";
+		};
+		7028133019F8008C00643D17 /* Web Service */ = {
+			isa = PBXGroup;
+			children = (
+				7028139F19F803CB00643D17 /* BaseWebServices */,
+				7028139219F8038700643D17 /* Model */,
+				7028133119F8008C00643D17 /* API */,
+				7028133319F8008C00643D17 /* ASIHTTPRequest */,
+				7028134819F8008C00643D17 /* Reachability */,
+				7028134B19F8008C00643D17 /* SBJSON */,
+			);
+			path = "Web Service";
+			sourceTree = "<group>";
+		};
+		7028133119F8008C00643D17 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				702813A719F804CD00643D17 /* Login */,
+				7028136919F800FB00643D17 /* BaseApi */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		7028133319F8008C00643D17 /* ASIHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				7028133419F8008C00643D17 /* ASIAuthenticationDialog.h */,
+				7028133519F8008C00643D17 /* ASIAuthenticationDialog.m */,
+				7028133619F8008C00643D17 /* ASICacheDelegate.h */,
+				7028133719F8008C00643D17 /* ASIDataCompressor.h */,
+				7028133819F8008C00643D17 /* ASIDataCompressor.m */,
+				7028133919F8008C00643D17 /* ASIDataDecompressor.h */,
+				7028133A19F8008C00643D17 /* ASIDataDecompressor.m */,
+				7028133B19F8008C00643D17 /* ASIDownloadCache.h */,
+				7028133C19F8008C00643D17 /* ASIDownloadCache.m */,
+				7028133D19F8008C00643D17 /* ASIFormDataRequest.h */,
+				7028133E19F8008C00643D17 /* ASIFormDataRequest.m */,
+				7028133F19F8008C00643D17 /* ASIHTTPRequest.h */,
+				7028134019F8008C00643D17 /* ASIHTTPRequest.m */,
+				7028134119F8008C00643D17 /* ASIHTTPRequestConfig.h */,
+				7028134219F8008C00643D17 /* ASIHTTPRequestDelegate.h */,
+				7028134319F8008C00643D17 /* ASIInputStream.h */,
+				7028134419F8008C00643D17 /* ASIInputStream.m */,
+				7028134519F8008C00643D17 /* ASINetworkQueue.h */,
+				7028134619F8008C00643D17 /* ASINetworkQueue.m */,
+				7028134719F8008C00643D17 /* ASIProgressDelegate.h */,
+			);
+			path = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		7028134819F8008C00643D17 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				7028134919F8008C00643D17 /* Reachability.h */,
+				7028134A19F8008C00643D17 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		7028134B19F8008C00643D17 /* SBJSON */ = {
+			isa = PBXGroup;
+			children = (
+				7028134C19F8008C00643D17 /* JSON.h */,
+				7028134D19F8008C00643D17 /* NSObject+SBJSON.h */,
+				7028134E19F8008C00643D17 /* NSObject+SBJSON.m */,
+				7028134F19F8008C00643D17 /* NSString+SBJSON.h */,
+				7028135019F8008C00643D17 /* NSString+SBJSON.m */,
+				7028135119F8008C00643D17 /* SBJSON.h */,
+				7028135219F8008C00643D17 /* SBJSON.m */,
+				7028135319F8008C00643D17 /* SBJsonBase.h */,
+				7028135419F8008C00643D17 /* SBJsonBase.m */,
+				7028135519F8008C00643D17 /* SBJsonParser.h */,
+				7028135619F8008C00643D17 /* SBJsonParser.m */,
+				7028135719F8008C00643D17 /* SBJsonWriter.h */,
+				7028135819F8008C00643D17 /* SBJsonWriter.m */,
+			);
+			path = SBJSON;
+			sourceTree = "<group>";
+		};
+		7028136919F800FB00643D17 /* BaseApi */ = {
+			isa = PBXGroup;
+			children = (
+				7028136A19F800FB00643D17 /* JHBaseAPI.h */,
+				7028136B19F800FB00643D17 /* JHBaseAPI.m */,
+			);
+			path = BaseApi;
+			sourceTree = "<group>";
+		};
+		7028136D19F8016F00643D17 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7028136E19F8016F00643D17 /* JHLoginViewController.h */,
+				7028136F19F8016F00643D17 /* JHLoginViewController.m */,
+				7028137019F8016F00643D17 /* JHLoginViewController.xib */,
+				7028137119F8016F00643D17 /* JHRegistrationViewController.h */,
+				7028137219F8016F00643D17 /* JHRegistrationViewController.m */,
+				7028137319F8016F00643D17 /* JHRegistrationViewController.xib */,
+				7028137419F8016F00643D17 /* JHTimelineViewController.h */,
+				7028137519F8016F00643D17 /* JHTimelineViewController.m */,
+				7028137619F8016F00643D17 /* JHTimelineViewController.xib */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7028137D19F8022200643D17 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7028137E19F8022200643D17 /* Default-568h@2x.png */,
+				7028137F19F8022200643D17 /* Default@2x.png */,
+				7028138019F8022200643D17 /* login_bg@2x.png */,
+				7028138119F8022200643D17 /* login_buton@2x.png */,
+				7028138219F8022200643D17 /* login_form@2x.png */,
+				7028138319F8022200643D17 /* login_logo@2x.png */,
+				7028138419F8022200643D17 /* password_icon@2x.png */,
+				7028138519F8022200643D17 /* register_buton@2x.png */,
+				7028138619F8022200643D17 /* separate_form@2x.png */,
+				7028138719F8022200643D17 /* username_icon@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7028139219F8038700643D17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7028139319F8038700643D17 /* JHBaseRequest.h */,
+				7028139419F8038700643D17 /* JHBaseRequest.m */,
+				7028139519F8038700643D17 /* JHBaseResponse.h */,
+				7028139619F8038700643D17 /* JHBaseResponse.m */,
+				7028139719F8038700643D17 /* JHError.h */,
+				7028139819F8038700643D17 /* JHError.m */,
+				7028139919F8038700643D17 /* JHResponeMessage.h */,
+				7028139A19F8038700643D17 /* JHResponeMessage.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7028139F19F803CB00643D17 /* BaseWebServices */ = {
+			isa = PBXGroup;
+			children = (
+				702813A019F803CB00643D17 /* JHWebService.h */,
+				702813A119F803CB00643D17 /* JHWebService.m */,
+			);
+			path = BaseWebServices;
+			sourceTree = "<group>";
+		};
+		702813A719F804CD00643D17 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				702813A819F804EE00643D17 /* JHLoginAPI.h */,
+				702813A919F804EE00643D17 /* JHLoginAPI.m */,
+				702813BA19F8083200643D17 /* JHLoginAPIRequest.h */,
+				702813BB19F8083200643D17 /* JHLoginAPIRequest.m */,
+				702813BD19F8084800643D17 /* JHLoginAPIResponse.h */,
+				702813BE19F8084800643D17 /* JHLoginAPIResponse.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		702813AE19F807C200643D17 /* Activity Manager */ = {
+			isa = PBXGroup;
+			children = (
+				702813AF19F807C200643D17 /* JHActivityManager.h */,
+				702813B019F807C200643D17 /* JHActivityManager.m */,
+			);
+			path = "Activity Manager";
+			sourceTree = "<group>";
+		};
+		702813B119F807C200643D17 /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				702813B219F807C200643D17 /* JHDataManager.h */,
+				702813B319F807C200643D17 /* JHDataManager.m */,
+			);
+			path = "Data Manager";
+			sourceTree = "<group>";
+		};
+		702813B419F807C200643D17 /* Location Manager */ = {
+			isa = PBXGroup;
+			children = (
+				702813B519F807C200643D17 /* JHLocationManager.h */,
+				702813B619F807C200643D17 /* JHLocationManager.m */,
+			);
+			path = "Location Manager";
+			sourceTree = "<group>";
+		};
 		70F10A8019706C92002513D1 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +437,7 @@
 		70F10A8B19706C92002513D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				700F9699199E1049009E5E52 /* libz.dylib */,
 				70F10A8C19706C92002513D1 /* Foundation.framework */,
 				70F10A8E19706C92002513D1 /* CoreGraphics.framework */,
 				70F10A9019706C92002513D1 /* UIKit.framework */,
@@ -137,10 +449,12 @@
 		70F10A9219706C92002513D1 /* Encourage */ = {
 			isa = PBXGroup;
 			children = (
-				70F10AC319706FBE002513D1 /* Resources */,
-				70F10ABB19706CB7002513D1 /* View Controllers */,
-				70F10A9B19706C92002513D1 /* JHAppDelegate.h */,
-				70F10A9C19706C92002513D1 /* JHAppDelegate.m */,
+				7028132C19F8008C00643D17 /* Utilities */,
+				7028133019F8008C00643D17 /* Web Service */,
+				7028136D19F8016F00643D17 /* View Controllers */,
+				702813AB19F8061700643D17 /* JHAppDelegate.h */,
+				702813AC19F8061700643D17 /* JHAppDelegate.m */,
+				7028137D19F8022200643D17 /* Resources */,
 				70F10A9E19706C92002513D1 /* Images.xcassets */,
 				70F10A9319706C92002513D1 /* Supporting Files */,
 			);
@@ -174,36 +488,6 @@
 				70F10AAE19706C92002513D1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		70F10ABB19706CB7002513D1 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				70F10ABC19706D07002513D1 /* JHLoginViewController.h */,
-				70F10ABD19706D07002513D1 /* JHLoginViewController.m */,
-				70F10AC119706D4E002513D1 /* JHLoginViewController.xib */,
-				70F10AD4197077B1002513D1 /* JHRegistrationViewController.h */,
-				70F10AD5197077B1002513D1 /* JHRegistrationViewController.m */,
-				70F10AD6197077B1002513D1 /* JHRegistrationViewController.xib */,
-			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		70F10AC319706FBE002513D1 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				70B36DBC19747808002695E4 /* login_buton@2x.png */,
-				70B36DAE197477EA002695E4 /* login_bg@2x.png */,
-				70B36DAF197477EA002695E4 /* login_form@2x.png */,
-				70B36DB0197477EA002695E4 /* login_logo@2x.png */,
-				70B36DB1197477EA002695E4 /* password_icon@2x.png */,
-				70B36DB2197477EA002695E4 /* register_buton@2x.png */,
-				70B36DB3197477EA002695E4 /* separate_form@2x.png */,
-				70B36DB4197477EA002695E4 /* username_icon@2x.png */,
-				70F10AD01970744D002513D1 /* Default@2x.png */,
-				70F10AD11970744D002513D1 /* Default-568h@2x.png */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,20 +566,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70B36DB8197477EA002695E4 /* password_icon@2x.png in Resources */,
-				70F10AD21970744D002513D1 /* Default@2x.png in Resources */,
-				70B36DB9197477EA002695E4 /* register_buton@2x.png in Resources */,
-				70F10AC219706D4E002513D1 /* JHLoginViewController.xib in Resources */,
-				70B36DB7197477EA002695E4 /* login_logo@2x.png in Resources */,
-				70B36DBD19747808002695E4 /* login_buton@2x.png in Resources */,
-				70B36DBB197477EA002695E4 /* username_icon@2x.png in Resources */,
-				70B36DBA197477EA002695E4 /* separate_form@2x.png in Resources */,
-				70B36DB6197477EA002695E4 /* login_form@2x.png in Resources */,
-				70F10AD8197077B1002513D1 /* JHRegistrationViewController.xib in Resources */,
+				7028138E19F8022200643D17 /* password_icon@2x.png in Resources */,
+				7028139019F8022200643D17 /* separate_form@2x.png in Resources */,
+				7028137A19F8016F00643D17 /* JHRegistrationViewController.xib in Resources */,
+				7028137C19F8016F00643D17 /* JHTimelineViewController.xib in Resources */,
 				70F10A9719706C92002513D1 /* InfoPlist.strings in Resources */,
-				70F10AD31970744D002513D1 /* Default-568h@2x.png in Resources */,
-				70B36DB5197477EA002695E4 /* login_bg@2x.png in Resources */,
 				70F10A9F19706C92002513D1 /* Images.xcassets in Resources */,
+				7028138F19F8022200643D17 /* register_buton@2x.png in Resources */,
+				7028137819F8016F00643D17 /* JHLoginViewController.xib in Resources */,
+				7028138D19F8022200643D17 /* login_logo@2x.png in Resources */,
+				7028139119F8022200643D17 /* username_icon@2x.png in Resources */,
+				7028138A19F8022200643D17 /* login_bg@2x.png in Resources */,
+				7028138C19F8022200643D17 /* login_form@2x.png in Resources */,
+				7028138B19F8022200643D17 /* login_buton@2x.png in Resources */,
+				70C366C919F8712100B5F30B /* Localizable.strings in Resources */,
+				7028138919F8022200643D17 /* Default@2x.png in Resources */,
+				7028138819F8022200643D17 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,10 +600,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70F10ABE19706D07002513D1 /* JHLoginViewController.m in Sources */,
-				70F10AD7197077B1002513D1 /* JHRegistrationViewController.m in Sources */,
-				70F10A9D19706C92002513D1 /* JHAppDelegate.m in Sources */,
+				7028139B19F8038700643D17 /* JHBaseRequest.m in Sources */,
+				7028136519F8008C00643D17 /* SBJSON.m in Sources */,
+				7028136019F8008C00643D17 /* ASIInputStream.m in Sources */,
+				702813AA19F804EE00643D17 /* JHLoginAPI.m in Sources */,
+				7028135D19F8008C00643D17 /* ASIDownloadCache.m in Sources */,
+				7028139D19F8038700643D17 /* JHError.m in Sources */,
+				7028136219F8008C00643D17 /* Reachability.m in Sources */,
+				7028135B19F8008C00643D17 /* ASIDataCompressor.m in Sources */,
+				702813C219F8287400643D17 /* Utility.m in Sources */,
+				702813B819F807C200643D17 /* JHDataManager.m in Sources */,
+				7028136819F8008C00643D17 /* SBJsonWriter.m in Sources */,
+				702813A219F803CB00643D17 /* JHWebService.m in Sources */,
+				7028135919F8008C00643D17 /* KVCBaseObject.m in Sources */,
+				7028136619F8008C00643D17 /* SBJsonBase.m in Sources */,
+				702813AD19F8061700643D17 /* JHAppDelegate.m in Sources */,
+				702813B919F807C200643D17 /* JHLocationManager.m in Sources */,
+				7028137919F8016F00643D17 /* JHRegistrationViewController.m in Sources */,
+				7028139C19F8038700643D17 /* JHBaseResponse.m in Sources */,
+				7028135F19F8008C00643D17 /* ASIHTTPRequest.m in Sources */,
+				7028135C19F8008C00643D17 /* ASIDataDecompressor.m in Sources */,
+				7028136719F8008C00643D17 /* SBJsonParser.m in Sources */,
+				7028137B19F8016F00643D17 /* JHTimelineViewController.m in Sources */,
+				7028137719F8016F00643D17 /* JHLoginViewController.m in Sources */,
+				7028136119F8008C00643D17 /* ASINetworkQueue.m in Sources */,
+				702813BF19F8084800643D17 /* JHLoginAPIResponse.m in Sources */,
+				702813BC19F8083200643D17 /* JHLoginAPIRequest.m in Sources */,
+				7028136C19F800FB00643D17 /* JHBaseAPI.m in Sources */,
+				7028135A19F8008C00643D17 /* ASIAuthenticationDialog.m in Sources */,
+				7028136419F8008C00643D17 /* NSString+SBJSON.m in Sources */,
+				7028135E19F8008C00643D17 /* ASIFormDataRequest.m in Sources */,
+				702813B719F807C200643D17 /* JHActivityManager.m in Sources */,
+				7028136319F8008C00643D17 /* NSObject+SBJSON.m in Sources */,
 				70F10A9919706C92002513D1 /* main.m in Sources */,
+				7028139E19F8038700643D17 /* JHResponeMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

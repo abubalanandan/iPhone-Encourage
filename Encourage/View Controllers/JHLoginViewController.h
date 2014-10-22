@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JHLoginAPI.h"
 
-@interface JHLoginViewController : UIViewController<UITextFieldDelegate>
+@interface JHLoginViewController : UIViewController<UITextFieldDelegate,JHLoginAPIDelegate>{
+    JHLoginAPI *loginAPI_;
+    
+}
 
 @property (nonatomic, strong) NSString *testString;
 @property IBOutlet UITextField *loginField;
 @property IBOutlet UITextField *passwordField;
 -(IBAction)registerButtonPressed:(id)sender;
+-(IBAction)loginButtonPressed:(id)sender;
 
 @end
