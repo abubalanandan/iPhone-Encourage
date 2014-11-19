@@ -80,11 +80,6 @@
     return timelineCell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    JHTimelineItem *item = (JHTimelineItem *)[_timelineItems objectAtIndex:indexPath.row];
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:nil message:@"clicked" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alertView show];
-}
 
 - (void)configureCell:(JHTimelineCell *)cell withItem:(JHTimelineItem *)item{
     NSArray *details = item.details;
