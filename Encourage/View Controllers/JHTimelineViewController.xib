@@ -16,24 +16,67 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RAD-sL-KHr">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="page_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ap3-rp-qcf">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RAD-sL-KHr">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="525"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="e79-kN-J9L"/>
                         <outlet property="delegate" destination="-1" id="ON2-Ii-HbZ"/>
                     </connections>
                 </tableView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="translucent_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="E7s-UL-BEV">
+                    <rect key="frame" x="0.0" y="525" width="320" height="43"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="VLh-4Q-55d">
+                    <rect key="frame" x="8" y="539" width="120" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="F5s-PJ-rJI"/>
+                        <constraint firstAttribute="width" constant="120" id="gfL-1p-URr"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqo-ui-Rjh">
+                    <rect key="frame" x="222" y="533" width="93" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="93" id="jHE-Z6-ByC"/>
+                        <constraint firstAttribute="height" constant="27" id="nsJ-ub-Wzs"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="report_buton.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" backgroundImage="report_butonhover.png"/>
+                    <state key="highlighted" backgroundImage="report_butonhover.png"/>
+                    <connections>
+                        <action selector="reportButtonPressed:" destination="-1" eventType="touchUpInside" id="V66-h5-3wN"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="RAD-sL-KHr" secondAttribute="trailing" id="205-p0-7ZL"/>
-                <constraint firstAttribute="bottom" secondItem="RAD-sL-KHr" secondAttribute="bottom" id="38H-1Y-sgI"/>
+                <constraint firstAttribute="bottom" secondItem="RAD-sL-KHr" secondAttribute="bottom" constant="43" id="38H-1Y-sgI"/>
+                <constraint firstItem="E7s-UL-BEV" firstAttribute="top" secondItem="RAD-sL-KHr" secondAttribute="bottom" id="3k8-p3-yzu"/>
+                <constraint firstItem="E7s-UL-BEV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9BY-Jo-NTs"/>
                 <constraint firstItem="RAD-sL-KHr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EOI-cG-Hod"/>
+                <constraint firstAttribute="bottom" secondItem="E7s-UL-BEV" secondAttribute="bottom" id="Sxo-KK-Yeu"/>
+                <constraint firstAttribute="trailing" secondItem="E7s-UL-BEV" secondAttribute="trailing" id="VEF-l5-BTc"/>
+                <constraint firstAttribute="bottom" secondItem="VLh-4Q-55d" secondAttribute="bottom" constant="14" id="Yoe-YU-RAc"/>
                 <constraint firstItem="RAD-sL-KHr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bAn-iB-Uni"/>
+                <constraint firstItem="VLh-4Q-55d" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="pxh-fv-Yey"/>
+                <constraint firstAttribute="trailing" secondItem="tqo-ui-Rjh" secondAttribute="trailing" constant="5" id="wGe-yP-Yap"/>
+                <constraint firstAttribute="bottom" secondItem="tqo-ui-Rjh" secondAttribute="bottom" constant="8" id="x09-2o-EUT"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="281" y="226"/>
         </view>
     </objects>
+    <resources>
+        <image name="bottom_logo.png" width="119" height="15"/>
+        <image name="page_bg.png" width="320" height="568"/>
+        <image name="report_buton.png" width="93" height="27"/>
+        <image name="report_butonhover.png" width="93" height="27"/>
+        <image name="translucent_bottom.png" width="320" height="42"/>
+    </resources>
 </document>

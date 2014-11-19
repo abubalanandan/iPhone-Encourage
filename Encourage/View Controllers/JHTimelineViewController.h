@@ -15,4 +15,6 @@
 }
 
 @property (nonatomic,weak) IBOutlet UITableView *timelineTV;
+
+-(IBAction)reportButtonPressed:(id)sender;
 @end
