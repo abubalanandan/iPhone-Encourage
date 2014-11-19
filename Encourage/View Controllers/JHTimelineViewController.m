@@ -122,7 +122,7 @@
     [cell.backgroundImageView setFrame:CGRectMake(0, 0, cell.bounds.size.width, originY + imageOffset +10)];
     cell.detailsView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
     cell.detailsView.layer.shadowOpacity = 0.5;
-    cell.detailsView.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+    cell.detailsView.layer.shadowOffset = CGSizeMake(-1.0, -1.0);
 }
 
 
