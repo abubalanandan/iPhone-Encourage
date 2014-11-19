@@ -31,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:35];
+    [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:0];
 
 }
 
@@ -49,9 +49,9 @@
 
 - (void)didReceiveTimelineDetails:(JHTimelineAPIResponse *)response{
     _lastCount = response.lastCount;
-//    if (_lastCount<40) {
-//        [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:_lastCount];
-//    }
+    if (_lastCount<40) {
+        [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:_lastCount];
+    }
     if (_timelineItems ==nil) {
         _timelineItems = [[NSMutableArray alloc]initWithArray:response.objects];
     }else{
@@ -103,6 +103,12 @@
         originY +=labelHeight+5;
     }
     cell.detailsView.frame = CGRectMake(cell.detailsView.frame.origin.x, CGRectGetMinY(cell.detailsView.frame), CGRectGetWidth(cell.detailsView.frame), originY);
+    if ([item.dataType containsString:@"Image"]) {
+        cell.dummyView.hidden = NO;
+        cell.dummyView.frame = CGRectMake(CGRectGetMinX(cell.dummyView.frame), originY+5, CGRectGetWidth(cell.dummyView.frame), CGRectGetHeight(cell.dummyView.frame));
+    }else{
+        cell.dummyView.hidden = YES;
+    }
 }
 
 
@@ -144,7 +150,12 @@
     });
     
      [self configureCell:sizingCell withItem:[_timelineItems objectAtIndex:indexPath.row]];
-    return sizingCell.detailsView.bounds.size.height + 10;
+    JHTimelineItem *item = [_timelineItems objectAtIndex:indexPath.row];
+    CGFloat imageOffset = 0;
+    if ([item.dataType containsString:@"Image"]) {
+        imageOffset = sizingCell.dummyView.bounds.size.height;
+    }
+    return sizingCell.detailsView.bounds.size.height + imageOffset + 10;
    // return [self calculateHeightForConfiguredSizingCell:sizingCell];
 }
 

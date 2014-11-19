@@ -18,6 +18,9 @@
                         <rect key="frame" x="10" y="2" width="300" height="40"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="page_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="TUV-Jg-McO">
+                        <rect key="frame" x="10" y="45" width="300" height="300"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="evx-gK-5Pi" secondAttribute="trailing" constant="10" id="8Uh-2R-AEa"/>
@@ -28,7 +31,11 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="detailsView" destination="evx-gK-5Pi" id="g5Z-hl-jei"/>
+                <outlet property="dummyView" destination="TUV-Jg-McO" id="G9g-gg-UhJ"/>
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="page_bg.png" width="320" height="568"/>
+    </resources>
 </document>
