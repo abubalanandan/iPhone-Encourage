@@ -12,7 +12,7 @@
 @protocol JHTimelineAPIDelegate;
 @interface JHTimelineAPI : JHBaseAPI
 
-- (void)getTimelineDetails:(NSString *)token andLastCount:(int) lastCount;
+- (void)getTimelineDetails:(NSString *)token andLastCount:(int) lastCount withLoadingIndicator:(BOOL)loading;
 
 @end
 

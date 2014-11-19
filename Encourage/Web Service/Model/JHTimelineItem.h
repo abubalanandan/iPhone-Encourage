@@ -15,6 +15,7 @@
 @property (nonatomic,strong) NSString *dataType;
 @property (nonatomic,strong) NSString *person;
 @property (nonatomic,strong) NSString *personProfilePictureName;
+@property (nonatomic,strong) NSString *documentActualName;
 @property (nonatomic,strong) NSString *personRole;
 @property (nonatomic,strong) NSArray *details;
 @end

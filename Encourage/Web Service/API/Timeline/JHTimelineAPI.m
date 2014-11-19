@@ -21,8 +21,11 @@
     return self;
 }
 
-- (void)getTimelineDetails:(NSString *)token andLastCount:(int)lastCount{
-    [self sendWebserviceRequest];
+- (void)getTimelineDetails:(NSString *)token andLastCount:(int)lastCount withLoadingIndicator:(BOOL)loading{
+    if (loading) {
+        [self sendWebserviceRequest];
+
+    }
     NSString *url = [NSString stringWithFormat:BASE_URL,TIMELINE_URL];
     JHTimelineAPIRequest *request = [[JHTimelineAPIRequest alloc]init];
     request.token = token;

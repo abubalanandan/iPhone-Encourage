@@ -11,10 +11,12 @@
 #import "JHTimelineCell.h"
 #import "JHTimelineItem.h"
 #import "JHTimelineDetailItem.h"
+#import "UIImageView+WebCache.h"
 
 @interface JHTimelineViewController ()
 @property int lastCount;
 @property (nonatomic,strong) NSMutableArray *timelineItems;
+@property BOOL loading;
 @end
 
 @implementation JHTimelineViewController
@@ -31,8 +33,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:0];
-
+    
+    _loading = YES;
+    [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:0 withLoadingIndicator:YES];
+    UIView *backgroundView = [[UIView alloc]initWithFrame:self.timelineTV.bounds];
+    UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(backgroundView.frame), CGRectGetHeight(backgroundView.frame))];
+    iv.image = [UIImage imageNamed:@"page_bg"];
+    [backgroundView addSubview:iv];
+    [self.timelineTV setBackgroundView:backgroundView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,9 +57,8 @@
 
 - (void)didReceiveTimelineDetails:(JHTimelineAPIResponse *)response{
     _lastCount = response.lastCount;
-    if (_lastCount<40) {
-        [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:_lastCount];
-    }
+    _loading = NO;
+    _timelineTV.tableFooterView = nil;
     if (_timelineItems ==nil) {
         _timelineItems = [[NSMutableArray alloc]initWithArray:response.objects];
     }else{
@@ -85,10 +92,10 @@
     NSArray *details = item.details;
     CGFloat labelWidth = cell.detailsView.bounds.size.width/2 - 10;
     [[cell.detailsView subviews]makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    CGFloat originY= 0;
+    CGFloat originY= 5;
     for (JHTimelineDetailItem *detail in details) {
         CGFloat labelHeight = [self requiredHeightWithKey:detail.key andValue:detail.value forCellWidth:labelWidth];
-        UILabel *keyLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, originY, labelWidth, labelHeight)];
+        UILabel *keyLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, originY, labelWidth, labelHeight)];
         UILabel *valueLabel = [[UILabel alloc]initWithFrame:CGRectMake(labelWidth+20, originY, labelWidth, labelHeight)];
         [keyLabel setFont:[UIFont systemFontOfSize:12.0]];
         keyLabel.text = detail.key;
@@ -102,13 +109,20 @@
         [cell.detailsView addSubview:valueLabel];
         originY +=labelHeight+5;
     }
-    cell.detailsView.frame = CGRectMake(cell.detailsView.frame.origin.x, CGRectGetMinY(cell.detailsView.frame), CGRectGetWidth(cell.detailsView.frame), originY);
+    cell.detailsView.frame = CGRectMake(cell.detailsView.frame.origin.x, 5, CGRectGetWidth(cell.detailsView.frame), originY);
+    CGFloat imageOffset = 0;
     if ([item.dataType containsString:@"Image"]) {
         cell.dummyView.hidden = NO;
         cell.dummyView.frame = CGRectMake(CGRectGetMinX(cell.dummyView.frame), originY+5, CGRectGetWidth(cell.dummyView.frame), CGRectGetHeight(cell.dummyView.frame));
+        imageOffset = cell.dummyView.frame.size.height;
+        [cell.dummyView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:FILE_URL,[JHAppDelegate application].dataManager.token,item.documentActualName]]] ;
     }else{
         cell.dummyView.hidden = YES;
     }
+    [cell.backgroundImageView setFrame:CGRectMake(0, 0, cell.bounds.size.width, originY + imageOffset +10)];
+    cell.detailsView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+    cell.detailsView.layer.shadowOpacity = 0.5;
+    cell.detailsView.layer.shadowOffset = CGSizeMake(1.0, 1.0);
 }
 
 
@@ -155,6 +169,7 @@
     if ([item.dataType containsString:@"Image"]) {
         imageOffset = sizingCell.dummyView.bounds.size.height;
     }
+    
     return sizingCell.detailsView.bounds.size.height + imageOffset + 10;
    // return [self calculateHeightForConfiguredSizingCell:sizingCell];
 }
@@ -165,6 +180,26 @@
     
     CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return size.height;
+}
+
+#pragma Scrollview delegate
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(self.timelineTV.contentOffset.y<0){
+        //it means table view is pulled down like refresh
+        return;
+    }
+    else if(self.timelineTV.contentOffset.y >= (self.timelineTV.contentSize.height - self.timelineTV.bounds.size.height)) {
+        UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [activityView startAnimating];
+        self.timelineTV.tableFooterView = activityView;
+        if (!_loading) {
+            [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:_lastCount withLoadingIndicator:NO];
+            _loading = YES;
+
+        }
+        
+            }
 }
 
 -(IBAction)reportButtonPressed:(id)sender{

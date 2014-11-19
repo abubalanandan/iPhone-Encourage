@@ -10,6 +10,7 @@
 /* URLs */
 
 #define BASE_URL @"http://tryencourage.com/hwdsi/mServices/%@.php"
+#define FILE_URL @"http://tryencourage.com/hwdsi/hwAttachedfile/%@/%@"
 #define LOGIN_URL @"mUserLogin"
 #define TIMELINE_URL @"mGetTimelineDetails"
 #define ALERT_DETAILS_URL @"mGetUserAlertDetails"

@@ -11,4 +11,5 @@
 @interface JHTimelineCell : UITableViewCell
 @property (nonatomic,weak) IBOutlet UIView *detailsView;
 @property (nonatomic,weak) IBOutlet UIImageView *dummyView;
+@property (nonatomic,weak) IBOutlet UIImageView *backgroundImageView;
 @end

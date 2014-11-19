@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -14,28 +14,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="evx-gK-5Pi">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="43" image="page_bg.png" id="ruv-Ct-xNj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="40" id="evx-gK-5Pi">
                         <rect key="frame" x="10" y="2" width="300" height="40"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="page_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="TUV-Jg-McO">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page_bg.png" id="TUV-Jg-McO">
                         <rect key="frame" x="10" y="45" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                 </subviews>
-                <constraints>
-                    <constraint firstAttribute="trailing" secondItem="evx-gK-5Pi" secondAttribute="trailing" constant="10" id="8Uh-2R-AEa"/>
-                    <constraint firstItem="evx-gK-5Pi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="H6O-Uv-xfL"/>
-                    <constraint firstItem="evx-gK-5Pi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="IYk-dJ-saY"/>
-                    <constraint firstAttribute="bottom" secondItem="evx-gK-5Pi" secondAttribute="bottom" constant="1" id="OOe-KZ-46A"/>
-                </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="backgroundImageView" destination="ruv-Ct-xNj" id="4wo-NV-E59"/>
                 <outlet property="detailsView" destination="evx-gK-5Pi" id="g5Z-hl-jei"/>
                 <outlet property="dummyView" destination="TUV-Jg-McO" id="G9g-gg-UhJ"/>
             </connections>
+            <point key="canvasLocation" x="288" y="293"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="page_bg.png" width="320" height="568"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
