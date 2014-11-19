@@ -24,11 +24,12 @@
 
 - (void)performLogin:(JHLoginAPIRequest *)request{
     [self sendWebserviceRequest];
-    NSString *url = @"http://tryencourage.com/hwdsi/encservice/userLogin.php";
+    NSString *url = [NSString stringWithFormat:BASE_URL,LOGIN_URL];
     [baseWebService_ performPostRequest:url withRequestObject:request];
 }
 
 - (void)didReceiveData:(JHBaseResponse *)responseObj{
+
     if ([delegate_ respondsToSelector:@selector(didReceiveLoginDetails:)]) {
         [delegate_ didReceiveLoginDetails:(JHLoginAPIResponse *)responseObj];
     }

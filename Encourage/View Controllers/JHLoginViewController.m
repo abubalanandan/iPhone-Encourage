@@ -11,6 +11,8 @@
 #import "JHWebService.h"
 #import "JHLoginAPI.h"
 #import "JHLoginAPIRequest.h"
+#import "JHTimelineAPI.h"
+#import "JHTimelineViewController.h"
 
 @implementation JHLoginViewController
 
@@ -28,6 +30,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
+
 }
 
 
@@ -48,77 +51,31 @@
 
 -(IBAction)loginButtonPressed:(id)sender{
     JHLoginAPIRequest *loginRequest = [[JHLoginAPIRequest alloc]init];
-    loginRequest.email_address = self.loginField.text;
+    loginRequest.emailAddress = self.loginField.text;
     loginRequest.password = self.passwordField.text;
+    loginRequest.emailAddress = @"abu.316@gmail.com";
+    loginRequest.password = @"Sachin@10";
     loginRequest.gcmRegistrationId = @"APA91bFqkDu1I4eYpkvjPN5RLf7QFibj9ncKsoYOjDKlsF_TZozpodNF16wUcSBhuHOnAidOMnADYJY8cqteSz-inA1TR2aM4OOnwkrO7ahHUuRO72VAVvjjjRTYo";
-    loginRequest.operationName = @"userLogin";
     loginRequest.deviceType = @"iOS";
-    loginRequest.timezone = @"Asia/Kolkata";
-    loginRequest.dateTime = @"20-10-2014 14:54";
+    loginRequest.timeZone = @"Asia/Kolkata";
+    loginRequest.dateTime = @"20-10-2014 14:54:11";
     
     [loginAPI_ performLogin:loginRequest];
 }
 
-//-(void)fireConnectionRequest {
-//    
-//    NSOperationQueue *mainQueue = [[NSOperationQueue alloc] init];
-//    [mainQueue setMaxConcurrentOperationCount:5];
-//    
-//    NSError *error = Nil;
-//    
-//    NSURL *url = [NSURL URLWithString:@"https://tryencourage.com/hwdsi/hwservice/userLogin.php"];
-//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-//    
-//    
-//    NSDictionary *dict = [[NSDictionary alloc]initWithObjectsAndKeys:@"abu.316@gmail.com",@"email_address",@"Sachin@10",@"password",@"",@"dateTime",@"Asia/Kolkata",@"timezone",@"userLogin",@"operationName", nil];
-//    
-//    NSData *sendData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
-//    
-//    NSString *postLength = [NSString stringWithFormat:@"%d",[sendData length]];
-//
-//    [request setHTTPMethod:@"POST"];
-//    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-//
-//    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//    //[request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-//    
-//    [request setHTTPBody: sendData];
-//    [NSURLConnection connectionWithRequest:request delegate:self];
-//    
-//    NSString *jsonString = [[NSString alloc]initWithData:sendData encoding:NSUTF8StringEncoding];
-//    
-//    
-//    //fire URL connectiion request
-//    [NSURLConnection sendAsynchronousRequest:request queue:mainQueue completionHandler:^(NSURLResponse *response, NSData *responseData, NSError *error) {
-//        
-//        //get the return message and transform to dictionary
-//        NSString *data = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-//        NSError *parseError = nil;
-//        NSDictionary * xmlDict = [XMLReader dictionaryForXMLString:data error:&error];
-//    
-//        
-//        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:xmlDict
-//                                                           options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-//                                                             error:&error];
-//        NSString *stringResponse = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-//        //check return message
-//        if (!error) {
-//            
-//        }
-//        else {
-//        }
-//        
-//    }];
-//    
-//}
 
 #pragma mark
 #pragma mark -- Login API delegate methods
 
 - (void)didReceiveLoginDetails:(JHLoginAPIResponse *)responseObj{
-    UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Success" message:responseObj.token delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alertview show];
+    [JHAppDelegate application].dataManager.token = responseObj.token;
+    JHTimelineViewController *timelineVC = [[JHTimelineViewController alloc]init];
+    [[JHAppDelegate application].navController pushViewController:timelineVC animated:YES];
+    timelineVC = nil;
+
 }
+
+
 
 - (void)didFailDataFetch:(NSString *)error{
     UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Failure" message:error delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -145,6 +102,9 @@
     UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Failure" message:error delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alertview show];
 
+}
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
 }
 
 -(IBAction)registerButtonPressed:(id)sender{

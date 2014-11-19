@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JHBaseViewController.h"
+#import "JHTimelineAPI.h"
 
-@interface JHRegistrationViewController : UIViewController
+@interface JHRegistrationViewController : JHBaseViewController<JHTimelineAPIDelegate>{
+    JHTimelineAPI *timelineAPI;
+}
 -(IBAction)loginButtonPressed:(id)sender;
 @end

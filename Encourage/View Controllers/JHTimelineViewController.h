@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JHBaseViewController.h"
+#import "JHTimelineAPI.h"
+@interface JHTimelineViewController : JHBaseViewController<JHTimelineAPIDelegate,UITableViewDataSource,UITableViewDelegate>{
+    JHTimelineAPI *timelineAPI_;
 
-@interface JHTimelineViewController : UIViewController
+}
 
+@property (nonatomic,weak) IBOutlet UITableView *timelineTV;
 @end

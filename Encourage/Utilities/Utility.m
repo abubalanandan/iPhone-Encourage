@@ -24,5 +24,13 @@
         return YES;
 }
 
-
++ (NSString *)getFormattedDate{
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+    [formatter setDateFormat:@"YYYY-MM-DD hh:mm:ss"];
+    return [formatter stringFromDate:date];
+    
+}
 @end

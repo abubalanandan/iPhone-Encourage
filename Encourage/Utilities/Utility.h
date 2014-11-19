@@ -11,5 +11,5 @@
 @interface Utility : NSObject
 
 + (BOOL)isNetworkAvailable ;
-
++ (NSString *)getFormattedDate;
 @end

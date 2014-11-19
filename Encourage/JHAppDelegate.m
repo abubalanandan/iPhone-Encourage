@@ -23,9 +23,9 @@ JHAppDelegate *mainApplicationInstance_;
     JHLoginViewController *splashViewController = [[JHLoginViewController alloc]
                                     initWithNibName:@"JHLoginViewController" bundle:nil];
 
-    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:
+    _navController = [[UINavigationController alloc]initWithRootViewController:
                              splashViewController]; 
-    window_.rootViewController = navController;
+    window_.rootViewController = _navController;
     [window_ makeKeyAndVisible];
       
 

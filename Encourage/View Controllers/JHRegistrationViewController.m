@@ -19,6 +19,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        timelineAPI = [[JHTimelineAPI alloc]init];
+        timelineAPI.delegate = self;
     }
     return self;
 }
@@ -26,14 +28,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   // [timelineAPI getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:0];
     // Do any additional setup after loading the view from its nib.
+
 }
 
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Test" message:@"message" delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+    [alert show];
+
 }
 
+- (void)didReceiveTimelineDetails:(JHTimelineAPIResponse *)response{
+    
+}
 
 -(IBAction)loginButtonPressed:(id)sender{
     [self.navigationController popToRootViewControllerAnimated:YES];

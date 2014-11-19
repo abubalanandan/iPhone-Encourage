@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "JHLoginAPI.h"
+#import "JHBaseViewController.h"
+#import "JHTimelineAPI.h"
 
-@interface JHLoginViewController : UIViewController<UITextFieldDelegate,JHLoginAPIDelegate>{
+@interface JHLoginViewController : JHBaseViewController<UITextFieldDelegate,JHLoginAPIDelegate, UIAlertViewDelegate>{
     JHLoginAPI *loginAPI_;
     
 }

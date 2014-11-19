@@ -6,6 +6,7 @@
 #import "JHAppDelegate.h"
 #import "Utility.h"
 #import "Constants.h"
+#import "JHHudController.h"
 
 #define GPS_POPUP_ACTIVITYINDICATOR_FRAME 20,5,60,60
 #define PLEASE_WAIT_LABEL_FRAME 100,5,250,50
@@ -106,30 +107,36 @@
 
 
 - (void) startPleaseWaitActivityIndicator {
+//    if (!pleaseWaitAlert_){
+//        NSLog(@"started");
+//
+//        pleaseWaitAlert_ = [[UIAlertView alloc]initWithTitle:@"Loading" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:nil,nil];
+//        
+//        [pleaseWaitAlert_ show];
+//        pleaseWaitLabel_ = [[UILabel alloc]initWithFrame:CGRectMake(PLEASE_WAIT_LABEL_FRAME)];
+//        pleaseWaitLabel_.text = NSLocalizedString(@"Please_Wait_Message", @""); 
+//        pleaseWaitLabel_.backgroundColor = [UIColor clearColor];
+//        pleaseWaitLabel_.textColor = [UIColor blackColor];
+//        largeActivityIndicator_.frame = CGRectMake(ACTIVITY_INDICTOR_FRAME);
+//        [pleaseWaitAlert_ addSubview:largeActivityIndicator_];
+//        [largeActivityIndicator_ startAnimating];
+//        [pleaseWaitAlert_ addSubview:pleaseWaitLabel_];
+//    }
+    [JHHudController displayHUDWithMessage:@"Loading..."];
     
-    if (!pleaseWaitAlert_){
-        
-        pleaseWaitAlert_ = [[UIAlertView alloc]initWithTitle:@"Loading" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:nil,nil];
-        
-        [pleaseWaitAlert_ show];
-        pleaseWaitLabel_ = [[UILabel alloc]initWithFrame:CGRectMake(PLEASE_WAIT_LABEL_FRAME)];
-        pleaseWaitLabel_.text = NSLocalizedString(@"Please_Wait_Message", @""); 
-        pleaseWaitLabel_.backgroundColor = [UIColor clearColor];
-        pleaseWaitLabel_.textColor = [UIColor blackColor];
-        largeActivityIndicator_.frame = CGRectMake(ACTIVITY_INDICTOR_FRAME);
-        [pleaseWaitAlert_ addSubview:largeActivityIndicator_];
-        [largeActivityIndicator_ startAnimating];
-        [pleaseWaitAlert_ addSubview:pleaseWaitLabel_];
-    }
 }
 
 - (void) stopPleaseWaitActivityIndicator {
-     
-    if (pleaseWaitAlert_){
+//    if (pleaseWaitAlert_){
+//        NSLog(@"stopped");
+// 
+//        [pleaseWaitAlert_ dismissWithClickedButtonIndex:0 animated:NO];
+//        
+//        pleaseWaitAlert_ = nil;
+//        
+//    }
     
-        [pleaseWaitAlert_ dismissWithClickedButtonIndex:0 animated:NO];
-        pleaseWaitAlert_ = nil;
-    }
+    [JHHudController hideAllHUDs];
 }
 
 - (void) displayAlertWithtitle:(NSString *)title message:(NSString *)message delegate:(id)delegate firstButtonTitle:(NSString *)firstButtonTitle secondButtonTitle:(NSString *)secondButtonTitle tag:(int)tag{

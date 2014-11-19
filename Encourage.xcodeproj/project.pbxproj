@@ -54,7 +54,12 @@
 		702813BC19F8083200643D17 /* JHLoginAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813BB19F8083200643D17 /* JHLoginAPIRequest.m */; };
 		702813BF19F8084800643D17 /* JHLoginAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813BE19F8084800643D17 /* JHLoginAPIResponse.m */; };
 		702813C219F8287400643D17 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813C119F8287400643D17 /* Utility.m */; };
+		703994B91A1C90AB00ECA291 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 703994B61A1C90AB00ECA291 /* MBProgressHUD.m */; };
+		703994BA1A1C90AB00ECA291 /* JHHudController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703994B81A1C90AB00ECA291 /* JHHudController.m */; };
+		7075D1201A17ED190095AA05 /* JHTimelineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7075D11E1A17ED190095AA05 /* JHTimelineCell.m */; };
+		7075D1211A17ED190095AA05 /* JHTimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7075D11F1A17ED190095AA05 /* JHTimelineCell.xib */; };
 		70C366C919F8712100B5F30B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70C366C819F8712100B5F30B /* Localizable.strings */; };
+		70C366CC19F9708800B5F30B /* JHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C366CB19F9708800B5F30B /* JHBaseViewController.m */; };
 		70F10A8D19706C92002513D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F10A8C19706C92002513D1 /* Foundation.framework */; };
 		70F10A8F19706C92002513D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F10A8E19706C92002513D1 /* CoreGraphics.framework */; };
 		70F10A9119706C92002513D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F10A9019706C92002513D1 /* UIKit.framework */; };
@@ -66,6 +71,11 @@
 		70F10AA819706C92002513D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F10A9019706C92002513D1 /* UIKit.framework */; };
 		70F10AB019706C92002513D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70F10AAE19706C92002513D1 /* InfoPlist.strings */; };
 		70F10AB219706C92002513D1 /* EncourageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F10AB119706C92002513D1 /* EncourageTests.m */; };
+		70F58CD01A128F79004A065E /* JHTimelineAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F58CCF1A128F79004A065E /* JHTimelineAPIRequest.m */; };
+		70F58CD31A1291BC004A065E /* JHTimelineAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F58CD21A1291BC004A065E /* JHTimelineAPIResponse.m */; };
+		70F58CD61A1292EB004A065E /* JHTimelineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F58CD51A1292EB004A065E /* JHTimelineItem.m */; };
+		70F58CD91A1293FB004A065E /* JHTimelineDetailItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F58CD81A1293FB004A065E /* JHTimelineDetailItem.m */; };
+		70F58CDC1A129653004A065E /* JHTimelineAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F58CDB1A129653004A065E /* JHTimelineAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,7 +175,16 @@
 		702813C019F8287400643D17 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		702813C119F8287400643D17 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		702813C319F8293300643D17 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		703994B51A1C90AB00ECA291 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		703994B61A1C90AB00ECA291 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		703994B71A1C90AB00ECA291 /* JHHudController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHHudController.h; sourceTree = "<group>"; };
+		703994B81A1C90AB00ECA291 /* JHHudController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHHudController.m; sourceTree = "<group>"; };
+		7075D11D1A17ED190095AA05 /* JHTimelineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHTimelineCell.h; path = Cells/JHTimelineCell.h; sourceTree = "<group>"; };
+		7075D11E1A17ED190095AA05 /* JHTimelineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHTimelineCell.m; path = Cells/JHTimelineCell.m; sourceTree = "<group>"; };
+		7075D11F1A17ED190095AA05 /* JHTimelineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JHTimelineCell.xib; path = Cells/JHTimelineCell.xib; sourceTree = "<group>"; };
 		70C366C819F8712100B5F30B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		70C366CA19F9708800B5F30B /* JHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHBaseViewController.h; sourceTree = "<group>"; };
+		70C366CB19F9708800B5F30B /* JHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHBaseViewController.m; sourceTree = "<group>"; };
 		70F10A8919706C92002513D1 /* Encourage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Encourage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F10A8C19706C92002513D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		70F10A8E19706C92002513D1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -180,6 +199,16 @@
 		70F10AAD19706C92002513D1 /* EncourageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EncourageTests-Info.plist"; sourceTree = "<group>"; };
 		70F10AAF19706C92002513D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		70F10AB119706C92002513D1 /* EncourageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncourageTests.m; sourceTree = "<group>"; };
+		70F58CCE1A128F79004A065E /* JHTimelineAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHTimelineAPIRequest.h; path = Timeline/JHTimelineAPIRequest.h; sourceTree = "<group>"; };
+		70F58CCF1A128F79004A065E /* JHTimelineAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHTimelineAPIRequest.m; path = Timeline/JHTimelineAPIRequest.m; sourceTree = "<group>"; };
+		70F58CD11A1291BC004A065E /* JHTimelineAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHTimelineAPIResponse.h; path = Timeline/JHTimelineAPIResponse.h; sourceTree = "<group>"; };
+		70F58CD21A1291BC004A065E /* JHTimelineAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHTimelineAPIResponse.m; path = Timeline/JHTimelineAPIResponse.m; sourceTree = "<group>"; };
+		70F58CD41A1292EB004A065E /* JHTimelineItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHTimelineItem.h; sourceTree = "<group>"; };
+		70F58CD51A1292EB004A065E /* JHTimelineItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHTimelineItem.m; sourceTree = "<group>"; };
+		70F58CD71A1293FB004A065E /* JHTimelineDetailItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHTimelineDetailItem.h; sourceTree = "<group>"; };
+		70F58CD81A1293FB004A065E /* JHTimelineDetailItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHTimelineDetailItem.m; sourceTree = "<group>"; };
+		70F58CDA1A129653004A065E /* JHTimelineAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHTimelineAPI.h; path = Timeline/JHTimelineAPI.h; sourceTree = "<group>"; };
+		70F58CDB1A129653004A065E /* JHTimelineAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHTimelineAPI.m; path = Timeline/JHTimelineAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +239,9 @@
 		7028132C19F8008C00643D17 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				703994B41A1C90AB00ECA291 /* MBProgressHUD */,
+				703994B71A1C90AB00ECA291 /* JHHudController.h */,
+				703994B81A1C90AB00ECA291 /* JHHudController.m */,
 				702813AE19F807C200643D17 /* Activity Manager */,
 				702813B119F807C200643D17 /* Data Manager */,
 				702813B419F807C200643D17 /* Location Manager */,
@@ -247,6 +279,7 @@
 		7028133119F8008C00643D17 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				70F58CCD1A128F2F004A065E /* Timeline */,
 				702813A719F804CD00643D17 /* Login */,
 				7028136919F800FB00643D17 /* BaseApi */,
 			);
@@ -330,6 +363,8 @@
 				7028137419F8016F00643D17 /* JHTimelineViewController.h */,
 				7028137519F8016F00643D17 /* JHTimelineViewController.m */,
 				7028137619F8016F00643D17 /* JHTimelineViewController.xib */,
+				70C366CA19F9708800B5F30B /* JHBaseViewController.h */,
+				70C366CB19F9708800B5F30B /* JHBaseViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -362,6 +397,10 @@
 				7028139819F8038700643D17 /* JHError.m */,
 				7028139919F8038700643D17 /* JHResponeMessage.h */,
 				7028139A19F8038700643D17 /* JHResponeMessage.m */,
+				70F58CD41A1292EB004A065E /* JHTimelineItem.h */,
+				70F58CD51A1292EB004A065E /* JHTimelineItem.m */,
+				70F58CD71A1293FB004A065E /* JHTimelineDetailItem.h */,
+				70F58CD81A1293FB004A065E /* JHTimelineDetailItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -415,6 +454,25 @@
 			path = "Location Manager";
 			sourceTree = "<group>";
 		};
+		703994B41A1C90AB00ECA291 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				703994B51A1C90AB00ECA291 /* MBProgressHUD.h */,
+				703994B61A1C90AB00ECA291 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		7075D11C1A17ECF90095AA05 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7075D11D1A17ED190095AA05 /* JHTimelineCell.h */,
+				7075D11E1A17ED190095AA05 /* JHTimelineCell.m */,
+				7075D11F1A17ED190095AA05 /* JHTimelineCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		70F10A8019706C92002513D1 = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +507,7 @@
 		70F10A9219706C92002513D1 /* Encourage */ = {
 			isa = PBXGroup;
 			children = (
+				7075D11C1A17ECF90095AA05 /* Cells */,
 				7028132C19F8008C00643D17 /* Utilities */,
 				7028133019F8008C00643D17 /* Web Service */,
 				7028136D19F8016F00643D17 /* View Controllers */,
@@ -488,6 +547,19 @@
 				70F10AAE19706C92002513D1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70F58CCD1A128F2F004A065E /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				70F58CCE1A128F79004A065E /* JHTimelineAPIRequest.h */,
+				70F58CCF1A128F79004A065E /* JHTimelineAPIRequest.m */,
+				70F58CD11A1291BC004A065E /* JHTimelineAPIResponse.h */,
+				70F58CD21A1291BC004A065E /* JHTimelineAPIResponse.m */,
+				70F58CDA1A129653004A065E /* JHTimelineAPI.h */,
+				70F58CDB1A129653004A065E /* JHTimelineAPI.m */,
+			);
+			name = Timeline;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,6 +610,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Journey Health Labs";
 				TargetAttributes = {
+					70F10A8819706C92002513D1 = {
+						DevelopmentTeam = H296YBCMSS;
+					};
 					70F10AA319706C92002513D1 = {
 						TestTargetID = 70F10A8819706C92002513D1;
 					};
@@ -580,6 +655,7 @@
 				7028138C19F8022200643D17 /* login_form@2x.png in Resources */,
 				7028138B19F8022200643D17 /* login_buton@2x.png in Resources */,
 				70C366C919F8712100B5F30B /* Localizable.strings in Resources */,
+				7075D1211A17ED190095AA05 /* JHTimelineCell.xib in Resources */,
 				7028138919F8022200643D17 /* Default@2x.png in Resources */,
 				7028138819F8022200643D17 /* Default-568h@2x.png in Resources */,
 			);
@@ -605,6 +681,7 @@
 				7028136019F8008C00643D17 /* ASIInputStream.m in Sources */,
 				702813AA19F804EE00643D17 /* JHLoginAPI.m in Sources */,
 				7028135D19F8008C00643D17 /* ASIDownloadCache.m in Sources */,
+				70F58CDC1A129653004A065E /* JHTimelineAPI.m in Sources */,
 				7028139D19F8038700643D17 /* JHError.m in Sources */,
 				7028136219F8008C00643D17 /* Reachability.m in Sources */,
 				7028135B19F8008C00643D17 /* ASIDataCompressor.m in Sources */,
@@ -617,23 +694,31 @@
 				702813AD19F8061700643D17 /* JHAppDelegate.m in Sources */,
 				702813B919F807C200643D17 /* JHLocationManager.m in Sources */,
 				7028137919F8016F00643D17 /* JHRegistrationViewController.m in Sources */,
+				70F58CD01A128F79004A065E /* JHTimelineAPIRequest.m in Sources */,
 				7028139C19F8038700643D17 /* JHBaseResponse.m in Sources */,
 				7028135F19F8008C00643D17 /* ASIHTTPRequest.m in Sources */,
 				7028135C19F8008C00643D17 /* ASIDataDecompressor.m in Sources */,
 				7028136719F8008C00643D17 /* SBJsonParser.m in Sources */,
 				7028137B19F8016F00643D17 /* JHTimelineViewController.m in Sources */,
+				70F58CD61A1292EB004A065E /* JHTimelineItem.m in Sources */,
 				7028137719F8016F00643D17 /* JHLoginViewController.m in Sources */,
 				7028136119F8008C00643D17 /* ASINetworkQueue.m in Sources */,
+				70F58CD91A1293FB004A065E /* JHTimelineDetailItem.m in Sources */,
 				702813BF19F8084800643D17 /* JHLoginAPIResponse.m in Sources */,
+				703994B91A1C90AB00ECA291 /* MBProgressHUD.m in Sources */,
 				702813BC19F8083200643D17 /* JHLoginAPIRequest.m in Sources */,
+				703994BA1A1C90AB00ECA291 /* JHHudController.m in Sources */,
 				7028136C19F800FB00643D17 /* JHBaseAPI.m in Sources */,
 				7028135A19F8008C00643D17 /* ASIAuthenticationDialog.m in Sources */,
 				7028136419F8008C00643D17 /* NSString+SBJSON.m in Sources */,
+				70C366CC19F9708800B5F30B /* JHBaseViewController.m in Sources */,
+				7075D1201A17ED190095AA05 /* JHTimelineCell.m in Sources */,
 				7028135E19F8008C00643D17 /* ASIFormDataRequest.m in Sources */,
 				702813B719F807C200643D17 /* JHActivityManager.m in Sources */,
 				7028136319F8008C00643D17 /* NSObject+SBJSON.m in Sources */,
 				70F10A9919706C92002513D1 /* main.m in Sources */,
 				7028139E19F8038700643D17 /* JHResponeMessage.m in Sources */,
+				70F58CD31A1291BC004A065E /* JHTimelineAPIResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,11 +835,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anil Thomas (95B2Y8N4VC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anil Thomas (95B2Y8N4VC)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Encourage/Encourage-Prefix.pch";
 				INFOPLIST_FILE = "Encourage/Encourage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "34fb69a2-cc3d-4899-9663-5c40e93674b2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -764,11 +852,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anil Thomas (95B2Y8N4VC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anil Thomas (95B2Y8N4VC)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Encourage/Encourage-Prefix.pch";
 				INFOPLIST_FILE = "Encourage/Encourage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "34fb69a2-cc3d-4899-9663-5c40e93674b2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

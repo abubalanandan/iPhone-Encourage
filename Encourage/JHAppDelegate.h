@@ -27,6 +27,8 @@
 @property (strong, nonatomic) JHDataManager *dataManager;
 @property (strong, nonatomic) JHLocationManager *locationManager;
 @property (strong, nonatomic) JHActivityManager *activityManager;
+@property (strong, nonatomic) UINavigationController *navController;
+
 
 
 

@@ -9,11 +9,10 @@
 #import "JHBaseRequest.h"
 
 @interface JHLoginAPIRequest : JHBaseRequest
-@property (nonatomic, strong) NSString *email_address;
+@property (nonatomic, strong) NSString *emailAddress;
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *dateTime;
-@property (nonatomic, strong) NSString *timezone;
+@property (nonatomic, strong) NSString *timeZone;
 @property (nonatomic, strong) NSString *gcmRegistrationId;
 @property (nonatomic, strong) NSString *deviceType;
-@property (nonatomic, strong) NSString *operationName;
 @end
