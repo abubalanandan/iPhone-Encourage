@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JHTimelineViewController">
             <connections>
+                <outlet property="menuButton" destination="0Xj-ke-mmV" id="Ctf-zQ-Vd1"/>
                 <outlet property="timelineTV" destination="RAD-sL-KHr" id="kBi-2D-BcO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -30,8 +31,6 @@
                     <state key="normal" backgroundImage="menu_select.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="selected" backgroundImage="not_iconhover.png"/>
-                    <state key="highlighted" backgroundImage="not_iconhover.png"/>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RAD-sL-KHr">
                     <rect key="frame" x="0.0" y="56" width="320" height="469"/>

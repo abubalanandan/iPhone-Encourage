@@ -10,6 +10,7 @@
 #import "JHDataManager.h"
 #import "JHActivityManager.h"
 #import "JHLocationManager.h"
+#import "JASidePanelController.h"
 
 
 
@@ -28,6 +29,7 @@
 @property (strong, nonatomic) JHLocationManager *locationManager;
 @property (strong, nonatomic) JHActivityManager *activityManager;
 @property (strong, nonatomic) UINavigationController *navController;
+@property (strong, nonatomic) JASidePanelController *sidePanel;
 
 
 

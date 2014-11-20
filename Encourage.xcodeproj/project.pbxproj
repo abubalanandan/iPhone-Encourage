@@ -91,6 +91,13 @@
 		703995111A1CC46E00ECA291 /* menu_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 703995101A1CC46E00ECA291 /* menu_select@2x.png */; };
 		7075D1201A17ED190095AA05 /* JHTimelineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7075D11E1A17ED190095AA05 /* JHTimelineCell.m */; };
 		7075D1211A17ED190095AA05 /* JHTimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7075D11F1A17ED190095AA05 /* JHTimelineCell.xib */; };
+		70761A371A1DA6DD00FE644F /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A341A1DA6DD00FE644F /* JASidePanelController.m */; };
+		70761A381A1DA6DD00FE644F /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A361A1DA6DD00FE644F /* UIViewController+JASidePanel.m */; };
+		70761A3C1A1DA97B00FE644F /* JHLeftPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A3A1A1DA97B00FE644F /* JHLeftPanelViewController.m */; };
+		70761A3D1A1DA97B00FE644F /* JHLeftPanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70761A3B1A1DA97B00FE644F /* JHLeftPanelViewController.xib */; };
+		70761A411A1DBCF600FE644F /* JHLogoutAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A401A1DBCF600FE644F /* JHLogoutAPIRequest.m */; };
+		70761A441A1DBD3500FE644F /* JHLogoutAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A431A1DBD3500FE644F /* JHLogoutAPIResponse.m */; };
+		70761A471A1DBD4800FE644F /* JHLogoutAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A461A1DBD4800FE644F /* JHLogoutAPI.m */; };
 		70C366C919F8712100B5F30B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70C366C819F8712100B5F30B /* Localizable.strings */; };
 		70C366CC19F9708800B5F30B /* JHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C366CB19F9708800B5F30B /* JHBaseViewController.m */; };
 		70F10A8D19706C92002513D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F10A8C19706C92002513D1 /* Foundation.framework */; };
@@ -265,6 +272,19 @@
 		7075D11D1A17ED190095AA05 /* JHTimelineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHTimelineCell.h; path = Cells/JHTimelineCell.h; sourceTree = "<group>"; };
 		7075D11E1A17ED190095AA05 /* JHTimelineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHTimelineCell.m; path = Cells/JHTimelineCell.m; sourceTree = "<group>"; };
 		7075D11F1A17ED190095AA05 /* JHTimelineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JHTimelineCell.xib; path = Cells/JHTimelineCell.xib; sourceTree = "<group>"; };
+		70761A331A1DA6DD00FE644F /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
+		70761A341A1DA6DD00FE644F /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
+		70761A351A1DA6DD00FE644F /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
+		70761A361A1DA6DD00FE644F /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
+		70761A391A1DA97B00FE644F /* JHLeftPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHLeftPanelViewController.h; sourceTree = "<group>"; };
+		70761A3A1A1DA97B00FE644F /* JHLeftPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHLeftPanelViewController.m; sourceTree = "<group>"; };
+		70761A3B1A1DA97B00FE644F /* JHLeftPanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHLeftPanelViewController.xib; sourceTree = "<group>"; };
+		70761A3F1A1DBCF600FE644F /* JHLogoutAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHLogoutAPIRequest.h; path = Logout/JHLogoutAPIRequest.h; sourceTree = "<group>"; };
+		70761A401A1DBCF600FE644F /* JHLogoutAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHLogoutAPIRequest.m; path = Logout/JHLogoutAPIRequest.m; sourceTree = "<group>"; };
+		70761A421A1DBD3500FE644F /* JHLogoutAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHLogoutAPIResponse.h; path = Logout/JHLogoutAPIResponse.h; sourceTree = "<group>"; };
+		70761A431A1DBD3500FE644F /* JHLogoutAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHLogoutAPIResponse.m; path = Logout/JHLogoutAPIResponse.m; sourceTree = "<group>"; };
+		70761A451A1DBD4800FE644F /* JHLogoutAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHLogoutAPI.h; path = Logout/JHLogoutAPI.h; sourceTree = "<group>"; };
+		70761A461A1DBD4800FE644F /* JHLogoutAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHLogoutAPI.m; path = Logout/JHLogoutAPI.m; sourceTree = "<group>"; };
 		70C366C819F8712100B5F30B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		70C366CA19F9708800B5F30B /* JHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHBaseViewController.h; sourceTree = "<group>"; };
 		70C366CB19F9708800B5F30B /* JHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHBaseViewController.m; sourceTree = "<group>"; };
@@ -322,6 +342,7 @@
 		7028132C19F8008C00643D17 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				70761A321A1DA6DD00FE644F /* SlideMenu */,
 				703994D41A1CAB8D00ECA291 /* SDWebImage */,
 				703994B41A1C90AB00ECA291 /* MBProgressHUD */,
 				703994B71A1C90AB00ECA291 /* JHHudController.h */,
@@ -363,6 +384,7 @@
 		7028133119F8008C00643D17 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				70761A3E1A1DBCD900FE644F /* Logout */,
 				70F58CCD1A128F2F004A065E /* Timeline */,
 				702813A719F804CD00643D17 /* Login */,
 				7028136919F800FB00643D17 /* BaseApi */,
@@ -622,6 +644,33 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		70761A321A1DA6DD00FE644F /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				70761A331A1DA6DD00FE644F /* JASidePanelController.h */,
+				70761A341A1DA6DD00FE644F /* JASidePanelController.m */,
+				70761A351A1DA6DD00FE644F /* UIViewController+JASidePanel.h */,
+				70761A361A1DA6DD00FE644F /* UIViewController+JASidePanel.m */,
+				70761A391A1DA97B00FE644F /* JHLeftPanelViewController.h */,
+				70761A3A1A1DA97B00FE644F /* JHLeftPanelViewController.m */,
+				70761A3B1A1DA97B00FE644F /* JHLeftPanelViewController.xib */,
+			);
+			path = SlideMenu;
+			sourceTree = "<group>";
+		};
+		70761A3E1A1DBCD900FE644F /* Logout */ = {
+			isa = PBXGroup;
+			children = (
+				70761A3F1A1DBCF600FE644F /* JHLogoutAPIRequest.h */,
+				70761A401A1DBCF600FE644F /* JHLogoutAPIRequest.m */,
+				70761A421A1DBD3500FE644F /* JHLogoutAPIResponse.h */,
+				70761A431A1DBD3500FE644F /* JHLogoutAPIResponse.m */,
+				70761A451A1DBD4800FE644F /* JHLogoutAPI.h */,
+				70761A461A1DBD4800FE644F /* JHLogoutAPI.m */,
+			);
+			name = Logout;
+			sourceTree = "<group>";
+		};
 		70F10A8019706C92002513D1 = {
 			isa = PBXGroup;
 			children = (
@@ -824,6 +873,7 @@
 				7028138919F8022200643D17 /* Default@2x.png in Resources */,
 				703994D01A1CA02400ECA291 /* 58x58.png in Resources */,
 				7028138819F8022200643D17 /* Default-568h@2x.png in Resources */,
+				70761A3D1A1DA97B00FE644F /* JHLeftPanelViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,24 +910,30 @@
 				7028136819F8008C00643D17 /* SBJsonWriter.m in Sources */,
 				702813A219F803CB00643D17 /* JHWebService.m in Sources */,
 				7028135919F8008C00643D17 /* KVCBaseObject.m in Sources */,
+				70761A411A1DBCF600FE644F /* JHLogoutAPIRequest.m in Sources */,
 				7028136619F8008C00643D17 /* SBJsonBase.m in Sources */,
 				702813AD19F8061700643D17 /* JHAppDelegate.m in Sources */,
 				702813B919F807C200643D17 /* JHLocationManager.m in Sources */,
 				7028137919F8016F00643D17 /* JHRegistrationViewController.m in Sources */,
 				70F58CD01A128F79004A065E /* JHTimelineAPIRequest.m in Sources */,
 				7028139C19F8038700643D17 /* JHBaseResponse.m in Sources */,
+				70761A3C1A1DA97B00FE644F /* JHLeftPanelViewController.m in Sources */,
 				7028135F19F8008C00643D17 /* ASIHTTPRequest.m in Sources */,
 				7028135C19F8008C00643D17 /* ASIDataDecompressor.m in Sources */,
+				70761A371A1DA6DD00FE644F /* JASidePanelController.m in Sources */,
 				703995041A1CAB8D00ECA291 /* UIImageView+WebCache.m in Sources */,
 				703994FF1A1CAB8D00ECA291 /* UIButton+WebCache.m in Sources */,
 				7028136719F8008C00643D17 /* SBJsonParser.m in Sources */,
 				7028137B19F8016F00643D17 /* JHTimelineViewController.m in Sources */,
 				703994F81A1CAB8D00ECA291 /* SDImageCache.m in Sources */,
+				70761A381A1DA6DD00FE644F /* UIViewController+JASidePanel.m in Sources */,
 				703994F91A1CAB8D00ECA291 /* SDWebImageCompat.m in Sources */,
 				70F58CD61A1292EB004A065E /* JHTimelineItem.m in Sources */,
+				70761A441A1DBD3500FE644F /* JHLogoutAPIResponse.m in Sources */,
 				703994FE1A1CAB8D00ECA291 /* SDWebImagePrefetcher.m in Sources */,
 				703995011A1CAB8D00ECA291 /* UIImage+MultiFormat.m in Sources */,
 				703994FA1A1CAB8D00ECA291 /* SDWebImageDecoder.m in Sources */,
+				70761A471A1DBD4800FE644F /* JHLogoutAPI.m in Sources */,
 				7028137719F8016F00643D17 /* JHLoginViewController.m in Sources */,
 				7028136119F8008C00643D17 /* ASINetworkQueue.m in Sources */,
 				70F58CD91A1293FB004A065E /* JHTimelineDetailItem.m in Sources */,
@@ -1017,14 +1073,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anil Thomas (95B2Y8N4VC)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anil Thomas (95B2Y8N4VC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cherian Thomas (82SZC2V2DB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cherian Thomas (82SZC2V2DB)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Encourage/Encourage-Prefix.pch";
 				INFOPLIST_FILE = "Encourage/Encourage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "34fb69a2-cc3d-4899-9663-5c40e93674b2";
+				PROVISIONING_PROFILE = "4148ba83-6ee1-4b84-85d3-d70f6740b6ef";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1034,14 +1090,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anil Thomas (95B2Y8N4VC)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anil Thomas (95B2Y8N4VC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cherian Thomas (82SZC2V2DB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cherian Thomas (82SZC2V2DB)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Encourage/Encourage-Prefix.pch";
 				INFOPLIST_FILE = "Encourage/Encourage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "34fb69a2-cc3d-4899-9663-5c40e93674b2";
+				PROVISIONING_PROFILE = "4148ba83-6ee1-4b84-85d3-d70f6740b6ef";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -33,7 +33,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+   
+    [[JHAppDelegate application].sidePanel leftButtonForCenterPanel:_menuButton];
     _loading = YES;
     [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:0 withLoadingIndicator:YES];
     UIView *backgroundView = [[UIView alloc]initWithFrame:self.timelineTV.bounds];

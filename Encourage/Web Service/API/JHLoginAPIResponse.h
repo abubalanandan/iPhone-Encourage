@@ -10,7 +10,6 @@
 
 @interface JHLoginAPIResponse : JHBaseResponse
 @property (nonatomic, strong) NSString *token;
-@property (nonatomic, strong) NSString *person_uuid;
-@property (nonatomic, strong) NSString *username;
-@property (nonatomic, strong) NSString *profilepic;
+@property (nonatomic, strong) NSString *personName;
+@property (nonatomic, strong) NSString *personProfilePic;
 @end

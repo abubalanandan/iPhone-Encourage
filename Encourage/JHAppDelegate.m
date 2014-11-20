@@ -1,6 +1,7 @@
 
 #import "JHAppDelegate.h"
 #import "JHLoginViewController.h"
+#import "JHLeftPanelViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation JHAppDelegate
@@ -28,7 +29,7 @@ JHAppDelegate *mainApplicationInstance_;
     window_.rootViewController = _navController;
     [window_ makeKeyAndVisible];
       
-
+    [self setupLeftPanel];
         
     return YES;
 }
@@ -40,7 +41,10 @@ JHAppDelegate *mainApplicationInstance_;
 }
 
 
-
+-(void)setupLeftPanel{
+    _sidePanel = [[JASidePanelController alloc]init];
+    _sidePanel.leftPanel = [[JHLeftPanelViewController alloc]init];
+}
 
 
 

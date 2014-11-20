@@ -13,6 +13,7 @@
 #import "JHLoginAPIRequest.h"
 #import "JHTimelineAPI.h"
 #import "JHTimelineViewController.h"
+#import "JHLeftPanelViewController.h"
 
 @implementation JHLoginViewController
 
@@ -69,9 +70,13 @@
 
 - (void)didReceiveLoginDetails:(JHLoginAPIResponse *)responseObj{
     [JHAppDelegate application].dataManager.token = responseObj.token;
-    JHTimelineViewController *timelineVC = [[JHTimelineViewController alloc]init];
-    [[JHAppDelegate application].navController pushViewController:timelineVC animated:YES];
-    timelineVC = nil;
+    [JHAppDelegate application].dataManager.profilePicURL = responseObj.personProfilePic;
+    [JHAppDelegate application].dataManager.username = responseObj.personName;
+    JHLeftPanelViewController *leftPanel =(JHLeftPanelViewController *) [JHAppDelegate application].sidePanel.leftPanel;
+    [leftPanel setUpViewsWithName:responseObj.personName email:@"abu.316@gmail.com" andProfilePic:responseObj.personProfilePic];
+       JHTimelineViewController *timelineVC = [[JHTimelineViewController alloc]init];
+    [JHAppDelegate application].sidePanel.centerPanel = timelineVC;
+    [JHAppDelegate application].window.rootViewController = [JHAppDelegate application].sidePanel;
 
 }
 

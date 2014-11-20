@@ -15,6 +15,7 @@ static char imageURLKey;
 @implementation UIImageView (WebCache)
 
 - (void)sd_setImageWithURL:(NSURL *)url {
+    NSLog(@"Added URL -- %@",url);
     [self sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:nil];
 }
 

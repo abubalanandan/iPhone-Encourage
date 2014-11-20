@@ -15,6 +15,6 @@
 }
 
 @property (nonatomic,weak) IBOutlet UITableView *timelineTV;
-
+@property (nonatomic,weak) IBOutlet UIButton *menuButton;
 -(IBAction)reportButtonPressed:(id)sender;
 @end
