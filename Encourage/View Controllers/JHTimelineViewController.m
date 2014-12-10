@@ -93,11 +93,11 @@
     NSArray *details = item.details;
     CGFloat labelWidth = cell.detailsView.bounds.size.width/2 - 10;
     [[cell.detailsView subviews]makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    CGFloat originY= 5;
+    CGFloat detailViewHeight= 20;
     for (JHTimelineDetailItem *detail in details) {
         CGFloat labelHeight = [self requiredHeightWithKey:detail.key andValue:detail.value forCellWidth:labelWidth];
-        UILabel *keyLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, originY, labelWidth, labelHeight)];
-        UILabel *valueLabel = [[UILabel alloc]initWithFrame:CGRectMake(labelWidth+20, originY, labelWidth, labelHeight)];
+        UILabel *keyLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, detailViewHeight, labelWidth, labelHeight)];
+        UILabel *valueLabel = [[UILabel alloc]initWithFrame:CGRectMake(labelWidth+20, detailViewHeight, labelWidth, labelHeight)];
         [keyLabel setFont:[UIFont systemFontOfSize:12.0]];
         keyLabel.text = detail.key;
         valueLabel.text = detail.value;
@@ -108,22 +108,24 @@
         valueLabel.numberOfLines=0;
         [cell.detailsView addSubview:keyLabel];
         [cell.detailsView addSubview:valueLabel];
-        originY +=labelHeight+5;
+        detailViewHeight +=labelHeight+5;
     }
-    cell.detailsView.frame = CGRectMake(cell.detailsView.frame.origin.x, 5, CGRectGetWidth(cell.detailsView.frame), originY);
+    cell.detailsView.frame = CGRectMake(cell.detailsView.frame.origin.x, 20, CGRectGetWidth(cell.detailsView.frame), detailViewHeight);
     CGFloat imageOffset = 0;
     if ([item.dataType containsString:@"Image"]) {
         cell.dummyView.hidden = NO;
-        cell.dummyView.frame = CGRectMake(CGRectGetMinX(cell.dummyView.frame), originY+5, CGRectGetWidth(cell.dummyView.frame), CGRectGetHeight(cell.dummyView.frame));
+        cell.dummyView.frame = CGRectMake(CGRectGetMinX(cell.dummyView.frame), CGRectGetMaxY(cell.detailsView.frame)+5, CGRectGetWidth(cell.dummyView.frame), CGRectGetHeight(cell.dummyView.frame));
         imageOffset = cell.dummyView.frame.size.height;
-        [cell.dummyView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:FILE_URL,[JHAppDelegate application].dataManager.token,item.documentActualName]]] ;
+        [cell.dummyView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:FILE_URL,[JHAppDelegate application].dataManager.token,item.documentActualName]] placeholderImage:[UIImage imageNamed:@"page_bg"]] ;
     }else{
         cell.dummyView.hidden = YES;
     }
-    [cell.backgroundImageView setFrame:CGRectMake(0, 0, cell.bounds.size.width, originY + imageOffset +10)];
-    cell.detailsView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
-    cell.detailsView.layer.shadowOpacity = 0.5;
-    cell.detailsView.layer.shadowOffset = CGSizeMake(-1.0, -1.0);
+    [cell.backgroundGrayView setFrame:CGRectMake(10, 15, cell.bounds.size.width-20, 5+detailViewHeight+5+imageOffset+15 )];
+    cell.backgroundGrayView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+    cell.backgroundGrayView.layer.shadowOpacity = 0.5;
+    cell.backgroundGrayView.layer.shadowOffset = CGSizeMake(-1.0, -1.0);
+    cell.backgroundGrayView.layer.cornerRadius = 2.0;
+    
 }
 
 
@@ -171,7 +173,7 @@
         imageOffset = sizingCell.dummyView.bounds.size.height;
     }
     
-    return sizingCell.detailsView.bounds.size.height + imageOffset + 10;
+    return sizingCell.backgroundGrayView.bounds.size.height + 20;
    // return [self calculateHeightForConfiguredSizingCell:sizingCell];
 }
 
