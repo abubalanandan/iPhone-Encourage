@@ -30,8 +30,38 @@ JHAppDelegate *mainApplicationInstance_;
     [window_ makeKeyAndVisible];
       
     [self setupLeftPanel];
-        
+    [self registerForPushNotifications];
     return YES;
+}
+
+- (void)registerForPushNotifications{
+    UIApplication *application = [UIApplication sharedApplication];
+    if ([[UIDevice currentDevice] systemVersion].floatValue < 8.0) {
+        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound ];
+    } else {
+        UIUserNotificationSettings *uiNotificationSettings = [UIUserNotificationSettings settingsForTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound categories:nil];
+        [application registerUserNotificationSettings:uiNotificationSettings];
+    }
+    
+}
+
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    [application registerForRemoteNotifications];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
+    
+    // Store the deviceToken in the current installation and save it to Parse.
+    NSString  *token_string = [[[[newDeviceToken description]    stringByReplacingOccurrencesOfString:@"<"withString:@""]
+                                stringByReplacingOccurrencesOfString:@">" withString:@""]
+                               stringByReplacingOccurrencesOfString: @" " withString: @""];
+    dataManager_.deviceToken = token_string;
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"" message:[NSString stringWithFormat:@"%@",userInfo] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
 }
 
 

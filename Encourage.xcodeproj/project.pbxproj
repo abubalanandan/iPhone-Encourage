@@ -1073,14 +1073,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Cherian Thomas (82SZC2V2DB)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cherian Thomas (82SZC2V2DB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anil Thomas (95B2Y8N4VC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anil Thomas (95B2Y8N4VC)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Encourage/Encourage-Prefix.pch";
 				INFOPLIST_FILE = "Encourage/Encourage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4148ba83-6ee1-4b84-85d3-d70f6740b6ef";
+				PROVISIONING_PROFILE = "61f7c4d0-cef2-44a8-b275-b05550b657dd";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1090,14 +1090,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Cherian Thomas (82SZC2V2DB)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cherian Thomas (82SZC2V2DB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anil Thomas (95B2Y8N4VC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anil Thomas (95B2Y8N4VC)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Encourage/Encourage-Prefix.pch";
 				INFOPLIST_FILE = "Encourage/Encourage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4148ba83-6ee1-4b84-85d3-d70f6740b6ef";
+				PROVISIONING_PROFILE = "61f7c4d0-cef2-44a8-b275-b05550b657dd";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
