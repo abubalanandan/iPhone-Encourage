@@ -18,4 +18,6 @@
 @property (nonatomic,strong) NSString *documentActualName;
 @property (nonatomic,strong) NSString *personRole;
 @property (nonatomic,strong) NSArray *details;
+@property (nonatomic,strong) NSString *header;
+
 @end

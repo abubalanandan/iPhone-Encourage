@@ -13,4 +13,9 @@
 @property (nonatomic,weak) IBOutlet UIImageView *dummyView;
 @property (nonatomic,weak) IBOutlet UIImageView *backgroundImageView;
 @property (nonatomic,weak) IBOutlet UIView *backgroundGrayView;
+@property (nonatomic,weak) IBOutlet UIView *headerView;
+@property (nonatomic,weak) IBOutlet UILabel *personName;
+@property (nonatomic,weak) IBOutlet UIImageView *profilePicImage;
+@property (nonatomic,weak) IBOutlet UILabel *headerLabel;
+@property (nonatomic,weak) IBOutlet UILabel *dateLabel;
 @end

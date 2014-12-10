@@ -92,7 +92,13 @@
 - (void)configureCell:(JHTimelineCell *)cell withItem:(JHTimelineItem *)item{
     NSArray *details = item.details;
     CGFloat labelWidth = cell.detailsView.bounds.size.width/2 - 10;
+    CGFloat headerHeight = CGRectGetMaxY(cell.headerView.frame);
+    cell.personName.text = item.person;
+    cell.dateLabel.text = item.dateTime;
+    cell.headerLabel.text = item.header;
+    [cell.profilePicImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:FILE_URL,[JHAppDelegate application].dataManager.token,item.personProfilePictureName]] placeholderImage:[UIImage imageNamed:@"page_bg"]];
     [[cell.detailsView subviews]makeObjectsPerformSelector:@selector(removeFromSuperview)];
+
     CGFloat detailViewHeight= 20;
     for (JHTimelineDetailItem *detail in details) {
         CGFloat labelHeight = [self requiredHeightWithKey:detail.key andValue:detail.value forCellWidth:labelWidth];
@@ -110,7 +116,7 @@
         [cell.detailsView addSubview:valueLabel];
         detailViewHeight +=labelHeight+5;
     }
-    cell.detailsView.frame = CGRectMake(cell.detailsView.frame.origin.x, 20, CGRectGetWidth(cell.detailsView.frame), detailViewHeight);
+    cell.detailsView.frame = CGRectMake(cell.detailsView.frame.origin.x, headerHeight+ 20, CGRectGetWidth(cell.detailsView.frame), detailViewHeight);
     CGFloat imageOffset = 0;
     if ([item.dataType containsString:@"Image"]) {
         cell.dummyView.hidden = NO;
@@ -120,7 +126,7 @@
     }else{
         cell.dummyView.hidden = YES;
     }
-    [cell.backgroundGrayView setFrame:CGRectMake(10, 15, cell.bounds.size.width-20, 5+detailViewHeight+5+imageOffset+15 )];
+    [cell.backgroundGrayView setFrame:CGRectMake(10, 15, cell.bounds.size.width-20,20+ CGRectGetHeight(cell.headerView.frame)+5+detailViewHeight+5+imageOffset+15 )];
     cell.backgroundGrayView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
     cell.backgroundGrayView.layer.shadowOpacity = 0.5;
     cell.backgroundGrayView.layer.shadowOffset = CGSizeMake(-1.0, -1.0);
