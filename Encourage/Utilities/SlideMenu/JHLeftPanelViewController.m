@@ -61,10 +61,13 @@
 - (void)loggedOutSuccessfully{
     [[JHAppDelegate application].dataManager clearData];
     [JHAppDelegate application].timelineVC = nil;
-    [[JHAppDelegate application].navController popToRootViewControllerAnimated:NO];
     JHLoginViewController *vc = [[JHLoginViewController alloc]init];
-    
-    [[JHAppDelegate application].navController pushViewController:vc animated:YES];
+    [[JHAppDelegate application].sidePanel removeFromParentViewController];
+    [JHAppDelegate application].sidePanel = nil;
+    [JHAppDelegate application].navController  = [[UINavigationController alloc]initWithRootViewController:vc];
+    [JHAppDelegate application].window.rootViewController = [JHAppDelegate application].navController;
+    [[JHAppDelegate application].window makeKeyAndVisible];
+    //[[JHAppDelegate application].navController pushViewController:vc animated:YES];
 }
 
 - (void)logoutFailed:(NSString *)message{

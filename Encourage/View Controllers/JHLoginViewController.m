@@ -72,6 +72,7 @@
     [JHAppDelegate application].dataManager.token = responseObj.token;
     [JHAppDelegate application].dataManager.profilePicURL = responseObj.personProfilePic;
     [JHAppDelegate application].dataManager.username = responseObj.personName;
+    [[JHAppDelegate application] setupLeftPanel];
     JHLeftPanelViewController *leftPanel =(JHLeftPanelViewController *) [JHAppDelegate application].sidePanel.leftPanel;
     [leftPanel setUpViewsWithName:responseObj.personName email:@"abu.316@gmail.com" andProfilePic:responseObj.personProfilePic];
        JHTimelineViewController *timelineVC = [[JHTimelineViewController alloc]init];

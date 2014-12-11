@@ -33,7 +33,7 @@
 @property (strong, nonatomic) JASidePanelController *sidePanel;
 @property (strong, nonatomic) JHTimelineViewController *timelineVC;
 
-
+-(void)setupLeftPanel;
 
 
 
