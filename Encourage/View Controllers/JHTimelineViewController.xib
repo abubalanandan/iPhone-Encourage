@@ -80,6 +80,9 @@
                     </state>
                     <state key="selected" backgroundImage="not_iconhover.png"/>
                     <state key="highlighted" backgroundImage="not_iconhover.png"/>
+                    <connections>
+                        <action selector="alertButtonPressed:" destination="-1" eventType="touchUpInside" id="srw-FT-IYh"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1i6-1r-gPe">
                     <rect key="frame" x="251" y="18" width="19" height="21"/>

@@ -100,6 +100,11 @@
 		70761A471A1DBD4800FE644F /* JHLogoutAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A461A1DBD4800FE644F /* JHLogoutAPI.m */; };
 		70AE03AA1A3A12D600FF3074 /* JHCareTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03A91A3A12D600FF3074 /* JHCareTask.m */; };
 		70AE03AD1A3A13E000FF3074 /* JHAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03AC1A3A13E000FF3074 /* JHAlert.m */; };
+		70AE03B01A3A357300FF3074 /* JHRecentAlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03AF1A3A357300FF3074 /* JHRecentAlertsViewController.m */; };
+		70AE03B21A3A358B00FF3074 /* JHRecentAlertsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70AE03B11A3A358B00FF3074 /* JHRecentAlertsViewController.xib */; };
+		70AE03B41A3A37B900FF3074 /* close_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70AE03B31A3A37B900FF3074 /* close_button@2x.png */; };
+		70AE03B81A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03B61A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.m */; };
+		70AE03B91A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70AE03B71A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.xib */; };
 		70C366C919F8712100B5F30B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70C366C819F8712100B5F30B /* Localizable.strings */; };
 		70C366CC19F9708800B5F30B /* JHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C366CB19F9708800B5F30B /* JHBaseViewController.m */; };
 		70F10A8D19706C92002513D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F10A8C19706C92002513D1 /* Foundation.framework */; };
@@ -291,6 +296,13 @@
 		70AE03A91A3A12D600FF3074 /* JHCareTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCareTask.m; sourceTree = "<group>"; };
 		70AE03AB1A3A13E000FF3074 /* JHAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAlert.h; sourceTree = "<group>"; };
 		70AE03AC1A3A13E000FF3074 /* JHAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAlert.m; sourceTree = "<group>"; };
+		70AE03AE1A3A357300FF3074 /* JHRecentAlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRecentAlertsViewController.h; sourceTree = "<group>"; };
+		70AE03AF1A3A357300FF3074 /* JHRecentAlertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRecentAlertsViewController.m; sourceTree = "<group>"; };
+		70AE03B11A3A358B00FF3074 /* JHRecentAlertsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHRecentAlertsViewController.xib; sourceTree = "<group>"; };
+		70AE03B31A3A37B900FF3074 /* close_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_button@2x.png"; sourceTree = "<group>"; };
+		70AE03B51A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRecentAlertsCellTableViewCell.h; sourceTree = "<group>"; };
+		70AE03B61A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRecentAlertsCellTableViewCell.m; sourceTree = "<group>"; };
+		70AE03B71A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHRecentAlertsCellTableViewCell.xib; sourceTree = "<group>"; };
 		70C366C819F8712100B5F30B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		70C366CA19F9708800B5F30B /* JHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHBaseViewController.h; sourceTree = "<group>"; };
 		70C366CB19F9708800B5F30B /* JHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHBaseViewController.m; sourceTree = "<group>"; };
@@ -477,6 +489,9 @@
 				7028137619F8016F00643D17 /* JHTimelineViewController.xib */,
 				70C366CA19F9708800B5F30B /* JHBaseViewController.h */,
 				70C366CB19F9708800B5F30B /* JHBaseViewController.m */,
+				70AE03AE1A3A357300FF3074 /* JHRecentAlertsViewController.h */,
+				70AE03AF1A3A357300FF3074 /* JHRecentAlertsViewController.m */,
+				70AE03B11A3A358B00FF3074 /* JHRecentAlertsViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -484,6 +499,7 @@
 		7028137D19F8022200643D17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				70AE03B31A3A37B900FF3074 /* close_button@2x.png */,
 				703995101A1CC46E00ECA291 /* menu_select@2x.png */,
 				703995081A1CC3A900ECA291 /* et_icon@2x.png */,
 				703995091A1CC3A900ECA291 /* et_iconhover@2x.png */,
@@ -650,6 +666,9 @@
 				7075D11D1A17ED190095AA05 /* JHTimelineCell.h */,
 				7075D11E1A17ED190095AA05 /* JHTimelineCell.m */,
 				7075D11F1A17ED190095AA05 /* JHTimelineCell.xib */,
+				70AE03B51A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.h */,
+				70AE03B61A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.m */,
+				70AE03B71A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -860,11 +879,13 @@
 				70F10A9719706C92002513D1 /* InfoPlist.strings in Resources */,
 				703995071A1CC31300ECA291 /* top_header@2x.png in Resources */,
 				70F10A9F19706C92002513D1 /* Images.xcassets in Resources */,
+				70AE03B91A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.xib in Resources */,
 				703995111A1CC46E00ECA291 /* menu_select@2x.png in Resources */,
 				7028138F19F8022200643D17 /* register_buton@2x.png in Resources */,
 				7028137819F8016F00643D17 /* JHLoginViewController.xib in Resources */,
 				703994BC1A1C9A0800ECA291 /* page_bg@2x.png in Resources */,
 				7028138D19F8022200643D17 /* login_logo@2x.png in Resources */,
+				70AE03B21A3A358B00FF3074 /* JHRecentAlertsViewController.xib in Resources */,
 				703994C41A1C9CA000ECA291 /* report_butonhover@2x.png in Resources */,
 				7028139119F8022200643D17 /* username_icon@2x.png in Resources */,
 				703994BE1A1C9AAD00ECA291 /* translucent_bottom@2x.png in Resources */,
@@ -877,6 +898,7 @@
 				703994CE1A1CA02400ECA291 /* 44x44.png in Resources */,
 				703994CC1A1CA02400ECA291 /* 1024x1024.png in Resources */,
 				70C366C919F8712100B5F30B /* Localizable.strings in Resources */,
+				70AE03B41A3A37B900FF3074 /* close_button@2x.png in Resources */,
 				703994C01A1C9B5E00ECA291 /* bottom_logo@2x.png in Resources */,
 				7075D1211A17ED190095AA05 /* JHTimelineCell.xib in Resources */,
 				7039950C1A1CC3A900ECA291 /* et_icon@2x.png in Resources */,
@@ -924,6 +946,7 @@
 				7028135919F8008C00643D17 /* KVCBaseObject.m in Sources */,
 				70761A411A1DBCF600FE644F /* JHLogoutAPIRequest.m in Sources */,
 				7028136619F8008C00643D17 /* SBJsonBase.m in Sources */,
+				70AE03B81A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.m in Sources */,
 				702813AD19F8061700643D17 /* JHAppDelegate.m in Sources */,
 				702813B919F807C200643D17 /* JHLocationManager.m in Sources */,
 				7028137919F8016F00643D17 /* JHRegistrationViewController.m in Sources */,
@@ -956,6 +979,7 @@
 				703994BA1A1C90AB00ECA291 /* JHHudController.m in Sources */,
 				7028136C19F800FB00643D17 /* JHBaseAPI.m in Sources */,
 				7028135A19F8008C00643D17 /* ASIAuthenticationDialog.m in Sources */,
+				70AE03B01A3A357300FF3074 /* JHRecentAlertsViewController.m in Sources */,
 				7028136419F8008C00643D17 /* NSString+SBJSON.m in Sources */,
 				70C366CC19F9708800B5F30B /* JHBaseViewController.m in Sources */,
 				703995051A1CAB8D00ECA291 /* UIView+WebCacheOperation.m in Sources */,

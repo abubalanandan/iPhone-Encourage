@@ -13,6 +13,7 @@
 #import "JHTimelineDetailItem.h"
 #import "UIImageView+WebCache.h"
 #import "JHHudController.h"
+#import "JHRecentAlertsViewController.h"
 
 @interface JHTimelineViewController ()
 @property int lastCount;
@@ -232,6 +233,12 @@
 }
 
 -(IBAction)reportButtonPressed:(id)sender{
+    
+}
+
+-(IBAction)alertButtonPressed:(id)sender{
+    JHRecentAlertsViewController *recentVC = [[JHRecentAlertsViewController alloc]initWithNibName:@"JHRecentAlertsViewController" bundle:nil];
+    [self presentViewController:recentVC animated:YES completion:nil];
     
 }
 

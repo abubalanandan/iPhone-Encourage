@@ -19,5 +19,6 @@
 @property (nonatomic,weak) IBOutlet UILabel *alertCountLabel;
 @property (nonatomic,weak) IBOutlet UILabel *careTaskCountLabel;
 -(IBAction)reportButtonPressed:(id)sender;
+-(IBAction)alertButtonPressed:(id)sender;
 - (void)updateAlert :(int)alertCount AndCareTask: (int)careTaskCount;
 @end
