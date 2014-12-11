@@ -66,12 +66,6 @@ JHAppDelegate *mainApplicationInstance_;
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     NSString *responseDict = [[userInfo valueForKey:@"aps"]valueForKey:@"alert" ];
     [dataManager_ parseNotification:responseDict];
-    if (responseDict) {
-//        NSString *notificationType = [responseDict objectForKey:@"notificationType"];
-//        if (notificationType && [notificationType isEqual:@"alert"]) {
-//            [dataManager_ parseAlerts:[NSString stringWithFormat:@"%@",userInfo]];
-//        }
-    }
     }
 
 
