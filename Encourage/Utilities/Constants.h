@@ -18,6 +18,7 @@
 #define UPDATE_CARETASK_STATUS_URL @"mUpdateCareTaskStatus"
 #define UPDATE_ALERT_STATUS_URL @"mUpdateUnreadAlertStatus"
 #define LOGOUT_URL @"mUserLogout"
+#define RESPONSE_DESCRIPTION_KEY @"responseDescription"
 
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
@@ -63,7 +64,10 @@
 
 #define CLASS_NAME @"className"
 
-
+#define NOTIFICATION_TYPE_KEY @"notificationType"
+#define NOTIFICATION_TYPE_ALERT @"alert"
+#define NOTIFICATION_TYPE_CARETASK @"caretask"
+#define NOTIFICATION_UNREAD @"unread"
 
 
 

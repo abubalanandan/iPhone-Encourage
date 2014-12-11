@@ -59,10 +59,22 @@ JHAppDelegate *mainApplicationInstance_;
     dataManager_.deviceToken = token_string;
 }
 
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"" message:[NSString stringWithFormat:@"%@",userInfo] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-    [alert show];
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    NSLog(@"%@",error.description);
 }
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    NSString *responseDict = [[userInfo valueForKey:@"aps"]valueForKey:@"alert" ];
+    [dataManager_ parseNotification:responseDict];
+    if (responseDict) {
+//        NSString *notificationType = [responseDict objectForKey:@"notificationType"];
+//        if (notificationType && [notificationType isEqual:@"alert"]) {
+//            [dataManager_ parseAlerts:[NSString stringWithFormat:@"%@",userInfo]];
+//        }
+    }
+    }
+
+
 
 
 + (JHAppDelegate *)application {

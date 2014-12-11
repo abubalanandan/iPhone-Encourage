@@ -16,5 +16,8 @@
 
 @property (nonatomic,weak) IBOutlet UITableView *timelineTV;
 @property (nonatomic,weak) IBOutlet UIButton *menuButton;
+@property (nonatomic,weak) IBOutlet UILabel *alertCountLabel;
+@property (nonatomic,weak) IBOutlet UILabel *careTaskCountLabel;
 -(IBAction)reportButtonPressed:(id)sender;
+- (void)updateAlert :(int)alertCount AndCareTask: (int)careTaskCount;
 @end

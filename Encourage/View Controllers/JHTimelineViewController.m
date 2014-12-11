@@ -12,6 +12,7 @@
 #import "JHTimelineItem.h"
 #import "JHTimelineDetailItem.h"
 #import "UIImageView+WebCache.h"
+#import "JHHudController.h"
 
 @interface JHTimelineViewController ()
 @property int lastCount;
@@ -33,10 +34,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    [JHAppDelegate application].timelineVC = self;
     [[JHAppDelegate application].sidePanel leftButtonForCenterPanel:_menuButton];
-    _loading = YES;
-    [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:0 withLoadingIndicator:YES];
+    
     UIView *backgroundView = [[UIView alloc]initWithFrame:self.timelineTV.bounds];
     UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(backgroundView.frame), CGRectGetHeight(backgroundView.frame))];
     iv.image = [UIImage imageNamed:@"page_bg"];
@@ -44,6 +44,12 @@
     [self.timelineTV setBackgroundView:backgroundView];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    _loading = YES;
+
+    [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:0 withLoadingIndicator:NO];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -63,7 +69,11 @@
     if (_timelineItems ==nil) {
         _timelineItems = [[NSMutableArray alloc]initWithArray:response.objects];
     }else{
-        [_timelineItems addObjectsFromArray:response.objects];
+        for (JHTimelineItem *timelineItem in response.objects) {
+            if (![_timelineItems containsObject:timelineItem]) {
+                [_timelineItems addObject:timelineItem];
+            }
+        }
     }
     [_timelineTV reloadData];
 }
@@ -203,12 +213,22 @@
         [activityView startAnimating];
         self.timelineTV.tableFooterView = activityView;
         if (!_loading) {
-            [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:_lastCount withLoadingIndicator:NO];
+            int start = 0;
+            if (_timelineItems != nil) {
+                start = [_timelineItems count];
+            }
+            [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:start withLoadingIndicator:NO];
             _loading = YES;
 
         }
         
             }
+}
+
+- (void)updateAlert:(int)alertCount AndCareTask:(int)careTaskCount{
+    [self.alertCountLabel setText:[NSString stringWithFormat:@"%d",alertCount]];
+    [self.careTaskCountLabel setText:[NSString stringWithFormat:@"%d",careTaskCount]];
+
 }
 
 -(IBAction)reportButtonPressed:(id)sender{

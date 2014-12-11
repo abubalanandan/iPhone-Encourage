@@ -129,6 +129,9 @@
     NSString *receivedResponse = nil;
     receivedResponse = [[request responseString] retain];
     
+    if ([request.url.absoluteString containsString:@"Logout"]) {
+        receivedResponse = @"{\"responseCode\":\"OK\",\"responseDescription\":{}}";
+    }
     SBJSON *parser = [[SBJSON alloc] init];
 	NSDictionary *jsonContent = [[parser objectWithString:receivedResponse error:nil] retain];
        
@@ -136,9 +139,10 @@
     Class responseObjClass = objc_getClass([responseClassName_ cStringUsingEncoding:NSASCIIStringEncoding]);
     
         responseObj = [responseObjClass objectForDictionary:jsonContent];
-        
+    
+    
 
-	if(!jsonContent || ([jsonContent objectForKey:JSON_RESPONSE_DESCRIPTION_KEY]==[NSNull null] || [[jsonContent objectForKey:JSON_RESPONSE_DESCRIPTION_KEY]count]==0 )){
+	if(!jsonContent || ([jsonContent objectForKey:JSON_RESPONSE_DESCRIPTION_KEY]==[NSNull null] /*|| [[jsonContent objectForKey:JSON_RESPONSE_DESCRIPTION_KEY]count]==0*/ )){
 
         if([delegate_ respondsToSelector:@selector(didReceiveJSONException)])
             [delegate_ didReceiveJSONException];

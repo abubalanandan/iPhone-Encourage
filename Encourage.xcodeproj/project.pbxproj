@@ -98,6 +98,8 @@
 		70761A411A1DBCF600FE644F /* JHLogoutAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A401A1DBCF600FE644F /* JHLogoutAPIRequest.m */; };
 		70761A441A1DBD3500FE644F /* JHLogoutAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A431A1DBD3500FE644F /* JHLogoutAPIResponse.m */; };
 		70761A471A1DBD4800FE644F /* JHLogoutAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A461A1DBD4800FE644F /* JHLogoutAPI.m */; };
+		70AE03AA1A3A12D600FF3074 /* JHCareTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03A91A3A12D600FF3074 /* JHCareTask.m */; };
+		70AE03AD1A3A13E000FF3074 /* JHAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03AC1A3A13E000FF3074 /* JHAlert.m */; };
 		70C366C919F8712100B5F30B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70C366C819F8712100B5F30B /* Localizable.strings */; };
 		70C366CC19F9708800B5F30B /* JHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C366CB19F9708800B5F30B /* JHBaseViewController.m */; };
 		70F10A8D19706C92002513D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F10A8C19706C92002513D1 /* Foundation.framework */; };
@@ -285,6 +287,10 @@
 		70761A431A1DBD3500FE644F /* JHLogoutAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHLogoutAPIResponse.m; path = Logout/JHLogoutAPIResponse.m; sourceTree = "<group>"; };
 		70761A451A1DBD4800FE644F /* JHLogoutAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHLogoutAPI.h; path = Logout/JHLogoutAPI.h; sourceTree = "<group>"; };
 		70761A461A1DBD4800FE644F /* JHLogoutAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHLogoutAPI.m; path = Logout/JHLogoutAPI.m; sourceTree = "<group>"; };
+		70AE03A81A3A12D600FF3074 /* JHCareTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCareTask.h; sourceTree = "<group>"; };
+		70AE03A91A3A12D600FF3074 /* JHCareTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCareTask.m; sourceTree = "<group>"; };
+		70AE03AB1A3A13E000FF3074 /* JHAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAlert.h; sourceTree = "<group>"; };
+		70AE03AC1A3A13E000FF3074 /* JHAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAlert.m; sourceTree = "<group>"; };
 		70C366C819F8712100B5F30B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		70C366CA19F9708800B5F30B /* JHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHBaseViewController.h; sourceTree = "<group>"; };
 		70C366CB19F9708800B5F30B /* JHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHBaseViewController.m; sourceTree = "<group>"; };
@@ -519,6 +525,10 @@
 				70F58CD51A1292EB004A065E /* JHTimelineItem.m */,
 				70F58CD71A1293FB004A065E /* JHTimelineDetailItem.h */,
 				70F58CD81A1293FB004A065E /* JHTimelineDetailItem.m */,
+				70AE03A81A3A12D600FF3074 /* JHCareTask.h */,
+				70AE03A91A3A12D600FF3074 /* JHCareTask.m */,
+				70AE03AB1A3A13E000FF3074 /* JHAlert.h */,
+				70AE03AC1A3A13E000FF3074 /* JHAlert.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -906,8 +916,10 @@
 				703995021A1CAB8D00ECA291 /* UIImage+WebP.m in Sources */,
 				7028135B19F8008C00643D17 /* ASIDataCompressor.m in Sources */,
 				702813C219F8287400643D17 /* Utility.m in Sources */,
+				70AE03AA1A3A12D600FF3074 /* JHCareTask.m in Sources */,
 				702813B819F807C200643D17 /* JHDataManager.m in Sources */,
 				7028136819F8008C00643D17 /* SBJsonWriter.m in Sources */,
+				70AE03AD1A3A13E000FF3074 /* JHAlert.m in Sources */,
 				702813A219F803CB00643D17 /* JHWebService.m in Sources */,
 				7028135919F8008C00643D17 /* KVCBaseObject.m in Sources */,
 				70761A411A1DBCF600FE644F /* JHLogoutAPIRequest.m in Sources */,

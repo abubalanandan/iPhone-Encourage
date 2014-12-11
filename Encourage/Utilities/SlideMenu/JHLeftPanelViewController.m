@@ -59,6 +59,8 @@
 
 
 - (void)loggedOutSuccessfully{
+    [[JHAppDelegate application].dataManager clearData];
+    [JHAppDelegate application].timelineVC = nil;
     [[JHAppDelegate application].navController popToRootViewControllerAnimated:NO];
     JHLoginViewController *vc = [[JHLoginViewController alloc]init];
     

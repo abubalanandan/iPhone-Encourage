@@ -11,6 +11,7 @@
 #import "JHActivityManager.h"
 #import "JHLocationManager.h"
 #import "JASidePanelController.h"
+#import "JHTimelineViewController.h"
 
 
 
@@ -30,6 +31,7 @@
 @property (strong, nonatomic) JHActivityManager *activityManager;
 @property (strong, nonatomic) UINavigationController *navController;
 @property (strong, nonatomic) JASidePanelController *sidePanel;
+@property (strong, nonatomic) JHTimelineViewController *timelineVC;
 
 
 

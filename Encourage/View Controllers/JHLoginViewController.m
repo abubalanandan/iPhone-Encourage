@@ -56,7 +56,7 @@
     loginRequest.password = self.passwordField.text;
     loginRequest.emailAddress = @"abu.316@gmail.com";
     loginRequest.password = @"Sachin@10";
-    loginRequest.gcmRegistrationId = ([JHAppDelegate application].dataManager.deviceToken)?[JHAppDelegate application].dataManager.deviceToken:@"";
+    loginRequest.gcmRegistrationId = ([JHAppDelegate application].dataManager.deviceToken)?[JHAppDelegate application].dataManager.deviceToken:@"afas";
     loginRequest.deviceType = @"iOS";
     loginRequest.timeZone = @"Asia/Kolkata";
     loginRequest.dateTime = @"20-10-2014 14:54:11";
