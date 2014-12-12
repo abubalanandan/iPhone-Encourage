@@ -7,8 +7,12 @@
 //
 
 #import "JHBaseViewController.h"
+#import "JHRecentCareTasksCell.h"
+#import "JHCareTaskStatusAPI.h"
 
-@interface JHCareTaskListViewController : JHBaseViewController<UITableViewDataSource,UITableViewDelegate>
+@interface JHCareTaskListViewController : JHBaseViewController<UITableViewDataSource,UITableViewDelegate,JHCareTaskActionDelegate,JHCareTaskStatusAPIDelegate>{
+    JHCareTaskStatusAPI *careTaskStatusAPI;
+}
 - (IBAction)close:(id)sender;
 
 @end

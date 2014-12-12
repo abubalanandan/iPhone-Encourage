@@ -14,6 +14,7 @@
 @interface JHCareTaskListViewController ()
 @property NSMutableArray *careTasks;
 @property IBOutlet UITableView *careTasksTV;
+@property JHCareTask *markedCareTask;
 @end
 
 @implementation JHCareTaskListViewController
@@ -22,6 +23,8 @@
     self = [super init];
     if (self) {
         self.careTasks = [[NSMutableArray alloc]init];
+        careTaskStatusAPI = [[JHCareTaskStatusAPI alloc]init];
+        careTaskStatusAPI.delegate = self;
     }
     return self;
 }
@@ -55,6 +58,8 @@
     
     JHCareTask *item = (JHCareTask *)[self.careTasks objectAtIndex:indexPath.row];
     [self configureCell:cell withItem:item];
+    cell.caretask = item;
+    cell.delegate = self;
     return cell;
 }
 
@@ -137,5 +142,19 @@
     
 }
 
+#pragma mark - Care task action delegate
+
+- (void)markCareTask:(JHCareTask *)caretask AsDone:(BOOL)done{
+    NSString *status = done?@"D":@"ND";
+    self.markedCareTask = caretask;
+    [careTaskStatusAPI updateCareTaskStatus:caretask status:status];
+}
+
+- (void)didUpdateCaretaskStatus:(JHCareTaskStatusAPIResponse *)responseObj{
+    [self.careTasks removeObject:self.markedCareTask];
+    [[JHAppDelegate application].dataManager.careTasks removeObject:self.markedCareTask];
+    self.markedCareTask = nil;
+    [self.careTasksTV reloadData];
+}
 
 @end

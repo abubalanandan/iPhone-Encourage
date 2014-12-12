@@ -49,7 +49,7 @@
                                 <color key="backgroundColor" red="0.86274509799999999" green="0.8862745098" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="fSg-ey-IUE">
-                                <rect key="frame" x="0.0" y="52" width="300" height="1.0000000055879354"/>
+                                <rect key="frame" x="0.0" y="52" width="300" height="1"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eMs-xR-7Xh">
@@ -58,6 +58,9 @@
                                 <state key="normal" image="done.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="done:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Qre-wP-SGo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zxY-zQ-kl4">
                                 <rect key="frame" x="211" y="57" width="76" height="22"/>
@@ -65,6 +68,9 @@
                                 <state key="normal" image="not_done.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="notDone:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zUu-fb-XRG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

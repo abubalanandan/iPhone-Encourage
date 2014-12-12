@@ -20,4 +20,16 @@
     // Configure the view for the selected state
 }
 
+
+-(IBAction)done:(id)sender{
+    if ([self.delegate respondsToSelector:@selector(markCareTask:AsDone:)]) {
+        [self.delegate markCareTask:self.caretask AsDone:YES];
+    }
+}
+-(IBAction)notDone:(id)sender{
+    if ([self.delegate respondsToSelector:@selector(markCareTask:AsDone:)]) {
+        [self.delegate markCareTask:self.caretask AsDone:NO];
+    }
+}
+
 @end

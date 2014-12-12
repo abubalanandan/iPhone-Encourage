@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JHCareTask.h"
+#import "JHRecentCareTasksCell.h"
 
 @interface JHCareTaskDetailViewCell : UITableViewCell
 @property IBOutlet UIView *detailsView;
@@ -16,5 +18,10 @@
 @property IBOutlet UIImageView *medImageView;
 @property IBOutlet UIButton *doneButton;
 @property IBOutlet UIButton *notDoneButton;
+@property JHCareTask *caretask;
+@property id<JHCareTaskActionDelegate>delegate;
 
+
+-(IBAction)done:(id)sender;
+-(IBAction)notDone:(id)sender;
 @end
