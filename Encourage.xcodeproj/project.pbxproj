@@ -96,6 +96,10 @@
 		703AE31B1A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE31A1A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.m */; };
 		703AE31E1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE31D1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.m */; };
 		703AE3211A3B8AD600959C5A /* JHCareTaskStatusAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE3201A3B8AD600959C5A /* JHCareTaskStatusAPI.m */; };
+		703AE3251A3B995A00959C5A /* JHReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE3231A3B995A00959C5A /* JHReportViewController.m */; };
+		703AE3261A3B995A00959C5A /* JHReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703AE3241A3B995A00959C5A /* JHReportViewController.xib */; };
+		704945201A3BA85B00D8933B /* DVSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7049451F1A3BA85B00D8933B /* DVSwitch.m */; };
+		704945221A3BABEF00D8933B /* report_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 704945211A3BABEF00D8933B /* report_bg@2x.png */; };
 		7075D1201A17ED190095AA05 /* JHTimelineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7075D11E1A17ED190095AA05 /* JHTimelineCell.m */; };
 		7075D1211A17ED190095AA05 /* JHTimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7075D11F1A17ED190095AA05 /* JHTimelineCell.xib */; };
 		70761A371A1DA6DD00FE644F /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A341A1DA6DD00FE644F /* JASidePanelController.m */; };
@@ -305,6 +309,12 @@
 		703AE31D1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHCareTaskStatusAPIResponse.m; path = CareTask/JHCareTaskStatusAPIResponse.m; sourceTree = "<group>"; };
 		703AE31F1A3B8AD600959C5A /* JHCareTaskStatusAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHCareTaskStatusAPI.h; path = CareTask/JHCareTaskStatusAPI.h; sourceTree = "<group>"; };
 		703AE3201A3B8AD600959C5A /* JHCareTaskStatusAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHCareTaskStatusAPI.m; path = CareTask/JHCareTaskStatusAPI.m; sourceTree = "<group>"; };
+		703AE3221A3B995A00959C5A /* JHReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHReportViewController.h; sourceTree = "<group>"; };
+		703AE3231A3B995A00959C5A /* JHReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHReportViewController.m; sourceTree = "<group>"; };
+		703AE3241A3B995A00959C5A /* JHReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHReportViewController.xib; sourceTree = "<group>"; };
+		7049451E1A3BA85B00D8933B /* DVSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSwitch.h; sourceTree = "<group>"; };
+		7049451F1A3BA85B00D8933B /* DVSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSwitch.m; sourceTree = "<group>"; };
+		704945211A3BABEF00D8933B /* report_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "report_bg@2x.png"; sourceTree = "<group>"; };
 		7075D11D1A17ED190095AA05 /* JHTimelineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHTimelineCell.h; path = Cells/JHTimelineCell.h; sourceTree = "<group>"; };
 		7075D11E1A17ED190095AA05 /* JHTimelineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHTimelineCell.m; path = Cells/JHTimelineCell.m; sourceTree = "<group>"; };
 		7075D11F1A17ED190095AA05 /* JHTimelineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JHTimelineCell.xib; path = Cells/JHTimelineCell.xib; sourceTree = "<group>"; };
@@ -401,6 +411,7 @@
 		7028132C19F8008C00643D17 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				7049451D1A3BA85B00D8933B /* DVSwitch */,
 				70761A321A1DA6DD00FE644F /* SlideMenu */,
 				703994D41A1CAB8D00ECA291 /* SDWebImage */,
 				703994B41A1C90AB00ECA291 /* MBProgressHUD */,
@@ -540,6 +551,9 @@
 				703AE30E1A3B6CC200959C5A /* JHCareTaskListViewController.h */,
 				703AE30F1A3B6CC200959C5A /* JHCareTaskListViewController.m */,
 				703AE3101A3B6CC200959C5A /* JHCareTaskListViewController.xib */,
+				703AE3221A3B995A00959C5A /* JHReportViewController.h */,
+				703AE3231A3B995A00959C5A /* JHReportViewController.m */,
+				703AE3241A3B995A00959C5A /* JHReportViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -547,6 +561,7 @@
 		7028137D19F8022200643D17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				704945211A3BABEF00D8933B /* report_bg@2x.png */,
 				70AE03CE1A3B56C700FF3074 /* lunch_mod@2x.png */,
 				70AE03CA1A3B561200FF3074 /* lunch@2x.png */,
 				70AE03CB1A3B561200FF3074 /* doc@2x.png */,
@@ -725,6 +740,15 @@
 				703AE3201A3B8AD600959C5A /* JHCareTaskStatusAPI.m */,
 			);
 			name = CareTask;
+			sourceTree = "<group>";
+		};
+		7049451D1A3BA85B00D8933B /* DVSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				7049451E1A3BA85B00D8933B /* DVSwitch.h */,
+				7049451F1A3BA85B00D8933B /* DVSwitch.m */,
+			);
+			path = DVSwitch;
 			sourceTree = "<group>";
 		};
 		7075D11C1A17ECF90095AA05 /* Cells */ = {
@@ -950,6 +974,7 @@
 				7028139019F8022200643D17 /* separate_form@2x.png in Resources */,
 				7028137A19F8016F00643D17 /* JHRegistrationViewController.xib in Resources */,
 				7028137C19F8016F00643D17 /* JHTimelineViewController.xib in Resources */,
+				704945221A3BABEF00D8933B /* report_bg@2x.png in Resources */,
 				7039950E1A1CC3A900ECA291 /* not_icon@2x.png in Resources */,
 				703994CD1A1CA02400ECA291 /* 120x120.png in Resources */,
 				70F10A9719706C92002513D1 /* InfoPlist.strings in Resources */,
@@ -963,6 +988,7 @@
 				7028138D19F8022200643D17 /* login_logo@2x.png in Resources */,
 				70AE03B21A3A358B00FF3074 /* JHRecentAlertsViewController.xib in Resources */,
 				70AE03BE1A3B4B3500FF3074 /* JHRecentCareTasksViewController.xib in Resources */,
+				703AE3261A3B995A00959C5A /* JHReportViewController.xib in Resources */,
 				703994C41A1C9CA000ECA291 /* report_butonhover@2x.png in Resources */,
 				7028139119F8022200643D17 /* username_icon@2x.png in Resources */,
 				703994BE1A1C9AAD00ECA291 /* translucent_bottom@2x.png in Resources */,
@@ -1032,6 +1058,7 @@
 				703AE31E1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.m in Sources */,
 				7028135919F8008C00643D17 /* KVCBaseObject.m in Sources */,
 				70761A411A1DBCF600FE644F /* JHLogoutAPIRequest.m in Sources */,
+				703AE3251A3B995A00959C5A /* JHReportViewController.m in Sources */,
 				7028136619F8008C00643D17 /* SBJsonBase.m in Sources */,
 				70AE03B81A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.m in Sources */,
 				702813AD19F8061700643D17 /* JHAppDelegate.m in Sources */,
@@ -1047,6 +1074,7 @@
 				70761A371A1DA6DD00FE644F /* JASidePanelController.m in Sources */,
 				703995041A1CAB8D00ECA291 /* UIImageView+WebCache.m in Sources */,
 				703994FF1A1CAB8D00ECA291 /* UIButton+WebCache.m in Sources */,
+				704945201A3BA85B00D8933B /* DVSwitch.m in Sources */,
 				7028136719F8008C00643D17 /* SBJsonParser.m in Sources */,
 				7028137B19F8016F00643D17 /* JHTimelineViewController.m in Sources */,
 				703994F81A1CAB8D00ECA291 /* SDImageCache.m in Sources */,

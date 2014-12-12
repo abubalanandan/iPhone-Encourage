@@ -15,6 +15,7 @@
 #import "JHHudController.h"
 #import "JHRecentCareTasksViewController.h"
 #import "JHRecentAlertsViewController.h"
+#import "JHReportViewController.h"
 
 @interface JHTimelineViewController ()
 @property int lastCount;
@@ -208,7 +209,8 @@
 }
 
 -(IBAction)reportButtonPressed:(id)sender{
-    
+    JHReportViewController *vc = [[JHReportViewController alloc]init];
+    [self presentViewController:vc animated:NO completion:nil];
 }
 
 -(IBAction)alertButtonPressed:(id)sender{
