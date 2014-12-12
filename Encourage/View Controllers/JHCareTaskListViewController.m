@@ -157,4 +157,8 @@
     [self.careTasksTV reloadData];
 }
 
+- (void)failedToUpdateCareTask{
+    [JHHudController displayHUDWithTitle:@"Failure" withMessage:@"Failed to Update CareTask status" time:3];
+}
+
 @end
