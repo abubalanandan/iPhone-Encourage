@@ -23,11 +23,18 @@
 
 
 -(IBAction)done:(id)sender{
-    [JHHudController displayHUDWithTitle:@"" withMessage:@"DONE" time:2];
+    if ([self.delegate respondsToSelector:@selector(markCareTask:AsDone:)]) {
+        [self.delegate markCareTask:self.caretask AsDone:YES];
+
+    }
+    
 }
 
 -(IBAction)notDone:(id)sender{
-    [JHHudController displayHUDWithTitle:@"" withMessage:@"NOT DONE!!!" time:2];
+    if ([self.delegate respondsToSelector:@selector(markCareTask:AsDone:)]) {
+        [self.delegate markCareTask:self.caretask AsDone:NO];
+        
+    }
 
 }
 

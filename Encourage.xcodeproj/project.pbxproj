@@ -93,6 +93,9 @@
 		703AE3121A3B6CC200959C5A /* JHCareTaskListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703AE3101A3B6CC200959C5A /* JHCareTaskListViewController.xib */; };
 		703AE3161A3B6E1D00959C5A /* JHCareTaskDetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE3141A3B6E1D00959C5A /* JHCareTaskDetailViewCell.m */; };
 		703AE3171A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703AE3151A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib */; };
+		703AE31B1A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE31A1A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.m */; };
+		703AE31E1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE31D1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.m */; };
+		703AE3211A3B8AD600959C5A /* JHCareTaskStatusAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE3201A3B8AD600959C5A /* JHCareTaskStatusAPI.m */; };
 		7075D1201A17ED190095AA05 /* JHTimelineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7075D11E1A17ED190095AA05 /* JHTimelineCell.m */; };
 		7075D1211A17ED190095AA05 /* JHTimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7075D11F1A17ED190095AA05 /* JHTimelineCell.xib */; };
 		70761A371A1DA6DD00FE644F /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A341A1DA6DD00FE644F /* JASidePanelController.m */; };
@@ -296,6 +299,12 @@
 		703AE3131A3B6E1D00959C5A /* JHCareTaskDetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCareTaskDetailViewCell.h; sourceTree = "<group>"; };
 		703AE3141A3B6E1D00959C5A /* JHCareTaskDetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCareTaskDetailViewCell.m; sourceTree = "<group>"; };
 		703AE3151A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHCareTaskDetailViewCell.xib; sourceTree = "<group>"; };
+		703AE3191A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCareTaskStatusAPIRequest.h; sourceTree = "<group>"; };
+		703AE31A1A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCareTaskStatusAPIRequest.m; sourceTree = "<group>"; };
+		703AE31C1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHCareTaskStatusAPIResponse.h; path = CareTask/JHCareTaskStatusAPIResponse.h; sourceTree = "<group>"; };
+		703AE31D1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHCareTaskStatusAPIResponse.m; path = CareTask/JHCareTaskStatusAPIResponse.m; sourceTree = "<group>"; };
+		703AE31F1A3B8AD600959C5A /* JHCareTaskStatusAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHCareTaskStatusAPI.h; path = CareTask/JHCareTaskStatusAPI.h; sourceTree = "<group>"; };
+		703AE3201A3B8AD600959C5A /* JHCareTaskStatusAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHCareTaskStatusAPI.m; path = CareTask/JHCareTaskStatusAPI.m; sourceTree = "<group>"; };
 		7075D11D1A17ED190095AA05 /* JHTimelineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHTimelineCell.h; path = Cells/JHTimelineCell.h; sourceTree = "<group>"; };
 		7075D11E1A17ED190095AA05 /* JHTimelineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHTimelineCell.m; path = Cells/JHTimelineCell.m; sourceTree = "<group>"; };
 		7075D11F1A17ED190095AA05 /* JHTimelineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JHTimelineCell.xib; path = Cells/JHTimelineCell.xib; sourceTree = "<group>"; };
@@ -434,6 +443,7 @@
 		7028133119F8008C00643D17 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				703AE3181A3B8A7900959C5A /* CareTask */,
 				70761A3E1A1DBCD900FE644F /* Logout */,
 				70F58CCD1A128F2F004A065E /* Timeline */,
 				702813A719F804CD00643D17 /* Login */,
@@ -702,6 +712,19 @@
 				703994F51A1CAB8D00ECA291 /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		703AE3181A3B8A7900959C5A /* CareTask */ = {
+			isa = PBXGroup;
+			children = (
+				703AE3191A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.h */,
+				703AE31A1A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.m */,
+				703AE31C1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.h */,
+				703AE31D1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.m */,
+				703AE31F1A3B8AD600959C5A /* JHCareTaskStatusAPI.h */,
+				703AE3201A3B8AD600959C5A /* JHCareTaskStatusAPI.m */,
+			);
+			name = CareTask;
 			sourceTree = "<group>";
 		};
 		7075D11C1A17ECF90095AA05 /* Cells */ = {
@@ -992,6 +1015,7 @@
 				703994FD1A1CAB8D00ECA291 /* SDWebImageManager.m in Sources */,
 				7028136019F8008C00643D17 /* ASIInputStream.m in Sources */,
 				702813AA19F804EE00643D17 /* JHLoginAPI.m in Sources */,
+				703AE31B1A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.m in Sources */,
 				7028135D19F8008C00643D17 /* ASIDownloadCache.m in Sources */,
 				70F58CDC1A129653004A065E /* JHTimelineAPI.m in Sources */,
 				7028139D19F8038700643D17 /* JHError.m in Sources */,
@@ -1005,6 +1029,7 @@
 				7028136819F8008C00643D17 /* SBJsonWriter.m in Sources */,
 				70AE03AD1A3A13E000FF3074 /* JHAlert.m in Sources */,
 				702813A219F803CB00643D17 /* JHWebService.m in Sources */,
+				703AE31E1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.m in Sources */,
 				7028135919F8008C00643D17 /* KVCBaseObject.m in Sources */,
 				70761A411A1DBCF600FE644F /* JHLogoutAPIRequest.m in Sources */,
 				7028136619F8008C00643D17 /* SBJsonBase.m in Sources */,
@@ -1012,6 +1037,7 @@
 				702813AD19F8061700643D17 /* JHAppDelegate.m in Sources */,
 				702813B919F807C200643D17 /* JHLocationManager.m in Sources */,
 				7028137919F8016F00643D17 /* JHRegistrationViewController.m in Sources */,
+				703AE3211A3B8AD600959C5A /* JHCareTaskStatusAPI.m in Sources */,
 				703AE3161A3B6E1D00959C5A /* JHCareTaskDetailViewCell.m in Sources */,
 				70F58CD01A128F79004A065E /* JHTimelineAPIRequest.m in Sources */,
 				7028139C19F8038700643D17 /* JHBaseResponse.m in Sources */,

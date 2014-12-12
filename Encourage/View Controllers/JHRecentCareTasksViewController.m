@@ -16,6 +16,7 @@
 @property IBOutlet UITableView *careTasksTV;
 @property IBOutlet UIButton *viewAllCTButton;
 @property NSMutableArray *recentCareTasks;
+@property JHCareTask *markedCareTask;
 
 @end
 
@@ -25,6 +26,8 @@
     self = [super init];
     if(self){
         self.recentCareTasks = [[NSMutableArray alloc]init];
+        careTaskStatusAPI = [[JHCareTaskStatusAPI alloc]init];
+        careTaskStatusAPI.delegate = self;
     }
     return self;
 }
@@ -109,6 +112,32 @@
     cell.whiteView.layer.cornerRadius = 2.0;
     cell.whiteView.layer.shadowOpacity = 0.5;
     cell.whiteView.layer.shadowOffset = CGSizeMake(-1, -1);
+    cell.caretask = careTask;
+    cell.delegate = self;
     return cell;
+}
+
+
+#pragma mark - Recent CareTask Cell Delegate
+
+- (void)markCareTask:(JHCareTask *)caretask AsDone:(BOOL)done{
+    NSString *status = done?@"D":@"ND";
+    self.markedCareTask = caretask;
+    [careTaskStatusAPI updateCareTaskStatus:caretask status:status];
+}
+
+
+#pragma mark - CareTask Status API delegate
+
+- (void)didUpdateCaretaskStatus:(JHCareTaskStatusAPIResponse *)responseObj{
+    [self.recentCareTasks removeObject:self.markedCareTask];
+    [[JHAppDelegate application].dataManager.careTasks removeObject:self.markedCareTask];
+    self.markedCareTask = nil;
+    [self.careTasksTV reloadData];
+
+}
+
+- (void)failedToUpdateCareTask{
+    [JHHudController displayHUDWithTitle:@"Failure" withMessage:@"Failed to update caretask status" time:3];
 }
 @end

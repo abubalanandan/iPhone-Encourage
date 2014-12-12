@@ -129,7 +129,7 @@
     
     [self configureCell:sizingCell withItem:[self.careTasks objectAtIndex:indexPath.row]];
     
-    return sizingCell.whiteView.bounds.size.height+40;
+    return sizingCell.whiteView.bounds.size.height+20;
 }
 
 - (IBAction)close:(id)sender{
