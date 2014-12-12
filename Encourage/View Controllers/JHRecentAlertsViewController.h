@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JHRecentAlertsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface JHRecentAlertsViewController : JHBaseViewController<UITableViewDataSource,UITableViewDelegate>
 -(IBAction)closeButtonPressed:(id)sender;
 @end

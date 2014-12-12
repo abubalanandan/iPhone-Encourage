@@ -89,6 +89,10 @@
 		7039950E1A1CC3A900ECA291 /* not_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7039950A1A1CC3A900ECA291 /* not_icon@2x.png */; };
 		7039950F1A1CC3A900ECA291 /* not_iconhover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7039950B1A1CC3A900ECA291 /* not_iconhover@2x.png */; };
 		703995111A1CC46E00ECA291 /* menu_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 703995101A1CC46E00ECA291 /* menu_select@2x.png */; };
+		703AE3111A3B6CC200959C5A /* JHCareTaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE30F1A3B6CC200959C5A /* JHCareTaskListViewController.m */; };
+		703AE3121A3B6CC200959C5A /* JHCareTaskListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703AE3101A3B6CC200959C5A /* JHCareTaskListViewController.xib */; };
+		703AE3161A3B6E1D00959C5A /* JHCareTaskDetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE3141A3B6E1D00959C5A /* JHCareTaskDetailViewCell.m */; };
+		703AE3171A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703AE3151A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib */; };
 		7075D1201A17ED190095AA05 /* JHTimelineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7075D11E1A17ED190095AA05 /* JHTimelineCell.m */; };
 		7075D1211A17ED190095AA05 /* JHTimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7075D11F1A17ED190095AA05 /* JHTimelineCell.xib */; };
 		70761A371A1DA6DD00FE644F /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A341A1DA6DD00FE644F /* JASidePanelController.m */; };
@@ -105,6 +109,16 @@
 		70AE03B41A3A37B900FF3074 /* close_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70AE03B31A3A37B900FF3074 /* close_button@2x.png */; };
 		70AE03B81A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03B61A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.m */; };
 		70AE03B91A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70AE03B71A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.xib */; };
+		70AE03BC1A3B4B2200FF3074 /* JHRecentCareTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03BB1A3B4B2200FF3074 /* JHRecentCareTasksViewController.m */; };
+		70AE03BE1A3B4B3500FF3074 /* JHRecentCareTasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70AE03BD1A3B4B3500FF3074 /* JHRecentCareTasksViewController.xib */; };
+		70AE03C21A3B4EC600FF3074 /* JHRecentCareTasksCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03C01A3B4EC600FF3074 /* JHRecentCareTasksCell.m */; };
+		70AE03C31A3B4EC600FF3074 /* JHRecentCareTasksCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70AE03C11A3B4EC600FF3074 /* JHRecentCareTasksCell.xib */; };
+		70AE03C51A3B502F00FF3074 /* med@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70AE03C41A3B502F00FF3074 /* med@2x.png */; };
+		70AE03C81A3B524800FF3074 /* not_done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70AE03C61A3B524800FF3074 /* not_done@2x.png */; };
+		70AE03C91A3B524800FF3074 /* done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70AE03C71A3B524800FF3074 /* done@2x.png */; };
+		70AE03CC1A3B561200FF3074 /* lunch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70AE03CA1A3B561200FF3074 /* lunch@2x.png */; };
+		70AE03CD1A3B561200FF3074 /* doc@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70AE03CB1A3B561200FF3074 /* doc@2x.png */; };
+		70AE03CF1A3B56C700FF3074 /* lunch_mod@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70AE03CE1A3B56C700FF3074 /* lunch_mod@2x.png */; };
 		70C366C919F8712100B5F30B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70C366C819F8712100B5F30B /* Localizable.strings */; };
 		70C366CC19F9708800B5F30B /* JHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C366CB19F9708800B5F30B /* JHBaseViewController.m */; };
 		70F10A8D19706C92002513D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F10A8C19706C92002513D1 /* Foundation.framework */; };
@@ -276,6 +290,12 @@
 		7039950A1A1CC3A900ECA291 /* not_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "not_icon@2x.png"; sourceTree = "<group>"; };
 		7039950B1A1CC3A900ECA291 /* not_iconhover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "not_iconhover@2x.png"; sourceTree = "<group>"; };
 		703995101A1CC46E00ECA291 /* menu_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_select@2x.png"; sourceTree = "<group>"; };
+		703AE30E1A3B6CC200959C5A /* JHCareTaskListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCareTaskListViewController.h; sourceTree = "<group>"; };
+		703AE30F1A3B6CC200959C5A /* JHCareTaskListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCareTaskListViewController.m; sourceTree = "<group>"; };
+		703AE3101A3B6CC200959C5A /* JHCareTaskListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHCareTaskListViewController.xib; sourceTree = "<group>"; };
+		703AE3131A3B6E1D00959C5A /* JHCareTaskDetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCareTaskDetailViewCell.h; sourceTree = "<group>"; };
+		703AE3141A3B6E1D00959C5A /* JHCareTaskDetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCareTaskDetailViewCell.m; sourceTree = "<group>"; };
+		703AE3151A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHCareTaskDetailViewCell.xib; sourceTree = "<group>"; };
 		7075D11D1A17ED190095AA05 /* JHTimelineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHTimelineCell.h; path = Cells/JHTimelineCell.h; sourceTree = "<group>"; };
 		7075D11E1A17ED190095AA05 /* JHTimelineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHTimelineCell.m; path = Cells/JHTimelineCell.m; sourceTree = "<group>"; };
 		7075D11F1A17ED190095AA05 /* JHTimelineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JHTimelineCell.xib; path = Cells/JHTimelineCell.xib; sourceTree = "<group>"; };
@@ -303,6 +323,18 @@
 		70AE03B51A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRecentAlertsCellTableViewCell.h; sourceTree = "<group>"; };
 		70AE03B61A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRecentAlertsCellTableViewCell.m; sourceTree = "<group>"; };
 		70AE03B71A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHRecentAlertsCellTableViewCell.xib; sourceTree = "<group>"; };
+		70AE03BA1A3B4B2200FF3074 /* JHRecentCareTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRecentCareTasksViewController.h; sourceTree = "<group>"; };
+		70AE03BB1A3B4B2200FF3074 /* JHRecentCareTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRecentCareTasksViewController.m; sourceTree = "<group>"; };
+		70AE03BD1A3B4B3500FF3074 /* JHRecentCareTasksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHRecentCareTasksViewController.xib; sourceTree = "<group>"; };
+		70AE03BF1A3B4EC600FF3074 /* JHRecentCareTasksCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRecentCareTasksCell.h; sourceTree = "<group>"; };
+		70AE03C01A3B4EC600FF3074 /* JHRecentCareTasksCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRecentCareTasksCell.m; sourceTree = "<group>"; };
+		70AE03C11A3B4EC600FF3074 /* JHRecentCareTasksCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHRecentCareTasksCell.xib; sourceTree = "<group>"; };
+		70AE03C41A3B502F00FF3074 /* med@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "med@2x.png"; sourceTree = "<group>"; };
+		70AE03C61A3B524800FF3074 /* not_done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "not_done@2x.png"; sourceTree = "<group>"; };
+		70AE03C71A3B524800FF3074 /* done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done@2x.png"; sourceTree = "<group>"; };
+		70AE03CA1A3B561200FF3074 /* lunch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lunch@2x.png"; sourceTree = "<group>"; };
+		70AE03CB1A3B561200FF3074 /* doc@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doc@2x.png"; sourceTree = "<group>"; };
+		70AE03CE1A3B56C700FF3074 /* lunch_mod@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lunch_mod@2x.png"; sourceTree = "<group>"; };
 		70C366C819F8712100B5F30B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		70C366CA19F9708800B5F30B /* JHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHBaseViewController.h; sourceTree = "<group>"; };
 		70C366CB19F9708800B5F30B /* JHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHBaseViewController.m; sourceTree = "<group>"; };
@@ -492,6 +524,12 @@
 				70AE03AE1A3A357300FF3074 /* JHRecentAlertsViewController.h */,
 				70AE03AF1A3A357300FF3074 /* JHRecentAlertsViewController.m */,
 				70AE03B11A3A358B00FF3074 /* JHRecentAlertsViewController.xib */,
+				70AE03BA1A3B4B2200FF3074 /* JHRecentCareTasksViewController.h */,
+				70AE03BB1A3B4B2200FF3074 /* JHRecentCareTasksViewController.m */,
+				70AE03BD1A3B4B3500FF3074 /* JHRecentCareTasksViewController.xib */,
+				703AE30E1A3B6CC200959C5A /* JHCareTaskListViewController.h */,
+				703AE30F1A3B6CC200959C5A /* JHCareTaskListViewController.m */,
+				703AE3101A3B6CC200959C5A /* JHCareTaskListViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -499,6 +537,12 @@
 		7028137D19F8022200643D17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				70AE03CE1A3B56C700FF3074 /* lunch_mod@2x.png */,
+				70AE03CA1A3B561200FF3074 /* lunch@2x.png */,
+				70AE03CB1A3B561200FF3074 /* doc@2x.png */,
+				70AE03C61A3B524800FF3074 /* not_done@2x.png */,
+				70AE03C71A3B524800FF3074 /* done@2x.png */,
+				70AE03C41A3B502F00FF3074 /* med@2x.png */,
 				70AE03B31A3A37B900FF3074 /* close_button@2x.png */,
 				703995101A1CC46E00ECA291 /* menu_select@2x.png */,
 				703995081A1CC3A900ECA291 /* et_icon@2x.png */,
@@ -669,6 +713,12 @@
 				70AE03B51A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.h */,
 				70AE03B61A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.m */,
 				70AE03B71A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.xib */,
+				70AE03BF1A3B4EC600FF3074 /* JHRecentCareTasksCell.h */,
+				70AE03C01A3B4EC600FF3074 /* JHRecentCareTasksCell.m */,
+				70AE03C11A3B4EC600FF3074 /* JHRecentCareTasksCell.xib */,
+				703AE3131A3B6E1D00959C5A /* JHCareTaskDetailViewCell.h */,
+				703AE3141A3B6E1D00959C5A /* JHCareTaskDetailViewCell.m */,
+				703AE3151A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -870,7 +920,10 @@
 			files = (
 				7039950F1A1CC3A900ECA291 /* not_iconhover@2x.png in Resources */,
 				7039950D1A1CC3A900ECA291 /* et_iconhover@2x.png in Resources */,
+				70AE03CF1A3B56C700FF3074 /* lunch_mod@2x.png in Resources */,
+				70AE03C51A3B502F00FF3074 /* med@2x.png in Resources */,
 				7028138E19F8022200643D17 /* password_icon@2x.png in Resources */,
+				70AE03C81A3B524800FF3074 /* not_done@2x.png in Resources */,
 				7028139019F8022200643D17 /* separate_form@2x.png in Resources */,
 				7028137A19F8016F00643D17 /* JHRegistrationViewController.xib in Resources */,
 				7028137C19F8016F00643D17 /* JHTimelineViewController.xib in Resources */,
@@ -886,12 +939,16 @@
 				703994BC1A1C9A0800ECA291 /* page_bg@2x.png in Resources */,
 				7028138D19F8022200643D17 /* login_logo@2x.png in Resources */,
 				70AE03B21A3A358B00FF3074 /* JHRecentAlertsViewController.xib in Resources */,
+				70AE03BE1A3B4B3500FF3074 /* JHRecentCareTasksViewController.xib in Resources */,
 				703994C41A1C9CA000ECA291 /* report_butonhover@2x.png in Resources */,
 				7028139119F8022200643D17 /* username_icon@2x.png in Resources */,
 				703994BE1A1C9AAD00ECA291 /* translucent_bottom@2x.png in Resources */,
 				7028138A19F8022200643D17 /* login_bg@2x.png in Resources */,
+				70AE03CD1A3B561200FF3074 /* doc@2x.png in Resources */,
+				703AE3171A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib in Resources */,
 				7028138C19F8022200643D17 /* login_form@2x.png in Resources */,
 				703994D11A1CA02400ECA291 /* 80x80.png in Resources */,
+				70AE03CC1A3B561200FF3074 /* lunch@2x.png in Resources */,
 				703994CF1A1CA02400ECA291 /* 50x50.png in Resources */,
 				7028138B19F8022200643D17 /* login_buton@2x.png in Resources */,
 				703994C31A1C9CA000ECA291 /* report_buton@2x.png in Resources */,
@@ -903,8 +960,11 @@
 				7075D1211A17ED190095AA05 /* JHTimelineCell.xib in Resources */,
 				7039950C1A1CC3A900ECA291 /* et_icon@2x.png in Resources */,
 				7028138919F8022200643D17 /* Default@2x.png in Resources */,
+				703AE3121A3B6CC200959C5A /* JHCareTaskListViewController.xib in Resources */,
+				70AE03C91A3B524800FF3074 /* done@2x.png in Resources */,
 				703994D01A1CA02400ECA291 /* 58x58.png in Resources */,
 				7028138819F8022200643D17 /* Default-568h@2x.png in Resources */,
+				70AE03C31A3B4EC600FF3074 /* JHRecentCareTasksCell.xib in Resources */,
 				70761A3D1A1DA97B00FE644F /* JHLeftPanelViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -924,6 +984,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70AE03C21A3B4EC600FF3074 /* JHRecentCareTasksCell.m in Sources */,
 				703995001A1CAB8D00ECA291 /* UIImage+GIF.m in Sources */,
 				7028139B19F8038700643D17 /* JHBaseRequest.m in Sources */,
 				703994F61A1CAB8D00ECA291 /* MKAnnotationView+WebCache.m in Sources */,
@@ -939,6 +1000,7 @@
 				7028135B19F8008C00643D17 /* ASIDataCompressor.m in Sources */,
 				702813C219F8287400643D17 /* Utility.m in Sources */,
 				70AE03AA1A3A12D600FF3074 /* JHCareTask.m in Sources */,
+				70AE03BC1A3B4B2200FF3074 /* JHRecentCareTasksViewController.m in Sources */,
 				702813B819F807C200643D17 /* JHDataManager.m in Sources */,
 				7028136819F8008C00643D17 /* SBJsonWriter.m in Sources */,
 				70AE03AD1A3A13E000FF3074 /* JHAlert.m in Sources */,
@@ -950,6 +1012,7 @@
 				702813AD19F8061700643D17 /* JHAppDelegate.m in Sources */,
 				702813B919F807C200643D17 /* JHLocationManager.m in Sources */,
 				7028137919F8016F00643D17 /* JHRegistrationViewController.m in Sources */,
+				703AE3161A3B6E1D00959C5A /* JHCareTaskDetailViewCell.m in Sources */,
 				70F58CD01A128F79004A065E /* JHTimelineAPIRequest.m in Sources */,
 				7028139C19F8038700643D17 /* JHBaseResponse.m in Sources */,
 				70761A3C1A1DA97B00FE644F /* JHLeftPanelViewController.m in Sources */,
@@ -974,6 +1037,7 @@
 				70F58CD91A1293FB004A065E /* JHTimelineDetailItem.m in Sources */,
 				702813BF19F8084800643D17 /* JHLoginAPIResponse.m in Sources */,
 				703995031A1CAB8D00ECA291 /* UIImageView+HighlightedWebCache.m in Sources */,
+				703AE3111A3B6CC200959C5A /* JHCareTaskListViewController.m in Sources */,
 				703994B91A1C90AB00ECA291 /* MBProgressHUD.m in Sources */,
 				702813BC19F8083200643D17 /* JHLoginAPIRequest.m in Sources */,
 				703994BA1A1C90AB00ECA291 /* JHHudController.m in Sources */,

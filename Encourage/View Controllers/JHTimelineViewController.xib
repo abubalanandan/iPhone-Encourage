@@ -71,6 +71,9 @@
                     </state>
                     <state key="selected" backgroundImage="et_iconhover.png"/>
                     <state key="highlighted" backgroundImage="et_iconhover.png"/>
+                    <connections>
+                        <action selector="careTaskButtonPressed:" destination="-1" eventType="touchUpInside" id="th2-MD-YqB"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gTW-Md-NEK">
                     <rect key="frame" x="232" y="16" width="35" height="23"/>

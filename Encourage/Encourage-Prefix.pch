@@ -17,4 +17,5 @@
 #import "JHDataManager.h"
 #import "Constants.h"
 #import "Utility.h"
+#import "JHHudController.h"
 #endif

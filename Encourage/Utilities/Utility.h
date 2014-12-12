@@ -12,4 +12,6 @@
 
 + (BOOL)isNetworkAvailable ;
 + (NSString *)getFormattedDate;
++ (CGFloat)requiredHeightWithKey:(NSString *)key andValue:(NSString *)value forCellWidth:(CGFloat)cellWidth;
++ (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell;
 @end

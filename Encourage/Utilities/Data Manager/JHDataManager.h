@@ -16,5 +16,6 @@
 
 - (void)clearData;
 - (void)parseNotification:(NSString *)alertsNotification;
+- (NSArray *)getUnreadAlerts;
 
 @end

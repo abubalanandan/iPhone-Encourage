@@ -14,13 +14,32 @@
 @property IBOutlet UIButton *viewAllAlertsButton;
 @property IBOutlet UITableView *recentAlertsTV;
 @property IBOutlet UILabel *noAlertsLabel;
+@property NSMutableArray *recentAlertsArray;
 @end
 
 @implementation JHRecentAlertsViewController
 
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.recentAlertsArray = [[NSMutableArray alloc]init];
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.recentAlertsArray addObjectsFromArray:[[JHAppDelegate application].dataManager getUnreadAlerts]];
+    
+    //[self.recentAlertsTV setBackgroundView:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"page_bg"]]];
+    //[self.recentAlertsTV.backgroundView setBackgroundColor:[UIColor colorWithRed:220/255 green:226/255 blue:227/255 alpha:1]];
+    UIView *bgView = [[UIView alloc]init];
+    bgView.backgroundColor = PAGE_BG_COLOR;
+    
+    [self.recentAlertsTV setBackgroundView:bgView];
+    [self.recentAlertsTV reloadData];
     [self.viewAllAlertsButton setBackgroundColor:[UIColor darkGrayColor]];
     if ([JHAppDelegate application].dataManager.alerts.count ==0) {
         self.recentAlertsTV.hidden = YES;
@@ -50,7 +69,7 @@
 #pragma mark - Table View
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [JHAppDelegate application].dataManager.alerts.count;
+    return self.recentAlertsArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -64,11 +83,11 @@
         NSArray *nibs = [[NSBundle mainBundle]loadNibNamed:@"JHRecentAlertsCellTableViewCell" owner:self options:nil];
         cell = [nibs objectAtIndex:0];
     }
-    JHAlert *alert = [[JHAppDelegate application].dataManager.alerts objectAtIndex:indexPath.row];
+    JHAlert *alert = [self.recentAlertsArray objectAtIndex:indexPath.row];
     cell.alertTitleLabel.text = alert.title;
     cell.dateLabel.text = alert.dateTime;
     cell.whiteView.layer.cornerRadius = 2.0;
-    cell.whiteView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+    cell.whiteView.layer.shadowColor = [UIColor blackColor].CGColor;
     cell.whiteView.layer.shadowOffset = CGSizeMake(-1.0, -1.0);
     cell.whiteView.layer.shadowOpacity = 0.5;
     return cell;

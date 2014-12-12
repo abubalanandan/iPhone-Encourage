@@ -68,12 +68,22 @@
                 unreadAlertCount++;
             }
         }
-        [[JHAppDelegate application].timelineVC updateAlert:unreadAlertCount AndCareTask:self.careTasks.count];
+        [[JHAppDelegate application].timelineVC updateAlert:unreadAlertCount AndCareTask:(int)self.careTasks.count];
     }
         
-        
+    
+
 
 }
 
+- (NSArray *)getUnreadAlerts{
+    NSMutableArray *array = [[NSMutableArray alloc]init];
+    for(JHAlert *alert in self.alerts){
+        if ([alert.readStatus isEqualToString:NOTIFICATION_UNREAD]) {
+            [array addObject:alert];
+        }
+    }
+    return array;
+}
 
 @end

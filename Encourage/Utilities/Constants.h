@@ -55,6 +55,7 @@
 #define ACTIVITY_INDICATOR_DURATION 2
 #define ACTIVITY_INDICATOR_REPEAT_COUNT 0
 
+#define PAGE_BG_COLOR [UIColor colorWithRed:220.0/255.0 green:226.0/255.0 blue:227.0/255.0 alpha:1]
 
 /** alert tags **/
 
@@ -68,6 +69,10 @@
 #define NOTIFICATION_TYPE_ALERT @"alert"
 #define NOTIFICATION_TYPE_CARETASK @"caretask"
 #define NOTIFICATION_UNREAD @"unread"
+
+#define CARETASK_TYPE_MEDICATION @"Medication"
+#define CARETASK_TYPE_FOOD @"Diet Management"
+#define CARETASK_TYPE_DOC @"Appointment"
 
 
 

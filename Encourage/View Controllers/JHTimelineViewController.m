@@ -13,6 +13,7 @@
 #import "JHTimelineDetailItem.h"
 #import "UIImageView+WebCache.h"
 #import "JHHudController.h"
+#import "JHRecentCareTasksViewController.h"
 #import "JHRecentAlertsViewController.h"
 
 @interface JHTimelineViewController ()
@@ -112,7 +113,7 @@
 
     CGFloat detailViewHeight= 20;
     for (JHTimelineDetailItem *detail in details) {
-        CGFloat labelHeight = [self requiredHeightWithKey:detail.key andValue:detail.value forCellWidth:labelWidth];
+        CGFloat labelHeight = [Utility requiredHeightWithKey:detail.key andValue:detail.value forCellWidth:labelWidth];
         UILabel *keyLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, detailViewHeight, labelWidth, labelHeight)];
         UILabel *valueLabel = [[UILabel alloc]initWithFrame:CGRectMake(labelWidth+20, detailViewHeight, labelWidth, labelHeight)];
         [keyLabel setFont:[UIFont systemFontOfSize:12.0]];
@@ -145,25 +146,6 @@
     
 }
 
-
-- (CGFloat)requiredHeightWithKey:(NSString *)key andValue:(NSString *)value forCellWidth:(CGFloat)cellWidth{
-    CGSize constrainedSize = CGSizeMake(cellWidth  , 9999);
-    
-    NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                          [UIFont systemFontOfSize:12.0], NSFontAttributeName,
-                                          nil];
-    
-    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:key attributes:attributesDictionary];
-    
-    CGFloat requiredKeyHeight = CGRectGetHeight([string boundingRectWithSize:constrainedSize options:NSStringDrawingUsesLineFragmentOrigin context:nil]);
-    
-    NSMutableAttributedString *valueString = [[NSMutableAttributedString alloc]initWithString:value attributes:attributesDictionary];
-    CGFloat requiredValueHeight =CGRectGetHeight( [valueString boundingRectWithSize:constrainedSize options:NSStringDrawingUsesLineFragmentOrigin context:nil]);
-    
-    return (requiredKeyHeight>requiredValueHeight)?requiredKeyHeight:requiredValueHeight;
-}
-
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [self heightForBasicCellAtIndexPath:indexPath];
 }
@@ -191,16 +173,9 @@
     }
     
     return sizingCell.backgroundGrayView.bounds.size.height + 20;
-   // return [self calculateHeightForConfiguredSizingCell:sizingCell];
 }
 
-- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
-    [sizingCell setNeedsLayout];
-    [sizingCell layoutIfNeeded];
-    
-    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    return size.height;
-}
+
 
 #pragma Scrollview delegate
 
@@ -216,7 +191,7 @@
         if (!_loading) {
             int start = 0;
             if (_timelineItems != nil) {
-                start = [_timelineItems count];
+                start = (int)[_timelineItems count];
             }
             [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:start withLoadingIndicator:NO];
             _loading = YES;
@@ -240,6 +215,11 @@
     JHRecentAlertsViewController *recentVC = [[JHRecentAlertsViewController alloc]initWithNibName:@"JHRecentAlertsViewController" bundle:nil];
     [self presentViewController:recentVC animated:YES completion:nil];
     
+}
+
+-(IBAction)careTaskButtonPressed:(id)sender{
+    JHRecentCareTasksViewController *recentCT = [[JHRecentCareTasksViewController alloc]init];
+    [self presentViewController:recentCT animated:YES completion:nil];
 }
 
 @end
