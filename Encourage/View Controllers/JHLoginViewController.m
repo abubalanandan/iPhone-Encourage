@@ -78,7 +78,7 @@
        JHTimelineViewController *timelineVC = [[JHTimelineViewController alloc]init];
     [JHAppDelegate application].sidePanel.centerPanel = timelineVC;
     [JHAppDelegate application].window.rootViewController = [JHAppDelegate application].sidePanel;
-
+    NSLog(@"TOKEN----%@",responseObj.token);
 }
 
 
