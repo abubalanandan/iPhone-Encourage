@@ -133,6 +133,7 @@
     [self.recentCareTasks removeObject:self.markedCareTask];
     [[JHAppDelegate application].dataManager.careTasks removeObject:self.markedCareTask];
     self.markedCareTask = nil;
+    [[JHAppDelegate application].timelineVC updateNotificationCount];
     [self.careTasksTV reloadData];
 
 }

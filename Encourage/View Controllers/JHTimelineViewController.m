@@ -209,7 +209,9 @@
             }
 }
 
-- (void)updateAlert:(int)alertCount AndCareTask:(int)careTaskCount{
+- (void)updateNotificationCount{
+    int alertCount = [[JHAppDelegate application].dataManager getUnreadAlerts].count;
+    int careTaskCount = [JHAppDelegate application].dataManager.careTasks.count;
     [self.alertCountLabel setText:[NSString stringWithFormat:@"%d",alertCount]];
     [self.careTaskCountLabel setText:[NSString stringWithFormat:@"%d",careTaskCount]];
 

@@ -22,5 +22,5 @@
 -(IBAction)alertButtonPressed:(id)sender;
 -(IBAction)careTaskButtonPressed:(id)sender;
 
-- (void)updateAlert :(int)alertCount AndCareTask: (int)careTaskCount;
+- (void)updateNotificationCount;
 @end

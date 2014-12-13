@@ -68,7 +68,7 @@
                 unreadAlertCount++;
             }
         }
-        [[JHAppDelegate application].timelineVC updateAlert:unreadAlertCount AndCareTask:(int)self.careTasks.count];
+        [[JHAppDelegate application].timelineVC updateNotificationCount];
     }
         
     
