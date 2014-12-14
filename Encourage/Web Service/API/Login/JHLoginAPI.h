@@ -19,5 +19,5 @@
 
 @protocol JHLoginAPIDelegate <JHBaseAPIDelegate>
 -(void) didReceiveLoginDetails:(JHLoginAPIResponse *) responseObj;
-
+- (void)loginFailed:(NSString *)message;
 @end

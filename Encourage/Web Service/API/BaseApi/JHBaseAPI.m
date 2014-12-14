@@ -38,7 +38,7 @@
     [[JHAppDelegate application].activityManager stopPleaseWaitActivityIndicator];
     if([delegate_ respondsToSelector:@selector(didFailAuthentication:)])
         [delegate_ didFailAuthentication:[message errorDescription]];
-
+    [self didReceiveNetworkError:message.errorDescription];
 }
 
 - (void)didReceiveJSONException {
@@ -46,6 +46,7 @@
     [[JHAppDelegate application].activityManager stopPleaseWaitActivityIndicator];
     if([delegate_ respondsToSelector:@selector(didFailJsonException)])
         [delegate_ didFailJsonException];
+    [self didReceiveNetworkError:nil];
     
 }
 
@@ -54,6 +55,7 @@
     [[JHAppDelegate application].activityManager stopPleaseWaitActivityIndicator];
     if([delegate_ respondsToSelector:@selector(didRequestFailUnexpectedly)])
         [delegate_ didRequestFailUnexpectedly];
+    [self didReceiveNetworkError:nil];
 }
 
 - (void)requestTimedOut:(NSString *)error {
@@ -61,6 +63,7 @@
     [[JHAppDelegate application].activityManager stopPleaseWaitActivityIndicator];
     if([delegate_ respondsToSelector:@selector(didRequestTimedOut:)])
         [delegate_ didRequestTimedOut:error];
+    [self didReceiveNetworkError:error];
 }
 
 
@@ -69,7 +72,6 @@
     [[JHAppDelegate application].activityManager stopPleaseWaitActivityIndicator];
     if([delegate_ respondsToSelector:@selector(didFailNetwork:)])
         [delegate_ didFailNetwork:errorMessage];
-
 
 }
 
@@ -85,6 +87,7 @@
   
     if([delegate_ respondsToSelector:@selector(didFailDataFetch:)])
         [delegate_ didFailDataFetch:[message errorDescription]];
+    [self didReceiveNetworkError:message.errorDescription];
 }
 
 - (void)didRequestFailDataFetch:(JHResponeMessage *)message {
@@ -92,6 +95,7 @@
     [[JHAppDelegate application].activityManager stopPleaseWaitActivityIndicator];
     if([delegate_ respondsToSelector:@selector(didFailedDataFetch)])
         [delegate_ didFailedDataFetch:[message errorDescription]];
+    [self didReceiveNetworkError:message];
 }
 
 - (void)dealloc {

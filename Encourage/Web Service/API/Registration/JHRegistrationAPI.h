@@ -14,4 +14,5 @@
 
 @protocol JHRegistrationAPIDelegate<JHBaseAPIDelegate>
 - (void)didRegisterUserSuccessfully;
+- (void)userRegistrationFailed:(NSString *)errorMessage;
 @end

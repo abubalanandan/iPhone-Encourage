@@ -45,4 +45,11 @@
     [super didReceiveData:responseObj];
 }
 
+- (void)didReceiveNetworkError:(NSString *)errorMessage{
+    [super didReceiveNetworkError:errorMessage];
+    if ([delegate_ respondsToSelector:@selector(userRegistrationFailed:)]) {
+        [delegate_ userRegistrationFailed:errorMessage];
+    }
+}
+
 @end

@@ -131,6 +131,9 @@ NSString *const kEmailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+- (void)userRegistrationFailed:(NSString *)errorMessage{
+    [Utility showOkAlertWithTitle:@"Error" message:errorMessage];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

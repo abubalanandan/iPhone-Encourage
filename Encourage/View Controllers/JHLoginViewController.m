@@ -82,36 +82,10 @@
 }
 
 
-
-- (void)didFailDataFetch:(NSString *)error{
-    UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Failure" message:error delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alertview show];
+- (void)loginFailed:(NSString *)message{
+    [Utility showOkAlertWithTitle:@"Failure" message:message];
 }
 
-- (void)didFailNetwork:(NSString *)error{
-    UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Failure" message:error delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alertview show];
-
-}
-
-- (void)didFailJsonException{
-    UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Failure" message:@"JSON exception" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alertview show];
-}
-
-- (void)didFailAuthentication:(NSString *)error{
-    UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Failure" message:error delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alertview show];
-}
-
-- (void)didRequestTimedOut:(NSString *)error{
-    UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Failure" message:error delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alertview show];
-
-}
-
--(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
-}
 
 -(IBAction)registerButtonPressed:(id)sender{
     JHRegistrationViewController *viewController = [[JHRegistrationViewController alloc]initWithNibName:@"JHRegistrationViewController" bundle:nil];

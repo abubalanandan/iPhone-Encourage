@@ -36,4 +36,14 @@
     [super didReceiveData:responseObj];
 }
 
+- (void)didReceiveNetworkError:(NSString *)errorMessage{
+    [super didReceiveNetworkError:errorMessage];
+    if (errorMessage==nil) {
+        errorMessage = @"Failed to Login. Please try again";
+    }
+    if ([delegate_ respondsToSelector:@selector(loginFailed:)]) {
+        [delegate_ loginFailed:errorMessage];
+    }
+}
+
 @end
