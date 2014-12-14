@@ -74,50 +74,47 @@
     
     
     
-//    if ([item.contentType containsString:@"Link"]) {
-//        cell.urlDetailView.hidden = NO;
-//        cell.urlHeader.text = item.urlHeader;
-//        cell.urlPreviewLabel.text = item.details;
-//        NSURL *imageURL = [NSURL URLWithString:item.image];
-//        [cell.urlPreviewImage sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"page_bg"]];
-//        cell.detailsView.hidden = YES;
-//        [cell.whiteView setFrame:CGRectMake(10, 19, cell.bounds.size.width-20,urlViewHeight+headerHeight + 20 )];
-//    }else{
+    if ([item.contentType containsString:@"Link"]) {
+        cell.urlDetailView.hidden = NO;
+        cell.urlHeader.text = item.urlHeader;
+        cell.urlPreviewLabel.text = item.details;
+        NSURL *imageURL = [NSURL URLWithString:item.image];
+        [cell.urlPreviewImage sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"page_bg"]];
+        cell.detailsView.hidden = YES;
+        [cell.whiteView setFrame:CGRectMake(10, 19, cell.bounds.size.width-20,urlViewHeight+headerHeight + 20 )];
+    }else{
     [[cell.detailsView subviews]makeObjectsPerformSelector:@selector(removeFromSuperview)];
     cell.urlDetailView.hidden=YES;
-//    
-//    
-//    
+ 
     CGFloat detailViewHeight= 5;
     CGFloat labelHeight = [Utility requiredHeightWithString:details forCellWidth:labelWidth ];
     UILabel *detailsLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, detailViewHeight, labelWidth, labelHeight)];
     detailsLabel.numberOfLines=0;
-    detailsLabel.font = [UIFont boldSystemFontOfSize:9.0];
-    detailsLabel.textColor = [UIColor darkGrayColor];
+    detailsLabel.font = [UIFont boldSystemFontOfSize:12.0];
     detailsLabel.lineBreakMode = NSLineBreakByWordWrapping;
     detailsLabel.text = item.details;
     [cell.detailsView addSubview:detailsLabel];
     
     detailViewHeight += labelHeight+5;
     CGFloat imageOffset = 0;
-//    if ([item.contentType containsString:@"Image"]) {
-//        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, detailViewHeight, 280, 280)];
-//        [cell.detailsView addSubview:imageView];
-//        NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:FILE_URL,[JHAppDelegate application].dataManager.token,item.documentActualName]];
-//        [imageView sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"page_bg"]];
-//        imageOffset += imageView.bounds.size.height + 10;
-//    }else if ([item.contentType containsString:@"Map"]) {
-//        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, detailViewHeight, 280, 280)];
-//        [cell.detailsView addSubview:imageView];
-//        NSString *urlString = [[NSString stringWithFormat:MAP_URL,item.eventAddress]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//        NSURL *imageURL = [NSURL URLWithString:urlString];
-//        [imageView sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"page_bg"]];
-//        imageOffset += imageView.bounds.size.height + 10;
-//    }
-    cell.detailsView.frame = CGRectMake(cell.detailsView.frame.origin.x, headerHeight+ 20, CGRectGetWidth(cell.detailsView.frame), detailViewHeight+imageOffset+10);
-    [cell.whiteView setFrame:CGRectMake(10, 19, cell.bounds.size.width-20,detailViewHeight+headerHeight + 5 )];
+    if ([item.contentType containsString:@"Image"]) {
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, detailViewHeight, 280, 280)];
+        [cell.detailsView addSubview:imageView];
+        NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:FILE_URL,[JHAppDelegate application].dataManager.token,item.documentActualName]];
+        [imageView sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"page_bg"]];
+        imageOffset += imageView.bounds.size.height + 10;
+    }else if ([item.contentType containsString:@"Map"]) {
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, detailViewHeight, 280, 280)];
+        [cell.detailsView addSubview:imageView];
+        NSString *urlString = [[NSString stringWithFormat:MAP_URL,item.eventAddress]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSURL *imageURL = [NSURL URLWithString:urlString];
+        [imageView sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"page_bg"]];
+        imageOffset += imageView.bounds.size.height + 10;
+    }
+    cell.detailsView.frame = CGRectMake(cell.detailsView.frame.origin.x, headerHeight, CGRectGetWidth(cell.detailsView.frame), detailViewHeight+imageOffset);
+    [cell.whiteView setFrame:CGRectMake(10, 19, cell.bounds.size.width-20,detailViewHeight+headerHeight+imageOffset + 15 )];
 
-    //}
+    }
     
     cell.whiteView.layer.shadowColor = [UIColor blackColor].CGColor;
     cell.whiteView.layer.shadowOpacity = 0.5;
