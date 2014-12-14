@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JHReportPageTwo">
+            <connections>
+                <outlet property="button1" destination="cKd-8n-l6l" id="5jV-QY-JCZ"/>
+                <outlet property="button2" destination="wHT-lj-boz" id="DG0-TH-A6f"/>
+                <outlet property="button3" destination="STE-cU-EbA" id="3Nz-NZ-U8I"/>
+                <outlet property="button4" destination="ay8-Q0-lKR" id="UN3-Gh-82D"/>
+                <outlet property="button5" destination="UZk-8Z-mnB" id="QKY-Pr-6aj"/>
+                <outlet property="button6" destination="RkR-zy-vMh" id="unL-ca-LWW"/>
+                <outlet property="button7" destination="34y-cp-9b6" id="WG6-ao-xVS"/>
+                <outlet property="button8" destination="Qs6-vP-Eeb" id="SJj-zK-yKc"/>
+                <outlet property="commentsTextField" destination="z6a-xT-hH7" id="Q1q-ii-YyC"/>
+                <outlet property="containerScrollView" destination="3CL-FY-M96" id="UIe-tv-O0M"/>
+                <outlet property="containerView" destination="e0p-IG-Q4g" id="xLd-fF-Ja2"/>
+                <outlet property="dateTextField" destination="YQ4-mS-9j4" id="C9f-PZ-Syy"/>
+                <outlet property="pickerContainerView" destination="RKP-Sh-p1I" id="WaW-Sd-QcK"/>
+                <outlet property="view" destination="iN0-l3-epB" id="1G4-he-JaU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="3CL-FY-M96">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" id="e0p-IG-Q4g">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="412"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cKd-8n-l6l">
+                                    <rect key="frame" x="21" y="20" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="worried.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="worriedhover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="naM-kF-Cn0"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wHT-lj-boz">
+                                    <rect key="frame" x="121" y="20" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="anxious.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="anxioushover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="V06-aS-1cH"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="STE-cU-EbA">
+                                    <rect key="frame" x="223" y="20" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="depressed.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="depressedhover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="h8P-cW-P10"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ay8-Q0-lKR">
+                                    <rect key="frame" x="21" y="122" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="angry.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="dizzinesshover.png"/>
+                                    <state key="highlighted" image="angryhover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="dxi-bY-Kr1"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UZk-8Z-mnB">
+                                    <rect key="frame" x="121" y="122" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="sad.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="cant_sleephover.png"/>
+                                    <state key="highlighted" image="sadhover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="PLo-8f-5D5"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RkR-zy-vMh">
+                                    <rect key="frame" x="223" y="122" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="happy.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="joint_painhover.png"/>
+                                    <state key="highlighted" image="happyhover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="6ff-SE-Cok"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="34y-cp-9b6">
+                                    <rect key="frame" x="20" y="222" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="restless.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="dry_skinhover.png"/>
+                                    <state key="highlighted" image="restlesshover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="R64-F0-wiW"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qs6-vP-Eeb">
+                                    <rect key="frame" x="120" y="222" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="cant_sleep.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="nosebleedhover.png"/>
+                                    <state key="highlighted" image="cant_sleephover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="Cyw-JE-yWL"/>
+                                    </connections>
+                                </button>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="YQ4-mS-9j4">
+                                    <rect key="frame" x="11" y="320" width="299" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="6Au-Ab-d21"/>
+                                    </connections>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Description" minimumFontSize="17" id="z6a-xT-hH7">
+                                    <rect key="frame" x="11" y="362" width="299" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="dei-Zw-ek6"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                        </view>
+                    </subviews>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="q4W-4L-C9y"/>
+                    </connections>
+                </scrollView>
+                <view hidden="YES" contentMode="scaleToFill" id="RKP-Sh-p1I">
+                    <rect key="frame" x="0.0" y="143" width="320" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="cYN-Hx-nJS">
+                            <rect key="frame" x="0.0" y="38" width="320" height="162"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <date key="date" timeIntervalSinceReferenceDate="440171683.96171099">
+                                <!--2014-12-13 13:54:43 +0000-->
+                            </date>
+                            <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                <!--1970-01-01 11:00:00 +0000-->
+                            </date>
+                        </datePicker>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="grv-Ye-plD">
+                            <rect key="frame" x="0.0" y="-6" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <barButtonItem tag="400" title="Cancel" id="BQ9-tC-86I">
+                                    <color key="tintColor" red="1" green="0.065182322759999994" blue="0.1205818082" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="cancelAction:" destination="-1" id="Ier-kd-N5z"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="waq-qn-BLj"/>
+                                <barButtonItem tag="401" title="Done" style="done" id="ZGd-76-vP3">
+                                    <connections>
+                                        <action selector="doneAction:" destination="-1" id="lch-0Y-sDN"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="245" y="271"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="angry.png" width="86" height="86"/>
+        <image name="angryhover.png" width="86" height="86"/>
+        <image name="anxious.png" width="86" height="86"/>
+        <image name="anxioushover.png" width="86" height="86"/>
+        <image name="cant_sleep.png" width="86" height="86"/>
+        <image name="cant_sleephover.png" width="86" height="86"/>
+        <image name="depressed.png" width="86" height="86"/>
+        <image name="depressedhover.png" width="86" height="86"/>
+        <image name="dizzinesshover.png" width="86" height="86"/>
+        <image name="dry_skinhover.png" width="86" height="86"/>
+        <image name="happy.png" width="86" height="86"/>
+        <image name="happyhover.png" width="86" height="86"/>
+        <image name="joint_painhover.png" width="86" height="86"/>
+        <image name="nosebleedhover.png" width="86" height="86"/>
+        <image name="restless.png" width="86" height="86"/>
+        <image name="restlesshover.png" width="86" height="86"/>
+        <image name="sad.png" width="86" height="86"/>
+        <image name="sadhover.png" width="86" height="86"/>
+        <image name="worried.png" width="86" height="86"/>
+        <image name="worriedhover.png" width="86" height="86"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

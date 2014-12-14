@@ -7,6 +7,26 @@
 //
 
 
+typedef enum {
+    
+    ReportButtonTypeSoreThroat = 0,
+    ReportButtonTypeTired,
+    ReportButtonTypeBackPain,
+    ReportButtonTypeDizziness,
+    ReportButtonTypeCantSleep,
+    ReportButtonTypeJointPain,
+    ReportButtonTypeDrySkin,
+    ReportButtonTypeNoseBleed,
+    ReportButtonTypeShortnessOfBreath,
+    ReportButtonTypeWorried,
+    ReportButtonTypeAnxious,
+    ReportButtonTypeDepressed,
+    ReportButtonTypeAngry,
+    ReportButtonTypeSad,
+    ReportButtonTypeHappy,
+    ReportButtonTypeRestless
+}ReportButtonType;
+
 /* URLs */
 
 #define BASE_URL @"http://tryencourage.com/hwdsi/mServices/%@.php"
