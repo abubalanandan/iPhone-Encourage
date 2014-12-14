@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JHRegistrationViewController">
             <connections>
+                <outlet property="emailAddressField" destination="LQ0-vN-ysd" id="Mt3-g0-agn"/>
+                <outlet property="firstNameField" destination="PsU-zQ-g2z" id="La8-3Z-a2C"/>
+                <outlet property="lastNameField" destination="zvq-mJ-jlq" id="9MI-KD-VTb"/>
                 <outlet property="termsAndConditionsLabel" destination="fPB-KH-aWV" id="VnX-f1-CMC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,7 +27,10 @@
                     <rect key="frame" x="38" y="169" width="244" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="0U5-EZ-zFY"/>
+                    </connections>
                 </textField>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separate_form.png" id="7tP-IM-wQT">
                     <rect key="frame" x="38" y="209" width="244" height="1"/>
@@ -34,7 +40,10 @@
                     <rect key="frame" x="38" y="221" width="244" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="U8g-i9-BgH"/>
+                    </connections>
                 </textField>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separate_form.png" id="J2P-ai-1Qc">
                     <rect key="frame" x="38" y="264" width="244" height="1"/>
@@ -44,7 +53,10 @@
                     <rect key="frame" x="38" y="278" width="244" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="hdv-WU-llf"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D85-ua-Gme">
                     <rect key="frame" x="-12" y="362" width="345" height="51"/>

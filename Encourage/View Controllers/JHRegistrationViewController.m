@@ -48,6 +48,22 @@
     _termsAndConditionsLabel.delegate = self;
 }
 
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if (textField==self.firstNameField) {
+        [self.lastNameField becomeFirstResponder];
+    }else if(textField == self.lastNameField){
+        [textField resignFirstResponder];
+        [self.emailAddressField becomeFirstResponder];
+    }else{
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+
+
+
 -(BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange{
     
     

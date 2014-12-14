@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "JHBaseViewController.h"
 
-@interface JHRegistrationViewController : JHBaseViewController<UITextViewDelegate>{
+@interface JHRegistrationViewController : JHBaseViewController<UITextViewDelegate,UITextFieldDelegate>{
 }
 @property IBOutlet UITextView *termsAndConditionsLabel;
+@property IBOutlet UITextField *firstNameField;
+@property IBOutlet UITextField *lastNameField;
+@property IBOutlet UITextField *emailAddressField;
 -(IBAction)loginButtonPressed:(id)sender;
 @end
