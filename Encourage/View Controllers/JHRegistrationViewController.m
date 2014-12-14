@@ -13,14 +13,15 @@
 
 @end
 
-@implementation JHRegistrationViewController 
+@implementation JHRegistrationViewController
 
+NSString *const kEmailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
-       
+        regAPI = [[JHRegistrationAPI alloc]init];
+        regAPI.delegate = self;
     }
     return self;
 }
@@ -80,6 +81,53 @@
 }
 
 -(IBAction)loginButtonPressed:(id)sender{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (IBAction)registerPressed:(id)sender{
+    if ([self validateFields]) {
+        [ regAPI registerUser:_firstNameField.text :_lastNameField.text :_emailAddressField.text ];
+
+    }
+}
+
+- (BOOL)validateEmailWithString:(NSString *)emailStr {
+    
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", kEmailRegex];
+    return [emailTest evaluateWithObject:emailStr];
+}
+
+- (BOOL)validateFields {
+    
+    NSString *errorMsg = nil;
+    
+    if (self.emailAddressField.text==nil ||  self.emailAddressField.text.length < 5) {
+        errorMsg = NSLocalizedString(@"EMAIL_TOO_SHORT_MSG", "");
+    }
+    else if (![self validateEmailWithString:self.emailAddressField.text]) {
+        errorMsg = NSLocalizedString(@"INVALID_EMAIL_MSG", "");
+    }
+    else if (self.firstNameField.text==nil || self.firstNameField.text.length == 0) {
+        errorMsg = NSLocalizedString(@"FIRST_NAME_TOO_SHORT_MSG", "");
+    }
+    else if (self.lastNameField.text==nil || self.lastNameField.text.length == 0) {
+        errorMsg = NSLocalizedString(@"LAST_NAME_TOO_SHORT_MSG", "");
+    }
+    
+    if (errorMsg){
+        [Utility showOkAlertWithTitle:@"Warning" message:errorMsg];
+        return NO;
+    }
+    
+    return YES;
+}
+
+
+
+#pragma mark
+
+- (void)didRegisterUserSuccessfully{
+    [Utility showOkAlertWithTitle:@"Success" message:NSLocalizedString(@"REGISTRATION_SUCCESS_MSG", @"")];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

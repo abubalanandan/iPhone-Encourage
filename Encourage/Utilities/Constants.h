@@ -39,6 +39,7 @@ typedef enum {
 #define UPDATE_CARETASK_STATUS_URL @"mUpdateCareTaskStatus"
 #define UPDATE_ALERT_STATUS_URL @"mUpdateUnreadAlertStatus"
 #define LOGOUT_URL @"mUserLogout"
+#define REGISTRATION_URL @"mPostPersonDetails"
 #define RESPONSE_DESCRIPTION_KEY @"responseDescription"
 
 

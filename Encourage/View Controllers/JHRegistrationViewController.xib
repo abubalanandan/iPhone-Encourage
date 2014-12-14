@@ -64,6 +64,9 @@
                     <state key="normal" image="register_buton.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="registerPressed:" destination="-1" eventType="touchUpInside" id="Cvc-kh-25j"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YtV-be-ucl">
                     <rect key="frame" x="21" y="421" width="279" height="51"/>

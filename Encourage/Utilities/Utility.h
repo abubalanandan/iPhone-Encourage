@@ -15,4 +15,5 @@
 + (CGFloat)requiredHeightWithKey:(NSString *)key andValue:(NSString *)value forCellWidth:(CGFloat)cellWidth;
 + (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell;
 + (CGFloat)requiredHeightWithString:(NSString *)valueString forCellWidth:(CGFloat)cellWidth;
++ (void)showOkAlertWithTitle:(NSString *)title message:(NSString *)message;
 @end
