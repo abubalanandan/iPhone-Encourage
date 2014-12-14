@@ -8,6 +8,6 @@
 
 #import "JHBaseViewController.h"
 
-@interface JHReportViewController : JHBaseViewController
+@interface JHReportViewController : JHBaseViewController <UIScrollViewDelegate>
 
 @end
