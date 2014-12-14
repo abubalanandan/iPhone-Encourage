@@ -13,8 +13,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [containerScrollView setContentSize:CGSizeMake(320, 100)];
-    containerScrollView.scrollEnabled = YES;
+    [containerScrollView setContentSize:containerView.frame.size];
     [dateTextField setText:[self formatDate:[NSDate date]]];
 }
 

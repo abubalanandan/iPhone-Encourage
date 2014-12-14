@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JHReportPageOne : UIViewController {
+@interface JHReportPageOne : UIViewController <UITextFieldDelegate> {
     
     IBOutlet UIScrollView *scrollView;
     IBOutlet UIButton *button1, *button2, *button3, *button4, *button5, *button6, *button7, *button8, *button9;
+    IBOutlet UIView *containerView, *pickerContainerView;
+    IBOutlet UITextField *dateTextField, *descriptionTextField;
+    IBOutlet UIDatePicker *datePicker;
 }
+
+- (NSArray *)getPageOneStatus;
 
 @end

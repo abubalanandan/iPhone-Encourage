@@ -7,7 +7,9 @@
 //
 
 #import "JHBaseViewController.h"
+#import <AddressBookUI/AddressBookUI.h>
+#import <AddressBook/AddressBook.h>
 
-@interface JHReportViewController : JHBaseViewController <UIScrollViewDelegate>
+@interface JHReportViewController : JHBaseViewController <UIScrollViewDelegate, ABPeoplePickerNavigationControllerDelegate>
 
 @end

@@ -14,8 +14,48 @@
     
     [super viewDidLoad];
     
+    [containerScrollView setContentSize:containerView.frame.size];
     [dateTextField setText:[self formatDate:[NSDate date]]];
+    [self setTags];
 }
+
+
+- (void)setTags {
+    
+    [button1 setTag:ReportButtonTypeWorried];
+    [button2 setTag:ReportButtonTypeAnxious];
+    [button3 setTag:ReportButtonTypeDepressed];
+    [button4 setTag:ReportButtonTypeAngry];
+    [button5 setTag:ReportButtonTypeSad];
+    [button6 setTag:ReportButtonTypeHappy];
+    [button7 setTag:ReportButtonTypeRestless];
+    [button8 setTag:ReportButtonTypeCantSleep];
+}
+
+- (NSArray *)getPageTwoStatus {
+    
+    NSMutableArray *tagArray = [NSMutableArray array];
+    for (UIView *subView in [containerView subviews]) {
+        
+        if ([subView isKindOfClass:[UIButton class]]) {
+            UIButton *btn = (UIButton *)subView;
+            if (btn.selected) {
+                [tagArray addObject:[NSString stringWithFormat:@"%ld", (long)btn.tag]];
+            }
+        }
+    }
+    return [NSArray arrayWithArray:tagArray];
+}
+
+- (IBAction)action:(UIButton *)sender {
+    
+    UIButton *btn = (UIButton *)[self.view viewWithTag:[sender tag]];
+    [btn setSelected:!btn.selected];
+    
+}
+
+#pragma mark -
+#pragma mark - IBAction
 
 - (IBAction)doneAction:(id)sender {
     

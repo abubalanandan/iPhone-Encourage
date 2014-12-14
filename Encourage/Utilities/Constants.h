@@ -17,8 +17,15 @@ typedef enum {
     ReportButtonTypeJointPain,
     ReportButtonTypeDrySkin,
     ReportButtonTypeNoseBleed,
-    ReportButtonTypeShortnessOfBreath
-}PageOneReportButtonType;
+    ReportButtonTypeShortnessOfBreath,
+    ReportButtonTypeWorried,
+    ReportButtonTypeAnxious,
+    ReportButtonTypeDepressed,
+    ReportButtonTypeAngry,
+    ReportButtonTypeSad,
+    ReportButtonTypeHappy,
+    ReportButtonTypeRestless
+}ReportButtonType;
 
 /* URLs */
 

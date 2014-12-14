@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -16,91 +16,193 @@
                 <outlet property="button7" destination="NrA-xY-5Pk" id="5mJ-qD-vYB"/>
                 <outlet property="button8" destination="N9V-xf-EeV" id="VxR-W9-45Q"/>
                 <outlet property="button9" destination="GgM-AV-HaH" id="zNo-6K-PPr"/>
+                <outlet property="containerView" destination="6Yo-nm-QIY" id="WhY-Bj-aMc"/>
+                <outlet property="datePicker" destination="dKb-p8-ueb" id="sBh-Sf-GDB"/>
+                <outlet property="dateTextField" destination="On4-46-Lpk" id="AvB-Y7-DHN"/>
+                <outlet property="descriptionTextField" destination="I4m-mp-f2u" id="Czr-nA-kf4"/>
+                <outlet property="pickerContainerView" destination="B48-dX-wLx" id="j74-aI-kDB"/>
                 <outlet property="scrollView" destination="7iW-pb-TyS" id="bIb-9y-BpL"/>
                 <outlet property="view" destination="iN0-l3-epB" id="t8G-vZ-6Qg"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view tag="6768" contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="428"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7iW-pb-TyS">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="328"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="4566" contentMode="scaleToFill" id="7iW-pb-TyS">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="428"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8Q-I0-elb">
-                            <rect key="frame" x="17" y="20" width="86" height="86"/>
-                            <state key="normal" image="sore_throat.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" image="sore_throathover.png"/>
-                            <connections>
-                                <action selector="action:" destination="-1" eventType="touchUpInside" id="JlG-EI-aYO"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARY-7b-3pS">
-                            <rect key="frame" x="117" y="20" width="86" height="86"/>
-                            <state key="normal" image="tired.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" image="tiredhover.png"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4J-bg-nKj">
-                            <rect key="frame" x="219" y="20" width="86" height="86"/>
-                            <state key="normal" image="back_pain.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" image="back_painhover.png"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrN-vz-UaS">
-                            <rect key="frame" x="17" y="122" width="86" height="86"/>
-                            <state key="normal" image="dizziness.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" image="dizzinesshover.png"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWq-lC-l7K">
-                            <rect key="frame" x="117" y="122" width="86" height="86"/>
-                            <state key="normal" image="cant_sleep.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" image="cant_sleephover.png"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaV-5g-TfR">
-                            <rect key="frame" x="219" y="122" width="86" height="86"/>
-                            <state key="normal" image="joint_pain.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" image="joint_painhover.png"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrA-xY-5Pk">
-                            <rect key="frame" x="16" y="222" width="86" height="86"/>
-                            <state key="normal" image="dry_skin.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" image="dry_skinhover.png"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9V-xf-EeV">
-                            <rect key="frame" x="116" y="222" width="86" height="86"/>
-                            <state key="normal" image="nosebleed.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" image="nosebleedhover.png"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgM-AV-HaH">
-                            <rect key="frame" x="218" y="222" width="86" height="86"/>
-                            <state key="normal" image="shortness.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" image="shortnesshover.png"/>
-                        </button>
+                        <view tag="1234" contentMode="scaleToFill" id="6Yo-nm-QIY">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="428"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="e8Q-I0-elb">
+                                    <rect key="frame" x="21" y="20" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="sore_throat.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="sore_throathover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="Vgj-O8-Qbt"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ARY-7b-3pS">
+                                    <rect key="frame" x="121" y="20" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="tired.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="tiredhover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="qJf-9J-lbz"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="y4J-bg-nKj">
+                                    <rect key="frame" x="223" y="20" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="back_pain.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="back_painhover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="2oI-5s-cRJ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RrN-vz-UaS">
+                                    <rect key="frame" x="21" y="122" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="dizziness.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="dizzinesshover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="41d-6k-QMk"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wWq-lC-l7K">
+                                    <rect key="frame" x="121" y="122" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="cant_sleep.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="cant_sleephover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="MPw-jh-dkq"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FaV-5g-TfR">
+                                    <rect key="frame" x="223" y="122" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="joint_pain.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="joint_painhover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="Jvm-Yh-kBQ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NrA-xY-5Pk">
+                                    <rect key="frame" x="20" y="222" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="dry_skin.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="dry_skinhover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="N8p-XP-u9F"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="N9V-xf-EeV">
+                                    <rect key="frame" x="120" y="222" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="nosebleed.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="nosebleedhover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="KVD-Tr-dDN"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GgM-AV-HaH">
+                                    <rect key="frame" x="222" y="222" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="shortness.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="shortnesshover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="qa9-7e-MGG"/>
+                                    </connections>
+                                </button>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="On4-46-Lpk">
+                                    <rect key="frame" x="21" y="326" width="287" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="3m6-vW-CUZ"/>
+                                    </connections>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a description" minimumFontSize="17" id="I4m-mp-f2u">
+                                    <rect key="frame" x="22" y="364" width="287" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="xMK-HB-7E7"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                        </view>
                     </subviews>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="H3g-1C-3gm"/>
+                    </connections>
                 </scrollView>
+                <view hidden="YES" contentMode="scaleToFill" id="B48-dX-wLx">
+                    <rect key="frame" x="0.0" y="228" width="320" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="dKb-p8-ueb">
+                            <rect key="frame" x="0.0" y="38" width="320" height="162"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <date key="date" timeIntervalSinceReferenceDate="440171683.96171099">
+                                <!--2014-12-13 13:54:43 +0000-->
+                            </date>
+                            <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                <!--1970-01-01 11:00:00 +0000-->
+                            </date>
+                        </datePicker>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="9Rt-kD-MWP">
+                            <rect key="frame" x="0.0" y="-6" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <barButtonItem tag="400" title="Cancel" id="678-KQ-Rtf">
+                                    <color key="tintColor" red="1" green="0.065182322759999994" blue="0.1205818082" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="cancelAction:" destination="-1" id="02y-Yn-wa9"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="5Lf-Ko-e2j"/>
+                                <barButtonItem tag="401" title="Done" style="done" id="m3R-bs-9HJ">
+                                    <connections>
+                                        <action selector="doneAction:" destination="-1" id="RT0-Oq-Ade"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="245" y="271"/>
         </view>
     </objects>
     <resources>
@@ -123,4 +225,9 @@
         <image name="tired.png" width="86" height="86"/>
         <image name="tiredhover.png" width="86" height="86"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

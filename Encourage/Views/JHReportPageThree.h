@@ -15,6 +15,7 @@
     IBOutlet UIDatePicker *datePicker;
     IBOutlet UIView *pickerContainerView;
     IBOutlet UIScrollView *containerScrollView;
+    IBOutlet UIView *containerView;
 }
 
 - (IBAction)selectImage:(id)sender;
