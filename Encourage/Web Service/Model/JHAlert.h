@@ -17,5 +17,8 @@
 @property NSString *title;
 @property NSString *details;
 @property NSString *url;
+@property NSString *urlHeader;
 @property NSString *eventAddress;
+@property NSString *image;
+@property NSString *documentActualName;
 @end

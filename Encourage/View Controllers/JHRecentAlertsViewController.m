@@ -9,6 +9,7 @@
 #import "JHRecentAlertsViewController.h"
 #import "JHRecentAlertsCellTableViewCell.h"
 #import "JHAlert.h"
+#import "JHAlertsListViewController.h"
 
 @interface JHRecentAlertsViewController ()
 @property IBOutlet UIButton *viewAllAlertsButton;
@@ -64,6 +65,12 @@
 
 -(IBAction)closeButtonPressed:(id)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)viewAllAlerts:(id)sender{
+    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    JHAlertsListViewController *vc = [[JHAlertsListViewController alloc]init];
+    [self.presentingViewController presentViewController:vc animated:YES completion:nil];
 }
 
 #pragma mark - Table View

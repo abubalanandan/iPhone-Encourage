@@ -51,6 +51,17 @@
     return (requiredKeyHeight>requiredValueHeight)?requiredKeyHeight:requiredValueHeight;
 }
 
++ (CGFloat)requiredHeightWithString:(NSString *)valueString forCellWidth:(CGFloat)cellWidth{
+    CGSize constrainedSize = CGSizeMake(cellWidth  , 9999);
+
+    NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                          [UIFont systemFontOfSize:12.0], NSFontAttributeName,
+                                          nil];
+      NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:valueString attributes:attributesDictionary];
+      CGFloat requiredHeight = CGRectGetHeight([string boundingRectWithSize:constrainedSize options:NSStringDrawingUsesLineFragmentOrigin context:nil]);
+    return requiredHeight;
+}
+
 + (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
     [sizingCell setNeedsLayout];
     [sizingCell layoutIfNeeded];

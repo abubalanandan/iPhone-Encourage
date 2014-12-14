@@ -10,4 +10,5 @@
 
 @interface JHRecentAlertsViewController : JHBaseViewController<UITableViewDataSource,UITableViewDelegate>
 -(IBAction)closeButtonPressed:(id)sender;
+-(IBAction)viewAllAlerts:(id)sender;
 @end

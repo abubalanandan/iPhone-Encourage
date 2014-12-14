@@ -114,11 +114,8 @@
 }
 
 -(IBAction)registerButtonPressed:(id)sender{
-//    JHRegistrationViewController *viewController = [[JHRegistrationViewController alloc]initWithNibName:@"JHRegistrationViewController" bundle:nil];
-//    [self.navigationController pushViewController:viewController animated:YES];
-    //[self fireConnectionRequest];
-//    JHWebService *service = [[JHWebService alloc]init];
-//    service.responseClassName= @"IDAcceptJobResponse";
-//    [service performPostRequest:@""];
+    JHRegistrationViewController *viewController = [[JHRegistrationViewController alloc]initWithNibName:@"JHRegistrationViewController" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+   
 }
 @end

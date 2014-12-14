@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "JHBaseViewController.h"
-#import "JHTimelineAPI.h"
 
-@interface JHRegistrationViewController : JHBaseViewController<JHTimelineAPIDelegate>{
-    JHTimelineAPI *timelineAPI;
+@interface JHRegistrationViewController : JHBaseViewController<UITextViewDelegate>{
 }
+@property IBOutlet UITextView *termsAndConditionsLabel;
 -(IBAction)loginButtonPressed:(id)sender;
 @end
