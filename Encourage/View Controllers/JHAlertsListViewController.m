@@ -26,6 +26,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIView *bgView = [[UIView alloc]init];
+    bgView.backgroundColor = PAGE_BG_COLOR;
+    [self.alertsTV setBackgroundView:bgView];
     [self.alerts addObjectsFromArray:[[JHAppDelegate application].dataManager getUnreadAlerts]];
     [self.alertsTV reloadData];
     // Do any additional setup after loading the view from its nib.
