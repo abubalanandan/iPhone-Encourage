@@ -31,7 +31,6 @@
     [self.alertsTV setBackgroundView:bgView];
     [self.alerts addObjectsFromArray:[[JHAppDelegate application].dataManager getUnreadAlerts]];
     [self.alertsTV reloadData];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -143,5 +142,12 @@
     [self configureCell:sizingCell withItem:[self.alerts objectAtIndex:indexPath.row]];
     
     return sizingCell.whiteView.bounds.size.height+20;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    JHAlert *alert = [self.alerts objectAtIndex:indexPath.row];
+    if ([alert.contentType containsString:@"Link"]) {
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:alert.url]];
+    }
 }
 @end
