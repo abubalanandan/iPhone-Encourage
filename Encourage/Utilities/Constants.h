@@ -24,6 +24,7 @@ typedef enum {
 
 #define BASE_URL @"http://tryencourage.com/hwdsi/mServices/%@.php"
 #define FILE_URL @"http://tryencourage.com/hwdsi/hwAttachedfile/%@/%@"
+#define MAP_URL @"http://maps.googleapis.com/maps/api/staticmap?zoom=12&size=1080x1920&markers=size:mid|color:red|%@"
 #define LOGIN_URL @"mUserLogin"
 #define TIMELINE_URL @"mGetTimelineDetails"
 #define ALERT_DETAILS_URL @"mGetUserAlertDetails"

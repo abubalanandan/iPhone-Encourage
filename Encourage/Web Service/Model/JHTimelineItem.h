@@ -19,5 +19,6 @@
 @property (nonatomic,strong) NSString *personRole;
 @property (nonatomic,strong) NSArray *details;
 @property (nonatomic,strong) NSString *header;
+@property (nonatomic,strong) NSString *eventAddress;
 
 @end

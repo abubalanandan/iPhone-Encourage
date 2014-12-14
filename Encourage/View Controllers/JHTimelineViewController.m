@@ -136,6 +136,13 @@
         cell.dummyView.frame = CGRectMake(CGRectGetMinX(cell.dummyView.frame), CGRectGetMaxY(cell.detailsView.frame)+5, CGRectGetWidth(cell.dummyView.frame), CGRectGetHeight(cell.dummyView.frame));
         imageOffset = cell.dummyView.frame.size.height;
         [cell.dummyView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:FILE_URL,[JHAppDelegate application].dataManager.token,item.documentActualName]] placeholderImage:[UIImage imageNamed:@"page_bg"]] ;
+    }else if([item.dataType containsString:@"Map"]){
+        cell.dummyView.hidden = NO;
+        cell.dummyView.frame = CGRectMake(CGRectGetMinX(cell.dummyView.frame), CGRectGetMaxY(cell.detailsView.frame)+5, CGRectGetWidth(cell.dummyView.frame), CGRectGetHeight(cell.dummyView.frame));
+        imageOffset = cell.dummyView.frame.size.height;
+        NSString *urlString = [[NSString stringWithFormat:MAP_URL,item.eventAddress] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSURL *url =[NSURL URLWithString:urlString];
+        [cell.dummyView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"page_bg"]] ;
     }else{
         cell.dummyView.hidden = YES;
     }
@@ -202,7 +209,9 @@
             }
 }
 
-- (void)updateAlert:(int)alertCount AndCareTask:(int)careTaskCount{
+- (void)updateNotificationCount{
+    int alertCount = [[JHAppDelegate application].dataManager getUnreadAlerts].count;
+    int careTaskCount = [JHAppDelegate application].dataManager.careTasks.count;
     [self.alertCountLabel setText:[NSString stringWithFormat:@"%d",alertCount]];
     [self.careTaskCountLabel setText:[NSString stringWithFormat:@"%d",careTaskCount]];
 

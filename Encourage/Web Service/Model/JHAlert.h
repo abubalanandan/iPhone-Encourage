@@ -16,4 +16,6 @@
 @property NSString *readStatus;
 @property NSString *title;
 @property NSString *details;
+@property NSString *url;
+@property NSString *eventAddress;
 @end
