@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JHTimelineViewController">
             <connections>
+                <outlet property="activity" destination="Stv-xa-aI1" id="L3n-a5-WBc"/>
                 <outlet property="alertCountLabel" destination="1i6-1r-gPe" id="WaI-04-CuZ"/>
                 <outlet property="careTaskCountLabel" destination="uk3-N8-esD" id="IBF-KS-0Vj"/>
                 <outlet property="menuButton" destination="0Xj-ke-mmV" id="Ctf-zQ-Vd1"/>
@@ -101,6 +102,10 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="Stv-xa-aI1">
+                    <rect key="frame" x="142" y="265" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

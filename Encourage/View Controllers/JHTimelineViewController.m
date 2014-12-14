@@ -66,6 +66,7 @@
 #pragma mark Timeline API delegate
 
 - (void)didReceiveTimelineDetails:(JHTimelineAPIResponse *)response{
+    [_activity stopAnimating];
     _lastCount = response.lastCount;
     _loading = NO;
     _timelineTV.tableFooterView = nil;

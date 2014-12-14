@@ -7,13 +7,17 @@
 //
 
 #import "JHBaseViewController.h"
+#import "JHAlertsAPI.h"
+#import "JHAlert.h"
 
-@interface JHAlertsListViewController : JHBaseViewController<UITableViewDelegate,UITableViewDataSource>{
-    
+@interface JHAlertsListViewController : JHBaseViewController<UITableViewDelegate,UITableViewDataSource,JHAlertsAPIDelegate>{
+    JHAlertsAPI *alertsAPI;
 }
 
 @property IBOutlet UITableView *alertsTV;
+@property IBOutlet UIActivityIndicatorView *activity;
 @property NSMutableArray *alerts;
+@property JHAlert *selectedAlert;
 - (IBAction)close:(id)sender;
 
 @end

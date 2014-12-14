@@ -11,7 +11,8 @@
 #import "UIImageView+WebCache.h"
 
 @interface JHAlertsListViewController ()
-
+@property BOOL loading;
+@property BOOL start;
 @end
 
 @implementation JHAlertsListViewController
@@ -20,6 +21,8 @@
     self = [super init];
     if (self) {
         self.alerts = [[NSMutableArray alloc]init];
+        alertsAPI = [[JHAlertsAPI alloc]init];
+        alertsAPI.delegate = self;
     }
     return self;
 }
@@ -29,9 +32,16 @@
     UIView *bgView = [[UIView alloc]init];
     bgView.backgroundColor = PAGE_BG_COLOR;
     [self.alertsTV setBackgroundView:bgView];
-    [self.alerts addObjectsFromArray:[[JHAppDelegate application].dataManager getUnreadAlerts]];
-    [self.alertsTV reloadData];
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+   
+    _loading = YES;
+    _start = YES;
+    [alertsAPI getAlertDetails:[JHAppDelegate application].dataManager.token andLastCount:0];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -40,6 +50,28 @@
 
 - (IBAction)close:(id)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (void)didReceiveAlertsDetails:(JHAlertsAPIResponse *)response{
+    _loading = NO;
+    [_activity stopAnimating];
+    for (JHAlert *alert in response.objects) {
+        if (![self.alerts containsObject:alert]) {
+            [self.alerts addObject:alert];
+        }
+    }
+    [self.alertsTV reloadData];
+    if (_start) {
+        if (self.selectedAlert!=nil) {
+            int index = [self.alerts indexOfObject:self.selectedAlert];
+            if (index!=NSNotFound) {
+                NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+                [self.alertsTV scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+            }
+        }
+        _start = NO;
+    }
 }
 
 #pragma mark - Table View Delegate methods
@@ -150,4 +182,28 @@
         [[UIApplication sharedApplication]openURL:[NSURL URLWithString:alert.url]];
     }
 }
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(self.alertsTV.contentOffset.y<0){
+        //it means table view is pulled down like refresh
+        return;
+    }
+    else if(self.alertsTV.contentOffset.y >= (self.alertsTV.contentSize.height - self.alertsTV.bounds.size.height)) {
+        UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [activityView startAnimating];
+        self.alertsTV.tableFooterView = activityView;
+        if (!_loading) {
+            int start = 0;
+            if (self.alerts != nil) {
+                start = (int)[self.alerts count];
+            }
+            [alertsAPI getAlertDetails:[JHAppDelegate application].dataManager.token andLastCount:start];
+            _loading = YES;
+            
+        }
+        
+    }
+}
+
+
 @end

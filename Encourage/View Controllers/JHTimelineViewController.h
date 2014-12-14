@@ -18,6 +18,7 @@
 @property (nonatomic,weak) IBOutlet UIButton *menuButton;
 @property (nonatomic,weak) IBOutlet UILabel *alertCountLabel;
 @property (nonatomic,weak) IBOutlet UILabel *careTaskCountLabel;
+@property (nonatomic,weak) IBOutlet UIActivityIndicatorView *activity;
 -(IBAction)reportButtonPressed:(id)sender;
 -(IBAction)alertButtonPressed:(id)sender;
 -(IBAction)careTaskButtonPressed:(id)sender;

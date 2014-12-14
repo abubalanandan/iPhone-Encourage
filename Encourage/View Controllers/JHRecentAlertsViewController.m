@@ -16,6 +16,7 @@
 @property IBOutlet UITableView *recentAlertsTV;
 @property IBOutlet UILabel *noAlertsLabel;
 @property NSMutableArray *recentAlertsArray;
+@property JHAlert *markedAlert;
 @end
 
 @implementation JHRecentAlertsViewController
@@ -24,6 +25,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.recentAlertsArray = [[NSMutableArray alloc]init];
+        alertStatusAPI = [[JHAlertStatusAPI alloc]init];
+        alertStatusAPI.delegate = self;
         
     }
     return self;
@@ -100,4 +103,29 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    JHAlert *alert = [self.recentAlertsArray objectAtIndex:indexPath.row];
+    self.markedAlert = alert;
+    [alertStatusAPI markAlertAsRead:alert.alertKey];
+}
+
+-(void)markedAlertSuccessfully{
+    [self.recentAlertsArray removeObject:self.markedAlert];
+    int index = [[JHAppDelegate application].dataManager.alerts indexOfObject:self.markedAlert];
+    JHAlert *alert = [[JHAppDelegate application].dataManager.alerts objectAtIndex:index];
+    alert.readStatus = NOTIFICATION_READ;
+    [[JHAppDelegate application].timelineVC updateNotificationCount];
+    self.markedAlert = nil;
+    JHAlertsListViewController *vc = [[JHAlertsListViewController alloc]init];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [JHHudController displayHUDWithMessage:@"Loading Alert Details..."];
+    [self.presentingViewController presentViewController:vc animated:YES completion:^{
+        [JHHudController hideAllHUDs];
+    }];
+}
+
+- (void)failedToMarkAlert:(NSString *)message{
+    self.markedAlert = nil;
+    [Utility showOkAlertWithTitle:@"Error" message:message];
+}
 @end
