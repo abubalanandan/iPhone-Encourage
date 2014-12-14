@@ -38,7 +38,9 @@
     UIView *bgView = [[UIView alloc]init];
     bgView.backgroundColor = PAGE_BG_COLOR;
     [self.careTasksTV setBackgroundView:bgView];
-    [self.recentCareTasks addObjectsFromArray:[JHAppDelegate application].dataManager.careTasks];
+    NSArray *sortedArray = [[JHAppDelegate application].dataManager.careTasks sortedArrayUsingSelector:@selector(compare:)];
+
+    [self.recentCareTasks addObjectsFromArray:sortedArray];
     [self.careTasksTV reloadData];
     if (self.recentCareTasks.count==0) {
         self.noCaretasksLabel.hidden = NO;
@@ -117,6 +119,17 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    JHCareTask *caretask = [self.recentCareTasks objectAtIndex:indexPath.row];
+    JHCareTaskListViewController *vc = [[JHCareTaskListViewController alloc]init];
+    vc.selectedCareTask = caretask;
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [JHHudController displayHUDWithMessage:@"Loading CareTask..."];
+    [self.presentingViewController presentViewController:vc animated:YES completion:^{
+        [JHHudController hideAllHUDs];
+    }];
+
+}
 
 #pragma mark - Recent CareTask Cell Delegate
 

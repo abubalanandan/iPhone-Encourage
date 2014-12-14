@@ -27,5 +27,9 @@
     return NO;
 }
 
-
+-(NSComparisonResult)compare:(JHCareTask *)otherCareTask{
+    NSDate *date = [Utility formattedDateFromString:self.careTaskDateTime];
+    NSDate *secondDate = [Utility formattedDateFromString:otherCareTask.careTaskDateTime];
+    return [secondDate compare:date];
+}
 @end

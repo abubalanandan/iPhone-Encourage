@@ -34,8 +34,17 @@
     UIView *bgView = [[UIView alloc]init];
     bgView.backgroundColor = PAGE_BG_COLOR;
     [self.careTasksTV setBackgroundView:bgView];
-    [self.careTasks addObjectsFromArray: [JHAppDelegate application].dataManager.careTasks];
+     NSArray *sortedArray = [[JHAppDelegate application].dataManager.careTasks sortedArrayUsingSelector:@selector(compare:)];
+    [self.careTasks addObjectsFromArray: sortedArray];
     [self.careTasksTV reloadData];
+    if (self.selectedCareTask) {
+        int index = [self.careTasks indexOfObject:self.selectedCareTask];
+        if (index==NSNotFound) {
+            return;
+        }
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+        [self.careTasksTV scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
