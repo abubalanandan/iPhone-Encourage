@@ -10,9 +10,18 @@
 #import <AddressBookUI/AddressBookUI.h>
 #import <AddressBook/AddressBook.h>
 #import "JHReportAPI.h"
+#import "JHImageUploadAPI.h"
+#import "JHContactsViewController.h"
 
-@interface JHReportViewController : JHBaseViewController <UIScrollViewDelegate, ABPeoplePickerNavigationControllerDelegate, JHReportAPIDelegate> {
+@protocol JHContactDataDelegate;
+
+@interface JHReportViewController : JHBaseViewController <UIScrollViewDelegate, JHReportAPIDelegate, JHContactDataDelegate, JHImageUploadDelegate> {
     JHReportAPI *reportAPI;
+    JHImageUploadAPI *imageAPI;
+    
+    IBOutlet UIButton *checkBoxButton;
 }
 
+@property (nonatomic, assign) id <JHContactDataDelegate> contactDelegate;
 @end
+

@@ -8,10 +8,16 @@
 
 #import "JHBaseAPI.h"
 #import "JHImageUploadAPIResponse.h"
-
+@protocol JHImageUploadDelegate;
 @interface JHImageUploadAPI : JHBaseAPI
 
 
 -(void)uploadImageWithPath:(NSString *)path;
+
+@end
+
+@protocol JHImageUploadDelegate <NSObject>
+
+- (void)didUploadImage:(JHImageUploadAPIResponse *)responseObj;
 
 @end

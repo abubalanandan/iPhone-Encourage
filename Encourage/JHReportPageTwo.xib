@@ -75,7 +75,7 @@
                                     <state key="normal" image="angry.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
-                                    <state key="selected" image="dizzinesshover.png"/>
+                                    <state key="selected" image="angryhover.png"/>
                                     <state key="highlighted" image="angryhover.png"/>
                                     <connections>
                                         <action selector="action:" destination="-1" eventType="touchUpInside" id="dxi-bY-Kr1"/>
@@ -87,7 +87,7 @@
                                     <state key="normal" image="sad.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
-                                    <state key="selected" image="cant_sleephover.png"/>
+                                    <state key="selected" image="sadhover.png"/>
                                     <state key="highlighted" image="sadhover.png"/>
                                     <connections>
                                         <action selector="action:" destination="-1" eventType="touchUpInside" id="PLo-8f-5D5"/>
@@ -99,7 +99,7 @@
                                     <state key="normal" image="happy.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
-                                    <state key="selected" image="joint_painhover.png"/>
+                                    <state key="selected" image="happyhover.png"/>
                                     <state key="highlighted" image="happyhover.png"/>
                                     <connections>
                                         <action selector="action:" destination="-1" eventType="touchUpInside" id="6ff-SE-Cok"/>
@@ -111,7 +111,7 @@
                                     <state key="normal" image="restless.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
-                                    <state key="selected" image="dry_skinhover.png"/>
+                                    <state key="selected" image="restlesshover.png"/>
                                     <state key="highlighted" image="restlesshover.png"/>
                                     <connections>
                                         <action selector="action:" destination="-1" eventType="touchUpInside" id="R64-F0-wiW"/>
@@ -123,7 +123,7 @@
                                     <state key="normal" image="cant_sleep.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
-                                    <state key="selected" image="nosebleedhover.png"/>
+                                    <state key="selected" image="cant_sleephover.png"/>
                                     <state key="highlighted" image="cant_sleephover.png"/>
                                     <connections>
                                         <action selector="action:" destination="-1" eventType="touchUpInside" id="Cyw-JE-yWL"/>
@@ -205,12 +205,8 @@
         <image name="cant_sleephover.png" width="86" height="86"/>
         <image name="depressed.png" width="86" height="86"/>
         <image name="depressedhover.png" width="86" height="86"/>
-        <image name="dizzinesshover.png" width="86" height="86"/>
-        <image name="dry_skinhover.png" width="86" height="86"/>
         <image name="happy.png" width="86" height="86"/>
         <image name="happyhover.png" width="86" height="86"/>
-        <image name="joint_painhover.png" width="86" height="86"/>
-        <image name="nosebleedhover.png" width="86" height="86"/>
         <image name="restless.png" width="86" height="86"/>
         <image name="restlesshover.png" width="86" height="86"/>
         <image name="sad.png" width="86" height="86"/>

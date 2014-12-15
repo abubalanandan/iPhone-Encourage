@@ -67,4 +67,25 @@
     return formattedDate;
 }
 
+- (BOOL)validateFields {
+    
+    if (eventAdressTextField.text.length == 0 || eventDescriptionTextField.text.length == 0 || eventNameTextField.text.length == 0) {
+        return NO;
+    }
+    return YES;
+}
+
+- (NSDictionary *)getPageFourData {
+    
+    if (![self validateFields]) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter event name, address and description" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return nil;
+    }
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:eventNameTextField.text, @"eventName", eventDescriptionTextField.text, @"eventDesc", eventAdressTextField.text, @"eventAddress", nil];
+    return dict;
+}
+
+
 @end

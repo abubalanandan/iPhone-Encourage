@@ -18,10 +18,10 @@
 @property (nonatomic, strong) NSString *eventAddress;
 @property (nonatomic, strong) NSString *eventDescription;
 @property (nonatomic, strong) NSString *complaint;
-@property (nonatomic, assign) BOOL informCC;
+@property (nonatomic, strong) NSString *informCC;
 @property (nonatomic, strong) NSArray *nimycMails;
 @property (nonatomic, strong) NSArray *nimycPersons;
-@property (nonatomic, assign) BOOL addToMyCcs;
+@property (nonatomic, strong) NSString *addToMyCcs;
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) NSString *fileActualName;
 @property (nonatomic, strong) NSString *fileName;

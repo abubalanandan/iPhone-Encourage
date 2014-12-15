@@ -19,5 +19,7 @@
 }
 
 - (IBAction)selectImage:(id)sender;
+- (UIImage *)getImage;
+- (NSDictionary *)getData;
 
 @end

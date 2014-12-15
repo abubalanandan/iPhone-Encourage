@@ -94,4 +94,15 @@
     return formattedDate;
 }
 
+- (UIImage *)getImage {
+    
+    return selectedImageView.image;
+}
+
+- (NSDictionary *)getData {
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:dateTextField.text, @"date", commentsTextField.text, @"description", nil];
+    return dict;
+}
+
 @end

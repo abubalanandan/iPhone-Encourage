@@ -220,7 +220,7 @@
 
 -(IBAction)reportButtonPressed:(id)sender{
     JHReportViewController *vc = [[JHReportViewController alloc]init];
-    [self presentViewController:vc animated:NO completion:nil];
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:NO completion:nil];
 }
 
 -(IBAction)alertButtonPressed:(id)sender{

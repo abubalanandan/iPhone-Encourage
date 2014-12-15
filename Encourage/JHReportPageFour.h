@@ -15,4 +15,6 @@
     IBOutlet UIView *pickerContainerView, *containerView;
 }
 
+- (NSDictionary *)getPageFourData;
+
 @end

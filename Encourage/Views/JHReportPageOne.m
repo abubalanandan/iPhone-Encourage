@@ -16,6 +16,8 @@
     [scrollView setContentSize:containerView.frame.size];
     [dateTextField setText:[self formatDate:[NSDate date]]];
     [self setTags];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearAllSelection) name:@"kClearAllButtonSelectionNotification" object:nil];
 }
 
 - (void)setTags {
@@ -108,6 +110,18 @@
     [formatter setDateFormat:@"MMMM dd, yyyy"];
     NSString *formattedDate = [formatter stringFromDate:date];
     return formattedDate;
+}
+
+
+- (void)clearAllSelection {
+    
+    for (UIView *subView in [containerView subviews]) {
+        
+        if ([subView isKindOfClass:[UIButton class]]) {
+            UIButton *btn = (UIButton *)subView;
+            [btn setSelected:NO];
+        }
+    }
 }
 
 @end

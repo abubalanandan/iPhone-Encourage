@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Journey Health Labs. All rights reserved.
 //
 
+
 #import "JHReportPageTwo.h"
 
 @implementation JHReportPageTwo
@@ -17,6 +18,8 @@
     [containerScrollView setContentSize:containerView.frame.size];
     [dateTextField setText:[self formatDate:[NSDate date]]];
     [self setTags];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearAllSelection) name:@"kClearAllButtonSelectionNotification" object:nil];
 }
 
 
@@ -110,5 +113,16 @@
     return formattedDate;
 }
 
+
+- (void)clearAllSelection {
+    
+    for (UIView *subView in [containerView subviews]) {
+        
+        if ([subView isKindOfClass:[UIButton class]]) {
+            UIButton *btn = (UIButton *)subView;
+            [btn setSelected:NO];
+        }
+    }
+}
 
 @end

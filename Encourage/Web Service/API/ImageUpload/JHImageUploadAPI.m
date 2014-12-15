@@ -22,10 +22,13 @@
     [baseWebService_ postDataWithImagePath:path andImageType:@"image/png" andToken:[JHAppDelegate application].dataManager.token];
 }
 
-- (void)didReceiveData:(JHBaseResponse *)responseObj{
+- (void)didReceiveData:(JHBaseResponse *)responseObj {
+    
     JHImageUploadAPIResponse *response = (JHImageUploadAPIResponse *)responseObj;
+    if ([delegate_ respondsToSelector:@selector(didUploadImage:)]) {
+        [delegate_ didUploadImage:(JHImageUploadAPIResponse *)response];
+    }
     [super didReceiveData:responseObj];
-    NSLog(@"File name --%@",response.fileActualName);
 }
 
 

@@ -13,6 +13,8 @@
 #import "JHReportPageThree.h"
 #import "JHReportPageFour.h"
 #import "JHReportAPIRequest.h"
+#import "JHContactsViewController.h"
+#import "JHHudController.h"
 
 @interface JHReportViewController ()
 @property IBOutlet UIView *sliderView;
@@ -28,6 +30,9 @@
 @property (nonatomic, readwrite) ABAddressBookRef addressBook;
 @property (nonatomic, strong) ABPeoplePickerNavigationController *addressBookController;
 @property (nonatomic, strong) NSMutableArray *contactsArray;
+@property (nonatomic, strong) NSArray *selectedEmailsArray;
+@property (nonatomic, strong) NSArray *selectedNamesArray;
+@property (nonatomic, assign) BOOL shouldInformCC;
 
 @end
 
@@ -36,6 +41,13 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    [[self navigationController] setNavigationBarHidden:YES animated:NO];
+    
+    reportAPI = [[JHReportAPI alloc] init];
+    reportAPI.delegate = self;
+    imageAPI = [[JHImageUploadAPI alloc]init];
+    imageAPI.delegate = self;
     
     _sliderSwitch = [DVSwitch switchWithStringsArray:@[@"SICK",@"EMOTIONAL",@"IMAGE",@"MAP"]];
     _sliderSwitch.font = [UIFont boldSystemFontOfSize:10];
@@ -56,6 +68,12 @@
     _addressBookController.delegate = self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    [[self navigationController] setNavigationBarHidden:YES animated:NO];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -64,6 +82,10 @@
 #pragma mark - DVSwitch Methods
 
 - (void)changeSegmentedControlToIndex:(NSUInteger)index {
+    
+    if (index > 1) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"kClearAllButtonSelectionNotification" object:nil];
+    }
     [_sliderSwitch forceSelectedIndex:index animated:YES];
 }
 
@@ -72,6 +94,10 @@
 
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+    if ([self getCurrentPage] > 1) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"kClearAllButtonSelectionNotification" object:nil];
+    }
     [self changeSegmentedControlToIndex:[self getCurrentPage]];
 }
 
@@ -111,175 +137,158 @@
     return floor(self.containerScrollView.contentOffset.x/320.0);
 }
 
+- (BOOL)shouldReport {
+
+    switch ([self getCurrentPage]) {
+        case 0:
+        case 1:
+        {
+            if ([[_pageOne.getPageOneStatus objectForKey:@"events"] count] > 0 || [[_pageTwo.getPageTwoStatus objectForKey:@"events"] count] > 0) {
+                return YES;
+            }
+            break;
+        }
+        case 2: {
+            
+        }
+        case 3: {
+            if ([[_pageFour.getPageFourData allKeys] count] > 0) {
+                return YES;
+            }
+        }
+        default:break;
+    }
+    return NO;
+}
+
 #pragma mark -
 #pragma mark - IBActions
 
 - (IBAction)reportAction:(id)sender {
     
-    switch ([self getCurrentPage]) {
-        case 0:
-        case 1:
-        {
-            [self sendReportForFirstAndSecondPages];
-            break;
-        }
-        case 2: {
-            
-            break;
-        }
-        case 3: {
-            break;
-        }
-        default:
-            break;
+    if ([self shouldReport] == NO) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please choose a sickness/emotion" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
     }
-    
+    else {
+        switch ([self getCurrentPage]) {
+            case 0:
+            case 1:
+            {
+                [self sendReportForFirstAndSecondPages];
+                break;
+            }
+            case 2: {
+                
+                [JHHudController hideAllHUDs];
+                [JHHudController displayHUDWithMessage:@""];
+                UIImage *img = _pageThree.getImage;
+                if (img != nil)
+                {
+                    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                                         NSUserDomainMask, YES);
+                    NSString *documentsDirectory = [paths objectAtIndex:0];
+                    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                                      @"test.png" ];
+                    NSData* data = UIImagePNGRepresentation(img);
+                    [data writeToFile:path atomically:YES];
+                    
+                    [imageAPI uploadImageWithPath:path];
+                }
+                
+                break;
+            }
+            case 3: {
+                [self sendReportForFourthPage];
+                break;
+            }
+            default:
+                break;
+        }
+    }
 }
 
 - (IBAction)addContacts:(id)sender {
     
-    _addressBookController = [[ABPeoplePickerNavigationController alloc] init];
-    [_addressBookController setPeoplePickerDelegate:self];
-    [self presentViewController:_addressBookController animated:YES completion:nil];
+    CFErrorRef *error = nil;
+    
+    
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, error);
+    
+    __block BOOL accessGranted = NO;
+    if (ABAddressBookRequestAccessWithCompletion != NULL) { // we're on iOS 6
+        dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+            accessGranted = granted;
+            dispatch_semaphore_signal(sema);
+        });
+        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+        
+    }
+    else { // we're on iOS 5 or older
+        accessGranted = YES;
+    }
+    
+    NSMutableArray* items = [NSMutableArray array];
+    if (accessGranted) {
+        
+        ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, error);
+        ABRecordRef source = ABAddressBookCopyDefaultSource(addressBook);
+        CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeopleInSourceWithSortOrdering(addressBook, source, kABPersonSortByFirstName);
+        CFIndex nPeople = ABAddressBookGetPersonCount(addressBook);
+        
+        
+        
+        for (int i = 0; i < nPeople; i++)
+        {
+            
+            ABRecordRef person = CFArrayGetValueAtIndex(allPeople, i);
+            
+            //get First Name and Last Name
+            
+            NSMutableDictionary *contact = [NSMutableDictionary dictionary];
+            [contact setObject:(__bridge NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty) forKey:@"name"];
+            [contact setObject:[NSString stringWithFormat:@"%@ %@", [contact objectForKey:@"name"], (__bridge NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty)] forKey:@"name"];
+
+            //get Contact email
+            
+            ABMultiValueRef multiEmails = ABRecordCopyValue(person, kABPersonEmailProperty);
+            
+            for (CFIndex i=0; i<ABMultiValueGetCount(multiEmails); i++) {
+                CFStringRef contactEmailRef = ABMultiValueCopyValueAtIndex(multiEmails, i);
+                [contact setObject:(__bridge NSString *)contactEmailRef forKey:@"email"];
+                break;
+            }
+            if ([[contact objectForKey:@"email"] length] != 0) {
+                [items addObject:contact];
+            }
+        }
+    }
+    
+    JHContactsViewController *contactsVC = [[JHContactsViewController alloc] initWithDelegate:self];
+    contactsVC.contactsArray = [[NSArray alloc] initWithArray:items];
+    contactsVC.delegate = self;
+    [self.navigationController pushViewController:contactsVC animated:YES];
+            
+}
+
+- (IBAction)informCareCircle:(id)sender {
+    
+    if (checkBoxButton.selected) {
+        
+        self.shouldInformCC = NO;
+        [checkBoxButton setSelected:NO];
+    }
+    else {
+        
+        self.shouldInformCC = YES;
+        [checkBoxButton setSelected:YES];
+    }
 }
 
 - (IBAction)dismissView:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark -
-#pragma mark - ABPeoplePickerNavigationController Delegates
-
--(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person{
-    
-    // Initialize a mutable dictionary and give it initial values.
-    NSMutableDictionary *contactInfoDict = [[NSMutableDictionary alloc]
-                                            initWithObjects:@[@"", @"", @"", @"", @"", @"", @"", @"", @""]
-                                            forKeys:@[@"firstName", @"lastName", @"homeEmail", @"workEmail"]];
-    
-    // Use a general Core Foundation object.
-    CFTypeRef generalCFObject = ABRecordCopyValue(person, kABPersonFirstNameProperty);
-    
-    // Get the first name.
-    if (generalCFObject) {
-        [contactInfoDict setObject:(__bridge NSString *)generalCFObject forKey:@"firstName"];
-        CFRelease(generalCFObject);
-    }
-    
-    // Get the last name.
-    generalCFObject = ABRecordCopyValue(person, kABPersonLastNameProperty);
-    if (generalCFObject) {
-        [contactInfoDict setObject:(__bridge NSString *)generalCFObject forKey:@"lastName"];
-        CFRelease(generalCFObject);
-    }
-    
-    
-    
-    // Get the e-mail addresses as a multi-value property.
-    ABMultiValueRef emailsRef = ABRecordCopyValue(person, kABPersonEmailProperty);
-    for (int i=0; i<ABMultiValueGetCount(emailsRef); i++) {
-        CFStringRef currentEmailLabel = ABMultiValueCopyLabelAtIndex(emailsRef, i);
-        CFStringRef currentEmailValue = ABMultiValueCopyValueAtIndex(emailsRef, i);
-        
-        if (CFStringCompare(currentEmailLabel, kABHomeLabel, 0) == kCFCompareEqualTo) {
-            [contactInfoDict setObject:(__bridge NSString *)currentEmailValue forKey:@"homeEmail"];
-        }
-        
-        if (CFStringCompare(currentEmailLabel, kABWorkLabel, 0) == kCFCompareEqualTo) {
-            [contactInfoDict setObject:(__bridge NSString *)currentEmailValue forKey:@"workEmail"];
-        }
-        
-        CFRelease(currentEmailLabel);
-        CFRelease(currentEmailValue);
-    }
-    CFRelease(emailsRef);
-    
-
-    // Initialize the array if it's not yet initialized.
-    if (_contactsArray == nil) {
-        _contactsArray = [[NSMutableArray alloc] init];
-    }
-    // Add the dictionary to the array.
-    [_contactsArray addObject:contactInfoDict];
-    
-//    // Reload the table view data.
-//    [self.tableView reloadData];
-//    
-    // Dismiss the address book view controller.
-    [_addressBookController dismissViewControllerAnimated:YES completion:nil];
-    
-    return NO;
-}
-
-
--(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier{
-    
-    
-    // Initialize a mutable dictionary and give it initial values.
-    NSMutableDictionary *contactInfoDict = [[NSMutableDictionary alloc]
-                                            initWithObjects:@[@"", @"", @"", @"", @"", @"", @"", @"", @""]
-                                            forKeys:@[@"firstName", @"lastName", @"homeEmail", @"workEmail"]];
-    
-    // Use a general Core Foundation object.
-    CFTypeRef generalCFObject = ABRecordCopyValue(person, kABPersonFirstNameProperty);
-    
-    // Get the first name.
-    if (generalCFObject) {
-        [contactInfoDict setObject:(__bridge NSString *)generalCFObject forKey:@"firstName"];
-        CFRelease(generalCFObject);
-    }
-    
-    // Get the last name.
-    generalCFObject = ABRecordCopyValue(person, kABPersonLastNameProperty);
-    if (generalCFObject) {
-        [contactInfoDict setObject:(__bridge NSString *)generalCFObject forKey:@"lastName"];
-        CFRelease(generalCFObject);
-    }
-    
-    
-    
-    // Get the e-mail addresses as a multi-value property.
-    ABMultiValueRef emailsRef = ABRecordCopyValue(person, kABPersonEmailProperty);
-    for (int i=0; i<ABMultiValueGetCount(emailsRef); i++) {
-        CFStringRef currentEmailLabel = ABMultiValueCopyLabelAtIndex(emailsRef, i);
-        CFStringRef currentEmailValue = ABMultiValueCopyValueAtIndex(emailsRef, i);
-        
-        if (CFStringCompare(currentEmailLabel, kABHomeLabel, 0) == kCFCompareEqualTo) {
-            [contactInfoDict setObject:(__bridge NSString *)currentEmailValue forKey:@"homeEmail"];
-        }
-        
-        if (CFStringCompare(currentEmailLabel, kABWorkLabel, 0) == kCFCompareEqualTo) {
-            [contactInfoDict setObject:(__bridge NSString *)currentEmailValue forKey:@"workEmail"];
-        }
-        
-        CFRelease(currentEmailLabel);
-        CFRelease(currentEmailValue);
-    }
-    CFRelease(emailsRef);
-    
-    
-    // Initialize the array if it's not yet initialized.
-    if (_contactsArray == nil) {
-        _contactsArray = [[NSMutableArray alloc] init];
-    }
-    // Add the dictionary to the array.
-    [_contactsArray addObject:contactInfoDict];
-    
-    //    // Reload the table view data.
-    //    [self.tableView reloadData];
-    //
-    // Dismiss the address book view controller.
-    [_addressBookController dismissViewControllerAnimated:YES completion:nil];
-    
-    return NO;
-}
-
-- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
-    
-}
-
--(void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
-    [_addressBookController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -
@@ -291,16 +300,60 @@
      {"dateTime":"2014-10-31 16:22:43","timeZone" : "Asia/Kolkata", "eventName":"Complaint", "eventData":["Can't sleep","Dry Skin","Shortness of Breath","Tingling sensation","Worried","Can't sleep"], "description":"","reportType":"complaint","informCC":"yes","nimycMails":["shylu@gmail.com"],"nimycPersons":["shylu"],"addToMyCcs":"yes","token":"c39743a867ad557e1000be334711edad"}
      */
     JHReportAPIRequest *reportRequest = [[JHReportAPIRequest alloc] init];
-    reportRequest.dateTime = [NSString stringWithFormat:@"%@", [NSDate date]];
+    reportRequest.dateTime = [Utility getFormattedDate];
     reportRequest.timeZone = [NSString stringWithFormat:@"%@", [NSTimeZone localTimeZone]];
-    reportRequest.eventName = @"";
     reportRequest.eventData = [self getEventData];
-    reportRequest.eventDescription = @"";
+    reportRequest.eventDescription = ([self getCurrentPage] == 0) ? [_pageOne.getPageOneStatus objectForKey:@"eventDescription"] : [_pageTwo.getPageTwoStatus objectForKey:@"eventDescription"];
     reportRequest.reportType = REPORT_TYPE_COMPLAINT;
-    reportRequest.informCC = NO;
+    reportRequest.informCC = (self.shouldInformCC) ? @"yes" : @"no";;
     reportRequest.nimycMails = [self getNimycMails];
     reportRequest.nimycPersons = [self getNimycPersons];
-    reportRequest.addToMyCcs = NO;
+    reportRequest.addToMyCcs = @"no";
+    
+    [reportAPI sendReport:reportRequest];
+}
+
+- (void)sendReportForThirdPage:(NSDictionary *)data {
+    
+    /*
+     {"dateTime":"2014-10-31 17:20:12","timeZone":"Asia/Kolkata","eventName":"Arrival entered an if drawing request","reportType":"image","token":"c39743a867ad557e1000be334711edad","fileActualName":"61885D04-B09B-42A4-B92C-4011D505ABBB.JPG","fileName":"","fileType":"image/jpeg","informCC":"yes","nimycMails":["shylu@gmail.com"],"nimycPersons":["shylu"],"addToMyCcs":"yes"}
+     */
+    JHReportAPIRequest *reportRequest = [[JHReportAPIRequest alloc] init];
+    reportRequest.dateTime = [Utility getFormattedDate];
+    reportRequest.timeZone = [NSString stringWithFormat:@"%@", [NSTimeZone localTimeZone]];
+    reportRequest.eventName = [data objectForKey:@"description"];
+    reportRequest.reportType = REPORT_TYPE_IMAGE;
+    reportRequest.informCC = (self.shouldInformCC) ? @"yes" : @"no";
+    reportRequest.nimycMails = [self getNimycMails];
+    reportRequest.nimycPersons = [self getNimycPersons];
+    reportRequest.addToMyCcs = @"no";
+    reportRequest.fileActualName = [data objectForKey:@"fileName"];
+    
+    [reportAPI sendReport:reportRequest];
+}
+
+- (void)sendReportForFourthPage {
+    
+    /*
+     {"dateTime":"2014-10-31 17:26:58","timeZone":"Asia/Kolkata","eventName":"tourist","reportType":"map","token":"bfad24bf95e447bdac33cff1c3381ada","eventAddress":"shamirpet,Rangareddi district of Telangana 500095, India","description":"","informCC":"yes","nimycMails":["shylu@gmail.com"],"nimycPersons":["shylu"],"addToMyCcs":"yes"}
+     
+     */
+    NSDictionary *dict = [NSDictionary dictionaryWithDictionary:_pageFour.getPageFourData];
+    
+    if (dict == nil) {
+        return;
+    }
+    JHReportAPIRequest *reportRequest = [[JHReportAPIRequest alloc] init];
+    reportRequest.dateTime = [Utility getFormattedDate];
+    reportRequest.timeZone = [NSString stringWithFormat:@"%@", [NSTimeZone localTimeZone]];
+    reportRequest.eventName = [dict objectForKey:@"eventName"];
+    reportRequest.eventAddress = [dict objectForKeyedSubscript:@"eventAddress"];
+    reportRequest.eventDescription = [dict objectForKeyedSubscript:@"eventDesc"];
+    reportRequest.reportType = REPORT_TYPE_MAP;
+    reportRequest.informCC = (self.shouldInformCC) ? @"yes" : @"no";
+    reportRequest.nimycMails = [self getNimycMails];
+    reportRequest.nimycPersons = [self getNimycPersons];
+    reportRequest.addToMyCcs = @"yes";
     
     [reportAPI sendReport:reportRequest];
 }
@@ -325,18 +378,46 @@
 
 - (NSArray *)getNimycMails {
     
-    return nil;
+    if (self.selectedEmailsArray) {
+        return self.selectedEmailsArray;
+    }
+    return [NSArray array];
 }
 
 - (NSArray *)getNimycPersons {
     
-    return nil;
+    if (self.selectedNamesArray) {
+        return self.selectedNamesArray;
+    }
+    return [NSArray array];
 }
 
 #pragma mark -
 #pragma mark - ReportAPI Delegate
 
 - (void)didReceiveReportResponse:(JHReportAPIResponse *)response {
+    [JHHudController hideAllHUDs];
+}
+
+#pragma mark -
+
+- (void)didSelectContacts:(NSMutableArray *)names andContacts:(NSMutableArray *)email {
+   
+    self.selectedEmailsArray = [NSArray arrayWithArray:email];
+    self.selectedNamesArray = [NSArray arrayWithArray:names];
+}
+
+#pragma mark -
+#pragma mark - ImageUploadDelegate
+
+- (void)didUploadImage:(JHImageUploadAPIResponse *)responseObj {
+    
+    if (responseObj == nil) {
+        [JHHudController hideAllHUDs];
+    }
+    NSMutableDictionary * data = [NSMutableDictionary dictionaryWithDictionary:_pageThree.getData];
+    [data setObject:responseObj.fileActualName forKey:@"fileName"];
+    [self sendReportForThirdPage:data];
     
 }
 

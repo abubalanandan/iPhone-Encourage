@@ -163,6 +163,12 @@
 		70F58CD61A1292EB004A065E /* JHTimelineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F58CD51A1292EB004A065E /* JHTimelineItem.m */; };
 		70F58CD91A1293FB004A065E /* JHTimelineDetailItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F58CD81A1293FB004A065E /* JHTimelineDetailItem.m */; };
 		70F58CDC1A129653004A065E /* JHTimelineAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F58CDB1A129653004A065E /* JHTimelineAPI.m */; };
+		7FAA14D31A3F1EE300F2947F /* JHContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA14D11A3F1EE300F2947F /* JHContactsViewController.m */; };
+		7FAA14D41A3F1EE300F2947F /* JHContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAA14D21A3F1EE300F2947F /* JHContactsViewController.xib */; };
+		7FAA14D91A3F211F00F2947F /* JHTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA14D71A3F211F00F2947F /* JHTableViewCell.m */; };
+		7FAA14DA1A3F211F00F2947F /* JHTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAA14D81A3F211F00F2947F /* JHTableViewCell.xib */; };
+		7FAA14DD1A3F2E5500F2947F /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FAA14DB1A3F2E5500F2947F /* check.png */; };
+		7FAA14DE1A3F2E5500F2947F /* un_check.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FAA14DC1A3F2E5500F2947F /* un_check.png */; };
 		7FEDC3811A3C4D15007D7FD9 /* JHReportPageOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDC3801A3C4D15007D7FD9 /* JHReportPageOne.m */; };
 		7FEDC3841A3C4D34007D7FD9 /* JHReportPageTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDC3831A3C4D34007D7FD9 /* JHReportPageTwo.m */; };
 		7FEDC3871A3C4D47007D7FD9 /* JHReportPageThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDC3861A3C4D47007D7FD9 /* JHReportPageThree.m */; };
@@ -479,6 +485,14 @@
 		70F58CD81A1293FB004A065E /* JHTimelineDetailItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHTimelineDetailItem.m; sourceTree = "<group>"; };
 		70F58CDA1A129653004A065E /* JHTimelineAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHTimelineAPI.h; path = Timeline/JHTimelineAPI.h; sourceTree = "<group>"; };
 		70F58CDB1A129653004A065E /* JHTimelineAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHTimelineAPI.m; path = Timeline/JHTimelineAPI.m; sourceTree = "<group>"; };
+		7FAA14D01A3F1EE300F2947F /* JHContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHContactsViewController.h; sourceTree = "<group>"; };
+		7FAA14D11A3F1EE300F2947F /* JHContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHContactsViewController.m; sourceTree = "<group>"; };
+		7FAA14D21A3F1EE300F2947F /* JHContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHContactsViewController.xib; sourceTree = "<group>"; };
+		7FAA14D61A3F211F00F2947F /* JHTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHTableViewCell.h; path = Cells/JHTableViewCell.h; sourceTree = "<group>"; };
+		7FAA14D71A3F211F00F2947F /* JHTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHTableViewCell.m; path = Cells/JHTableViewCell.m; sourceTree = "<group>"; };
+		7FAA14D81A3F211F00F2947F /* JHTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JHTableViewCell.xib; path = Cells/JHTableViewCell.xib; sourceTree = "<group>"; };
+		7FAA14DB1A3F2E5500F2947F /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		7FAA14DC1A3F2E5500F2947F /* un_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = un_check.png; sourceTree = "<group>"; };
 		7FEDC37F1A3C4D15007D7FD9 /* JHReportPageOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHReportPageOne.h; path = Views/JHReportPageOne.h; sourceTree = "<group>"; };
 		7FEDC3801A3C4D15007D7FD9 /* JHReportPageOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHReportPageOne.m; path = Views/JHReportPageOne.m; sourceTree = "<group>"; };
 		7FEDC3821A3C4D34007D7FD9 /* JHReportPageTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHReportPageTwo.h; path = Views/JHReportPageTwo.h; sourceTree = "<group>"; };
@@ -714,6 +728,9 @@
 				70785D991A3C3E7A00094144 /* JHAlertsListViewController.h */,
 				70785D9A1A3C3E7A00094144 /* JHAlertsListViewController.m */,
 				70785D9B1A3C3E7A00094144 /* JHAlertsListViewController.xib */,
+				7FAA14D01A3F1EE300F2947F /* JHContactsViewController.h */,
+				7FAA14D11A3F1EE300F2947F /* JHContactsViewController.m */,
+				7FAA14D21A3F1EE300F2947F /* JHContactsViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -721,6 +738,8 @@
 		7028137D19F8022200643D17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7FAA14DB1A3F2E5500F2947F /* check.png */,
+				7FAA14DC1A3F2E5500F2947F /* un_check.png */,
 				70785DA71A3DB3A900094144 /* jhlpolicy.html */,
 				70785DA51A3DA97C00094144 /* register_form@2x.png */,
 				70785DA31A3DA8E800094144 /* register_bg@2x.png */,
@@ -933,6 +952,9 @@
 				70785D9E1A3C445E00094144 /* JHAlertDetailViewCell.h */,
 				70785D9F1A3C445E00094144 /* JHAlertDetailViewCell.m */,
 				70785DA01A3C445E00094144 /* JHAlertDetailViewCell.xib */,
+				7FAA14D61A3F211F00F2947F /* JHTableViewCell.h */,
+				7FAA14D71A3F211F00F2947F /* JHTableViewCell.m */,
+				7FAA14D81A3F211F00F2947F /* JHTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1329,6 +1351,7 @@
 				7028137819F8016F00643D17 /* JHLoginViewController.xib in Resources */,
 				703994BC1A1C9A0800ECA291 /* page_bg@2x.png in Resources */,
 				7028138D19F8022200643D17 /* login_logo@2x.png in Resources */,
+				7FAA14DD1A3F2E5500F2947F /* check.png in Resources */,
 				70AE03B21A3A358B00FF3074 /* JHRecentAlertsViewController.xib in Resources */,
 				70AE03BE1A3B4B3500FF3074 /* JHRecentCareTasksViewController.xib in Resources */,
 				703AE3261A3B995A00959C5A /* JHReportViewController.xib in Resources */,
@@ -1348,6 +1371,7 @@
 				7FEDC3C01A3C502F007D7FD9 /* sore_throathover@2x.png in Resources */,
 				70AE03CD1A3B561200FF3074 /* doc@2x.png in Resources */,
 				703AE3171A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib in Resources */,
+				7FAA14DA1A3F211F00F2947F /* JHTableViewCell.xib in Resources */,
 				7FEDC3BA1A3C502F007D7FD9 /* nosebleed@2x.png in Resources */,
 				7FEDC3B71A3C502F007D7FD9 /* dry_skinhover@2x.png in Resources */,
 				7FEDC3EC1A3C8D8B007D7FD9 /* worriedhover@2x.png in Resources */,
@@ -1358,6 +1382,7 @@
 				703994D11A1CA02400ECA291 /* 80x80.png in Resources */,
 				70AE03CC1A3B561200FF3074 /* lunch@2x.png in Resources */,
 				70785DA21A3C445E00094144 /* JHAlertDetailViewCell.xib in Resources */,
+				7FAA14DE1A3F2E5500F2947F /* un_check.png in Resources */,
 				703994CF1A1CA02400ECA291 /* 50x50.png in Resources */,
 				7028138B19F8022200643D17 /* login_buton@2x.png in Resources */,
 				7FEDC3EA1A3C8D8B007D7FD9 /* sadhover@2x.png in Resources */,
@@ -1371,6 +1396,7 @@
 				703994C01A1C9B5E00ECA291 /* bottom_logo@2x.png in Resources */,
 				7075D1211A17ED190095AA05 /* JHTimelineCell.xib in Resources */,
 				7039950C1A1CC3A900ECA291 /* et_icon@2x.png in Resources */,
+				7FAA14D41A3F1EE300F2947F /* JHContactsViewController.xib in Resources */,
 				7028138919F8022200643D17 /* Default@2x.png in Resources */,
 				7FEDC3BD1A3C502F007D7FD9 /* shortness@2x.png in Resources */,
 				703AE3121A3B6CC200959C5A /* JHCareTaskListViewController.xib in Resources */,
@@ -1416,6 +1442,7 @@
 				702813AA19F804EE00643D17 /* JHLoginAPI.m in Sources */,
 				7028135D19F8008C00643D17 /* ASIDownloadCache.m in Sources */,
 				70F58CDC1A129653004A065E /* JHTimelineAPI.m in Sources */,
+				7FAA14D31A3F1EE300F2947F /* JHContactsViewController.m in Sources */,
 				7FEDC3F81A3EC8F3007D7FD9 /* JHReportAPI.m in Sources */,
 				7028139D19F8038700643D17 /* JHError.m in Sources */,
 				7028136219F8008C00643D17 /* Reachability.m in Sources */,
@@ -1471,6 +1498,7 @@
 				703995011A1CAB8D00ECA291 /* UIImage+MultiFormat.m in Sources */,
 				703994FA1A1CAB8D00ECA291 /* SDWebImageDecoder.m in Sources */,
 				70761A471A1DBD4800FE644F /* JHLogoutAPI.m in Sources */,
+				7FAA14D91A3F211F00F2947F /* JHTableViewCell.m in Sources */,
 				7028137719F8016F00643D17 /* JHLoginViewController.m in Sources */,
 				7028136119F8008C00643D17 /* ASINetworkQueue.m in Sources */,
 				70F58CD91A1293FB004A065E /* JHTimelineDetailItem.m in Sources */,

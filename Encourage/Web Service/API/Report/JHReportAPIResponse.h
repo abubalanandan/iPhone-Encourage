@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JHReportAPIResponse : NSObject
+@interface JHReportAPIResponse : JHBaseResponse
 
 @end
