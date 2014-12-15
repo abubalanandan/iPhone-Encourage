@@ -42,6 +42,7 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     if (textField==self.loginField) {
+        [textField resignFirstResponder];
         [self.passwordField becomeFirstResponder];
     }else{
         [textField resignFirstResponder];
@@ -51,20 +52,37 @@
 
 
 -(IBAction)loginButtonPressed:(id)sender{
+    
+    if (![self isEntriesValid]) {
+        return;
+    }
+    
     JHLoginAPIRequest *loginRequest = [[JHLoginAPIRequest alloc]init];
     loginRequest.emailAddress = self.loginField.text;
     loginRequest.password = self.passwordField.text;
-    loginRequest.emailAddress = @"abu.316@gmail.com";
-    loginRequest.password = @"Sachin@10";
+    
     loginRequest.gcmRegistrationId = ([JHAppDelegate application].dataManager.deviceToken)?[JHAppDelegate application].dataManager.deviceToken:@"afas";
     loginRequest.deviceType = @"iOS";
-    loginRequest.timeZone = @"Asia/Kolkata";
-    loginRequest.dateTime = @"20-10-2014 14:54:11";
+    loginRequest.timeZone = [[NSTimeZone localTimeZone]name];
+   
+    loginRequest.dateTime = [Utility getFormattedDate];
     
     [loginAPI_ performLogin:loginRequest];
 }
 
-
+- (BOOL)isEntriesValid{
+    NSString *error = nil;
+    if (self.loginField.text == nil || self.loginField.text.length<5) {
+        error = @"Please enter a valid email address";
+    }else if(self.passwordField.text==nil || self.passwordField.text.length==0){
+        error = @"Please enter your password";
+    }
+    if (error) {
+        [Utility showOkAlertWithTitle:@"Warning" message:error];
+        return NO;
+    }
+    return YES;
+}
 #pragma mark
 #pragma mark -- Login API delegate methods
 
@@ -74,11 +92,10 @@
     [JHAppDelegate application].dataManager.username = responseObj.personName;
     [[JHAppDelegate application] setupLeftPanel];
     JHLeftPanelViewController *leftPanel =(JHLeftPanelViewController *) [JHAppDelegate application].sidePanel.leftPanel;
-    [leftPanel setUpViewsWithName:responseObj.personName email:@"abu.316@gmail.com" andProfilePic:responseObj.personProfilePic];
+    [leftPanel setUpViewsWithName:responseObj.personName email:self.loginField.text andProfilePic:responseObj.personProfilePic];
        JHTimelineViewController *timelineVC = [[JHTimelineViewController alloc]init];
     [JHAppDelegate application].sidePanel.centerPanel = timelineVC;
     [JHAppDelegate application].window.rootViewController = [JHAppDelegate application].sidePanel;
-    NSLog(@"TOKEN----%@",responseObj.token);
 }
 
 
