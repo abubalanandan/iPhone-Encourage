@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JHReportPageTwo : UIViewController <UITextFieldDelegate>{
+@interface JHReportPageTwo : JHBaseViewController <UITextFieldDelegate>{
     
     IBOutlet UITextField *dateTextField, *commentsTextField;
     IBOutlet UIDatePicker *datePicker;

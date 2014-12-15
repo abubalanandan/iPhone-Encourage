@@ -60,6 +60,13 @@
 
 
 
+- (void)updateNotificationCount{
+    NSInteger alertCount = [[JHAppDelegate application].dataManager getUnreadAlerts].count;
+    NSInteger careTaskCount = [JHAppDelegate application].dataManager.careTasks.count;
+    [self.alertCountLabel setText:[NSString stringWithFormat:@"%ld",(long)alertCount]];
+    [self.careTaskCountLabel setText:[NSString stringWithFormat:@"%ld",(long)careTaskCount]];
+    
+}
 
 
 
@@ -78,7 +85,11 @@
                 [_timelineItems addObject:timelineItem];
             }
         }
+
     }
+    NSArray *sortedArray = [_timelineItems sortedArrayUsingSelector:@selector(compare:)];
+    [_timelineItems removeAllObjects];
+    [_timelineItems addObjectsFromArray:sortedArray];
     [_timelineTV reloadData];
 }
 
@@ -186,6 +197,7 @@
 
 
 
+
 #pragma Scrollview delegate
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -210,13 +222,8 @@
             }
 }
 
-- (void)updateNotificationCount{
-    int alertCount = [[JHAppDelegate application].dataManager getUnreadAlerts].count;
-    int careTaskCount = [JHAppDelegate application].dataManager.careTasks.count;
-    [self.alertCountLabel setText:[NSString stringWithFormat:@"%d",alertCount]];
-    [self.careTaskCountLabel setText:[NSString stringWithFormat:@"%d",careTaskCount]];
 
-}
+#pragma mark -- IBActions
 
 -(IBAction)reportButtonPressed:(id)sender{
     JHReportViewController *vc = [[JHReportViewController alloc]init];

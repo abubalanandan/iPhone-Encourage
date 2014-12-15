@@ -48,10 +48,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -- IBActions
 - (IBAction)close:(id)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark -- Alert Details API Delegate
 
 - (void)didReceiveAlertsDetails:(JHAlertsAPIResponse *)response{
     _loading = NO;
@@ -61,10 +63,13 @@
             [self.alerts addObject:alert];
         }
     }
+    NSArray *sortedArray = [self.alerts sortedArrayUsingSelector:@selector(compare:)];
+    [self.alerts removeAllObjects];
+    [self.alerts addObjectsFromArray:sortedArray];
     [self.alertsTV reloadData];
     if (_start) {
         if (self.selectedAlert!=nil) {
-            int index = [self.alerts indexOfObject:self.selectedAlert];
+            NSInteger index = [self.alerts indexOfObject:self.selectedAlert];
             if (index!=NSNotFound) {
                 NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
                 [self.alertsTV scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
@@ -182,6 +187,9 @@
         [[UIApplication sharedApplication]openURL:[NSURL URLWithString:alert.url]];
     }
 }
+
+
+#pragma mark -- ScrollView Delegate
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if(self.alertsTV.contentOffset.y<0){

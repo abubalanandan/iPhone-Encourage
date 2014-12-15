@@ -48,7 +48,8 @@ JHLocationManager * sharedLocation = nil;
 - (void) startUpdating{
     
     locationManager_.delegate = self;
-    [locationManager_ startUpdatingLocation];    
+
+    [locationManager_ startMonitoringSignificantLocationChanges];
 }
 
 /** 

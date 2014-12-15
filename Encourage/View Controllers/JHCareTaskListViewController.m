@@ -38,7 +38,7 @@
     [self.careTasks addObjectsFromArray: sortedArray];
     [self.careTasksTV reloadData];
     if (self.selectedCareTask) {
-        int index = [self.careTasks indexOfObject:self.selectedCareTask];
+        NSInteger index = [self.careTasks indexOfObject:self.selectedCareTask];
         if (index==NSNotFound) {
             return;
         }

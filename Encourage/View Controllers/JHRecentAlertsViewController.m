@@ -56,21 +56,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+#pragma mark -- IBActions
 
 -(IBAction)closeButtonPressed:(id)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)viewAllAlerts:(id)sender{
+    
     [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
     JHAlertsListViewController *vc = [[JHAlertsListViewController alloc]init];
     [self.presentingViewController presentViewController:vc animated:YES completion:nil];
@@ -109,9 +102,12 @@
     [alertStatusAPI markAlertAsRead:alert.alertKey];
 }
 
+
+#pragma mark -- Alert Status API delegate
+
 -(void)markedAlertSuccessfully{
     [self.recentAlertsArray removeObject:self.markedAlert];
-    int index = [[JHAppDelegate application].dataManager.alerts indexOfObject:self.markedAlert];
+    NSInteger index = [[JHAppDelegate application].dataManager.alerts indexOfObject:self.markedAlert];
     JHAlert *alert = [[JHAppDelegate application].dataManager.alerts objectAtIndex:index];
     alert.readStatus = NOTIFICATION_READ;
     [[JHAppDelegate application].timelineVC updateNotificationCount];

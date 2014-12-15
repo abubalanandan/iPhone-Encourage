@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JHReportPageThree : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate> {
+@interface JHReportPageThree : JHBaseViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate> {
     
     IBOutlet UIImageView *selectedImageView;
     IBOutlet UITextField *dateTextField, *commentsTextField;

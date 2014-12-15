@@ -150,6 +150,7 @@
         }
         case 2: {
             
+            break;
         }
         case 3: {
             if ([[_pageFour.getPageFourData allKeys] count] > 0) {
