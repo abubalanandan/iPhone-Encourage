@@ -24,6 +24,7 @@
 
 - (void)performPostRequest:(NSString*)url withRequestObject:(JHBaseRequest*)requestObj;
 //- (void) postData:(IDUploadDataRequest *)data;
+- (void) postDataWithImagePath:(NSString *)path andImageType:(NSString *)imageType andToken:(NSString *)token;
 
 @end
 

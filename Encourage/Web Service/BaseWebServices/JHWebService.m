@@ -65,61 +65,62 @@
 	}
 }
 
-//- (void) postData:(IDUploadDataRequest *)data{
-//    
-//    if ([Utility isNetworkAvailable]) {
-//        
-//        NSString * url = [NSString stringWithFormat:IMAGE_UPLOAD_URL, BASE_URL];
-//        ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:url]];
-//        [request setRequestMethod:@"POST"];
-//    
-//        NSString *contentType = [NSString stringWithFormat:@"multipart/form-data"];
-//        [request addRequestHeader:@"Content-Type" value:contentType];
-//    
-//        [request setFile:data.imageFile forKey:@"imageFile"];
-//        [request setPostValue:data.imageType forKey:@"imageType"];
-//    
-//        [request startSynchronous];
-//            
-//        NSString *receivedResponse = nil;
-//        receivedResponse = [request responseString];
-//        
-//        SBJSON *parser = [[SBJSON alloc] init];
-//        NSDictionary *jsonContent = [parser objectWithString:receivedResponse error:nil];
-//        id responseObj;
-//        Class responseObjClass = objc_getClass([responseClassName_ cStringUsingEncoding:NSASCIIStringEncoding]);
-//        
-//        responseObj = [responseObjClass objectForDictionary:jsonContent];
-//        
-//        if(!jsonContent || ([jsonContent objectForKey:JSON_RESPONSE_DESCRIPTION_KEY]==[NSNull null] || [[jsonContent objectForKey:JSON_RESPONSE_DESCRIPTION_KEY]count]==0 )){
-//        
-//            if([delegate_ respondsToSelector:@selector(didReceiveJSONException)])
-//                [delegate_ didReceiveJSONException];
-//        
-//        }else if ([[jsonContent objectForKey:JSON_RESPONSE_STATUS_KEY] isEqualToString:JSON_RESPONSE_SUCCESS_STATUS]){
-//        
-//        
-//            if([delegate_ respondsToSelector:@selector(didReceiveData:)])
-//                [delegate_ didReceiveData:responseObj];
-//        
-//        
-//        }else if([[jsonContent objectForKey:JSON_RESPONSE_STATUS_KEY] isEqualToString:JSON_RESPONSE_FAIL_STATUS]) {
-//        
-//        
-//            JHResponeMessage * responseMessageObj = (JHResponeMessage *)[JHResponeMessage objectForDictionary:[jsonContent objectForKey:RESPONSE_MESSAGES]];
-//        
-//        
-//            if([delegate_ respondsToSelector:@selector(didReceiveFailedStatusCode:)])
-//                [delegate_ didReceiveFailedStatusCode:responseMessageObj];
-//        } else if([delegate_ respondsToSelector:@selector(didFailUnexpectedly)]) {
-//            [delegate_ didFailUnexpectedly];
-//        }
-//        [parser release];
-//    }else{
-//        
-//        [delegate_ didReceiveNetworkError:NSLocalizedString(@"ReachabilityMessage",@"")];
-//    }
-//}
+- (void) postDataWithImagePath:(NSString *)path andImageType:(NSString *)imageType andToken:(NSString *)token{
+    
+    if ([Utility isNetworkAvailable]) {
+        
+        NSString * url = IMAGE_UPLOAD_URL;
+        ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:url]];
+        [request setRequestMethod:@"POST"];
+    
+        NSString *contentType = [NSString stringWithFormat:@"multipart/form-data"];
+        [request addRequestHeader:@"Content-Type" value:contentType];
+    
+        [request setFile:path forKey:@"images"];
+        [request setValue:token forKey:@"token"];
+        [request setPostValue:imageType forKey:@"imageType"];
+    
+        [request startSynchronous];
+            
+        NSString *receivedResponse = nil;
+        receivedResponse = [request responseString];
+        
+        SBJSON *parser = [[SBJSON alloc] init];
+        NSDictionary *jsonContent = [parser objectWithString:receivedResponse error:nil];
+        id responseObj;
+        Class responseObjClass = objc_getClass([responseClassName_ cStringUsingEncoding:NSASCIIStringEncoding]);
+        
+        responseObj = [responseObjClass objectForDictionary:jsonContent];
+        
+        if(!jsonContent || ([jsonContent objectForKey:JSON_RESPONSE_DESCRIPTION_KEY]==[NSNull null] || [[jsonContent objectForKey:JSON_RESPONSE_DESCRIPTION_KEY]count]==0 )){
+        
+            if([delegate_ respondsToSelector:@selector(didReceiveJSONException)])
+                [delegate_ didReceiveJSONException];
+        
+        }else if ([[jsonContent objectForKey:JSON_RESPONSE_STATUS_KEY] isEqualToString:JSON_RESPONSE_SUCCESS_STATUS]){
+        
+        
+            if([delegate_ respondsToSelector:@selector(didReceiveData:)])
+                [delegate_ didReceiveData:responseObj];
+        
+        
+        }else if([[jsonContent objectForKey:JSON_RESPONSE_STATUS_KEY] isEqualToString:JSON_RESPONSE_FAIL_STATUS]) {
+        
+        
+            JHResponeMessage * responseMessageObj = (JHResponeMessage *)[JHResponeMessage objectForDictionary:[jsonContent objectForKey:RESPONSE_MESSAGES]];
+        
+        
+            if([delegate_ respondsToSelector:@selector(didReceiveFailedStatusCode:)])
+                [delegate_ didReceiveFailedStatusCode:responseMessageObj];
+        } else if([delegate_ respondsToSelector:@selector(didFailUnexpectedly)]) {
+            [delegate_ didFailUnexpectedly];
+        }
+        [parser release];
+    }else{
+        
+        [delegate_ didReceiveNetworkError:NSLocalizedString(@"ReachabilityMessage",@"")];
+    }
+}
 
 #pragma mark --
 #pragma mark ASIHTTPRequestDelegateMethods
