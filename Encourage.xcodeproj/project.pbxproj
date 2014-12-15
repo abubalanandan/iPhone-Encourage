@@ -52,7 +52,6 @@
 		702813B819F807C200643D17 /* JHDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813B319F807C200643D17 /* JHDataManager.m */; };
 		702813B919F807C200643D17 /* JHLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813B619F807C200643D17 /* JHLocationManager.m */; };
 		702813BC19F8083200643D17 /* JHLoginAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813BB19F8083200643D17 /* JHLoginAPIRequest.m */; };
-		702813BF19F8084800643D17 /* JHLoginAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813BE19F8084800643D17 /* JHLoginAPIResponse.m */; };
 		702813C219F8287400643D17 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 702813C119F8287400643D17 /* Utility.m */; };
 		703994B91A1C90AB00ECA291 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 703994B61A1C90AB00ECA291 /* MBProgressHUD.m */; };
 		703994BA1A1C90AB00ECA291 /* JHHudController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703994B81A1C90AB00ECA291 /* JHHudController.m */; };
@@ -93,7 +92,6 @@
 		703AE3121A3B6CC200959C5A /* JHCareTaskListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703AE3101A3B6CC200959C5A /* JHCareTaskListViewController.xib */; };
 		703AE3161A3B6E1D00959C5A /* JHCareTaskDetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE3141A3B6E1D00959C5A /* JHCareTaskDetailViewCell.m */; };
 		703AE3171A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703AE3151A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib */; };
-		703AE31B1A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE31A1A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.m */; };
 		703AE31E1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE31D1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.m */; };
 		703AE3211A3B8AD600959C5A /* JHCareTaskStatusAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE3201A3B8AD600959C5A /* JHCareTaskStatusAPI.m */; };
 		703AE3251A3B995A00959C5A /* JHReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE3231A3B995A00959C5A /* JHReportViewController.m */; };
@@ -109,6 +107,25 @@
 		70761A411A1DBCF600FE644F /* JHLogoutAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A401A1DBCF600FE644F /* JHLogoutAPIRequest.m */; };
 		70761A441A1DBD3500FE644F /* JHLogoutAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A431A1DBD3500FE644F /* JHLogoutAPIResponse.m */; };
 		70761A471A1DBD4800FE644F /* JHLogoutAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 70761A461A1DBD4800FE644F /* JHLogoutAPI.m */; };
+		70785D9C1A3C3E7A00094144 /* JHAlertsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70785D9A1A3C3E7A00094144 /* JHAlertsListViewController.m */; };
+		70785D9D1A3C3E7A00094144 /* JHAlertsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70785D9B1A3C3E7A00094144 /* JHAlertsListViewController.xib */; };
+		70785DA11A3C445E00094144 /* JHAlertDetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70785D9F1A3C445E00094144 /* JHAlertDetailViewCell.m */; };
+		70785DA21A3C445E00094144 /* JHAlertDetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70785DA01A3C445E00094144 /* JHAlertDetailViewCell.xib */; };
+		70785DA41A3DA8E800094144 /* register_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70785DA31A3DA8E800094144 /* register_bg@2x.png */; };
+		70785DA61A3DA97C00094144 /* register_form@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70785DA51A3DA97C00094144 /* register_form@2x.png */; };
+		70785DA81A3DB3A900094144 /* jhlpolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = 70785DA71A3DB3A900094144 /* jhlpolicy.html */; };
+		707FDA371A3DC7E000B60218 /* KGModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA361A3DC7E000B60218 /* KGModal.m */; };
+		707FDA3B1A3DCD6300B60218 /* JHRegistrationAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA3A1A3DCD6300B60218 /* JHRegistrationAPIRequest.m */; };
+		707FDA3E1A3DCD7800B60218 /* JHRegistrationAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA3D1A3DCD7800B60218 /* JHRegistrationAPIResponse.m */; };
+		707FDA411A3DCD8500B60218 /* JHRegistrationAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA401A3DCD8500B60218 /* JHRegistrationAPI.m */; };
+		707FDA461A3E4A9C00B60218 /* JHAlertStatusAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA451A3E4A9C00B60218 /* JHAlertStatusAPIRequest.m */; };
+		707FDA491A3E4AB000B60218 /* JHAlertStatusAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA481A3E4AB000B60218 /* JHAlertStatusAPIResponse.m */; };
+		707FDA4C1A3E4AC300B60218 /* JHAlertStatusAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA4B1A3E4AC300B60218 /* JHAlertStatusAPI.m */; };
+		707FDA4F1A3E4CD600B60218 /* JHAlertsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA4E1A3E4CD600B60218 /* JHAlertsAPI.m */; };
+		707FDA521A3E4CE700B60218 /* JHAlertsAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA511A3E4CE700B60218 /* JHAlertsAPIRequest.m */; };
+		707FDA551A3E4CF900B60218 /* JHAlertsAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA541A3E4CF900B60218 /* JHAlertsAPIResponse.m */; };
+		707FDA581A3E55E300B60218 /* JHCareTaskStatusAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA571A3E55E300B60218 /* JHCareTaskStatusAPIRequest.m */; };
+		707FDA5B1A3E55F200B60218 /* JHLoginAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA5A1A3E55F200B60218 /* JHLoginAPIResponse.m */; };
 		70AE03AA1A3A12D600FF3074 /* JHCareTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03A91A3A12D600FF3074 /* JHCareTask.m */; };
 		70AE03AD1A3A13E000FF3074 /* JHAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03AC1A3A13E000FF3074 /* JHAlert.m */; };
 		70AE03B01A3A357300FF3074 /* JHRecentAlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03AF1A3A357300FF3074 /* JHRecentAlertsViewController.m */; };
@@ -164,7 +181,6 @@
 		7FEDC3B91A3C502F007D7FD9 /* joint_painhover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FEDC39E1A3C502F007D7FD9 /* joint_painhover@2x.png */; };
 		7FEDC3BA1A3C502F007D7FD9 /* nosebleed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FEDC39F1A3C502F007D7FD9 /* nosebleed@2x.png */; };
 		7FEDC3BB1A3C502F007D7FD9 /* nosebleedhover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FEDC3A01A3C502F007D7FD9 /* nosebleedhover@2x.png */; };
-		7FEDC3BC1A3C502F007D7FD9 /* page_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FEDC3A11A3C502F007D7FD9 /* page_bg@2x.png */; };
 		7FEDC3BD1A3C502F007D7FD9 /* shortness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FEDC3A21A3C502F007D7FD9 /* shortness@2x.png */; };
 		7FEDC3BE1A3C502F007D7FD9 /* shortnesshover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FEDC3A31A3C502F007D7FD9 /* shortnesshover@2x.png */; };
 		7FEDC3BF1A3C502F007D7FD9 /* sore_throat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FEDC3A41A3C502F007D7FD9 /* sore_throat@2x.png */; };
@@ -285,8 +301,6 @@
 		702813B619F807C200643D17 /* JHLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHLocationManager.m; sourceTree = "<group>"; };
 		702813BA19F8083200643D17 /* JHLoginAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHLoginAPIRequest.h; path = Login/JHLoginAPIRequest.h; sourceTree = "<group>"; };
 		702813BB19F8083200643D17 /* JHLoginAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHLoginAPIRequest.m; path = Login/JHLoginAPIRequest.m; sourceTree = "<group>"; };
-		702813BD19F8084800643D17 /* JHLoginAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHLoginAPIResponse.h; sourceTree = "<group>"; };
-		702813BE19F8084800643D17 /* JHLoginAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHLoginAPIResponse.m; sourceTree = "<group>"; };
 		702813C019F8287400643D17 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		702813C119F8287400643D17 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		702813C319F8293300643D17 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -350,8 +364,6 @@
 		703AE3131A3B6E1D00959C5A /* JHCareTaskDetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCareTaskDetailViewCell.h; sourceTree = "<group>"; };
 		703AE3141A3B6E1D00959C5A /* JHCareTaskDetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCareTaskDetailViewCell.m; sourceTree = "<group>"; };
 		703AE3151A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHCareTaskDetailViewCell.xib; sourceTree = "<group>"; };
-		703AE3191A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCareTaskStatusAPIRequest.h; sourceTree = "<group>"; };
-		703AE31A1A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCareTaskStatusAPIRequest.m; sourceTree = "<group>"; };
 		703AE31C1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHCareTaskStatusAPIResponse.h; path = CareTask/JHCareTaskStatusAPIResponse.h; sourceTree = "<group>"; };
 		703AE31D1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHCareTaskStatusAPIResponse.m; path = CareTask/JHCareTaskStatusAPIResponse.m; sourceTree = "<group>"; };
 		703AE31F1A3B8AD600959C5A /* JHCareTaskStatusAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHCareTaskStatusAPI.h; path = CareTask/JHCareTaskStatusAPI.h; sourceTree = "<group>"; };
@@ -378,6 +390,39 @@
 		70761A431A1DBD3500FE644F /* JHLogoutAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHLogoutAPIResponse.m; path = Logout/JHLogoutAPIResponse.m; sourceTree = "<group>"; };
 		70761A451A1DBD4800FE644F /* JHLogoutAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHLogoutAPI.h; path = Logout/JHLogoutAPI.h; sourceTree = "<group>"; };
 		70761A461A1DBD4800FE644F /* JHLogoutAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHLogoutAPI.m; path = Logout/JHLogoutAPI.m; sourceTree = "<group>"; };
+		70785D991A3C3E7A00094144 /* JHAlertsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAlertsListViewController.h; sourceTree = "<group>"; };
+		70785D9A1A3C3E7A00094144 /* JHAlertsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAlertsListViewController.m; sourceTree = "<group>"; };
+		70785D9B1A3C3E7A00094144 /* JHAlertsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHAlertsListViewController.xib; sourceTree = "<group>"; };
+		70785D9E1A3C445E00094144 /* JHAlertDetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAlertDetailViewCell.h; sourceTree = "<group>"; };
+		70785D9F1A3C445E00094144 /* JHAlertDetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAlertDetailViewCell.m; sourceTree = "<group>"; };
+		70785DA01A3C445E00094144 /* JHAlertDetailViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHAlertDetailViewCell.xib; sourceTree = "<group>"; };
+		70785DA31A3DA8E800094144 /* register_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register_bg@2x.png"; sourceTree = "<group>"; };
+		70785DA51A3DA97C00094144 /* register_form@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register_form@2x.png"; sourceTree = "<group>"; };
+		70785DA71A3DB3A900094144 /* jhlpolicy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = jhlpolicy.html; sourceTree = "<group>"; };
+		707FDA351A3DC7E000B60218 /* KGModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGModal.h; sourceTree = "<group>"; };
+		707FDA361A3DC7E000B60218 /* KGModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGModal.m; sourceTree = "<group>"; };
+		707FDA391A3DCD6300B60218 /* JHRegistrationAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRegistrationAPIRequest.h; sourceTree = "<group>"; };
+		707FDA3A1A3DCD6300B60218 /* JHRegistrationAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRegistrationAPIRequest.m; sourceTree = "<group>"; };
+		707FDA3C1A3DCD7800B60218 /* JHRegistrationAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRegistrationAPIResponse.h; sourceTree = "<group>"; };
+		707FDA3D1A3DCD7800B60218 /* JHRegistrationAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRegistrationAPIResponse.m; sourceTree = "<group>"; };
+		707FDA3F1A3DCD8500B60218 /* JHRegistrationAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRegistrationAPI.h; sourceTree = "<group>"; };
+		707FDA401A3DCD8500B60218 /* JHRegistrationAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRegistrationAPI.m; sourceTree = "<group>"; };
+		707FDA441A3E4A9C00B60218 /* JHAlertStatusAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAlertStatusAPIRequest.h; sourceTree = "<group>"; };
+		707FDA451A3E4A9C00B60218 /* JHAlertStatusAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAlertStatusAPIRequest.m; sourceTree = "<group>"; };
+		707FDA471A3E4AB000B60218 /* JHAlertStatusAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAlertStatusAPIResponse.h; sourceTree = "<group>"; };
+		707FDA481A3E4AB000B60218 /* JHAlertStatusAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAlertStatusAPIResponse.m; sourceTree = "<group>"; };
+		707FDA4A1A3E4AC300B60218 /* JHAlertStatusAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAlertStatusAPI.h; sourceTree = "<group>"; };
+		707FDA4B1A3E4AC300B60218 /* JHAlertStatusAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAlertStatusAPI.m; sourceTree = "<group>"; };
+		707FDA4D1A3E4CD600B60218 /* JHAlertsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAlertsAPI.h; sourceTree = "<group>"; };
+		707FDA4E1A3E4CD600B60218 /* JHAlertsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAlertsAPI.m; sourceTree = "<group>"; };
+		707FDA501A3E4CE700B60218 /* JHAlertsAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAlertsAPIRequest.h; sourceTree = "<group>"; };
+		707FDA511A3E4CE700B60218 /* JHAlertsAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAlertsAPIRequest.m; sourceTree = "<group>"; };
+		707FDA531A3E4CF900B60218 /* JHAlertsAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAlertsAPIResponse.h; sourceTree = "<group>"; };
+		707FDA541A3E4CF900B60218 /* JHAlertsAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAlertsAPIResponse.m; sourceTree = "<group>"; };
+		707FDA561A3E55E300B60218 /* JHCareTaskStatusAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHCareTaskStatusAPIRequest.h; path = CareTask/JHCareTaskStatusAPIRequest.h; sourceTree = "<group>"; };
+		707FDA571A3E55E300B60218 /* JHCareTaskStatusAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHCareTaskStatusAPIRequest.m; path = CareTask/JHCareTaskStatusAPIRequest.m; sourceTree = "<group>"; };
+		707FDA591A3E55F200B60218 /* JHLoginAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHLoginAPIResponse.h; path = Login/JHLoginAPIResponse.h; sourceTree = "<group>"; };
+		707FDA5A1A3E55F200B60218 /* JHLoginAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHLoginAPIResponse.m; path = Login/JHLoginAPIResponse.m; sourceTree = "<group>"; };
 		70AE03A81A3A12D600FF3074 /* JHCareTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCareTask.h; sourceTree = "<group>"; };
 		70AE03A91A3A12D600FF3074 /* JHCareTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCareTask.m; sourceTree = "<group>"; };
 		70AE03AB1A3A13E000FF3074 /* JHAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAlert.h; sourceTree = "<group>"; };
@@ -452,7 +497,6 @@
 		7FEDC39E1A3C502F007D7FD9 /* joint_painhover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "joint_painhover@2x.png"; sourceTree = "<group>"; };
 		7FEDC39F1A3C502F007D7FD9 /* nosebleed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nosebleed@2x.png"; sourceTree = "<group>"; };
 		7FEDC3A01A3C502F007D7FD9 /* nosebleedhover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nosebleedhover@2x.png"; sourceTree = "<group>"; };
-		7FEDC3A11A3C502F007D7FD9 /* page_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page_bg@2x.png"; sourceTree = "<group>"; };
 		7FEDC3A21A3C502F007D7FD9 /* shortness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shortness@2x.png"; sourceTree = "<group>"; };
 		7FEDC3A31A3C502F007D7FD9 /* shortnesshover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shortnesshover@2x.png"; sourceTree = "<group>"; };
 		7FEDC3A41A3C502F007D7FD9 /* sore_throat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sore_throat@2x.png"; sourceTree = "<group>"; };
@@ -512,6 +556,7 @@
 		7028132C19F8008C00643D17 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				707FDA341A3DC7E000B60218 /* KGModal */,
 				7049451D1A3BA85B00D8933B /* DVSwitch */,
 				70761A321A1DA6DD00FE644F /* SlideMenu */,
 				703994D41A1CAB8D00ECA291 /* SDWebImage */,
@@ -556,6 +601,9 @@
 			isa = PBXGroup;
 			children = (
 				7FEDC3F21A3E355A007D7FD9 /* Report */,
+				707FDA421A3E498400B60218 /* AlertStatus */,
+				707FDA431A3E498400B60218 /* Alert */,
+				707FDA381A3DCD3F00B60218 /* Registration */,
 				703AE3181A3B8A7900959C5A /* CareTask */,
 				70761A3E1A1DBCD900FE644F /* Logout */,
 				70F58CCD1A128F2F004A065E /* Timeline */,
@@ -656,6 +704,9 @@
 				703AE3221A3B995A00959C5A /* JHReportViewController.h */,
 				703AE3231A3B995A00959C5A /* JHReportViewController.m */,
 				703AE3241A3B995A00959C5A /* JHReportViewController.xib */,
+				70785D991A3C3E7A00094144 /* JHAlertsListViewController.h */,
+				70785D9A1A3C3E7A00094144 /* JHAlertsListViewController.m */,
+				70785D9B1A3C3E7A00094144 /* JHAlertsListViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -663,6 +714,9 @@
 		7028137D19F8022200643D17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				70785DA71A3DB3A900094144 /* jhlpolicy.html */,
+				70785DA51A3DA97C00094144 /* register_form@2x.png */,
+				70785DA31A3DA8E800094144 /* register_bg@2x.png */,
 				7FEDC3931A3C502F007D7FD9 /* Report */,
 				704945211A3BABEF00D8933B /* report_bg@2x.png */,
 				70AE03CE1A3B56C700FF3074 /* lunch_mod@2x.png */,
@@ -733,12 +787,12 @@
 		702813A719F804CD00643D17 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				707FDA591A3E55F200B60218 /* JHLoginAPIResponse.h */,
+				707FDA5A1A3E55F200B60218 /* JHLoginAPIResponse.m */,
 				702813A819F804EE00643D17 /* JHLoginAPI.h */,
 				702813A919F804EE00643D17 /* JHLoginAPI.m */,
 				702813BA19F8083200643D17 /* JHLoginAPIRequest.h */,
 				702813BB19F8083200643D17 /* JHLoginAPIRequest.m */,
-				702813BD19F8084800643D17 /* JHLoginAPIResponse.h */,
-				702813BE19F8084800643D17 /* JHLoginAPIResponse.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -835,8 +889,8 @@
 		703AE3181A3B8A7900959C5A /* CareTask */ = {
 			isa = PBXGroup;
 			children = (
-				703AE3191A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.h */,
-				703AE31A1A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.m */,
+				707FDA561A3E55E300B60218 /* JHCareTaskStatusAPIRequest.h */,
+				707FDA571A3E55E300B60218 /* JHCareTaskStatusAPIRequest.m */,
 				703AE31C1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.h */,
 				703AE31D1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.m */,
 				703AE31F1A3B8AD600959C5A /* JHCareTaskStatusAPI.h */,
@@ -869,6 +923,9 @@
 				703AE3131A3B6E1D00959C5A /* JHCareTaskDetailViewCell.h */,
 				703AE3141A3B6E1D00959C5A /* JHCareTaskDetailViewCell.m */,
 				703AE3151A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib */,
+				70785D9E1A3C445E00094144 /* JHAlertDetailViewCell.h */,
+				70785D9F1A3C445E00094144 /* JHAlertDetailViewCell.m */,
+				70785DA01A3C445E00094144 /* JHAlertDetailViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -898,6 +955,54 @@
 				70761A461A1DBD4800FE644F /* JHLogoutAPI.m */,
 			);
 			name = Logout;
+			sourceTree = "<group>";
+		};
+		707FDA341A3DC7E000B60218 /* KGModal */ = {
+			isa = PBXGroup;
+			children = (
+				707FDA351A3DC7E000B60218 /* KGModal.h */,
+				707FDA361A3DC7E000B60218 /* KGModal.m */,
+			);
+			path = KGModal;
+			sourceTree = "<group>";
+		};
+		707FDA381A3DCD3F00B60218 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				707FDA391A3DCD6300B60218 /* JHRegistrationAPIRequest.h */,
+				707FDA3A1A3DCD6300B60218 /* JHRegistrationAPIRequest.m */,
+				707FDA3C1A3DCD7800B60218 /* JHRegistrationAPIResponse.h */,
+				707FDA3D1A3DCD7800B60218 /* JHRegistrationAPIResponse.m */,
+				707FDA3F1A3DCD8500B60218 /* JHRegistrationAPI.h */,
+				707FDA401A3DCD8500B60218 /* JHRegistrationAPI.m */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		707FDA421A3E498400B60218 /* AlertStatus */ = {
+			isa = PBXGroup;
+			children = (
+				707FDA441A3E4A9C00B60218 /* JHAlertStatusAPIRequest.h */,
+				707FDA451A3E4A9C00B60218 /* JHAlertStatusAPIRequest.m */,
+				707FDA471A3E4AB000B60218 /* JHAlertStatusAPIResponse.h */,
+				707FDA481A3E4AB000B60218 /* JHAlertStatusAPIResponse.m */,
+				707FDA4A1A3E4AC300B60218 /* JHAlertStatusAPI.h */,
+				707FDA4B1A3E4AC300B60218 /* JHAlertStatusAPI.m */,
+			);
+			path = AlertStatus;
+			sourceTree = "<group>";
+		};
+		707FDA431A3E498400B60218 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				707FDA4D1A3E4CD600B60218 /* JHAlertsAPI.h */,
+				707FDA4E1A3E4CD600B60218 /* JHAlertsAPI.m */,
+				707FDA501A3E4CE700B60218 /* JHAlertsAPIRequest.h */,
+				707FDA511A3E4CE700B60218 /* JHAlertsAPIRequest.m */,
+				707FDA531A3E4CF900B60218 /* JHAlertsAPIResponse.h */,
+				707FDA541A3E4CF900B60218 /* JHAlertsAPIResponse.m */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		70F10A8019706C92002513D1 = {
@@ -1034,7 +1139,6 @@
 				7FEDC39E1A3C502F007D7FD9 /* joint_painhover@2x.png */,
 				7FEDC39F1A3C502F007D7FD9 /* nosebleed@2x.png */,
 				7FEDC3A01A3C502F007D7FD9 /* nosebleedhover@2x.png */,
-				7FEDC3A11A3C502F007D7FD9 /* page_bg@2x.png */,
 				7FEDC3A21A3C502F007D7FD9 /* shortness@2x.png */,
 				7FEDC3A31A3C502F007D7FD9 /* shortnesshover@2x.png */,
 				7FEDC3A41A3C502F007D7FD9 /* sore_throat@2x.png */,
@@ -1203,7 +1307,6 @@
 				70F10A9F19706C92002513D1 /* Images.xcassets in Resources */,
 				70AE03B91A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.xib in Resources */,
 				703995111A1CC46E00ECA291 /* menu_select@2x.png in Resources */,
-				7FEDC3BC1A3C502F007D7FD9 /* page_bg@2x.png in Resources */,
 				7028138F19F8022200643D17 /* register_buton@2x.png in Resources */,
 				7028137819F8016F00643D17 /* JHLoginViewController.xib in Resources */,
 				703994BC1A1C9A0800ECA291 /* page_bg@2x.png in Resources */,
@@ -1211,6 +1314,7 @@
 				70AE03B21A3A358B00FF3074 /* JHRecentAlertsViewController.xib in Resources */,
 				70AE03BE1A3B4B3500FF3074 /* JHRecentCareTasksViewController.xib in Resources */,
 				703AE3261A3B995A00959C5A /* JHReportViewController.xib in Resources */,
+				70785DA81A3DB3A900094144 /* jhlpolicy.html in Resources */,
 				703994C41A1C9CA000ECA291 /* report_butonhover@2x.png in Resources */,
 				7FEDC3B81A3C502F007D7FD9 /* joint_pain@2x.png in Resources */,
 				7FEDC3B31A3C502F007D7FD9 /* cant_sleephover@2x.png in Resources */,
@@ -1222,6 +1326,7 @@
 				7FEDC3E41A3C8D8B007D7FD9 /* depressedhover@2x.png in Resources */,
 				7FEDC3C11A3C502F007D7FD9 /* tired@2x.png in Resources */,
 				7028138A19F8022200643D17 /* login_bg@2x.png in Resources */,
+				70785DA41A3DA8E800094144 /* register_bg@2x.png in Resources */,
 				7FEDC3C01A3C502F007D7FD9 /* sore_throathover@2x.png in Resources */,
 				70AE03CD1A3B561200FF3074 /* doc@2x.png in Resources */,
 				703AE3171A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib in Resources */,
@@ -1229,10 +1334,12 @@
 				7FEDC3B71A3C502F007D7FD9 /* dry_skinhover@2x.png in Resources */,
 				7FEDC3EC1A3C8D8B007D7FD9 /* worriedhover@2x.png in Resources */,
 				7028138C19F8022200643D17 /* login_form@2x.png in Resources */,
+				70785D9D1A3C3E7A00094144 /* JHAlertsListViewController.xib in Resources */,
 				7FEDC3E91A3C8D8B007D7FD9 /* sad@2x.png in Resources */,
 				7FEDC3E11A3C8D8B007D7FD9 /* cant_sleep@2x.png in Resources */,
 				703994D11A1CA02400ECA291 /* 80x80.png in Resources */,
 				70AE03CC1A3B561200FF3074 /* lunch@2x.png in Resources */,
+				70785DA21A3C445E00094144 /* JHAlertDetailViewCell.xib in Resources */,
 				703994CF1A1CA02400ECA291 /* 50x50.png in Resources */,
 				7028138B19F8022200643D17 /* login_buton@2x.png in Resources */,
 				7FEDC3EA1A3C8D8B007D7FD9 /* sadhover@2x.png in Resources */,
@@ -1240,6 +1347,7 @@
 				703994C31A1C9CA000ECA291 /* report_buton@2x.png in Resources */,
 				703994CE1A1CA02400ECA291 /* 44x44.png in Resources */,
 				703994CC1A1CA02400ECA291 /* 1024x1024.png in Resources */,
+				70785DA61A3DA97C00094144 /* register_form@2x.png in Resources */,
 				70C366C919F8712100B5F30B /* Localizable.strings in Resources */,
 				70AE03B41A3A37B900FF3074 /* close_button@2x.png in Resources */,
 				703994C01A1C9B5E00ECA291 /* bottom_logo@2x.png in Resources */,
@@ -1279,20 +1387,22 @@
 			files = (
 				70AE03C21A3B4EC600FF3074 /* JHRecentCareTasksCell.m in Sources */,
 				703995001A1CAB8D00ECA291 /* UIImage+GIF.m in Sources */,
+				707FDA551A3E4CF900B60218 /* JHAlertsAPIResponse.m in Sources */,
 				7028139B19F8038700643D17 /* JHBaseRequest.m in Sources */,
 				7FEDC3F51A3E35A4007D7FD9 /* JHReportAPIRequest.m in Sources */,
+				707FDA3B1A3DCD6300B60218 /* JHRegistrationAPIRequest.m in Sources */,
 				703994F61A1CAB8D00ECA291 /* MKAnnotationView+WebCache.m in Sources */,
 				7028136519F8008C00643D17 /* SBJSON.m in Sources */,
 				703994FD1A1CAB8D00ECA291 /* SDWebImageManager.m in Sources */,
 				7028136019F8008C00643D17 /* ASIInputStream.m in Sources */,
 				702813AA19F804EE00643D17 /* JHLoginAPI.m in Sources */,
-				703AE31B1A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.m in Sources */,
 				7028135D19F8008C00643D17 /* ASIDownloadCache.m in Sources */,
 				70F58CDC1A129653004A065E /* JHTimelineAPI.m in Sources */,
 				7FEDC3F81A3EC8F3007D7FD9 /* JHReportAPI.m in Sources */,
 				7028139D19F8038700643D17 /* JHError.m in Sources */,
 				7028136219F8008C00643D17 /* Reachability.m in Sources */,
 				703995021A1CAB8D00ECA291 /* UIImage+WebP.m in Sources */,
+				707FDA4C1A3E4AC300B60218 /* JHAlertStatusAPI.m in Sources */,
 				7028135B19F8008C00643D17 /* ASIDataCompressor.m in Sources */,
 				702813C219F8287400643D17 /* Utility.m in Sources */,
 				70AE03AA1A3A12D600FF3074 /* JHCareTask.m in Sources */,
@@ -1305,20 +1415,25 @@
 				702813A219F803CB00643D17 /* JHWebService.m in Sources */,
 				703AE31E1A3B8AB900959C5A /* JHCareTaskStatusAPIResponse.m in Sources */,
 				7028135919F8008C00643D17 /* KVCBaseObject.m in Sources */,
+				707FDA461A3E4A9C00B60218 /* JHAlertStatusAPIRequest.m in Sources */,
+				707FDA5B1A3E55F200B60218 /* JHLoginAPIResponse.m in Sources */,
 				70761A411A1DBCF600FE644F /* JHLogoutAPIRequest.m in Sources */,
 				703AE3251A3B995A00959C5A /* JHReportViewController.m in Sources */,
 				7028136619F8008C00643D17 /* SBJsonBase.m in Sources */,
 				70AE03B81A3A3BB000FF3074 /* JHRecentAlertsCellTableViewCell.m in Sources */,
 				702813AD19F8061700643D17 /* JHAppDelegate.m in Sources */,
+				707FDA581A3E55E300B60218 /* JHCareTaskStatusAPIRequest.m in Sources */,
 				702813B919F807C200643D17 /* JHLocationManager.m in Sources */,
 				7028137919F8016F00643D17 /* JHRegistrationViewController.m in Sources */,
 				703AE3211A3B8AD600959C5A /* JHCareTaskStatusAPI.m in Sources */,
 				703AE3161A3B6E1D00959C5A /* JHCareTaskDetailViewCell.m in Sources */,
 				7FEDC3841A3C4D34007D7FD9 /* JHReportPageTwo.m in Sources */,
+				707FDA411A3DCD8500B60218 /* JHRegistrationAPI.m in Sources */,
 				7FEDC3811A3C4D15007D7FD9 /* JHReportPageOne.m in Sources */,
 				70F58CD01A128F79004A065E /* JHTimelineAPIRequest.m in Sources */,
 				7028139C19F8038700643D17 /* JHBaseResponse.m in Sources */,
 				70761A3C1A1DA97B00FE644F /* JHLeftPanelViewController.m in Sources */,
+				707FDA371A3DC7E000B60218 /* KGModal.m in Sources */,
 				7028135F19F8008C00643D17 /* ASIHTTPRequest.m in Sources */,
 				7028135C19F8008C00643D17 /* ASIDataDecompressor.m in Sources */,
 				70761A371A1DA6DD00FE644F /* JASidePanelController.m in Sources */,
@@ -1339,21 +1454,26 @@
 				7028137719F8016F00643D17 /* JHLoginViewController.m in Sources */,
 				7028136119F8008C00643D17 /* ASINetworkQueue.m in Sources */,
 				70F58CD91A1293FB004A065E /* JHTimelineDetailItem.m in Sources */,
-				702813BF19F8084800643D17 /* JHLoginAPIResponse.m in Sources */,
 				703995031A1CAB8D00ECA291 /* UIImageView+HighlightedWebCache.m in Sources */,
+				70785DA11A3C445E00094144 /* JHAlertDetailViewCell.m in Sources */,
 				703AE3111A3B6CC200959C5A /* JHCareTaskListViewController.m in Sources */,
 				703994B91A1C90AB00ECA291 /* MBProgressHUD.m in Sources */,
 				702813BC19F8083200643D17 /* JHLoginAPIRequest.m in Sources */,
+				707FDA3E1A3DCD7800B60218 /* JHRegistrationAPIResponse.m in Sources */,
 				703994BA1A1C90AB00ECA291 /* JHHudController.m in Sources */,
 				7028136C19F800FB00643D17 /* JHBaseAPI.m in Sources */,
+				707FDA521A3E4CE700B60218 /* JHAlertsAPIRequest.m in Sources */,
 				7028135A19F8008C00643D17 /* ASIAuthenticationDialog.m in Sources */,
 				70AE03B01A3A357300FF3074 /* JHRecentAlertsViewController.m in Sources */,
 				7028136419F8008C00643D17 /* NSString+SBJSON.m in Sources */,
 				70C366CC19F9708800B5F30B /* JHBaseViewController.m in Sources */,
 				703995051A1CAB8D00ECA291 /* UIView+WebCacheOperation.m in Sources */,
+				707FDA4F1A3E4CD600B60218 /* JHAlertsAPI.m in Sources */,
 				7075D1201A17ED190095AA05 /* JHTimelineCell.m in Sources */,
 				7028135E19F8008C00643D17 /* ASIFormDataRequest.m in Sources */,
+				707FDA491A3E4AB000B60218 /* JHAlertStatusAPIResponse.m in Sources */,
 				702813B719F807C200643D17 /* JHActivityManager.m in Sources */,
+				70785D9C1A3C3E7A00094144 /* JHAlertsListViewController.m in Sources */,
 				703994F71A1CAB8D00ECA291 /* NSData+ImageContentType.m in Sources */,
 				7028136319F8008C00643D17 /* NSObject+SBJSON.m in Sources */,
 				70F10A9919706C92002513D1 /* main.m in Sources */,
@@ -1485,7 +1605,7 @@
 				INFOPLIST_FILE = "Encourage/Encourage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c6e3f825-1651-4666-8b6d-49aa608135d2";
+				PROVISIONING_PROFILE = "61f7c4d0-cef2-44a8-b275-b05550b657dd";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1502,7 +1622,7 @@
 				INFOPLIST_FILE = "Encourage/Encourage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c6e3f825-1651-4666-8b6d-49aa608135d2";
+				PROVISIONING_PROFILE = "61f7c4d0-cef2-44a8-b275-b05550b657dd";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

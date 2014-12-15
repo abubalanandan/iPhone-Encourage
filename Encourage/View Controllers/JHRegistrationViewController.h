@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "JHBaseViewController.h"
-#import "JHTimelineAPI.h"
+#import "JHRegistrationAPI.h"
 
-@interface JHRegistrationViewController : JHBaseViewController<JHTimelineAPIDelegate>{
-    JHTimelineAPI *timelineAPI;
+@interface JHRegistrationViewController : JHBaseViewController<UITextViewDelegate,UITextFieldDelegate,JHRegistrationAPIDelegate>{
+    JHRegistrationAPI *regAPI;
 }
+@property IBOutlet UITextView *termsAndConditionsLabel;
+@property IBOutlet UITextField *firstNameField;
+@property IBOutlet UITextField *lastNameField;
+@property IBOutlet UITextField *emailAddressField;
 -(IBAction)loginButtonPressed:(id)sender;
+-(IBAction)registerPressed:(id)sender;
 @end

@@ -70,6 +70,7 @@
 #pragma mark -
 #pragma mark - UIScrollView Delegate
 
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [self changeSegmentedControlToIndex:[self getCurrentPage]];
 }

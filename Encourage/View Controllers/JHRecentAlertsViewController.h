@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JHAlertStatusAPI.h"
 
-@interface JHRecentAlertsViewController : JHBaseViewController<UITableViewDataSource,UITableViewDelegate>
+@interface JHRecentAlertsViewController : JHBaseViewController<UITableViewDataSource,UITableViewDelegate,JHAlertStatusAPIDelegate>{
+    JHAlertStatusAPI *alertStatusAPI;
+}
 -(IBAction)closeButtonPressed:(id)sender;
+-(IBAction)viewAllAlerts:(id)sender;
 @end

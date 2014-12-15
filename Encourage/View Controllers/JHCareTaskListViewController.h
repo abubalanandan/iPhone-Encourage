@@ -13,6 +13,8 @@
 @interface JHCareTaskListViewController : JHBaseViewController<UITableViewDataSource,UITableViewDelegate,JHCareTaskActionDelegate,JHCareTaskStatusAPIDelegate>{
     JHCareTaskStatusAPI *careTaskStatusAPI;
 }
+@property JHCareTask *selectedCareTask;
+
 - (IBAction)close:(id)sender;
 
 @end

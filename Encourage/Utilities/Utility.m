@@ -51,12 +51,38 @@
     return (requiredKeyHeight>requiredValueHeight)?requiredKeyHeight:requiredValueHeight;
 }
 
++ (CGFloat)requiredHeightWithString:(NSString *)valueString forCellWidth:(CGFloat)cellWidth{
+    CGSize constrainedSize = CGSizeMake(cellWidth  , 9999);
+
+    NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                          [UIFont systemFontOfSize:12.0], NSFontAttributeName,
+                                          nil];
+      NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:valueString attributes:attributesDictionary];
+      CGFloat requiredHeight = CGRectGetHeight([string boundingRectWithSize:constrainedSize options:NSStringDrawingUsesLineFragmentOrigin context:nil]);
+    return requiredHeight;
+}
+
 + (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
     [sizingCell setNeedsLayout];
     [sizingCell layoutIfNeeded];
     
     CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return size.height;
+}
+
+
++ (void)showOkAlertWithTitle:(NSString *)title message:(NSString *)message{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+
++ (NSDate *)formattedDateFromString:(NSString *)dateString{
+    NSString *formattedString = [dateString stringByReplacingOccurrencesOfString:@"@" withString:@" "];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+    [dateFormatter setDateFormat:@"MMMM dd yyyy hh:mma"];
+    return [dateFormatter dateFromString:formattedString];
 }
 
 @end

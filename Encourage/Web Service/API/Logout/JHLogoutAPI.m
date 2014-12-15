@@ -36,10 +36,14 @@
     [super didReceiveData:responseObj];
 }
 
--(void)didReceiveFailedStatusCode:(JHResponeMessage *)message{
-    if ([delegate_ respondsToSelector:@selector(logoutFailed:)]) {
-        [delegate_ logoutFailed:message.errorDescription];
+
+-(void)didReceiveNetworkError:(NSString *)errorMessage{
+    if (errorMessage==nil) {
+        errorMessage = @"Logout Failed";
     }
-    [super didReceiveFailedStatusCode:message];
+    [super didReceiveNetworkError:errorMessage];
+    if ([delegate_ respondsToSelector:@selector(logoutFailed:)]) {
+        [delegate_ logoutFailed:errorMessage];
+    }
 }
 @end

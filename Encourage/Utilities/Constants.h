@@ -35,11 +35,12 @@ typedef enum {
 #define LOGIN_URL @"mUserLogin"
 #define REPORT_URL @"mPostReportWizardData"
 #define TIMELINE_URL @"mGetTimelineDetails"
-#define ALERT_DETAILS_URL @"mGetUserAlertDetails"
+#define ALERT_DETAILS_URL @"mGetUserAlertsDetails"
 #define POST_REPORT_URL @"mPostReportWizardData"
 #define UPDATE_CARETASK_STATUS_URL @"mUpdateCareTaskStatus"
 #define UPDATE_ALERT_STATUS_URL @"mUpdateUnreadAlertStatus"
 #define LOGOUT_URL @"mUserLogout"
+#define REGISTRATION_URL @"mPostPersonDetails"
 #define RESPONSE_DESCRIPTION_KEY @"responseDescription"
 
 /***
@@ -98,6 +99,7 @@ typedef enum {
 #define NOTIFICATION_TYPE_ALERT @"alert"
 #define NOTIFICATION_TYPE_CARETASK @"caretask"
 #define NOTIFICATION_UNREAD @"unread"
+#define NOTIFICATION_READ @"read"
 
 #define CARETASK_TYPE_MEDICATION @"Medication"
 #define CARETASK_TYPE_FOOD @"Diet Management"

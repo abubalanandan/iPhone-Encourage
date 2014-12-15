@@ -34,8 +34,17 @@
     UIView *bgView = [[UIView alloc]init];
     bgView.backgroundColor = PAGE_BG_COLOR;
     [self.careTasksTV setBackgroundView:bgView];
-    [self.careTasks addObjectsFromArray: [JHAppDelegate application].dataManager.careTasks];
+     NSArray *sortedArray = [[JHAppDelegate application].dataManager.careTasks sortedArrayUsingSelector:@selector(compare:)];
+    [self.careTasks addObjectsFromArray: sortedArray];
     [self.careTasksTV reloadData];
+    if (self.selectedCareTask) {
+        int index = [self.careTasks indexOfObject:self.selectedCareTask];
+        if (index==NSNotFound) {
+            return;
+        }
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+        [self.careTasksTV scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,7 +94,7 @@
 
     [[cell.detailsView subviews]makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
-    CGFloat detailViewHeight= 20;
+    CGFloat detailViewHeight= 5;
     for (JHTimelineDetailItem *detail in details) {
         CGFloat labelHeight = [Utility requiredHeightWithKey:detail.key andValue:detail.value forCellWidth:labelWidth];
         UILabel *keyLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, detailViewHeight, labelWidth, labelHeight)];
@@ -102,15 +111,15 @@
         [cell.detailsView addSubview:valueLabel];
         detailViewHeight +=labelHeight+5;
     }
-    cell.detailsView.frame = CGRectMake(cell.detailsView.frame.origin.x, headerHeight+ 20, CGRectGetWidth(cell.detailsView.frame), detailViewHeight);
+    cell.detailsView.frame = CGRectMake(cell.detailsView.frame.origin.x, headerHeight, CGRectGetWidth(cell.detailsView.frame), detailViewHeight);
     
-    CGPoint doneButtonOrigin= CGPointMake(CGRectGetMinX(cell.doneButton.frame), headerHeight+20+detailViewHeight+5);
+    CGPoint doneButtonOrigin= CGPointMake(CGRectGetMinX(cell.doneButton.frame), headerHeight+detailViewHeight+5);
     cell.doneButton.frame = CGRectMake(doneButtonOrigin.x, doneButtonOrigin.y, CGRectGetWidth(cell.doneButton.frame), CGRectGetHeight(cell.doneButton.frame));
     
-    CGPoint notDoneButtonOrigin= CGPointMake(CGRectGetMinX(cell.notDoneButton.frame), headerHeight+20+detailViewHeight+5);
+    CGPoint notDoneButtonOrigin= CGPointMake(CGRectGetMinX(cell.notDoneButton.frame), headerHeight+detailViewHeight+5);
     cell.notDoneButton.frame = CGRectMake(notDoneButtonOrigin.x, notDoneButtonOrigin.y, CGRectGetWidth(cell.notDoneButton.frame), CGRectGetHeight(cell.notDoneButton.frame));
     
-    [cell.whiteView setFrame:CGRectMake(10, 19, cell.bounds.size.width-20,detailViewHeight+headerHeight + CGRectGetHeight(cell.doneButton.frame)+20+10 )];
+    [cell.whiteView setFrame:CGRectMake(10, 19, cell.bounds.size.width-20,detailViewHeight+headerHeight + CGRectGetHeight(cell.doneButton.frame)+10 )];
     cell.whiteView.layer.shadowColor = [UIColor blackColor].CGColor;
     cell.whiteView.layer.shadowOpacity = 0.5;
     cell.whiteView.layer.shadowOffset = CGSizeMake(-1.0, -1.0);
