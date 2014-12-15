@@ -16,6 +16,8 @@
     [dateTextField setText:[self formatDate:[NSDate date]]];
 }
 
+
+
 #pragma mark -
 #pragma mark - IBAction
 
@@ -45,6 +47,15 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+
+    if (textField == dateTextField) {
+        [eventNameTextField becomeFirstResponder];
+    }else if(textField == eventNameTextField){
+        [eventAdressTextField becomeFirstResponder];
+    }else if(textField == eventAdressTextField){
+        [eventDescriptionTextField becomeFirstResponder];
+    }
     return YES;
 }
 

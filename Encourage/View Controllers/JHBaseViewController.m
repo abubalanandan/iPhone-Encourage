@@ -44,7 +44,10 @@
     if (CGRectGetMaxY(self.activeField.frame) < CGRectGetMinY(self.keyboardFrame)) {
         return;
     }
-    CGFloat keyboardOffset = CGRectGetMaxY(self.activeField.frame) - CGRectGetMinY(self.keyboardFrame);
+    
+    CGPoint actualOrigin = [self.view.window convertPoint:self.activeField.frame.origin fromView:[self.activeField superview]];
+    
+    CGFloat keyboardOffset =  actualOrigin.y + CGRectGetHeight(self.activeField.frame) - CGRectGetMinY(self.keyboardFrame);
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
     

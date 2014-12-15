@@ -142,7 +142,7 @@
                                     <rect key="frame" x="11" y="362" width="299" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     <connections>
                                         <outlet property="delegate" destination="-1" id="dei-Zw-ek6"/>
                                     </connections>
