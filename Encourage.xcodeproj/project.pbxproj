@@ -126,6 +126,8 @@
 		707FDA551A3E4CF900B60218 /* JHAlertsAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA541A3E4CF900B60218 /* JHAlertsAPIResponse.m */; };
 		707FDA581A3E55E300B60218 /* JHCareTaskStatusAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA571A3E55E300B60218 /* JHCareTaskStatusAPIRequest.m */; };
 		707FDA5B1A3E55F200B60218 /* JHLoginAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA5A1A3E55F200B60218 /* JHLoginAPIResponse.m */; };
+		707FDA5F1A3EDB6B00B60218 /* JHImageUploadAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA5E1A3EDB6B00B60218 /* JHImageUploadAPI.m */; };
+		707FDA621A3EDCE600B60218 /* JHImageUploadAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA611A3EDCE600B60218 /* JHImageUploadAPIResponse.m */; };
 		70AE03AA1A3A12D600FF3074 /* JHCareTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03A91A3A12D600FF3074 /* JHCareTask.m */; };
 		70AE03AD1A3A13E000FF3074 /* JHAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03AC1A3A13E000FF3074 /* JHAlert.m */; };
 		70AE03B01A3A357300FF3074 /* JHRecentAlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03AF1A3A357300FF3074 /* JHRecentAlertsViewController.m */; };
@@ -423,6 +425,10 @@
 		707FDA571A3E55E300B60218 /* JHCareTaskStatusAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHCareTaskStatusAPIRequest.m; path = CareTask/JHCareTaskStatusAPIRequest.m; sourceTree = "<group>"; };
 		707FDA591A3E55F200B60218 /* JHLoginAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHLoginAPIResponse.h; path = Login/JHLoginAPIResponse.h; sourceTree = "<group>"; };
 		707FDA5A1A3E55F200B60218 /* JHLoginAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHLoginAPIResponse.m; path = Login/JHLoginAPIResponse.m; sourceTree = "<group>"; };
+		707FDA5D1A3EDB6B00B60218 /* JHImageUploadAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHImageUploadAPI.h; sourceTree = "<group>"; };
+		707FDA5E1A3EDB6B00B60218 /* JHImageUploadAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHImageUploadAPI.m; sourceTree = "<group>"; };
+		707FDA601A3EDCE600B60218 /* JHImageUploadAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHImageUploadAPIResponse.h; sourceTree = "<group>"; };
+		707FDA611A3EDCE600B60218 /* JHImageUploadAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHImageUploadAPIResponse.m; sourceTree = "<group>"; };
 		70AE03A81A3A12D600FF3074 /* JHCareTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCareTask.h; sourceTree = "<group>"; };
 		70AE03A91A3A12D600FF3074 /* JHCareTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCareTask.m; sourceTree = "<group>"; };
 		70AE03AB1A3A13E000FF3074 /* JHAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAlert.h; sourceTree = "<group>"; };
@@ -600,6 +606,7 @@
 		7028133119F8008C00643D17 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				707FDA5C1A3EDB5200B60218 /* ImageUpload */,
 				7FEDC3F21A3E355A007D7FD9 /* Report */,
 				707FDA421A3E498400B60218 /* AlertStatus */,
 				707FDA431A3E498400B60218 /* Alert */,
@@ -1003,6 +1010,17 @@
 				707FDA541A3E4CF900B60218 /* JHAlertsAPIResponse.m */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		707FDA5C1A3EDB5200B60218 /* ImageUpload */ = {
+			isa = PBXGroup;
+			children = (
+				707FDA5D1A3EDB6B00B60218 /* JHImageUploadAPI.h */,
+				707FDA5E1A3EDB6B00B60218 /* JHImageUploadAPI.m */,
+				707FDA601A3EDCE600B60218 /* JHImageUploadAPIResponse.h */,
+				707FDA611A3EDCE600B60218 /* JHImageUploadAPIResponse.m */,
+			);
+			path = ImageUpload;
 			sourceTree = "<group>";
 		};
 		70F10A8019706C92002513D1 = {
@@ -1434,6 +1452,7 @@
 				7028139C19F8038700643D17 /* JHBaseResponse.m in Sources */,
 				70761A3C1A1DA97B00FE644F /* JHLeftPanelViewController.m in Sources */,
 				707FDA371A3DC7E000B60218 /* KGModal.m in Sources */,
+				707FDA5F1A3EDB6B00B60218 /* JHImageUploadAPI.m in Sources */,
 				7028135F19F8008C00643D17 /* ASIHTTPRequest.m in Sources */,
 				7028135C19F8008C00643D17 /* ASIDataDecompressor.m in Sources */,
 				70761A371A1DA6DD00FE644F /* JASidePanelController.m in Sources */,
@@ -1441,6 +1460,7 @@
 				703994FF1A1CAB8D00ECA291 /* UIButton+WebCache.m in Sources */,
 				704945201A3BA85B00D8933B /* DVSwitch.m in Sources */,
 				7028136719F8008C00643D17 /* SBJsonParser.m in Sources */,
+				707FDA621A3EDCE600B60218 /* JHImageUploadAPIResponse.m in Sources */,
 				7028137B19F8016F00643D17 /* JHTimelineViewController.m in Sources */,
 				703994F81A1CAB8D00ECA291 /* SDImageCache.m in Sources */,
 				70761A381A1DA6DD00FE644F /* UIViewController+JASidePanel.m in Sources */,
