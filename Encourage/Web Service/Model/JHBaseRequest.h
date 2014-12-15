@@ -9,6 +9,7 @@
 @interface JHBaseRequest : KVCBaseObject {
     
 }
-
+@property NSString *latitude;
+@property NSString *longitude;
 
 @end
