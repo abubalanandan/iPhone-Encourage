@@ -12,6 +12,7 @@
 #import "JHReportPageTwo.h"
 #import "JHReportPageThree.h"
 #import "JHReportPageFour.h"
+#import "JHReportAPIRequest.h"
 
 @interface JHReportViewController ()
 @property IBOutlet UIView *sliderView;
@@ -33,8 +34,9 @@
 @implementation JHReportViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
     _sliderSwitch = [DVSwitch switchWithStringsArray:@[@"SICK",@"EMOTIONAL",@"IMAGE",@"MAP"]];
     _sliderSwitch.font = [UIFont boldSystemFontOfSize:10];
     [_sliderSwitch setFrame:CGRectMake(0, 0, self.sliderView.bounds.size.width, self.sliderView.bounds.size.height)];
@@ -54,6 +56,10 @@
     _addressBookController.delegate = self;
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
 #pragma mark -
 #pragma mark - DVSwitch Methods
 
@@ -66,7 +72,6 @@
 
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    
     [self changeSegmentedControlToIndex:[self getCurrentPage]];
 }
 
@@ -115,7 +120,7 @@
         case 0:
         case 1:
         {
-            NSLog(@"page1----- %@ page2---- %@", [_pageOne getPageOneStatus], [_pageTwo getPageTwoStatus]);
+            [self sendReportForFirstAndSecondPages];
             break;
         }
         case 2: {
@@ -278,12 +283,61 @@
 }
 
 #pragma mark -
+#pragma mark - Webservice Methods
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)sendReportForFirstAndSecondPages {
+    
+    /*
+     {"dateTime":"2014-10-31 16:22:43","timeZone" : "Asia/Kolkata", "eventName":"Complaint", "eventData":["Can't sleep","Dry Skin","Shortness of Breath","Tingling sensation","Worried","Can't sleep"], "description":"","reportType":"complaint","informCC":"yes","nimycMails":["shylu@gmail.com"],"nimycPersons":["shylu"],"addToMyCcs":"yes","token":"c39743a867ad557e1000be334711edad"}
+     */
+    JHReportAPIRequest *reportRequest = [[JHReportAPIRequest alloc] init];
+    reportRequest.dateTime = [NSString stringWithFormat:@"%@", [NSDate date]];
+    reportRequest.timeZone = [NSString stringWithFormat:@"%@", [NSTimeZone localTimeZone]];
+    reportRequest.eventName = @"";
+    reportRequest.eventData = [self getEventData];
+    reportRequest.eventDescription = @"";
+    reportRequest.reportType = REPORT_TYPE_COMPLAINT;
+    reportRequest.informCC = NO;
+    reportRequest.nimycMails = [self getNimycMails];
+    reportRequest.nimycPersons = [self getNimycPersons];
+    reportRequest.addToMyCcs = NO;
+    
+    [reportAPI sendReport:reportRequest];
 }
 
+#pragma mark -
+#pragma mark - Private Methods
 
+- (NSArray *)getEventData {
+    
+    NSArray *eventsArray = [NSArray arrayWithObjects:@"Sore Throat", @"Tired", @"Back Pain", @"Dizziness", @"Can't Sleep", @"Joint Pain", @"Dry Skin", @"Nose Bleed", @"Shortness of Breath", @"Worried", @"Anxious", @"Depressed", @"Angry", @"Sad", @"Happy", @"Restless", nil];
+    
+    NSMutableArray *events = [NSMutableArray arrayWithArray:[[_pageOne getPageOneStatus] objectForKey:@"events"]];
+    [events addObjectsFromArray:[[_pageTwo getPageTwoStatus] objectForKey:@"events"]];
+    
+    NSMutableArray *selectedEvents = [NSMutableArray arrayWithCapacity:0];
+    for (NSString *event in events) {
+        [selectedEvents addObject:[eventsArray objectAtIndex:[event integerValue]]];
+    }
+    
+    return selectedEvents;
+}
+
+- (NSArray *)getNimycMails {
+    
+    return nil;
+}
+
+- (NSArray *)getNimycPersons {
+    
+    return nil;
+}
+
+#pragma mark -
+#pragma mark - ReportAPI Delegate
+
+- (void)didReceiveReportResponse:(JHReportAPIResponse *)response {
+    
+}
 
 @end

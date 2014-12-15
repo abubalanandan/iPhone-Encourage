@@ -32,8 +32,9 @@
     [button8 setTag:ReportButtonTypeCantSleep];
 }
 
-- (NSArray *)getPageTwoStatus {
+- (NSDictionary *)getPageTwoStatus {
     
+    NSMutableDictionary *statusDict = [NSMutableDictionary dictionary];
     NSMutableArray *tagArray = [NSMutableArray array];
     for (UIView *subView in [containerView subviews]) {
         
@@ -44,7 +45,11 @@
             }
         }
     }
-    return [NSArray arrayWithArray:tagArray];
+    [statusDict setObject:[NSArray arrayWithArray:tagArray] forKey:@"events"];
+    [statusDict setObject:dateTextField.text forKey:@"date"];
+    [statusDict setObject:commentsTextField.text forKey:@"eventDescription"];
+    
+    return [NSDictionary dictionaryWithDictionary:statusDict];
 }
 
 - (IBAction)action:(UIButton *)sender {
