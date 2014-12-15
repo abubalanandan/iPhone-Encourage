@@ -77,7 +77,7 @@
         [request addRequestHeader:@"Content-Type" value:contentType];
     
         [request setFile:path forKey:@"images"];
-        [request setValue:token forKey:@"token"];
+        [request setPostValue:token forKey:@"token"];
         [request setPostValue:imageType forKey:@"imageType"];
     
         [request startSynchronous];
