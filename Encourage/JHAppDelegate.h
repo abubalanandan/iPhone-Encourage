@@ -32,6 +32,7 @@
 @property (strong, nonatomic) UINavigationController *navController;
 @property (strong, nonatomic) JASidePanelController *sidePanel;
 @property (strong, nonatomic) JHTimelineViewController *timelineVC;
+@property (nonatomic, assign) BOOL shouldEnableScrolling;
 
 -(void)setupLeftPanel;
 

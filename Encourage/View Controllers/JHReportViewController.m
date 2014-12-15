@@ -86,7 +86,9 @@
     if (index > 1) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"kClearAllButtonSelectionNotification" object:nil];
     }
-    [_sliderSwitch forceSelectedIndex:index animated:YES];
+    if (APP_DELEGATE.shouldEnableScrolling) {
+        [_sliderSwitch forceSelectedIndex:index animated:YES];
+    }
 }
 
 #pragma mark -
@@ -123,7 +125,19 @@
 }
 
 - (void)scrollToSelectedIndex:(NSUInteger)index {
-    [self.containerScrollView setContentOffset:CGPointMake(index * 320, 0) animated:YES];
+    if (APP_DELEGATE.shouldEnableScrolling)
+        [self.containerScrollView setContentOffset:CGPointMake(index * 320, 0) animated:YES];
+}
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    if (APP_DELEGATE.shouldEnableScrolling) {
+        self.containerScrollView.scrollEnabled = YES;
+    }
+    else {
+        self.containerScrollView.scrollEnabled = NO;
+    }
 }
 
 - (UIView *)setFrameForView:(UIView *)view atIndex:(int)index {
@@ -143,17 +157,19 @@
         case 0:
         case 1:
         {
-            if ([[_pageOne.getPageOneStatus objectForKey:@"events"] count] > 0 || [[_pageTwo.getPageTwoStatus objectForKey:@"events"] count] > 0) {
+            if ([[_pageOne.getPageOneStatus objectForKey:@"events"] count] > 0 && [[_pageTwo.getPageTwoStatus objectForKey:@"events"] count] > 0) {
                 return YES;
             }
             break;
         }
         case 2: {
-            
+            if (_pageThree.getImage != nil && [[_pageThree.getData objectForKey:@"description"] length] > 0) {
+                return YES;
+            }
             break;
         }
         case 3: {
-            if ([[_pageFour.getPageFourData allKeys] count] > 0) {
+            if ([[_pageFour.getPageFourData objectForKey:@"eventName"] length] > 0 && [[_pageFour.getPageFourData objectForKey:@"eventDesc"] length] > 0 && [[_pageFour.getPageFourData objectForKey:@"eventAddress"] length] > 0) {
                 return YES;
             }
         }
@@ -169,8 +185,15 @@
     
     if ([self shouldReport] == NO) {
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please choose a sickness/emotion" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
+        if ([self getCurrentPage] == 0 || [self getCurrentPage] == 1) {
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please choose a sickness/emotion" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please fill in all fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
     }
     else {
         switch ([self getCurrentPage]) {

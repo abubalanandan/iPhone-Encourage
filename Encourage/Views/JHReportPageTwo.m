@@ -72,6 +72,8 @@
 }
 
 - (IBAction)cancelAction:(id)sender {
+    
+    APP_DELEGATE.shouldEnableScrolling = YES;
     [pickerContainerView setHidden:YES];
 }
 
@@ -86,13 +88,19 @@
         return NO;
     }
     else {
+        APP_DELEGATE.shouldEnableScrolling = NO;
         return YES;
     }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
     [textField resignFirstResponder];
     return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    APP_DELEGATE.shouldEnableScrolling = YES;
 }
 
 #pragma mark -
@@ -100,6 +108,7 @@
 
 - (void)showDatePicker {
     
+    APP_DELEGATE.shouldEnableScrolling = NO;
     [pickerContainerView setHidden:NO];
     
 }

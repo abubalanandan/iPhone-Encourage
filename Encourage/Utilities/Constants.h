@@ -56,7 +56,7 @@ typedef enum {
 /*** response class  ***/
 
 
-
+#define APP_DELEGATE ((JHAppDelegate *)[[UIApplication sharedApplication] delegate])
 
 /*.......Nib files........*/
 

@@ -225,7 +225,9 @@
 
 #pragma mark -- IBActions
 
--(IBAction)reportButtonPressed:(id)sender{
+-(IBAction)reportButtonPressed:(id)sender {
+    
+    APP_DELEGATE.shouldEnableScrolling = YES;
     JHReportViewController *vc = [[JHReportViewController alloc]init];
     [self presentViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:NO completion:nil];
 }
