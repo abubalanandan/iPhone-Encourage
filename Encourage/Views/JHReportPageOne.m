@@ -31,8 +31,9 @@
     [button9 setTag:ReportButtonTypeShortnessOfBreath];
 }
 
-- (NSArray *)getPageOneStatus {
+- (NSDictionary *)getPageOneStatus {
     
+    NSMutableDictionary *statusDict = [NSMutableDictionary dictionary];
     NSMutableArray *tagArray = [NSMutableArray array];
     for (UIView *subView in [containerView subviews]) {
         
@@ -43,7 +44,11 @@
         }
         }
     }
-    return [NSArray arrayWithArray:tagArray];
+    [statusDict setObject:[NSArray arrayWithArray:tagArray] forKey:@"events"];
+    [statusDict setObject:dateTextField.text forKey:@"date"];
+    [statusDict setObject:descriptionTextField.text forKey:@"eventDescription"];
+    
+    return [NSDictionary dictionaryWithDictionary:statusDict];
 }
 
 #pragma mark -

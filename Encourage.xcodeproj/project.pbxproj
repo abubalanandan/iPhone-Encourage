@@ -188,6 +188,9 @@
 		7FEDC3EA1A3C8D8B007D7FD9 /* sadhover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FEDC3DA1A3C8D8B007D7FD9 /* sadhover@2x.png */; };
 		7FEDC3EB1A3C8D8B007D7FD9 /* worried@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FEDC3DB1A3C8D8B007D7FD9 /* worried@2x.png */; };
 		7FEDC3EC1A3C8D8B007D7FD9 /* worriedhover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FEDC3DC1A3C8D8B007D7FD9 /* worriedhover@2x.png */; };
+		7FEDC3F51A3E35A4007D7FD9 /* JHReportAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDC3F41A3E35A4007D7FD9 /* JHReportAPIRequest.m */; };
+		7FEDC3F81A3EC8F3007D7FD9 /* JHReportAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDC3F71A3EC8F3007D7FD9 /* JHReportAPI.m */; };
+		7FEDC3FB1A3EC9AD007D7FD9 /* JHReportAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDC3FA1A3EC9AD007D7FD9 /* JHReportAPIResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -473,6 +476,12 @@
 		7FEDC3DA1A3C8D8B007D7FD9 /* sadhover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sadhover@2x.png"; sourceTree = "<group>"; };
 		7FEDC3DB1A3C8D8B007D7FD9 /* worried@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "worried@2x.png"; sourceTree = "<group>"; };
 		7FEDC3DC1A3C8D8B007D7FD9 /* worriedhover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "worriedhover@2x.png"; sourceTree = "<group>"; };
+		7FEDC3F31A3E35A4007D7FD9 /* JHReportAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHReportAPIRequest.h; path = Report/JHReportAPIRequest.h; sourceTree = "<group>"; };
+		7FEDC3F41A3E35A4007D7FD9 /* JHReportAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHReportAPIRequest.m; path = Report/JHReportAPIRequest.m; sourceTree = "<group>"; };
+		7FEDC3F61A3EC8F3007D7FD9 /* JHReportAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHReportAPI.h; path = Report/JHReportAPI.h; sourceTree = "<group>"; };
+		7FEDC3F71A3EC8F3007D7FD9 /* JHReportAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHReportAPI.m; path = Report/JHReportAPI.m; sourceTree = "<group>"; };
+		7FEDC3F91A3EC9AD007D7FD9 /* JHReportAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHReportAPIResponse.h; path = Report/JHReportAPIResponse.h; sourceTree = "<group>"; };
+		7FEDC3FA1A3EC9AD007D7FD9 /* JHReportAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHReportAPIResponse.m; path = Report/JHReportAPIResponse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -546,6 +555,7 @@
 		7028133119F8008C00643D17 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				7FEDC3F21A3E355A007D7FD9 /* Report */,
 				703AE3181A3B8A7900959C5A /* CareTask */,
 				70761A3E1A1DBCD900FE644F /* Logout */,
 				70F58CCD1A128F2F004A065E /* Timeline */,
@@ -1066,6 +1076,19 @@
 			path = Page3;
 			sourceTree = "<group>";
 		};
+		7FEDC3F21A3E355A007D7FD9 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				7FEDC3F31A3E35A4007D7FD9 /* JHReportAPIRequest.h */,
+				7FEDC3F41A3E35A4007D7FD9 /* JHReportAPIRequest.m */,
+				7FEDC3F61A3EC8F3007D7FD9 /* JHReportAPI.h */,
+				7FEDC3F71A3EC8F3007D7FD9 /* JHReportAPI.m */,
+				7FEDC3F91A3EC9AD007D7FD9 /* JHReportAPIResponse.h */,
+				7FEDC3FA1A3EC9AD007D7FD9 /* JHReportAPIResponse.m */,
+			);
+			name = Report;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1257,6 +1280,7 @@
 				70AE03C21A3B4EC600FF3074 /* JHRecentCareTasksCell.m in Sources */,
 				703995001A1CAB8D00ECA291 /* UIImage+GIF.m in Sources */,
 				7028139B19F8038700643D17 /* JHBaseRequest.m in Sources */,
+				7FEDC3F51A3E35A4007D7FD9 /* JHReportAPIRequest.m in Sources */,
 				703994F61A1CAB8D00ECA291 /* MKAnnotationView+WebCache.m in Sources */,
 				7028136519F8008C00643D17 /* SBJSON.m in Sources */,
 				703994FD1A1CAB8D00ECA291 /* SDWebImageManager.m in Sources */,
@@ -1265,6 +1289,7 @@
 				703AE31B1A3B8AA000959C5A /* JHCareTaskStatusAPIRequest.m in Sources */,
 				7028135D19F8008C00643D17 /* ASIDownloadCache.m in Sources */,
 				70F58CDC1A129653004A065E /* JHTimelineAPI.m in Sources */,
+				7FEDC3F81A3EC8F3007D7FD9 /* JHReportAPI.m in Sources */,
 				7028139D19F8038700643D17 /* JHError.m in Sources */,
 				7028136219F8008C00643D17 /* Reachability.m in Sources */,
 				703995021A1CAB8D00ECA291 /* UIImage+WebP.m in Sources */,
@@ -1332,6 +1357,7 @@
 				703994F71A1CAB8D00ECA291 /* NSData+ImageContentType.m in Sources */,
 				7028136319F8008C00643D17 /* NSObject+SBJSON.m in Sources */,
 				70F10A9919706C92002513D1 /* main.m in Sources */,
+				7FEDC3FB1A3EC9AD007D7FD9 /* JHReportAPIResponse.m in Sources */,
 				703994FC1A1CAB8D00ECA291 /* SDWebImageDownloaderOperation.m in Sources */,
 				7028139E19F8038700643D17 /* JHResponeMessage.m in Sources */,
 				703994FB1A1CAB8D00ECA291 /* SDWebImageDownloader.m in Sources */,

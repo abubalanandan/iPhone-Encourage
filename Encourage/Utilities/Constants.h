@@ -33,6 +33,7 @@ typedef enum {
 #define FILE_URL @"http://tryencourage.com/hwdsi/hwAttachedfile/%@/%@"
 #define MAP_URL @"http://maps.googleapis.com/maps/api/staticmap?zoom=12&size=1080x1920&markers=size:mid|color:red|%@"
 #define LOGIN_URL @"mUserLogin"
+#define REPORT_URL @"mPostReportWizardData"
 #define TIMELINE_URL @"mGetTimelineDetails"
 #define ALERT_DETAILS_URL @"mGetUserAlertDetails"
 #define POST_REPORT_URL @"mPostReportWizardData"
@@ -40,6 +41,13 @@ typedef enum {
 #define UPDATE_ALERT_STATUS_URL @"mUpdateUnreadAlertStatus"
 #define LOGOUT_URL @"mUserLogout"
 #define RESPONSE_DESCRIPTION_KEY @"responseDescription"
+
+/***
+ * Report Typres
+ */
+#define REPORT_TYPE_COMPLAINT @"complaint"
+#define REPORT_TYPE_IMAGE @"image"
+#define REPORT_TYPE_MAP @"map"
 
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)

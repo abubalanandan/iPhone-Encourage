@@ -17,6 +17,6 @@
     IBOutlet UIDatePicker *datePicker;
 }
 
-- (NSArray *)getPageOneStatus;
+- (NSDictionary *)getPageOneStatus;
 
 @end

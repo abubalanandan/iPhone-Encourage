@@ -9,7 +9,10 @@
 #import "JHBaseViewController.h"
 #import <AddressBookUI/AddressBookUI.h>
 #import <AddressBook/AddressBook.h>
+#import "JHReportAPI.h"
 
-@interface JHReportViewController : JHBaseViewController <UIScrollViewDelegate, ABPeoplePickerNavigationControllerDelegate>
+@interface JHReportViewController : JHBaseViewController <UIScrollViewDelegate, ABPeoplePickerNavigationControllerDelegate, JHReportAPIDelegate> {
+    JHReportAPI *reportAPI;
+}
 
 @end
