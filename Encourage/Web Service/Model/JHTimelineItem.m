@@ -31,4 +31,13 @@
     return NO;
 }
 
+
+- (NSComparisonResult )compare:(JHTimelineItem *)otherObject{
+    if ([otherObject.timelineId integerValue] > [self.timelineId integerValue]) {
+        return NSOrderedAscending;
+    }else if([otherObject.timelineId integerValue]==[self.timelineId integerValue]){
+        return NSOrderedSame;
+    }
+    return NSOrderedDescending;
+}
 @end

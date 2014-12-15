@@ -17,4 +17,11 @@
     }
     return NO;
 }
+
+-(NSComparisonResult)compare:(JHAlert *)otherAlert{
+    NSDate *date = [Utility formattedDateFromString:self.dateTime];
+    NSDate *secondDate = [Utility formattedDateFromString:otherAlert.dateTime];
+    return [secondDate compare:date];
+}
+
 @end
