@@ -18,6 +18,7 @@
                 <outlet property="commentsTextField" destination="z6a-xT-hH7" id="Q1q-ii-YyC"/>
                 <outlet property="containerScrollView" destination="3CL-FY-M96" id="UIe-tv-O0M"/>
                 <outlet property="containerView" destination="e0p-IG-Q4g" id="xLd-fF-Ja2"/>
+                <outlet property="datePicker" destination="cYN-Hx-nJS" id="PeS-OA-pz0"/>
                 <outlet property="dateTextField" destination="YQ4-mS-9j4" id="C9f-PZ-Syy"/>
                 <outlet property="pickerContainerView" destination="RKP-Sh-p1I" id="WaW-Sd-QcK"/>
                 <outlet property="view" destination="iN0-l3-epB" id="1G4-he-JaU"/>

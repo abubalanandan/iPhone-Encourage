@@ -38,6 +38,7 @@
 
 - (IBAction)cancelAction:(id)sender {
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kEnableContainerScrollNotification" object:nil];
     APP_DELEGATE.shouldEnableScrolling = YES;
     [pickerContainerView setHidden:YES];
 }
@@ -78,10 +79,13 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     [textField resignFirstResponder];
+    APP_DELEGATE.shouldEnableScrolling = YES;
     return YES;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kEnableContainerScrollNotification" object:nil];
     APP_DELEGATE.shouldEnableScrolling = YES;
 }
 
