@@ -36,4 +36,13 @@
     [super didReceiveData:responseObj];
 }
 
+- (void)didReceiveNetworkError:(NSString *)errorMessage{
+    if (errorMessage==nil) {
+        errorMessage = @"Report posting failed. Please try again.";
+        
+    }
+    if ([delegate_ respondsToSelector:@selector(failedToPostReport:)]) {
+        [delegate_ failedToPostReport:errorMessage];
+    }
+}
 @end
