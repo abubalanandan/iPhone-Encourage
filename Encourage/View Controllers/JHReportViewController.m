@@ -66,6 +66,8 @@
     [self addPagesToContainer];
     
     _addressBookController.delegate = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableScrolling) name:@"kEnableContainerScrollNotification" object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -83,11 +85,11 @@
 
 - (void)changeSegmentedControlToIndex:(NSUInteger)index {
     
-    if (index > 1) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"kClearAllButtonSelectionNotification" object:nil];
-    }
     if (APP_DELEGATE.shouldEnableScrolling) {
         [_sliderSwitch forceSelectedIndex:index animated:YES];
+    }
+    if (index > 1) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"kClearAllButtonSelectionNotification" object:nil];
     }
 }
 
@@ -129,6 +131,10 @@
         [self.containerScrollView setContentOffset:CGPointMake(index * 320, 0) animated:YES];
 }
 
+- (void)enableScrolling {
+    self.containerScrollView.scrollEnabled = YES;
+}
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
@@ -138,6 +144,7 @@
     else {
         self.containerScrollView.scrollEnabled = NO;
     }
+    
 }
 
 - (UIView *)setFrameForView:(UIView *)view atIndex:(int)index {

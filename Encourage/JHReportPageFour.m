@@ -28,6 +28,9 @@
 }
 
 - (IBAction)cancelAction:(id)sender {
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kEnableContainerScrollNotification" object:nil];
+    APP_DELEGATE.shouldEnableScrolling = YES;
     [pickerContainerView setHidden:YES];
 }
 
@@ -36,6 +39,7 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     
+    APP_DELEGATE.shouldEnableScrolling = NO;
     if (textField == dateTextField) {
         
         [self showDatePicker];
@@ -56,7 +60,14 @@
     }else if(textField == eventAdressTextField){
         [eventDescriptionTextField becomeFirstResponder];
     }
+    APP_DELEGATE.shouldEnableScrolling = YES;
     return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kEnableContainerScrollNotification" object:nil];
+    APP_DELEGATE.shouldEnableScrolling = YES;
 }
 
 #pragma mark -
@@ -65,7 +76,6 @@
 - (void)showDatePicker {
     
     [pickerContainerView setHidden:NO];
-    
 }
 
 #pragma mark -
