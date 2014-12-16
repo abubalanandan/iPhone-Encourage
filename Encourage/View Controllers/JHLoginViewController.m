@@ -61,8 +61,8 @@
     }
     
     JHLoginAPIRequest *loginRequest = [[JHLoginAPIRequest alloc]init];
-    loginRequest.emailAddress = @"abu.316@gmail.com";//self.loginField.text;
-    loginRequest.password = @"Sachin@10";//self.passwordField.text;
+    loginRequest.emailAddress = self.loginField.text;
+    loginRequest.password = self.passwordField.text;
     
     loginRequest.gcmRegistrationId = ([JHAppDelegate application].dataManager.deviceToken)?[JHAppDelegate application].dataManager.deviceToken:@"afas";
     loginRequest.deviceType = @"iOS";
@@ -75,11 +75,11 @@
 
 - (BOOL)isEntriesValid{
     NSString *error = nil;
-//    if (self.loginField.text == nil || self.loginField.text.length<5) {
-//        error = @"Please enter a valid email address";
-//    }else if(self.passwordField.text==nil || self.passwordField.text.length==0){
-//        error = @"Please enter your password";
-//    }
+    if (self.loginField.text == nil || self.loginField.text.length<5) {
+        error = @"Please enter a valid email address";
+    }else if(self.passwordField.text==nil || self.passwordField.text.length==0){
+        error = @"Please enter your password";
+    }
     if (error) {
         [Utility showOkAlertWithTitle:@"Warning" message:error];
         return NO;
