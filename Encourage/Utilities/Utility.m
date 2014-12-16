@@ -29,7 +29,7 @@
     NSDate *date = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
-    [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     return [formatter stringFromDate:date];
     
 }

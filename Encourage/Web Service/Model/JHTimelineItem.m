@@ -34,10 +34,10 @@
 
 - (NSComparisonResult )compare:(JHTimelineItem *)otherObject{
     if ([otherObject.timelineId integerValue] > [self.timelineId integerValue]) {
-        return NSOrderedAscending;
+        return NSOrderedDescending;
     }else if([otherObject.timelineId integerValue]==[self.timelineId integerValue]){
         return NSOrderedSame;
     }
-    return NSOrderedDescending;
+    return NSOrderedAscending;
 }
 @end

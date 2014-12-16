@@ -53,8 +53,8 @@
 
 -(IBAction)loginButtonPressed:(id)sender{
     if(TARGET_IPHONE_SIMULATOR){
-        self.loginField.text = @"kiranvs@ovi.com";
-        self.passwordField.text = @"fjwmxcjz";
+        self.loginField.text = @"abu.316@gmail.com";
+        self.passwordField.text = @"Sachin@10";
     }
     if (![self isEntriesValid]) {
         return;
