@@ -20,8 +20,11 @@
     JHImageUploadAPI *imageAPI;
     
     IBOutlet UIButton *checkBoxButton;
+    
+    void(^imageSaveCompletion)(BOOL didFinish, NSString *path);
 }
 
 @property (nonatomic, assign) id <JHContactDataDelegate> contactDelegate;
+
 @end
 

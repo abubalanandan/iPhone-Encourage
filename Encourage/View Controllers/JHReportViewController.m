@@ -205,20 +205,11 @@
             }
             case 2: {
                 
-                [JHHudController hideAllHUDs];
-                [JHHudController displayHUDWithMessage:@""];
-                UIImage *img = _pageThree.getImage;
+               UIImage *img = _pageThree.getImage;
                 if (img != nil)
                 {
-                    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                                         NSUserDomainMask, YES);
-                    NSString *documentsDirectory = [paths objectAtIndex:0];
-                    NSString* path = [documentsDirectory stringByAppendingPathComponent:
-                                      @"test.png" ];
-                    NSData* data = UIImagePNGRepresentation(img);
-                    [data writeToFile:path atomically:YES];
-                    
-                    [imageAPI uploadImageWithPath:path];
+                    [JHHudController displayHUDWithMessage:@"Uploading Image..."];
+                    [self performSelectorInBackground:@selector(saveImageData) withObject:nil];
                 }
                 
                 break;
@@ -452,6 +443,21 @@
 
 - (void)imageUploadFailed:(NSString *)message{
     [Utility showOkAlertWithTitle:@"Error" message:message];
+}
+
+- (void)saveImageData {
+    
+    UIImage *img = _pageThree.getImage;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      @"test.png" ];
+    NSData* data = UIImagePNGRepresentation(img);
+    BOOL success = [data writeToFile:path atomically:YES];
+    if (success) {
+        [imageAPI performSelectorOnMainThread:@selector(uploadImageWithPath:) withObject:path waitUntilDone:YES];
+    }
 }
 
 @end
