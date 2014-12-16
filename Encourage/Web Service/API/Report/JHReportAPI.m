@@ -23,6 +23,7 @@
 - (void)sendReport:(JHReportAPIRequest *)request {
     
     [self sendWebserviceRequest];
+    request.dateTime = [Utility getFormattedDate];
     request.token = [JHAppDelegate application].dataManager.token;
     NSString *url = [NSString stringWithFormat:BASE_URL,REPORT_URL];
     [baseWebService_ performPostRequest:url withRequestObject:request];

@@ -53,16 +53,16 @@
 
 -(IBAction)loginButtonPressed:(id)sender{
     if(TARGET_IPHONE_SIMULATOR){
-        self.loginField.text = @"abu.316@gmail.com";
-        self.passwordField.text = @"Sachin@10";
+        self.loginField.text = @"kiranvs@ovi.com";
+        self.passwordField.text = @"fjwmxcjz";
     }
     if (![self isEntriesValid]) {
         return;
     }
     
     JHLoginAPIRequest *loginRequest = [[JHLoginAPIRequest alloc]init];
-    loginRequest.emailAddress = @"abu.316@gmail.com";//self.loginField.text;
-    loginRequest.password = @"Sachin@10";//self.passwordField.text;
+    loginRequest.emailAddress = self.loginField.text;
+    loginRequest.password = self.passwordField.text;
     
     loginRequest.gcmRegistrationId = ([JHAppDelegate application].dataManager.deviceToken)?[JHAppDelegate application].dataManager.deviceToken:@"afas";
     loginRequest.deviceType = @"iOS";

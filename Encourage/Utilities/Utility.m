@@ -34,6 +34,15 @@
     
 }
 
++ (NSString *)formatDateForReport:(NSString *)inputDate {
+    //2014-10-31 17:26:58
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-mm-dd hh:mm:ss"];
+    NSDate *newDate = [formatter dateFromString:inputDate];
+    
+    return [NSString stringWithFormat:@"%@", newDate];
+}
+
 + (CGFloat)requiredHeightWithKey:(NSString *)key andValue:(NSString *)value forCellWidth:(CGFloat)cellWidth{
     CGSize constrainedSize = CGSizeMake(cellWidth  , 9999);
     

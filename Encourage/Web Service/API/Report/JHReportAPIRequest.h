@@ -27,5 +27,6 @@
 @property (nonatomic, strong) NSString *fileName;
 @property (nonatomic, strong) NSString *fileType;
 @property (nonatomic, strong) NSString *reportType;
+@property (nonatomic, strong) NSString *eventDate;
 
 @end

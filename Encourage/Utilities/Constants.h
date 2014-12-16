@@ -47,9 +47,9 @@ typedef enum {
 /***
  * Report Typres
  */
-#define REPORT_TYPE_COMPLAINT @"complaint"
-#define REPORT_TYPE_IMAGE @"image"
-#define REPORT_TYPE_MAP @"map"
+#define REPORT_TYPE_COMPLAINT @"Complaint"
+#define REPORT_TYPE_IMAGE @"Image"
+#define REPORT_TYPE_MAP @"Map"
 
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
