@@ -12,7 +12,7 @@
 @interface JHImageUploadAPI : JHBaseAPI
 
 
--(void)uploadImageWithPath:(NSString *)path;
+- (void)uploadImageWithPath:(NSString *)path;
 
 @end
 

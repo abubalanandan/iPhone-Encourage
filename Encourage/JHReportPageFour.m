@@ -94,7 +94,7 @@
         [alert show];
         return nil;
     }
-    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:eventNameTextField.text, @"eventName", eventDescriptionTextField.text, @"eventDesc", eventAdressTextField.text, @"eventAddress", nil];
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:eventNameTextField.text, @"eventName", eventDescriptionTextField.text, @"eventDesc", eventAdressTextField.text, @"eventAddress", dateTextField.text, @"date", nil];
     return dict;
 }
 

@@ -17,4 +17,6 @@
 + (CGFloat)requiredHeightWithString:(NSString *)valueString forCellWidth:(CGFloat)cellWidth;
 + (void)showOkAlertWithTitle:(NSString *)title message:(NSString *)message;
 + (NSDate *)formattedDateFromString:(NSString *)dateString;
++ (NSString *)formatDateForReport:(NSString *)inputDate;
+
 @end

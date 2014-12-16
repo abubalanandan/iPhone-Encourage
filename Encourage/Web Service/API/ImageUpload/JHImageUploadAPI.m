@@ -18,7 +18,6 @@
 }
 
 - (void)uploadImageWithPath:(NSString *)path{
-    [self sendWebserviceRequest];
     [baseWebService_ postDataWithImagePath:path andImageType:@"image/png" andToken:[JHAppDelegate application].dataManager.token];
 }
 

@@ -157,7 +157,7 @@
         case 0:
         case 1:
         {
-            if ([[_pageOne.getPageOneStatus objectForKey:@"events"] count] > 0 && [[_pageTwo.getPageTwoStatus objectForKey:@"events"] count] > 0) {
+            if ([[_pageOne.getPageOneStatus objectForKey:@"events"] count] > 0 || [[_pageTwo.getPageTwoStatus objectForKey:@"events"] count] > 0) {
                 return YES;
             }
             break;
@@ -205,20 +205,11 @@
             }
             case 2: {
                 
-                [JHHudController hideAllHUDs];
-                [JHHudController displayHUDWithMessage:@""];
-                UIImage *img = _pageThree.getImage;
+               UIImage *img = _pageThree.getImage;
                 if (img != nil)
                 {
-                    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                                         NSUserDomainMask, YES);
-                    NSString *documentsDirectory = [paths objectAtIndex:0];
-                    NSString* path = [documentsDirectory stringByAppendingPathComponent:
-                                      @"test.png" ];
-                    NSData* data = UIImagePNGRepresentation(img);
-                    [data writeToFile:path atomically:YES];
-                    
-                    [imageAPI uploadImageWithPath:path];
+                    [JHHudController displayHUDWithMessage:@"Uploading Image..."];
+                    [self performSelectorInBackground:@selector(saveImageData) withObject:nil];
                 }
                 
                 break;
@@ -324,15 +315,15 @@
      {"dateTime":"2014-10-31 16:22:43","timeZone" : "Asia/Kolkata", "eventName":"Complaint", "eventData":["Can't sleep","Dry Skin","Shortness of Breath","Tingling sensation","Worried","Can't sleep"], "description":"","reportType":"complaint","informCC":"yes","nimycMails":["shylu@gmail.com"],"nimycPersons":["shylu"],"addToMyCcs":"yes","token":"c39743a867ad557e1000be334711edad"}
      */
     JHReportAPIRequest *reportRequest = [[JHReportAPIRequest alloc] init];
-    reportRequest.dateTime = [Utility getFormattedDate];
-    reportRequest.timeZone = [NSString stringWithFormat:@"%@", [NSTimeZone localTimeZone]];
+    reportRequest.timeZone = [NSString stringWithFormat:@"%@", [[NSTimeZone localTimeZone] name]];
     reportRequest.eventData = [self getEventData];
     reportRequest.eventDescription = ([self getCurrentPage] == 0) ? [_pageOne.getPageOneStatus objectForKey:@"eventDescription"] : [_pageTwo.getPageTwoStatus objectForKey:@"eventDescription"];
     reportRequest.reportType = REPORT_TYPE_COMPLAINT;
     reportRequest.informCC = (self.shouldInformCC) ? @"yes" : @"no";;
     reportRequest.nimycMails = [self getNimycMails];
     reportRequest.nimycPersons = [self getNimycPersons];
-    reportRequest.addToMyCcs = @"no";
+    reportRequest.addToMyCcs = @"yes";
+    reportRequest.eventDate = [_pageOne.getPageOneStatus objectForKey:@"date"];
     
     [reportAPI sendReport:reportRequest];
 }
@@ -343,15 +334,15 @@
      {"dateTime":"2014-10-31 17:20:12","timeZone":"Asia/Kolkata","eventName":"Arrival entered an if drawing request","reportType":"image","token":"c39743a867ad557e1000be334711edad","fileActualName":"61885D04-B09B-42A4-B92C-4011D505ABBB.JPG","fileName":"","fileType":"image/jpeg","informCC":"yes","nimycMails":["shylu@gmail.com"],"nimycPersons":["shylu"],"addToMyCcs":"yes"}
      */
     JHReportAPIRequest *reportRequest = [[JHReportAPIRequest alloc] init];
-    reportRequest.dateTime = [Utility getFormattedDate];
-    reportRequest.timeZone = [NSString stringWithFormat:@"%@", [NSTimeZone localTimeZone]];
+    reportRequest.timeZone = [NSString stringWithFormat:@"%@", [[NSTimeZone localTimeZone] name]];
     reportRequest.eventName = [data objectForKey:@"description"];
     reportRequest.reportType = REPORT_TYPE_IMAGE;
     reportRequest.informCC = (self.shouldInformCC) ? @"yes" : @"no";
     reportRequest.nimycMails = [self getNimycMails];
     reportRequest.nimycPersons = [self getNimycPersons];
-    reportRequest.addToMyCcs = @"no";
+    reportRequest.addToMyCcs = @"yes";
     reportRequest.fileActualName = [data objectForKey:@"fileName"];
+    reportRequest.eventDate = [_pageOne.getPageOneStatus objectForKey:@"date"];
     
     [reportAPI sendReport:reportRequest];
 }
@@ -368,8 +359,7 @@
         return;
     }
     JHReportAPIRequest *reportRequest = [[JHReportAPIRequest alloc] init];
-    reportRequest.dateTime = [Utility getFormattedDate];
-    reportRequest.timeZone = [NSString stringWithFormat:@"%@", [NSTimeZone localTimeZone]];
+    reportRequest.timeZone = [NSString stringWithFormat:@"%@", [[NSTimeZone localTimeZone] name]];
     reportRequest.eventName = [dict objectForKey:@"eventName"];
     reportRequest.eventAddress = [dict objectForKeyedSubscript:@"eventAddress"];
     reportRequest.eventDescription = [dict objectForKeyedSubscript:@"eventDesc"];
@@ -378,6 +368,7 @@
     reportRequest.nimycMails = [self getNimycMails];
     reportRequest.nimycPersons = [self getNimycPersons];
     reportRequest.addToMyCcs = @"yes";
+    reportRequest.eventDate = [_pageOne.getPageOneStatus objectForKey:@"date"];
     
     [reportAPI sendReport:reportRequest];
 }
@@ -420,7 +411,9 @@
 #pragma mark - ReportAPI Delegate
 
 - (void)didReceiveReportResponse:(JHReportAPIResponse *)response {
+    
     [JHHudController hideAllHUDs];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)failedToPostReport:(NSString *)message{
@@ -450,6 +443,21 @@
 
 - (void)imageUploadFailed:(NSString *)message{
     [Utility showOkAlertWithTitle:@"Error" message:message];
+}
+
+- (void)saveImageData {
+    
+    UIImage *img = _pageThree.getImage;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      @"test.png" ];
+    NSData* data = UIImagePNGRepresentation(img);
+    BOOL success = [data writeToFile:path atomically:YES];
+    if (success) {
+        [imageAPI performSelectorOnMainThread:@selector(uploadImageWithPath:) withObject:path waitUntilDone:YES];
+    }
 }
 
 @end
