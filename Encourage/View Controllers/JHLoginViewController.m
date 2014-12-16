@@ -93,10 +93,10 @@
     [JHAppDelegate application].dataManager.token = responseObj.token;
     [JHAppDelegate application].dataManager.profilePicURL = responseObj.personProfilePic;
     [JHAppDelegate application].dataManager.username = responseObj.personName;
+    [JHAppDelegate application].dataManager.emailAddress = self.loginField.text;
     [[JHAppDelegate application] setupLeftPanel];
-    JHLeftPanelViewController *leftPanel =(JHLeftPanelViewController *) [JHAppDelegate application].sidePanel.leftPanel;
-    [leftPanel setUpViewsWithName:responseObj.personName email:self.loginField.text andProfilePic:responseObj.personProfilePic];
-       JHTimelineViewController *timelineVC = [[JHTimelineViewController alloc]init];
+
+    JHTimelineViewController *timelineVC = [[JHTimelineViewController alloc]init];
     [JHAppDelegate application].sidePanel.centerPanel = timelineVC;
     [JHAppDelegate application].window.rootViewController = [JHAppDelegate application].sidePanel;
 }

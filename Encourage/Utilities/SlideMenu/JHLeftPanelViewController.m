@@ -47,6 +47,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self setUpViewsWithName:[JHAppDelegate application].dataManager.username email:[JHAppDelegate application].dataManager.emailAddress andProfilePic:[JHAppDelegate application].dataManager.profilePicURL] ;
     [_profilePicImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:FILE_URL,[JHAppDelegate application].dataManager.token,_profilePicName]]];
     _profileNameTV.text = _userName;
     _emailTV.text = _emailAddress;
