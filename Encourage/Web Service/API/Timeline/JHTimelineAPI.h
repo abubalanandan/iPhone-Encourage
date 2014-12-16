@@ -19,5 +19,5 @@
 @protocol JHTimelineAPIDelegate <JHBaseAPIDelegate>
 
 - (void)didReceiveTimelineDetails:(JHTimelineAPIResponse *)response;
-
+- (void)failedToReceiveTimelineDetails:(NSString *)message;
 @end
