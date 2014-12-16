@@ -10,6 +10,7 @@
 @property (nonatomic,strong) NSString *token;
 @property (nonatomic,strong) NSString *username;
 @property (nonatomic,strong) NSString *profilePicURL;
+@property (nonatomic,strong) NSString *emailAddress;
 @property (nonatomic,strong) NSString *deviceToken;
 @property (nonatomic,strong) NSMutableArray *alerts;
 @property (nonatomic,strong) NSMutableArray *careTasks;

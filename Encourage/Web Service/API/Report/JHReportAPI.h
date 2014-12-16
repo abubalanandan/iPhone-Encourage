@@ -20,5 +20,5 @@
 @protocol JHReportAPIDelegate <JHBaseAPIDelegate>
 
 - (void)didReceiveReportResponse:(JHReportAPIResponse *)response;
-
+- (void)failedToPostReport:(NSString *)message;
 @end

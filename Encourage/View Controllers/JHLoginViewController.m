@@ -75,11 +75,11 @@
 
 - (BOOL)isEntriesValid{
     NSString *error = nil;
-//    if (self.loginField.text == nil || self.loginField.text.length<5) {
-//        error = @"Please enter a valid email address";
-//    }else if(self.passwordField.text==nil || self.passwordField.text.length==0){
-//        error = @"Please enter your password";
-//    }
+    if (self.loginField.text == nil || self.loginField.text.length<5) {
+        error = @"Please enter a valid email address";
+    }else if(self.passwordField.text==nil || self.passwordField.text.length==0){
+        error = @"Please enter your password";
+    }
     if (error) {
         [Utility showOkAlertWithTitle:@"Warning" message:error];
         return NO;
@@ -93,10 +93,10 @@
     [JHAppDelegate application].dataManager.token = responseObj.token;
     [JHAppDelegate application].dataManager.profilePicURL = responseObj.personProfilePic;
     [JHAppDelegate application].dataManager.username = responseObj.personName;
+    [JHAppDelegate application].dataManager.emailAddress = self.loginField.text;
     [[JHAppDelegate application] setupLeftPanel];
-    JHLeftPanelViewController *leftPanel =(JHLeftPanelViewController *) [JHAppDelegate application].sidePanel.leftPanel;
-    [leftPanel setUpViewsWithName:responseObj.personName email:self.loginField.text andProfilePic:responseObj.personProfilePic];
-       JHTimelineViewController *timelineVC = [[JHTimelineViewController alloc]init];
+
+    JHTimelineViewController *timelineVC = [[JHTimelineViewController alloc]init];
     [JHAppDelegate application].sidePanel.centerPanel = timelineVC;
     [JHAppDelegate application].window.rootViewController = [JHAppDelegate application].sidePanel;
 }

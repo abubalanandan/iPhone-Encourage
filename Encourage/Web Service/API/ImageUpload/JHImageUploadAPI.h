@@ -16,8 +16,9 @@
 
 @end
 
-@protocol JHImageUploadDelegate <NSObject>
+@protocol JHImageUploadDelegate <JHBaseAPIDelegate>
 
 - (void)didUploadImage:(JHImageUploadAPIResponse *)responseObj;
+- (void)imageUploadFailed:(NSString *)message;
 
 @end

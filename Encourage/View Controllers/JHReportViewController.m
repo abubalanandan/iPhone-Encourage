@@ -425,6 +425,9 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)failedToPostReport:(NSString *)message{
+    [Utility showOkAlertWithTitle:@"Error" message:message];
+}
 #pragma mark -
 
 - (void)didSelectContacts:(NSMutableArray *)names andContacts:(NSMutableArray *)email {
@@ -445,6 +448,10 @@
     [data setObject:responseObj.fileActualName forKey:@"fileName"];
     [self sendReportForThirdPage:data];
     
+}
+
+- (void)imageUploadFailed:(NSString *)message{
+    [Utility showOkAlertWithTitle:@"Error" message:message];
 }
 
 @end

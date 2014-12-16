@@ -31,5 +31,13 @@
     [super didReceiveData:responseObj];
 }
 
-
+- (void)didReceiveNetworkError:(NSString *)errorMessage{
+    if (errorMessage==nil) {
+        errorMessage = @"Image Upload failed. Please try again.";
+        
+    }
+    if ([delegate_ respondsToSelector:@selector(imageUploadFailed:)]) {
+        [delegate_ imageUploadFailed:errorMessage];
+    }
+}
 @end
