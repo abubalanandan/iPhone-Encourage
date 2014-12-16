@@ -20,6 +20,7 @@
 @interface JHTimelineViewController ()
 @property int lastCount;
 @property (nonatomic,strong) NSMutableArray *timelineItems;
+@property UIRefreshControl *refreshControl;
 @property BOOL loading;
 @end
 
@@ -45,6 +46,11 @@
     iv.image = [UIImage imageNamed:@"page_bg"];
     [backgroundView addSubview:iv];
     [self.timelineTV setBackgroundView:backgroundView];
+    
+    
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.timelineTV addSubview:self.refreshControl];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -69,11 +75,20 @@
 }
 
 
+#pragma mark -- Refresh Control
+
+- (void)handleRefresh:(id)sender{
+    _loading = YES;
+    
+    [timelineAPI_ getTimelineDetails:[JHAppDelegate application].dataManager.token andLastCount:0 withLoadingIndicator:NO];
+}
+
 
 #pragma mark Timeline API delegate
 
 - (void)didReceiveTimelineDetails:(JHTimelineAPIResponse *)response{
     [_activity stopAnimating];
+    [self.refreshControl endRefreshing];
     _lastCount = response.lastCount;
     _loading = NO;
     _timelineTV.tableFooterView = nil;
@@ -91,6 +106,11 @@
     [_timelineItems removeAllObjects];
     [_timelineItems addObjectsFromArray:sortedArray];
     [_timelineTV reloadData];
+}
+
+- (void)failedToReceiveTimelineDetails:(NSString *)message{
+    [_activity stopAnimating];
+    [self.refreshControl endRefreshing];
 }
 
 #pragma mark TableView Data Source

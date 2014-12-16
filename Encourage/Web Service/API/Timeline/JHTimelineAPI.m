@@ -46,4 +46,12 @@
     [super didReceiveData:responseObj];
 }
 
+- (void)didReceiveNetworkError:(NSString *)errorMessage{
+    if(errorMessage==nil)
+        errorMessage = @"Network Error";
+    
+    if ([delegate_ respondsToSelector:@selector(failedToReceiveTimelineDetails:)]) {
+        [delegate_ failedToReceiveTimelineDetails:errorMessage];
+    }
+}
 @end
