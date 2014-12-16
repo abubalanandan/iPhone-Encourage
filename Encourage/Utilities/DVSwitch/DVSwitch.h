@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol DVSwitchDelegate;
 @interface DVSwitch : UIControl
 
 @property (strong, nonatomic) UIColor *backgroundColor; // defaults to gray
@@ -16,7 +16,9 @@
 @property (strong, nonatomic) UIColor *labelTextColorOutsideSlider; // defaults to white
 @property (strong, nonatomic) UIFont *font;
 @property (nonatomic) CGFloat cornerRadius; // defaults to 12
-@property (nonatomic) CGFloat sliderOffset; // slider offset from background, top, bottom, left, right
+@property (nonatomic) CGFloat sliderOffset;
+@property (weak, nonatomic) id<DVSwitchDelegate> delegate;
+// slider offset from background, top, bottom, left, right
 
 + (instancetype)switchWithStringsArray:(NSArray *)strings;
 - (instancetype)initWithStringsArray:(NSArray *)strings;
@@ -33,6 +35,11 @@
 - (void)setWillBePressedHandler:(void (^)(NSUInteger index))handler;
 
 
+@end
+
+@protocol DVSwitchDelegate<NSObject>
+
+- (BOOL)shouldChangeIndex:(NSInteger)index;
 @end
 
 // 版权属于原作者

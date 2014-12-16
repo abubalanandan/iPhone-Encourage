@@ -229,6 +229,11 @@
 
 - (void)handleRecognizerTap:(UITapGestureRecognizer *)rec
 {
+    if ([_delegate respondsToSelector:@selector(shouldChangeIndex:)]){
+        if(![_delegate shouldChangeIndex:rec.view.tag]){
+            return;
+        }
+    }
     self.selectedIndex = rec.view.tag;
     [self animateChangeToIndex:self.selectedIndex];
 }

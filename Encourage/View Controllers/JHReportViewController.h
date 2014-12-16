@@ -12,10 +12,11 @@
 #import "JHReportAPI.h"
 #import "JHImageUploadAPI.h"
 #import "JHContactsViewController.h"
+#import "DVSwitch.h"
 
 @protocol JHContactDataDelegate;
 
-@interface JHReportViewController : JHBaseViewController <UIScrollViewDelegate, JHReportAPIDelegate, JHContactDataDelegate, JHImageUploadDelegate> {
+@interface JHReportViewController : JHBaseViewController <UIScrollViewDelegate, JHReportAPIDelegate, JHContactDataDelegate, JHImageUploadDelegate,DVSwitchDelegate> {
     JHReportAPI *reportAPI;
     JHImageUploadAPI *imageAPI;
     

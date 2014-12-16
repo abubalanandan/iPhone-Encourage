@@ -58,9 +58,11 @@
     _sliderSwitch.labelTextColorOutsideSlider = [UIColor whiteColor];
     _sliderSwitch.cornerRadius = 0;
     _sliderSwitch.sliderOffset = 5;
+    _sliderSwitch.delegate = self;
     [_sliderSwitch setWillBePressedHandler:^(NSUInteger index) {
         [self scrollToSelectedIndex:index];
     }];
+    
     [self.sliderView addSubview:_sliderSwitch];
     
     [self addPagesToContainer];
@@ -91,6 +93,12 @@
     if (index > 1) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"kClearAllButtonSelectionNotification" object:nil];
     }
+}
+
+- (BOOL)shouldChangeIndex:(NSInteger)index{
+    if (APP_DELEGATE.shouldEnableScrolling)
+        return YES;
+    return NO;
 }
 
 #pragma mark -
