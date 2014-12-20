@@ -1653,7 +1653,7 @@
 				INFOPLIST_FILE = "Encourage/Encourage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d62aecc7-43d5-45f0-86c7-a48f0811d1f9";
+				PROVISIONING_PROFILE = "b7a6451c-a2ec-45b9-b7b9-9d59d20a571b";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1670,7 +1670,7 @@
 				INFOPLIST_FILE = "Encourage/Encourage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d62aecc7-43d5-45f0-86c7-a48f0811d1f9";
+				PROVISIONING_PROFILE = "b7a6451c-a2ec-45b9-b7b9-9d59d20a571b";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

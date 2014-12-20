@@ -100,8 +100,8 @@
     
     if (![self validateFields]) {
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter event name, address and description" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter event name, address and description" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//        [alert show];
         return nil;
     }
     NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:eventNameTextField.text, @"eventName", eventDescriptionTextField.text, @"eventDesc", eventAdressTextField.text, @"eventAddress", dateTextField.text, @"date", nil];

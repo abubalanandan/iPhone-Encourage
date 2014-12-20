@@ -130,9 +130,7 @@
     NSString *receivedResponse = nil;
     receivedResponse = [[request responseString] retain];
     
-    if ([request.url.absoluteString containsString:@"Logout"]) {
-        receivedResponse = @"{\"responseCode\":\"OK\",\"responseDescription\":{}}";
-    }
+
     SBJSON *parser = [[SBJSON alloc] init];
 	NSDictionary *jsonContent = [[parser objectWithString:receivedResponse error:nil] retain];
        

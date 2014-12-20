@@ -113,7 +113,7 @@
     
     
     
-    if ([item.contentType containsString:@"Link"]) {
+    if ([item.contentType rangeOfString:@"Link"].location!=NSNotFound) {
         cell.urlDetailView.hidden = NO;
         cell.urlHeader.text = item.urlHeader;
         cell.urlPreviewLabel.text = item.details;
@@ -136,13 +136,13 @@
     
     detailViewHeight += labelHeight+5;
     CGFloat imageOffset = 0;
-    if ([item.contentType containsString:@"Image"]) {
+    if ([item.contentType rangeOfString:@"Image"].location!=NSNotFound) {
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, detailViewHeight, 280, 280)];
         [cell.detailsView addSubview:imageView];
         NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:FILE_URL,[JHAppDelegate application].dataManager.token,item.documentActualName]];
         [imageView sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"page_bg"]];
         imageOffset += imageView.bounds.size.height + 10;
-    }else if ([item.contentType containsString:@"Map"]) {
+    }else if ([item.contentType rangeOfString:@"Map"].location!=NSNotFound) {
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, detailViewHeight, 280, 280)];
         [cell.detailsView addSubview:imageView];
         NSString *urlString = [[NSString stringWithFormat:MAP_URL,item.eventAddress]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -183,7 +183,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     JHAlert *alert = [self.alerts objectAtIndex:indexPath.row];
-    if ([alert.contentType containsString:@"Link"]) {
+    if ([alert.contentType rangeOfString:@"Link"].location != NSNotFound) {
         [[UIApplication sharedApplication]openURL:[NSURL URLWithString:alert.url]];
     }
 }

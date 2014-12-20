@@ -163,12 +163,12 @@
     }
     cell.detailsView.frame = CGRectMake(cell.detailsView.frame.origin.x, headerHeight+ 20, CGRectGetWidth(cell.detailsView.frame), detailViewHeight);
     CGFloat imageOffset = 0;
-    if ([item.dataType containsString:@"Image"]) {
+    if ([item.dataType rangeOfString:@"Image"].location != NSNotFound) {
         cell.dummyView.hidden = NO;
         cell.dummyView.frame = CGRectMake(CGRectGetMinX(cell.dummyView.frame), CGRectGetMaxY(cell.detailsView.frame)+5, CGRectGetWidth(cell.dummyView.frame), CGRectGetHeight(cell.dummyView.frame));
         imageOffset = cell.dummyView.frame.size.height;
         [cell.dummyView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:FILE_URL,[JHAppDelegate application].dataManager.token,item.documentActualName]] placeholderImage:[UIImage imageNamed:@"page_bg"]] ;
-    }else if([item.dataType containsString:@"Map"]){
+    }else if([item.dataType rangeOfString:@"Map"].location != NSNotFound){
         cell.dummyView.hidden = NO;
         cell.dummyView.frame = CGRectMake(CGRectGetMinX(cell.dummyView.frame), CGRectGetMaxY(cell.detailsView.frame)+5, CGRectGetWidth(cell.dummyView.frame), CGRectGetHeight(cell.dummyView.frame));
         imageOffset = cell.dummyView.frame.size.height;
@@ -208,7 +208,7 @@
      [self configureCell:sizingCell withItem:[_timelineItems objectAtIndex:indexPath.row]];
     JHTimelineItem *item = [_timelineItems objectAtIndex:indexPath.row];
     CGFloat imageOffset = 0;
-    if ([item.dataType containsString:@"Image"]) {
+    if ([item.dataType rangeOfString:@"Image"].location != NSNotFound || [item.dataType rangeOfString:@"Map"].location != NSNotFound) {
         imageOffset = sizingCell.dummyView.bounds.size.height;
     }
     
