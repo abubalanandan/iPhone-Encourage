@@ -37,9 +37,9 @@ JHAppDelegate *mainApplicationInstance_;
 - (void)registerForPushNotifications{
     UIApplication *application = [UIApplication sharedApplication];
     if ([[UIDevice currentDevice] systemVersion].floatValue < 8.0) {
-        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound ];
+        [application registerForRemoteNotificationTypes:  UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound ];
     } else {
-        UIUserNotificationSettings *uiNotificationSettings = [UIUserNotificationSettings settingsForTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound categories:nil];
+        UIUserNotificationSettings *uiNotificationSettings = [UIUserNotificationSettings settingsForTypes:  UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound categories:nil];
         [application registerUserNotificationSettings:uiNotificationSettings];
     }
     
