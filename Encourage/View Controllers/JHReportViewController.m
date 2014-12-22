@@ -65,8 +65,6 @@
     
     [self.sliderView addSubview:_sliderSwitch];
     
-    [self addPagesToContainer];
-    
     _addressBookController.delegate = self;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableScrolling) name:@"kEnableContainerScrollNotification" object:nil];
@@ -76,6 +74,10 @@
     
     [super viewWillAppear:animated];
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self addPagesToContainer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -398,7 +400,7 @@
 
 - (NSArray *)getEventData {
     
-    NSArray *eventsArray = [NSArray arrayWithObjects:@"Sore Throat", @"Tired", @"Back Pain", @"Dizziness", @"Can't Sleep", @"Joint Pain", @"Dry Skin", @"Nose Bleed", @"Shortness of Breath", @"Worried", @"Anxious", @"Depressed", @"Angry", @"Sad", @"Happy", @"Restless", nil];
+    NSArray *eventsArray = [NSArray arrayWithObjects:@"Sore Throat", @"Tired", @"Back Pain", @"Dizziness", @"Can't Sleep", @"Joint Pain", @"Dry Skin", @"Nose Bleed", @"Shortness of Breath", @"Breathless", @"Tingling Sensation", @"Other", @"Worried", @"Anxious", @"Depressed", @"Angry", @"Sad", @"Happy", @"Restless", nil];
     
     NSMutableArray *events = [NSMutableArray arrayWithArray:[[_pageOne getPageOneStatus] objectForKey:@"events"]];
     [events addObjectsFromArray:[[_pageTwo getPageTwoStatus] objectForKey:@"events"]];

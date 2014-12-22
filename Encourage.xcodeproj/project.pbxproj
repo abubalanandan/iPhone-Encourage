@@ -163,6 +163,12 @@
 		70F58CD61A1292EB004A065E /* JHTimelineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F58CD51A1292EB004A065E /* JHTimelineItem.m */; };
 		70F58CD91A1293FB004A065E /* JHTimelineDetailItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F58CD81A1293FB004A065E /* JHTimelineDetailItem.m */; };
 		70F58CDC1A129653004A065E /* JHTimelineAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F58CDB1A129653004A065E /* JHTimelineAPI.m */; };
+		7F4DC4B11A48A0540059312B /* breathless@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4DC4AB1A48A0540059312B /* breathless@2x.png */; };
+		7F4DC4B21A48A0540059312B /* breathlesshover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4DC4AC1A48A0540059312B /* breathlesshover@2x.png */; };
+		7F4DC4B31A48A0540059312B /* other@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4DC4AD1A48A0540059312B /* other@2x.png */; };
+		7F4DC4B41A48A0540059312B /* otherhover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4DC4AE1A48A0540059312B /* otherhover@2x.png */; };
+		7F4DC4B51A48A0540059312B /* tingling@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4DC4AF1A48A0540059312B /* tingling@2x.png */; };
+		7F4DC4B61A48A0540059312B /* tinglinghover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4DC4B01A48A0540059312B /* tinglinghover@2x.png */; };
 		7FAA14D31A3F1EE300F2947F /* JHContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA14D11A3F1EE300F2947F /* JHContactsViewController.m */; };
 		7FAA14D41A3F1EE300F2947F /* JHContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAA14D21A3F1EE300F2947F /* JHContactsViewController.xib */; };
 		7FAA14D91A3F211F00F2947F /* JHTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA14D71A3F211F00F2947F /* JHTableViewCell.m */; };
@@ -485,6 +491,12 @@
 		70F58CD81A1293FB004A065E /* JHTimelineDetailItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHTimelineDetailItem.m; sourceTree = "<group>"; };
 		70F58CDA1A129653004A065E /* JHTimelineAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JHTimelineAPI.h; path = Timeline/JHTimelineAPI.h; sourceTree = "<group>"; };
 		70F58CDB1A129653004A065E /* JHTimelineAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JHTimelineAPI.m; path = Timeline/JHTimelineAPI.m; sourceTree = "<group>"; };
+		7F4DC4AB1A48A0540059312B /* breathless@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "breathless@2x.png"; sourceTree = "<group>"; };
+		7F4DC4AC1A48A0540059312B /* breathlesshover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "breathlesshover@2x.png"; sourceTree = "<group>"; };
+		7F4DC4AD1A48A0540059312B /* other@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "other@2x.png"; sourceTree = "<group>"; };
+		7F4DC4AE1A48A0540059312B /* otherhover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "otherhover@2x.png"; sourceTree = "<group>"; };
+		7F4DC4AF1A48A0540059312B /* tingling@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tingling@2x.png"; sourceTree = "<group>"; };
+		7F4DC4B01A48A0540059312B /* tinglinghover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tinglinghover@2x.png"; sourceTree = "<group>"; };
 		7FAA14D01A3F1EE300F2947F /* JHContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHContactsViewController.h; sourceTree = "<group>"; };
 		7FAA14D11A3F1EE300F2947F /* JHContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHContactsViewController.m; sourceTree = "<group>"; };
 		7FAA14D21A3F1EE300F2947F /* JHContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHContactsViewController.xib; sourceTree = "<group>"; };
@@ -1167,6 +1179,12 @@
 		7FEDC3941A3C502F007D7FD9 /* Page1 */ = {
 			isa = PBXGroup;
 			children = (
+				7F4DC4AB1A48A0540059312B /* breathless@2x.png */,
+				7F4DC4AC1A48A0540059312B /* breathlesshover@2x.png */,
+				7F4DC4AD1A48A0540059312B /* other@2x.png */,
+				7F4DC4AE1A48A0540059312B /* otherhover@2x.png */,
+				7F4DC4AF1A48A0540059312B /* tingling@2x.png */,
+				7F4DC4B01A48A0540059312B /* tinglinghover@2x.png */,
 				7FEDC3951A3C502F007D7FD9 /* back_pain@2x.png */,
 				7FEDC3961A3C502F007D7FD9 /* back_painhover@2x.png */,
 				7FEDC3971A3C502F007D7FD9 /* cant_sleep@2x.png */,
@@ -1323,8 +1341,10 @@
 				7FEDC3E31A3C8D8B007D7FD9 /* depressed@2x.png in Resources */,
 				7028138E19F8022200643D17 /* password_icon@2x.png in Resources */,
 				70AE03C81A3B524800FF3074 /* not_done@2x.png in Resources */,
+				7F4DC4B51A48A0540059312B /* tingling@2x.png in Resources */,
 				7028139019F8022200643D17 /* separate_form@2x.png in Resources */,
 				7028137A19F8016F00643D17 /* JHRegistrationViewController.xib in Resources */,
+				7F4DC4B21A48A0540059312B /* breathlesshover@2x.png in Resources */,
 				7FEDC3BF1A3C502F007D7FD9 /* sore_throat@2x.png in Resources */,
 				7028137C19F8016F00643D17 /* JHTimelineViewController.xib in Resources */,
 				7FEDC3921A3C4DA3007D7FD9 /* JHReportPageFour.xib in Resources */,
@@ -1372,9 +1392,13 @@
 				70AE03CD1A3B561200FF3074 /* doc@2x.png in Resources */,
 				703AE3171A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib in Resources */,
 				7FAA14DA1A3F211F00F2947F /* JHTableViewCell.xib in Resources */,
+				7F4DC4B41A48A0540059312B /* otherhover@2x.png in Resources */,
 				7FEDC3BA1A3C502F007D7FD9 /* nosebleed@2x.png in Resources */,
+				7F4DC4B11A48A0540059312B /* breathless@2x.png in Resources */,
 				7FEDC3B71A3C502F007D7FD9 /* dry_skinhover@2x.png in Resources */,
+				7F4DC4B61A48A0540059312B /* tinglinghover@2x.png in Resources */,
 				7FEDC3EC1A3C8D8B007D7FD9 /* worriedhover@2x.png in Resources */,
+				7F4DC4B31A48A0540059312B /* other@2x.png in Resources */,
 				7028138C19F8022200643D17 /* login_form@2x.png in Resources */,
 				70785D9D1A3C3E7A00094144 /* JHAlertsListViewController.xib in Resources */,
 				7FEDC3E91A3C8D8B007D7FD9 /* sad@2x.png in Resources */,

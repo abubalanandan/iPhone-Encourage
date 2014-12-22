@@ -8,6 +8,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JHReportPageOne">
             <connections>
                 <outlet property="button1" destination="e8Q-I0-elb" id="RQo-Td-a7Q"/>
+                <outlet property="button10" destination="hRH-lT-iSo" id="MOE-xs-Ghe"/>
+                <outlet property="button11" destination="OzU-YI-2IY" id="sek-Bo-pJz"/>
+                <outlet property="button12" destination="mGe-OS-e1k" id="qoh-Fb-WVg"/>
                 <outlet property="button2" destination="ARY-7b-3pS" id="Y9R-71-VNq"/>
                 <outlet property="button3" destination="y4J-bg-nKj" id="dLq-Am-Kbb"/>
                 <outlet property="button4" destination="RrN-vz-UaS" id="Fz2-ek-FPo"/>
@@ -31,11 +34,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="4566" contentMode="scaleToFill" id="7iW-pb-TyS">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="428"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view tag="1234" contentMode="scaleToFill" id="6Yo-nm-QIY">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="428"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="615"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="e8Q-I0-elb">
@@ -137,8 +140,41 @@
                                         <action selector="action:" destination="-1" eventType="touchUpInside" id="qa9-7e-MGG"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hRH-lT-iSo">
+                                    <rect key="frame" x="20" y="322" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="breathless.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="breathlesshover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="HZ6-g2-SWd"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OzU-YI-2IY">
+                                    <rect key="frame" x="120" y="322" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="tingling.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="tinglinghover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="NA9-Wk-vtG"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mGe-OS-e1k">
+                                    <rect key="frame" x="222" y="322" width="86" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="other.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="otherhover.png"/>
+                                    <connections>
+                                        <action selector="action:" destination="-1" eventType="touchUpInside" id="tPZ-Em-eWL"/>
+                                    </connections>
+                                </button>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="On4-46-Lpk">
-                                    <rect key="frame" x="21" y="326" width="287" height="30"/>
+                                    <rect key="frame" x="21" y="419" width="287" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -147,7 +183,7 @@
                                     </connections>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a description" minimumFontSize="17" id="I4m-mp-f2u">
-                                    <rect key="frame" x="22" y="364" width="287" height="30"/>
+                                    <rect key="frame" x="21" y="457" width="287" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -156,6 +192,7 @@
                                     </connections>
                                 </textField>
                             </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
                     <connections>
@@ -208,6 +245,8 @@
     <resources>
         <image name="back_pain.png" width="86" height="86"/>
         <image name="back_painhover.png" width="86" height="86"/>
+        <image name="breathless.png" width="86" height="86"/>
+        <image name="breathlesshover.png" width="86" height="86"/>
         <image name="cant_sleep.png" width="86" height="86"/>
         <image name="cant_sleephover.png" width="86" height="86"/>
         <image name="dizziness.png" width="86" height="86"/>
@@ -218,10 +257,14 @@
         <image name="joint_painhover.png" width="86" height="86"/>
         <image name="nosebleed.png" width="86" height="86"/>
         <image name="nosebleedhover.png" width="86" height="86"/>
+        <image name="other.png" width="86" height="86"/>
+        <image name="otherhover.png" width="86" height="86"/>
         <image name="shortness.png" width="86" height="86"/>
         <image name="shortnesshover.png" width="86" height="86"/>
         <image name="sore_throat.png" width="86" height="86"/>
         <image name="sore_throathover.png" width="86" height="86"/>
+        <image name="tingling.png" width="86" height="86"/>
+        <image name="tinglinghover.png" width="86" height="86"/>
         <image name="tired.png" width="86" height="86"/>
         <image name="tiredhover.png" width="86" height="86"/>
     </resources>

@@ -31,6 +31,9 @@
     [button7 setTag:ReportButtonTypeDrySkin];
     [button8 setTag:ReportButtonTypeNoseBleed];
     [button9 setTag:ReportButtonTypeShortnessOfBreath];
+    [button10 setTag:ReportButtonTypeBreathless];
+    [button11 setTag:ReportButtonTypeTingling];
+    [button12 setTag:ReportButtonTypeOther];
 }
 
 - (NSDictionary *)getPageOneStatus {
