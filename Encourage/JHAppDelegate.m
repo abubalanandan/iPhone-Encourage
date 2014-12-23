@@ -31,6 +31,7 @@ JHAppDelegate *mainApplicationInstance_;
       
     [self setupLeftPanel];
     [self registerForPushNotifications];
+    
     return YES;
 }
 

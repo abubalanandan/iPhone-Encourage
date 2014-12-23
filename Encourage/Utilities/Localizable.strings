@@ -11,6 +11,6 @@
 "Terms_And_Conditions_text" = "By clicking Register, you agree to our Terms and Conditions documented herein";
 "EMAIL_TOO_SHORT_MSG" = "Please enter a valid email address";
 "INVALID_EMAIL_MSG" = "Please enter a valid email address";
-"FIRST_NAME_TOO_SHORT" = "Please enter your First name";
-"LAST_NAME_TOO_SHORT" = "Please enter your Last name";
+"FIRST_NAME_TOO_SHORT_MSG" = "Please enter your First name";
+"LAST_NAME_TOO_SHORT_MSG" = "Please enter your Last name";
 "REGISTRATION_SUCCESS_MSG" = "Please follow instructions in the Encourage registration confirmation email";
