@@ -17,6 +17,7 @@
 @property IBOutlet UIButton *viewAllCTButton;
 @property NSMutableArray *recentCareTasks;
 @property JHCareTask *markedCareTask;
+@property (nonatomic,strong) JASidePanelController *presentingVC;
 
 @end
 
@@ -34,6 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.presentingVC = self.presentingViewController;
     [self.viewAllCTButton setBackgroundColor:[UIColor darkGrayColor]];
     UIView *bgView = [[UIView alloc]init];
     bgView.backgroundColor = PAGE_BG_COLOR;
@@ -74,10 +76,20 @@
 
 - (IBAction)viewAllCareTasks:(id)sender{
     if ([self.recentCareTasks count]!=0) {
+        if (SYSTEM_VERSION_LESS_THAN(@"8.0")) {
+            [self dismissViewControllerAnimated:YES completion:^{
+                JHCareTaskListViewController *vc = [[JHCareTaskListViewController alloc]init];
+                
+                [self.presentingVC presentViewController:vc animated:YES completion:nil];
+                
+            }];
+
+            
+        }else{
         JHCareTaskListViewController *vc = [[JHCareTaskListViewController alloc]init];
-        [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
         [self.presentingViewController presentViewController:vc animated:YES completion:nil];
-        
+        }
         
     }
 }

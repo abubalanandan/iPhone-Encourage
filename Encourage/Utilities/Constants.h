@@ -43,6 +43,8 @@ typedef enum {
 #define LOGOUT_URL @"mUserLogout"
 #define REGISTRATION_URL @"mPostPersonDetails"
 #define RESPONSE_DESCRIPTION_KEY @"responseDescription"
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+
 
 /***
  * Report Typres

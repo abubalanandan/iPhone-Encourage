@@ -17,6 +17,7 @@
 @property IBOutlet UILabel *noAlertsLabel;
 @property NSMutableArray *recentAlertsArray;
 @property JHAlert *markedAlert;
+@property (nonatomic,strong) JASidePanelController *presentingVC;
 @end
 
 @implementation JHRecentAlertsViewController
@@ -34,6 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.presentingVC = (JASidePanelController *) self.presentingViewController;
     // Do any additional setup after loading the view.
     [self.recentAlertsArray addObjectsFromArray:[[JHAppDelegate application].dataManager getUnreadAlerts]];
     
@@ -64,9 +66,27 @@
 
 - (IBAction)viewAllAlerts:(id)sender{
     
-    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
-    JHAlertsListViewController *vc = [[JHAlertsListViewController alloc]init];
-    [self.presentingViewController presentViewController:vc animated:YES completion:nil];
+    if (SYSTEM_VERSION_LESS_THAN(@"8.0") ) {
+        [self dismissViewControllerAnimated:YES completion:^{
+            JHAlertsListViewController *vc = [[JHAlertsListViewController alloc]init];
+            
+            [self.presentingVC presentViewController:vc animated:YES completion:nil];
+            
+        }];
+
+    }else{
+            [self.presentingViewController dismissViewControllerAnimated:YES  completion:nil];
+            JHAlertsListViewController *vc = [[JHAlertsListViewController alloc]init];
+            
+            [self.presentingViewController presentViewController:vc animated:YES completion:nil];
+
+        
+        
+
+    }
+    
+
+
 }
 
 #pragma mark - Table View
