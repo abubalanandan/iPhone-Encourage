@@ -135,8 +135,13 @@
 }
 
 - (void)scrollToSelectedIndex:(NSUInteger)index {
-    if (APP_DELEGATE.shouldEnableScrolling)
+    if (APP_DELEGATE.shouldEnableScrolling){
         [self.containerScrollView setContentOffset:CGPointMake(index * 320, 0) animated:YES];
+        if (index > 1) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"kClearAllButtonSelectionNotification" object:nil];
+        }
+
+    }
 }
 
 - (void)enableScrolling {
