@@ -10,6 +10,7 @@
                 <outlet property="bgView" destination="Yft-hd-bUK" id="48m-Xk-TIo"/>
                 <outlet property="checkBoxButton" destination="rhM-Mj-gDC" id="MAg-PW-mzF"/>
                 <outlet property="containerScrollView" destination="Xz4-bv-se6" id="ABh-es-4lo"/>
+                <outlet property="progressIndicator" destination="7TD-E4-tgs" id="bqp-bR-t2m"/>
                 <outlet property="sliderView" destination="slZ-be-U10" id="LZU-pW-ZL0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -98,6 +99,10 @@
                         <action selector="addContacts:" destination="-1" eventType="touchUpInside" id="7pm-6c-wsH"/>
                     </connections>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="7TD-E4-tgs">
+                    <rect key="frame" x="141" y="222" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

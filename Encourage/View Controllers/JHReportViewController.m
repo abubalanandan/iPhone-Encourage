@@ -20,7 +20,7 @@
 @property IBOutlet UIView *sliderView;
 @property IBOutlet UIImageView *bgView;
 @property IBOutlet UIScrollView *containerScrollView;
-
+@property (nonatomic,weak) IBOutlet UIActivityIndicatorView *progressIndicator;
 @property DVSwitch *sliderSwitch;
 @property (nonatomic, strong) JHReportPageOne *pageOne;
 @property (nonatomic, strong) JHReportPageTwo *pageTwo;
@@ -117,6 +117,7 @@
 
 - (void)addPagesToContainer {
     
+    [_progressIndicator startAnimating];
     _pageOne = [[JHReportPageOne alloc] init];
     _pageTwo = [[JHReportPageTwo alloc] init];
     _pageThree = [[JHReportPageThree alloc] init];
@@ -133,6 +134,7 @@
     [self.containerScrollView addSubview:[self setFrameForView:_pageThree.view atIndex:2]];
     [self.containerScrollView addSubview:[self setFrameForView:_pageFour.view atIndex:3]];
     
+    [_progressIndicator stopAnimating];
     self.containerScrollView.pagingEnabled = YES;
 }
 
