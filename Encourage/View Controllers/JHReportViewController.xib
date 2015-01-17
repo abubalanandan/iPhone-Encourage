@@ -81,20 +81,22 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rhM-Mj-gDC">
                     <rect key="frame" x="36" y="447" width="22" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <state key="normal" image="un_check.png">
+                    <state key="normal" backgroundImage="un_check.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="selected" image="check.png"/>
+                    <state key="selected" backgroundImage="check.png"/>
                     <connections>
                         <action selector="informCareCircle:" destination="-1" eventType="touchUpInside" id="6Jg-Kp-9Wh"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="XAC-hY-o8z">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XAC-hY-o8z">
                     <rect key="frame" x="8" y="447" width="22" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <state key="normal">
+                    <state key="normal" backgroundImage="ic_action_add_group.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="selected" backgroundImage="ic_action_add_group_hover.png"/>
+                    <state key="highlighted" backgroundImage="ic_action_add_group_hover.png"/>
                     <connections>
                         <action selector="addContacts:" destination="-1" eventType="touchUpInside" id="7pm-6c-wsH"/>
                     </connections>
@@ -110,12 +112,14 @@
         </view>
     </objects>
     <resources>
-        <image name="check.png" width="91" height="92"/>
+        <image name="check.png" width="45" height="46"/>
         <image name="close_button.png" width="48" height="48"/>
+        <image name="ic_action_add_group.png" width="48" height="48"/>
+        <image name="ic_action_add_group_hover.png" width="48" height="48"/>
         <image name="report_bg.png" width="320" height="568"/>
         <image name="report_buton.png" width="93" height="27"/>
         <image name="top_header.png" width="320" height="55"/>
-        <image name="un_check.png" width="91" height="92"/>
+        <image name="un_check.png" width="45" height="46"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

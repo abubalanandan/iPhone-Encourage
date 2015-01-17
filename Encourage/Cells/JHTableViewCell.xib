@@ -44,7 +44,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="check.png" width="91" height="92"/>
-        <image name="un_check.png" width="91" height="92"/>
+        <image name="check.png" width="45" height="46"/>
+        <image name="un_check.png" width="45" height="46"/>
     </resources>
 </document>

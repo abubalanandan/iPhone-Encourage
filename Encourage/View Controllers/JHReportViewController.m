@@ -68,10 +68,15 @@
     _addressBookController.delegate = self;
     
     [self addPagesToContainer];
+    [self setupCheckBox];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableScrolling) name:@"kEnableContainerScrollNotification" object:nil];
 }
 
+- (void)setupCheckBox{
+    self.shouldInformCC = YES;
+    [checkBoxButton setSelected:YES];
+}
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
