@@ -144,7 +144,7 @@
     [cell.profilePicImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:FILE_URL,[JHAppDelegate application].dataManager.token,item.personProfilePictureName]] placeholderImage:[UIImage imageNamed:@"page_bg"]];
     [[cell.detailsView subviews]makeObjectsPerformSelector:@selector(removeFromSuperview)];
 
-    CGFloat detailViewHeight= 20;
+    CGFloat detailViewHeight= 5;
     for (JHTimelineDetailItem *detail in details) {
         CGFloat labelHeight = [Utility requiredHeightWithKey:detail.key andValue:detail.value forCellWidth:labelWidth];
         UILabel *keyLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, detailViewHeight, labelWidth, labelHeight)];
@@ -161,24 +161,26 @@
         [cell.detailsView addSubview:valueLabel];
         detailViewHeight +=labelHeight+5;
     }
-    cell.detailsView.frame = CGRectMake(cell.detailsView.frame.origin.x, headerHeight+ 20, CGRectGetWidth(cell.detailsView.frame), detailViewHeight);
+    cell.detailsView.frame = CGRectMake(cell.detailsView.frame.origin.x, headerHeight, CGRectGetWidth(cell.detailsView.frame), detailViewHeight);
     CGFloat imageOffset = 0;
     if ([item.dataType rangeOfString:@"Image"].location != NSNotFound) {
         cell.dummyView.hidden = NO;
         cell.dummyView.frame = CGRectMake(CGRectGetMinX(cell.dummyView.frame), CGRectGetMaxY(cell.detailsView.frame)+5, CGRectGetWidth(cell.dummyView.frame), CGRectGetHeight(cell.dummyView.frame));
         imageOffset = cell.dummyView.frame.size.height;
+        imageOffset+= 10;
         [cell.dummyView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:FILE_URL,[JHAppDelegate application].dataManager.token,item.documentActualName]] placeholderImage:[UIImage imageNamed:@"page_bg"]] ;
     }else if([item.dataType rangeOfString:@"Map"].location != NSNotFound){
         cell.dummyView.hidden = NO;
         cell.dummyView.frame = CGRectMake(CGRectGetMinX(cell.dummyView.frame), CGRectGetMaxY(cell.detailsView.frame)+5, CGRectGetWidth(cell.dummyView.frame), CGRectGetHeight(cell.dummyView.frame));
         imageOffset = cell.dummyView.frame.size.height;
+        imageOffset+= 10;
         NSString *urlString = [[NSString stringWithFormat:MAP_URL,item.eventAddress] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *url =[NSURL URLWithString:urlString];
         [cell.dummyView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"page_bg"]] ;
     }else{
         cell.dummyView.hidden = YES;
     }
-    [cell.backgroundGrayView setFrame:CGRectMake(10, 15, cell.bounds.size.width-20,20+ CGRectGetHeight(cell.headerView.frame)+5+detailViewHeight+5+imageOffset+15 )];
+    [cell.backgroundGrayView setFrame:CGRectMake(10, 15, cell.bounds.size.width-20,CGRectGetHeight(cell.headerView.frame)+5+detailViewHeight+imageOffset )];
     cell.backgroundGrayView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
     cell.backgroundGrayView.layer.shadowOpacity = 0.5;
     cell.backgroundGrayView.layer.shadowOffset = CGSizeMake(-1.0, -1.0);
