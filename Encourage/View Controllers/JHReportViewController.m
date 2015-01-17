@@ -67,6 +67,8 @@
     
     _addressBookController.delegate = self;
     
+    [self addPagesToContainer];
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableScrolling) name:@"kEnableContainerScrollNotification" object:nil];
 }
 
@@ -76,9 +78,9 @@
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [self addPagesToContainer];
-}
+//- (void)viewDidAppear:(BOOL)animated {
+//    [self addPagesToContainer];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
