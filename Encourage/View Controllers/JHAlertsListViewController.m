@@ -169,7 +169,7 @@
 
     }
     
-    cell.whiteView.layer.shadowColor = [UIColor blackColor].CGColor;
+    cell.whiteView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
     cell.whiteView.layer.shadowOpacity = 0.5;
     cell.whiteView.layer.shadowOffset = CGSizeMake(-1.0, -1.0);
     cell.whiteView.layer.cornerRadius = 2.0;

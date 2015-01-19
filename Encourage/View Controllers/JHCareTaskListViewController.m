@@ -120,7 +120,7 @@
     cell.notDoneButton.frame = CGRectMake(notDoneButtonOrigin.x, notDoneButtonOrigin.y, CGRectGetWidth(cell.notDoneButton.frame), CGRectGetHeight(cell.notDoneButton.frame));
     
     [cell.whiteView setFrame:CGRectMake(10, 19, cell.bounds.size.width-20,detailViewHeight+headerHeight + CGRectGetHeight(cell.doneButton.frame)+10 )];
-    cell.whiteView.layer.shadowColor = [UIColor blackColor].CGColor;
+    cell.whiteView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
     cell.whiteView.layer.shadowOpacity = 0.5;
     cell.whiteView.layer.shadowOffset = CGSizeMake(-1.0, -1.0);
     cell.whiteView.layer.cornerRadius = 2.0;

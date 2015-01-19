@@ -96,7 +96,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100.0;
+    return 82.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -110,7 +110,7 @@
     cell.alertTitleLabel.text = alert.title;
     cell.dateLabel.text = alert.dateTime;
     cell.whiteView.layer.cornerRadius = 2.0;
-    cell.whiteView.layer.shadowColor = [UIColor blackColor].CGColor;
+    cell.whiteView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
     cell.whiteView.layer.shadowOffset = CGSizeMake(-1.0, -1.0);
     cell.whiteView.layer.shadowOpacity = 0.5;
     return cell;

@@ -122,7 +122,7 @@
     }else{
         [cell.medImageView setImage:[UIImage imageNamed:@"med"]];
     }
-    cell.whiteView.layer.shadowColor = [UIColor blackColor].CGColor;
+    cell.whiteView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
     cell.whiteView.layer.cornerRadius = 2.0;
     cell.whiteView.layer.shadowOpacity = 0.5;
     cell.whiteView.layer.shadowOffset = CGSizeMake(-1, -1);
