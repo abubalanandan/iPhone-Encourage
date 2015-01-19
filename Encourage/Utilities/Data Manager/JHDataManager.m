@@ -17,6 +17,7 @@
     if (self) {
         self.alerts = [[NSMutableArray alloc]init];
         self.careTasks = [[NSMutableArray alloc]init];
+        self.imageHeights = [[NSMutableDictionary alloc]init];
     }
     return self;
 }
@@ -27,6 +28,7 @@
     self.username = nil;
     self.alerts = nil;
     self.careTasks = nil;
+    self.imageHeights = nil;
 }
 
 - (void)parseNotification:(NSString *)alertsNotification{

@@ -14,6 +14,7 @@
 @property (nonatomic,strong) NSString *deviceToken;
 @property (nonatomic,strong) NSMutableArray *alerts;
 @property (nonatomic,strong) NSMutableArray *careTasks;
+@property (nonatomic,strong) NSMutableDictionary *imageHeights;
 
 - (void)clearData;
 - (void)parseNotification:(NSString *)alertsNotification;
