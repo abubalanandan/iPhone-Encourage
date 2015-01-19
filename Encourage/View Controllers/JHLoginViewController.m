@@ -52,7 +52,7 @@
 
 
 -(IBAction)loginButtonPressed:(id)sender{
-    if(TARGET_IPHONE_SIMULATOR){
+    if(/*TARGET_IPHONE_SIMULATOR*/true){
         self.loginField.text = @"abu.316@gmail.com";
         self.passwordField.text = @"Sachin@10";
     }
