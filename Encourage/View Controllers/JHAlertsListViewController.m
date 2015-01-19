@@ -94,7 +94,7 @@
 
     }
     JHAlert *alert = [self.alerts objectAtIndex:indexPath.row];
-    [self configureCell:cell withItem:alert];
+    [self configureCell:cell withItem:alert indexPath:indexPath];
     return cell;
 }
 
@@ -103,7 +103,7 @@
     return [self heightForBasicCellAtIndexPath:indexPath];
 }
 
-- (void)configureCell:(JHAlertDetailViewCell *)cell withItem:(JHAlert *)item{
+- (void)configureCell:(JHAlertDetailViewCell *)cell withItem:(JHAlert *)item indexPath:(NSIndexPath *)indexPath{
     NSString *details = item.details;
     CGFloat labelWidth = cell.detailsView.bounds.size.width - 20;
     CGFloat headerHeight = CGRectGetMinY(cell.detailsView.frame);
@@ -140,8 +140,22 @@
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, detailViewHeight, 280, 280)];
         [cell.detailsView addSubview:imageView];
         NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:FILE_URL,[JHAppDelegate application].dataManager.token,item.documentActualName]];
-        [imageView sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"page_bg"]];
+        if ([[JHAppDelegate application].dataManager.imageHeights objectForKey:imageURL]!=nil) {
+            float height = [[[JHAppDelegate application].dataManager.imageHeights objectForKey:imageURL]floatValue];
+            imageView.frame = CGRectMake(10, detailViewHeight, 280, height);
+        }
         imageOffset += imageView.bounds.size.height + 10;
+
+        [imageView sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"page_bg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if (cacheType==SDImageCacheTypeNone) {
+                float height = 280.0 * image.size.height / image.size.width;
+                NSNumber *heightNumber = [NSNumber numberWithFloat:height];
+                [[JHAppDelegate application].dataManager.imageHeights setObject:heightNumber forKey:imageURL];
+                [self.alertsTV beginUpdates];
+                [self.alertsTV reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+                [self.alertsTV endUpdates];
+            }
+        }];
     }else if ([item.contentType rangeOfString:@"Map"].location!=NSNotFound) {
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, detailViewHeight, 280, 280)];
         [cell.detailsView addSubview:imageView];
@@ -176,7 +190,7 @@
         
     });
     
-    [self configureCell:sizingCell withItem:[self.alerts objectAtIndex:indexPath.row]];
+    [self configureCell:sizingCell withItem:[self.alerts objectAtIndex:indexPath.row] indexPath:indexPath];
     
     return sizingCell.whiteView.bounds.size.height+20;
 }
