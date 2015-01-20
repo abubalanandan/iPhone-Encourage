@@ -129,6 +129,9 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Are you sure you want to remove the selected contacts?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
         [alert show];
     }
+    else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 #pragma mark -
