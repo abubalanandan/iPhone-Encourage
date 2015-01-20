@@ -66,7 +66,6 @@
     [self.sliderView addSubview:_sliderSwitch];
     
     _addressBookController.delegate = self;
-    
     [self setupCheckBox];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableScrolling) name:@"kEnableContainerScrollNotification" object:nil];
@@ -80,14 +79,16 @@
     
     [super viewWillAppear:animated];
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
+    if (!self.containerScrollView.pagingEnabled) {
+        [self addPagesToContainer];
+        
+    }
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    if (!self.containerScrollView.pagingEnabled) {
-        [self addPagesToContainer];
-
+    [super viewDidAppear:animated];
     }
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -136,7 +137,6 @@
     [self addChildViewController:_pageTwo];
     [self addChildViewController:_pageThree];
     [self addChildViewController:_pageFour];
-    
     [self.containerScrollView setContentSize:CGSizeMake(1280, CGRectGetHeight(self.containerScrollView.frame))];
     [self.containerScrollView addSubview:[self setFrameForView:_pageOne.view atIndex:0]];
     [self.containerScrollView addSubview:[self setFrameForView:_pageTwo.view atIndex:1]];
@@ -175,7 +175,7 @@
 
 - (UIView *)setFrameForView:(UIView *)view atIndex:(int)index {
     
-    view.frame = CGRectMake(index * 320, 0, 320, 340);
+    view.frame = CGRectMake(index * 320, 0, 320, CGRectGetHeight(self.containerScrollView.frame));
     return view;
 }
 
