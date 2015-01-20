@@ -31,7 +31,7 @@ JHAppDelegate *mainApplicationInstance_;
       
     [self setupLeftPanel];
     [self registerForPushNotifications];
-    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     return YES;
 }
 
@@ -65,8 +65,9 @@ JHAppDelegate *mainApplicationInstance_;
 }
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    NSString *responseDict = [[userInfo valueForKey:@"aps"]valueForKey:@"alert" ];
-    [dataManager_ parseNotification:responseDict];
+    NSString *notification = [userInfo valueForKey:@"notification"];
+    [dataManager_ parseNotification:notification];
+    
     }
 
 

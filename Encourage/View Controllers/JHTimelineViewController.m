@@ -176,6 +176,9 @@
         }
         [cell.dummyView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:FILE_URL,[JHAppDelegate application].dataManager.token,item.documentActualName]] placeholderImage:[UIImage imageNamed:@"page_bg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             if (cacheType==SDImageCacheTypeNone) {
+                if (image.size.width!=0) {
+                    
+        
             float height = CGRectGetWidth(cell.dummyView.frame) * image.size.height / image.size.width;
             NSNumber *heightNumber = [NSNumber numberWithFloat:height];
             [[JHAppDelegate application].dataManager.imageHeights setObject:heightNumber forKey:imageURL];
@@ -183,6 +186,7 @@
             [self.timelineTV reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             [self.timelineTV endUpdates];
                // [self.timelineTV reloadData];
+            }
             }
         }] ;
     }else if([item.dataType rangeOfString:@"Map"].location != NSNotFound){

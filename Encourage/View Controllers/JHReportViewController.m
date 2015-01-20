@@ -281,17 +281,35 @@
     NSMutableArray* items = [NSMutableArray array];
     if (accessGranted) {
         
+//        ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, error);
+//        ABRecordRef source = ABAddressBookCopyDefaultSource(addressBook);
+//        //CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeopleInSourceWithSortOrdering(addressBook, source, kABPersonSortByFirstName);
+//        CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeopleInSource(addressBook, source);
+//        CFIndex nPeople = ABAddressBookGetPersonCount(addressBook);
+        
+        
         ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, error);
-        ABRecordRef source = ABAddressBookCopyDefaultSource(addressBook);
-        CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeopleInSourceWithSortOrdering(addressBook, source, kABPersonSortByFirstName);
+        CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople(addressBook);
+        CFMutableArrayRef peopleMutable = CFArrayCreateMutableCopy(
+                                                                   kCFAllocatorDefault,
+                                                                   CFArrayGetCount(allPeople),
+                                                                   allPeople
+                                                                   );
+        
+        CFArraySortValues(
+                          peopleMutable,
+                          CFRangeMake(0, CFArrayGetCount(peopleMutable)),
+                          (CFComparatorFunction) ABPersonComparePeopleByName,
+                          (void*) kABPersonSortByFirstName
+                          );
+        
+        
         CFIndex nPeople = ABAddressBookGetPersonCount(addressBook);
-        
-        
         
         for (int i = 0; i < nPeople; i++)
         {
             
-            ABRecordRef person = CFArrayGetValueAtIndex(allPeople, i);
+            ABRecordRef person = CFArrayGetValueAtIndex(peopleMutable, i);
             
             //get First Name and Last Name
             
@@ -312,13 +330,16 @@
                 [items addObject:contact];
             }
         }
+        JHContactsViewController *contactsVC = [[JHContactsViewController alloc] initWithDelegate:self];
+        contactsVC.contactsArray = [[NSArray alloc] initWithArray:items];
+        contactsVC.delegate = self;
+        [self.navigationController pushViewController:contactsVC animated:YES];
+
+    }else{
+        [Utility showOkAlertWithTitle:@"Access Denied!" message:@"Please grant access for Contacts from the Settings app of your device to use this feature."];
     }
     
-    JHContactsViewController *contactsVC = [[JHContactsViewController alloc] initWithDelegate:self];
-    contactsVC.contactsArray = [[NSArray alloc] initWithArray:items];
-    contactsVC.delegate = self;
-    [self.navigationController pushViewController:contactsVC animated:YES];
-            
+    
 }
 
 - (IBAction)informCareCircle:(id)sender {
