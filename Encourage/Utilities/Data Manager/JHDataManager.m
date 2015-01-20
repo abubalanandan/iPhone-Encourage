@@ -17,6 +17,8 @@
     if (self) {
         self.alerts = [[NSMutableArray alloc]init];
         self.careTasks = [[NSMutableArray alloc]init];
+        self.chosenContactNames = [[NSMutableArray alloc] init];
+        self.chosenContactEmails = [[NSMutableArray alloc] init];
         self.imageHeights = [[NSMutableDictionary alloc]init];
     }
     return self;
@@ -29,6 +31,8 @@
     self.alerts = nil;
     self.careTasks = nil;
     self.imageHeights = nil;
+    self.chosenContactNames = nil;
+    self.chosenContactEmails = nil;
 }
 
 - (void)parseNotification:(NSString *)alertsNotification{
@@ -86,6 +90,12 @@
         }
     }
     return array;
+}
+
+- (void)clearContacts {
+    
+    [self.chosenContactNames removeAllObjects];
+    [self.chosenContactEmails removeAllObjects];
 }
 
 @end
