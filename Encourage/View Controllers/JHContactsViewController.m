@@ -27,9 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[self navigationController] setNavigationBarHidden:NO animated:NO];
+  //  [[self navigationController] setNavigationBarHidden:NO animated:NO];
     
-    [self addBarButtons];
+ //   [self addBarButtons];
     
 }
 
@@ -132,6 +132,14 @@
     else {
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+-(IBAction)close:(id)sender{
+    [self backButtonAction];
+}
+
+-(IBAction)done:(id)sender{
+    [self saveAction];
 }
 
 #pragma mark -

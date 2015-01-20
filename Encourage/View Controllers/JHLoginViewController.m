@@ -112,4 +112,8 @@
     [self.navigationController pushViewController:viewController animated:YES];
    
 }
+
+-(IBAction)forgotPasswordPressed:(id)sender{
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:FORGOT_PASSWORD_URL]];
+}
 @end

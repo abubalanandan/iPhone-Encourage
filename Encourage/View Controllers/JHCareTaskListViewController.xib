@@ -38,8 +38,8 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="e0Y-cN-fuM">
-                    <rect key="frame" x="0.0" y="56" width="320" height="475"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="0.0" y="56" width="320" height="468"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" red="0.86274509799999999" green="0.8862745098" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
@@ -48,7 +48,7 @@
                     </connections>
                 </tableView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="translucent_bottom.png" id="vBm-zA-Kw9">
-                    <rect key="frame" x="0.0" y="525" width="320" height="43"/>
+                    <rect key="frame" x="0.0" y="524" width="320" height="43"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom_logo.png" id="SNc-85-jhf">

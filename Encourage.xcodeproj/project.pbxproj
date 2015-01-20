@@ -132,6 +132,8 @@
 		707FDA5B1A3E55F200B60218 /* JHLoginAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA5A1A3E55F200B60218 /* JHLoginAPIResponse.m */; };
 		707FDA5F1A3EDB6B00B60218 /* JHImageUploadAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA5E1A3EDB6B00B60218 /* JHImageUploadAPI.m */; };
 		707FDA621A3EDCE600B60218 /* JHImageUploadAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 707FDA611A3EDCE600B60218 /* JHImageUploadAPIResponse.m */; };
+		709AECD11A6EAFCA0003208A /* donedownhover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 709AECCF1A6EAFCA0003208A /* donedownhover@2x.png */; };
+		709AECD21A6EAFCA0003208A /* donedown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 709AECD01A6EAFCA0003208A /* donedown@2x.png */; };
 		70AE03AA1A3A12D600FF3074 /* JHCareTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03A91A3A12D600FF3074 /* JHCareTask.m */; };
 		70AE03AD1A3A13E000FF3074 /* JHAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03AC1A3A13E000FF3074 /* JHAlert.m */; };
 		70AE03B01A3A357300FF3074 /* JHRecentAlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AE03AF1A3A357300FF3074 /* JHRecentAlertsViewController.m */; };
@@ -449,6 +451,8 @@
 		707FDA5E1A3EDB6B00B60218 /* JHImageUploadAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHImageUploadAPI.m; sourceTree = "<group>"; };
 		707FDA601A3EDCE600B60218 /* JHImageUploadAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHImageUploadAPIResponse.h; sourceTree = "<group>"; };
 		707FDA611A3EDCE600B60218 /* JHImageUploadAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHImageUploadAPIResponse.m; sourceTree = "<group>"; };
+		709AECCF1A6EAFCA0003208A /* donedownhover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "donedownhover@2x.png"; sourceTree = "<group>"; };
+		709AECD01A6EAFCA0003208A /* donedown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "donedown@2x.png"; sourceTree = "<group>"; };
 		70AE03A81A3A12D600FF3074 /* JHCareTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCareTask.h; sourceTree = "<group>"; };
 		70AE03A91A3A12D600FF3074 /* JHCareTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCareTask.m; sourceTree = "<group>"; };
 		70AE03AB1A3A13E000FF3074 /* JHAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAlert.h; sourceTree = "<group>"; };
@@ -758,6 +762,8 @@
 		7028137D19F8022200643D17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				709AECCF1A6EAFCA0003208A /* donedownhover@2x.png */,
+				709AECD01A6EAFCA0003208A /* donedown@2x.png */,
 				706E80A91A6AE5BD004F499D /* ic_action_secure.png */,
 				706E80A51A6AE3A6004F499D /* head@2x.png */,
 				706E80A11A6AE233004F499D /* ic_action_add_group_hover@2x.png */,
@@ -1405,6 +1411,7 @@
 				7FEDC3C01A3C502F007D7FD9 /* sore_throathover@2x.png in Resources */,
 				70AE03CD1A3B561200FF3074 /* doc@2x.png in Resources */,
 				703AE3171A3B6E1D00959C5A /* JHCareTaskDetailViewCell.xib in Resources */,
+				709AECD21A6EAFCA0003208A /* donedown@2x.png in Resources */,
 				7FAA14DA1A3F211F00F2947F /* JHTableViewCell.xib in Resources */,
 				7F4DC4B41A48A0540059312B /* otherhover@2x.png in Resources */,
 				7FEDC3BA1A3C502F007D7FD9 /* nosebleed@2x.png in Resources */,
@@ -1448,6 +1455,7 @@
 				7FEDC3B01A3C502F007D7FD9 /* back_pain@2x.png in Resources */,
 				7FEDC3901A3C4D8E007D7FD9 /* JHReportPageThree.xib in Resources */,
 				70AE03C31A3B4EC600FF3074 /* JHRecentCareTasksCell.xib in Resources */,
+				709AECD11A6EAFCA0003208A /* donedownhover@2x.png in Resources */,
 				7FEDC3B61A3C502F007D7FD9 /* dry_skin@2x.png in Resources */,
 				70761A3D1A1DA97B00FE644F /* JHLeftPanelViewController.xib in Resources */,
 				7FEDC3DE1A3C8D8B007D7FD9 /* angryhover@2x.png in Resources */,

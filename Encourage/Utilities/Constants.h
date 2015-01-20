@@ -32,6 +32,7 @@ typedef enum {
 
 /* URLs */
 
+#define FORGOT_PASSWORD_URL @"https://tryencourage.com"
 #define BASE_URL @"http://tryencourage.com/hwdsi/mServices/%@.php"
 #define FILE_URL @"http://tryencourage.com/hwdsi/hwAttachedfile/%@/%@"
 #define IMAGE_UPLOAD_URL @"https://tryencourage.com/mFileUpload.php"
