@@ -79,16 +79,17 @@
     
     [super viewWillAppear:animated];
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     if (!self.containerScrollView.pagingEnabled) {
         [self addPagesToContainer];
         
     }
 
 }
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
